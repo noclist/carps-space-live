@@ -1,0 +1,93 @@
+@import 'modules/breakpoints';
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    color: #fff; 
+    background: var(--color-pink);
+}  
+
+h1,
+h2,
+h3,
+h4,
+h5
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto; 
+    align-self: center;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.flow-content > * + * {
+    margin-top: 2rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+@mixin bp-xs-hide {
+    display: none;
+
+    @media(min-width: $bp-xs) {
+        display: block;
+    }
+}
+
+@mixin bp-sm-hide {
+    display: none;
+
+    @media(min-width: $bp-sm) {
+        display: block;
+    }
+}
+
+@mixin bp-md-hide {
+    display: none;
+
+    @media(min-width: $bp-md) {
+        display: block;
+    }
+}
+
+@mixin bp-lg-hide {
+    display: none;
+
+    @media(min-width: $bp-lg) {
+        display: block;
+    }
+}
+
+@mixin bp-xl-hide {
+    display: none;
+
+    @media(min-width: $bp-xl) {
+        display: block;
+    }
+}
+
+@mixin bp-custom-hide($width, $display-type) {
+    display: none;
+
+    @media(min-width: $width) {
+        display: $display-type;
+    }
+}

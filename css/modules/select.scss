@@ -1,0 +1,23 @@
+.select {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    -webkit-text-stroke: 1.5px #fff;
+    text-stroke: 1.5px #fff;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    cursor: pointer;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
