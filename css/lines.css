@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@900&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0.25rem;
+  font-family: "Mulish", sans-serif;
+  font-size: 4vw;
+}
+@media (orientation: portrait) {
+  body {
+    padding: 0;
+  }
+}
+body:before {
+  content: "";
+  background-image: url("/images/hedge.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.25;
+  z-index: -1;
+}
+@media (orientation: portrait) {
+  body:before {
+    opacity: 1;
+    background-image: url("/images/mazebg.png");
+  }
+}
+
+main {
+  display: grid;
+}
+@media (orientation: landscape) {
+  main {
+    grid-template-columns: repeat(14, calc(7.14vw - 0.036rem));
+    grid-template-rows: repeat(8, calc(var(--vh, 1vh) * 12.5 - 0.0625rem));
+  }
+}
+@media (orientation: portrait) {
+  main {
+    grid-template-columns: repeat(14, 7.14vw);
+    grid-template-rows: repeat(8, calc(var(--vh, 1vh) * 12.5));
+  }
+}
+main div {
+  display: grid;
+  justify-content: center;
+}
+main div i {
+  font-size: 4vmax;
+  margin-top: 1vmax;
+}
+main div.block-2, main div.block-3, main div.block-4, main div.block-5, main div.block-6, main div.block-7, main div.block-8, main div.block-9, main div.block-10, main div.block-11, main div.block-12, main div.block-13, main div.block-14, main div.block-25, main div.block-26, main div.block-27, main div.block-35, main div.block-36, main div.block-37, main div.block-38, main div.block-40, main div.block-41, main div.block-42, main div.block-95, main div.block-96, main div.block-97 {
+  border-top: 1vmax solid #212529;
+}
+main div.block-15, main div.block-16, main div.block-30, main div.block-31, main div.block-34, main div.block-37, main div.block-45, main div.block-46, main div.block-49, main div.block-50, main div.block-55, main div.block-57, main div.block-58, main div.block-60, main div.block-61, main div.block-62, main div.block-65, main div.block-68, main div.block-72, main div.block-73, main div.block-75, main div.block-78, main div.block-90, main div.block-91, main div.block-92, main div.block-96, main div.block-97, main div.block-98, main div.block-99, main div.block-93, main div.block-100, main div.block-101, main div.block-102, main div.block-103, main div.block-104, main div.block-105, main div.block-106, main div.block-107, main div.block-108, main div.block-109, main div.block-110, main div.block-111, main div.block-112 {
+  border-bottom: 1vmax solid #212529;
+}
+main div.block-1, main div.block-8, main div.block-10, main div.block-15, main div.block-19, main div.block-21, main div.block-23, main div.block-29, main div.block-33, main div.block-36, main div.block-43, main div.block-44, main div.block-47, main div.block-50, main div.block-57, main div.block-59, main div.block-64, main div.block-71, main div.block-74, main div.block-78, main div.block-85, main div.block-86, main div.block-88, main div.block-89, main div.block-99, main div.block-101, main div.block-103 {
+  border-left: 1vmax solid #212529;
+}
+main div.block-1, main div.block-3, main div.block-5, main div.block-14, main div.block-16, main div.block-17, main div.block-19, main div.block-24, main div.block-28, main div.block-31, main div.block-33, main div.block-38, main div.block-39, main div.block-41, main div.block-42, main div.block-47, main div.block-51, main div.block-52, main div.block-53, main div.block-54, main div.block-56, main div.block-61, main div.block-65, main div.block-66, main div.block-67, main div.block-69, main div.block-70, main div.block-76, main div.block-79, main div.block-80, main div.block-83, main div.block-84, main div.block-90, main div.block-93, main div.block-94, main div.block-98, main div.block-108 {
+  border-right: 1vmax solid #212529;
+}
+main div.block-112 {
+  position: relative;
+  place-items: center;
+}
+@media (orientation: portrait) {
+  main div.block-112 i {
+    position: absolute;
+    left: -5vmax;
+    font-size: 7.5vmax;
+  }
+}

@@ -1,0 +1,92 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@900&display=swap');
+
+@mixin border($position) {
+    border-#{$position}: 1vmax solid #212529;
+}
+
+body {
+    min-height: 100vh;
+    padding: 0.25rem;
+
+    @media (orientation: portrait) {
+        padding: 0;
+    }
+
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vw;
+
+    &:before {
+        content: '';
+        background-image: url('/images/hedge.png');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.25;
+        z-index: -1;
+
+        @media (orientation: portrait) {
+            opacity: 01;
+            background-image: url('/images/mazebg.png');
+        }
+    }
+}
+
+main {
+    display: grid;
+
+    @media (orientation: landscape) {
+        grid-template-columns: repeat(14, calc(7.14vw - .036rem));
+        grid-template-rows: repeat(8, calc(var(--vh, 1vh) * 12.5 - .0625rem));
+    }
+
+    @media (orientation: portrait) {
+        grid-template-columns: repeat(14, calc(7.14vw));
+        grid-template-rows: repeat(8, calc(var(--vh, 1vh) * 12.5));
+    }
+    
+    div {
+        display: grid;
+        justify-content: center;
+
+        i {
+            font-size: 4vmax;
+            margin-top: 1vmax;
+        }
+
+        &.block {
+            &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9, &-10, &-11, &-12, &-13, &-14, &-25, &-26, &-27, &-35, &-36, &-37, &-38, &-40, &-41, &-42, &-95, &-96, &-97 {
+                @include border('top');
+            }
+
+            &-15, &-16, &-30, &-31, &-34, &-37, &-45, &-46, &-49, &-50, &-55, &-57, &-58, &-60, &-61, &-62, &-65, &-68, &-72, &-73, &-75, &-78, &-90, &-91, &-92, &-96, &-97, &-98, &-99, &-93, &-100, &-101, &-102, &-103, &-104, &-105, &-106, &-107, &-108, &-109, &-110, &-111, &-112 {
+                @include border('bottom');
+            }
+    
+            &-1, &-8, &-10, &-15, &-19, &-21, &-23, &-29, &-33, &-36, &-43, &-44, &-47, &-50, &-57, &-59, &-64, &-71, &-74, &-78, &-85, &-86, &-88, &-89, &-99, &-101, &-103 {
+                @include border('left');
+            }
+
+            &-1, &-3, &-5, &-14, &-16, &-17, &-19, &-24, &-28, &-31, &-33, &-38, &-39, &-41, &-42, &-47, &-51, &-52, &-53, &-54, &-56, &-61, &-65, &-66, &-67, &-69, &-70, &-76, &-79, &-80, &-83, &-84, &-90, &-93, &-94, &-98, &-108 {
+                @include border('right');
+            }
+
+            &-112 {
+                position: relative;
+                place-items: center;
+
+                @media (orientation: portrait) {
+                    i {
+                        position: absolute;
+                        left: -5vmax;
+                        font-size: 7.5vmax;
+                    }
+                }
+            }
+        }
+    }
+}
