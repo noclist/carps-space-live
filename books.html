@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="css/books.css">
+</head>
+<body>
+    <main>
+        <section>
+            <header>
+                <h1>Ernest Hemingway</h1>
+            </header>
+            <p class="number">01</p>
+            <p class="title">For Whom the Bell Tolls</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section>
+            <header>
+                <h1>J.D. Salinger</h1>
+            </header>
+            <p class="number">02</p>
+            <p class="title">The Catcher in the Rye</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section>
+            <header>
+                <h1>Aldous Huxley</h1>
+            </header>
+            <p class="number">03</p>
+            <p class="title">Brave New World</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section>
+            <header>
+                <h1>Jonathan Swift</h1>
+            </header>
+            <p class="number">04</p>
+            <p class="title">Gulliver's Travels</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+                <section>
+            <header>
+                <h1>H.G. Wells</h1>
+            </header>
+            <p class="number">05</p>
+            <p class="title">The War of the Worlds</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+    document.querySelectorAll('.book').forEach(function(book, i) {
+        book.style.backgroundImage = `url(images/books/${i+1}.jpg)`;
+    })
+</script>
