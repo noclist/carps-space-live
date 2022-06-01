@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/favicon-basic.ico" /> 
+    <title>carps space</title>
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>carps space</h1>
+            <!-- <a href="index-enhanced.html"><img src="/images/color.png"></a> -->
+        </header>
+        <p>ben carpenter is a front end developer in cleveland, ohio!</p>
+        <main>
+            <section class="art xl col-span-2 row-span-2" onClick="navigate('art')"> 
+                <i class="fad fa-palette"></i>
+                <h2>css art gallery</h2>
+            </section>
+
+            <section class="grail" onClick="navigate('holygrail')">
+                <i class="fad fa-trophy"></i>
+                <h2>the holy grail layout</h2>
+            </section>
+
+            <section class="ddd" onClick="navigate('bounce')">
+                <i class="fad fa-cubes"></i>
+                <h2>3d css</h2>
+            </section>
+
+            <section class="cquery" onClick="navigate('container')">
+                <i class="fad fa-truck-container"></i>
+                <h2>container queries</h2>
+            </section>
+
+            <section class="form" onClick="navigate('forms')">
+                <i class="fad fa-pen-field"></i>
+                <h2>form controls</h2>
+            </section>
+
+            <section class="film xl col-span-2 row-span-2 col-start-3 row-start-3" onClick="navigate('_site/movies/2021/index')">
+                <i class="fad fa-film-alt"></i>
+                <h2>top ten films</h2>
+            </section>
+
+            <section class="subgrid" onClick="navigate('subgrid')">
+                <i class="fad fa-game-board-simple"></i>
+                <h2>subgrid</h2>
+            </section>
+
+            <section class="transform" onClick="navigate('transform')">
+                <i class="fad fa-transporter-1"></i>
+                <h2>css transforms</h2>
+            </section>
+
+            <section class="snap col-start-1" onClick="navigate('scrollsnap')">
+                <i class="fad fa-mouse"></i>
+                <h2>scroll snap</h2>
+            </section>
+
+            <section class="shadow " onClick="navigate('shadows')">
+                <i class="fad fa-lightbulb-on"></i>
+                <h2>box shadows</h2>
+            </section>
+
+            <section class="books xl col-span-2 row-span-2 row-start-5" onClick="navigate('books')">
+                <i class="fad fa-books"></i> 
+                <h2>css grid library</h2>
+            </section>
+
+            <section class="cards" onClick="navigate('cards')">
+                <i class="fad fa-cards"></i>
+                <h2>flipping cards</h2>
+            </section>
+
+            <section class="masonry" onClick="navigate('masonry')">
+                <i class="fad fa-chimney"></i>
+                <h2>masonry layout</h2>
+            </section>
+
+            <section class="cleveland" onClick="navigate('terminal')">
+                <i class="fad fa-wind-turbine"></i>
+                <h2>cleveland</h2>
+            </section>
+
+            <section class="aliens" onClick="navigate('aliens')">
+                <i class="fad fa-alien-monster"></i> 
+                <h2>aliens!</h2>
+            </section>
+
+            <section class="turtle col-span-2" onClick="navigate('turtles')">
+                <i class="fad fa-turtle"></i> 
+                <h2>ninja turtle grid</h2>
+            </section>
+
+            <section class="grid col-span-2" onClick="navigate('grid')">
+                <i class="fad fa-grid-4"></i>
+                <h2>auto-fit grid</h2>
+            </section>
+
+            <section class="maze col-start-2 col-span-2" onClick="navigate('lines')">
+                <i class="fad fa-wave-square"></i> 
+                <h2>a responsive maze</h2>
+            </section>
+        </main>
+        <footer>
+            <a href="https://www.twitter.com/afewgoodben" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com/spacejam" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/beneleventwelve/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+            <a href="https://www.strava.com/athletes/45181835" target="_blank"><i class="fab fa-strava"></i></a>
+            <a href="https://www.last.fm/user/noclist" target="_blank"><i class="fab fa-lastfm-square"></i></a>
+            <a href="https://www.linkedin.com/in/ben-carpenter-2556299/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/noclist/" target="_blank"><i class="fab fa-github-square"></i></a>
+        </footer>
+   </div>
+</html>
+
+<script>
+    function navigate(url) {
+        window.location.href='/' + url + '.html';
+    }
+</script> 
