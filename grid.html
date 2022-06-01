@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A CSS Grid</title>
+    <link rel="stylesheet" href="css/grid.css">
+</head>
+<body>
+    <h1>css grId</h1>
+    <h2>these are some of my photos in a css grid with auto-fit.</h2>
+    <div id="grid"></div>
+</body>
+</html>
+
+<script>
+    var grid = document.getElementById('grid');
+
+    for(var i = 1; i <= 73; i++) {
+        grid.innerHTML += '<div><img src="images/grid/auto-fit/' + i + '.jpg">' + '</div>';
+    }
+</script>

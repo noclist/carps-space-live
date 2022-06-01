@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+:root {
+  --color-blue: hsl(203, 89%, 53%);
+  --color-purple: hsl(264, 87%, 76%);
+  --color-pink: hsl(349, 100%, 74%);
+  --color-yellow: hsl(48, 100%, 53%);
+  --color-black: hsl(210, 11%, 15%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: hsl(0deg, 0%, 90%);
+  font-family: "Major Mono Display", monospace;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5.5vmax;
+  background: hsl(340deg, 38%, 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-stroke: 3.5px #000;
+  -webkit-text-stroke: 3.5px #000;
+  color: transparent;
+  letter-spacing: 5px;
+}
+
+h2 {
+  font-size: 1.25em;
+  color: hsla(0deg, 0%, 0%, 0.6);
+}
+
+#grid {
+  width: 95vw;
+  margin-bottom: 1rem;
+  padding: 1em;
+  background: #fff;
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, 240px);
+  grid-template-rows: repeat(auto-fit, 240px);
+  justify-content: center;
+  box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.75);
+}
+@media (min-width: 600px) {
+  #grid {
+    padding: 4em;
+  }
+}
+#grid > * {
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  height: 240px;
+}
+#grid > *:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 9px hsla(0deg, 0%, 0%, 0.25);
+}
+
+img {
+  max-width: 100%;
+}

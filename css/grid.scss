@@ -1,0 +1,65 @@
+@import 'modules/reset';
+@import 'modules/colors';
+@import 'modules/breakpoints';
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: hsl(0, 0%, 90%);
+    font-family: 'Major Mono Display', monospace;
+    text-align: center;
+}
+
+    h1 {
+        font-size: 5.5vmax;
+        background: hsl(340, 38%, 65%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-stroke: 3.5px #000;
+        -webkit-text-stroke: 3.5px #000;
+        color: transparent;
+        letter-spacing: 5px;
+    }
+
+    h2 {
+        font-size: 1.25em;
+        color: hsla(0, 0, 0, 0.6);
+    }
+    
+    #grid {
+        width: 95vw;
+        margin-bottom: 1rem;
+        padding: 1em;
+        background: #fff;
+        display: grid;
+        gap: 1.5em;
+        grid-template-columns: repeat(auto-fit, 240px);
+        grid-template-rows: repeat(auto-fit, 240px);
+        justify-content: center;
+        box-shadow: 0 0 13px 3px rgba(0, 0, 0, 75%);
+        
+        @media(min-width: $bp-xs) {
+            padding: 4em;
+        }
+    
+        > * {
+            overflow: hidden;
+            transition: all 0.25s ease-in-out;
+            height: 240px;
+    
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 10px 10px 9px hsla(0, 0%, 0%, 0.25);
+            }
+        }
+    }
+
+img {
+    max-width: 100%;
+}
