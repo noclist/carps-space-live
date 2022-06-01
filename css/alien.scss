@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    background: #ffd079;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .circle {
+    width: 70vmin;
+    height: 70vmin;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .alien {
+    position: relative;
+    border: 0.75vmin solid black;
+    width: 40vmin;
+    height: 45vmin;
+    border-radius: 53% 47% 48% 52% / 28% 29% 71% 72%;
+    background: #BCFFAD;
+  }
+
+  .eyes {
+      position: relative;
+
+    > * {
+        position: absolute;
+        width: 15vmin;
+        height: 15vmin;
+        background: #000;
+        border-radius: 39% 61% 22% 78% / 24% 81% 19% 76%;
+        left: 3.8vmin;
+        top: 18vmin;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 3vmin;
+            height: 3vmin;
+            background: white;
+            border-radius: 39% 61% 22% 78% / 24% 81% 19% 76%;
+            left: 4vmin;
+            top: 2.2vmin;
+            transform: rotate(317deg);
+        }
+    }
+
+    :last-child {
+        transform: scale(-1, 1);
+        left: 20.2vmin;
+    }
+  }
+
+  .nose {
+        position: absolute;
+        width: 1.3vmin;
+        height: 2.5vmin;
+        left: 17.5vmin;
+        bottom: 5vmin;
+        background: #000;
+        border-radius: 50px / 100px;
+        box-shadow: 2.6vmin 0 #000;
+  }
+
+  .mouth {
+        position: absolute;
+        width: 7.6vmin;
+        height: 5vmin;
+        border-radius: 40%;
+        border-bottom: 0.75vmin solid black;
+        bottom: 1.6vmin;
+        left: 15.8vmin;
+  }
