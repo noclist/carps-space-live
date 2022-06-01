@@ -8,8 +8,8 @@ docReady(function() {
 
     const grid = document.querySelector('.grid');
     const gridItems = grid.querySelectorAll(':scope > div');
-    // const year = window.location.href.substring(29, 33);
-    const year = window.location.href.substring(33, 37);
+    const year = window.location.href.substring(35, 39);
+    // const year = window.location.href.substring(33, 37);
     document.getElementById('movieYear').value = year;
 
     gridItems.forEach((item, i) => {
