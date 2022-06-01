@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  background: #ff81cf;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  width: 50vmin;
+  height: 50vmin;
+  background: #ffffff;
+  border-radius: 36% 64% 37% 63%/43% 56% 44% 57%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.stage {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin: 20px;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+.stage .ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+  background: radial-gradient(circle at 50px 50px, #5cabff, #000);
+  transform: translateY(-50px);
+  animation: bounce 0.5s ease-in infinite alternate;
+}
+.stage .ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  transform: rotateX(95deg) translateZ(-125px);
+  z-index: -1;
+  animation: shadow 0.5s ease-in infinite alternate;
+}
+.stage .ball .eight {
+  width: 55px;
+  height: 55px;
+  margin: 30%;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(34px) translateY(-30px) skewX(15deg) skewY(2deg);
+  position: absolute;
+}
+.stage .ball .eight:before {
+  content: "2";
+  display: block;
+  position: absolute;
+  text-align: center;
+  height: 40px;
+  width: 50px;
+  left: 25px;
+  margin-left: -20px;
+  top: 22px;
+  margin-top: -20px;
+  color: black;
+  font-family: Arial;
+  font-size: 45px;
+  line-height: 52px;
+}
+.stage .ball:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  filter: blur(5px);
+  z-index: 2;
+}
+.stage .ball:after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  transform: translateX(-40px) translateY(-45px) skewX(-20deg);
+  filter: blur(10px);
+  animation: lightSource 0.5s ease-in infinite alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes shadow {
+  to {
+    transform: rotateX(95deg) translateZ(-75px) scale(1.3);
+  }
+}
+@keyframes lightSource {
+  to {
+    transform: translateX(-40px) translateY(-51px) skewX(-20deg);
+  }
+}
