@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  background: Hsl(220 100% 85%);
+  font-family: "Karla", sans-serif;
+  font-size: 1.3em;
+  padding: 0.5em;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5.5vmax;
+  background: #ffffff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  color: transparent;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 2.5vmax;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #212529;
+}
+
+section {
+  display: grid;
+  justify-items: center;
+  gap: 2em;
+}
+section > div {
+  display: grid;
+  place-content: center;
+  width: 85%;
+  padding: 1em;
+  text-align: center;
+  border: 2px solid #212529;
+  background: hsl(39deg, 100%, 99%);
+  filter: drop-shadow(1px 2px 2px var(--shadow-color)) drop-shadow(1px 2px 2px var(--shadow-color)) drop-shadow(2px 4px 4px var(--shadow-color));
+  transition: all 300ms ease-in;
+}
+section > div:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(1px 2px 2px var(--shadow-color)) drop-shadow(1px 2px 2px var(--shadow-color)) drop-shadow(2px 4px 4px var(--shadow-color)) drop-shadow(1px 2px 5px var(--shadow-color));
+}
+section > div > div {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 1em;
+}
+section > div > div i {
+  font-size: 2em;
+}
+section > div.dark {
+  --shadow-color: hsl(0 0% 0% / 0.5);
+}
+section > div.light {
+  --shadow-color: hsl(220 100% 50%);
+}
+section > div.light > div {
+  text-align: right;
+}
+section > div.perfect {
+  --shadow-color: hsl(220 60% 50%);
+}
