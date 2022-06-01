@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    background: #9479ff;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .circle {
+    width: 70vmin;
+    height: 70vmin;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .robot {
+    position: relative;
+    border: 0.5vmin solid black;
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 49% 51% 49% 51% / 71% 72% 28% 29%;
+    background: #999999;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+
+    &:before {
+        top: -5.6vmin;
+        left: 5vmin;
+        width: 1vmin;
+        height: 10vmin;
+        border: 0.5vmin solid black;
+        border-bottom: 0;
+        border-top: 0;
+        background: #999;
+    }
+
+    &:after {
+        top: -8.6vmin;
+        left: 3.5vmin;
+        background: red;
+        width: 4vmin;
+        height: 4vmin;
+        border-radius: 50%;
+        border: 0.5vmin solid black;
+    }
+  }
+
+  .eyes {
+    position: relative;
+    width: 10vmin;
+    height: 10vmin;
+    background: white;
+    border-radius: 50%;
+    left: 3.5vmin;
+    top: 7vmin;
+    box-shadow: 12vmin 0 white;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+
+    &:before {
+        width: 5vmin;
+        height: 5vmin;
+        background: black;
+        border-radius: 50%;
+        right: 1vmin;
+        top: 25%;
+        box-shadow: 9vmin 0 black;
+    }
+
+    &:after {
+        width: 2.5vmin;
+        height: 2.5vmin;
+        background: white;
+        border-radius: 36% 64% 37% 63% / 43% 56% 44% 57%;
+        right: 1.5vmin;
+        top: 32%;
+        box-shadow: 9vmin 0 white;
+    }
+  }
+
+  .mouth {
+      display: flex;
+      gap: 1vmin;
+      position: absolute;
+      width: 12vmin;
+      height: 5vmin;
+      left: 8.5vmin;
+      bottom: 5vmin;
+
+      div {
+          width: 2vmin;
+          height: 5vmin;
+          background: #C7C7C7;
+      }
+  }
