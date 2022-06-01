@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "block";
+  src: url("/fonts/block.TTF");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  background: #0060B8;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  width: 85vmin;
+  height: 85vmin;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.block {
+  position: relative;
+  width: 40vmin;
+  height: 40vmin;
+  background: #FFD503;
+  border: 15px solid #000;
+  border-radius: 20px;
+  transition: transform 0.1s ease-out;
+}
+.block:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+.block .rivets {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.8vmin;
+}
+.block .rivets div {
+  width: 3.8vmin;
+  height: 3.8vmin;
+  background: #B48E0E;
+  border: 0.7vmin solid #000;
+  border-radius: 50%;
+}
+.block .rivets div:nth-child(even) {
+  justify-self: end;
+}
+.block .rivets div:nth-child(3), .block .rivets div:nth-child(4) {
+  align-self: end;
+}
+.block span {
+  font-family: block;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 1vmin;
+  -webkit-text-stroke-color: #000;
+  font-size: 22.8vmin;
+  position: absolute;
+  top: -1.9vmin;
+  left: 9.3vmin;
+}
