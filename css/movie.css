@@ -1,0 +1,227 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  -webkit-text-stroke: 1.5px #fff;
+  text-stroke: 1.5px #fff;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+@font-face {
+  font-family: "Theater";
+  src: url("/fonts/Theater_Bold.otf");
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background: #212529;
+  background: hsl(0deg, 13%, 98%);
+}
+
+.container {
+  width: 95vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: Theater;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+h1 .select {
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  h1 .select {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    transform: rotate(0deg) translateY(0);
+    margin: 0 0 1rem 0;
+    font-size: 4rem;
+    letter-spacing: 1.5vw;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.grid {
+  height: 80vh;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 5fr 4fr 3fr 2fr 1fr 1fr;
+  grid-template-areas: "one one one one one" "two two two three three" "four four five five five" "six six six seven seven" "eight eight eight eight eight" "nine nine nine ten ten";
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 3fr 2fr 1fr 1fr;
+    grid-template-rows: repeat(2, 4fr) repeat(4, 1fr);
+    grid-template-areas: "one two four four" "one two five seven" "one three five eight" "one three six eight" "one three six nine" "one three six ten";
+  }
+}
+.grid > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 2rem;
+  border: 2.5px solid #000;
+  background: no-repeat center/cover;
+  filter: contrast(100%);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.grid > div .details {
+  display: flex;
+  gap: 0.5rem;
+  background: Rgb(0 0 0/0%);
+  border-radius: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transform: translateX(-1px);
+  transition: all 0.5s ease;
+}
+.grid > div .details .rank {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 50px;
+  height: 25px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.5s ease;
+}
+.grid > div .details .title {
+  opacity: 0;
+  color: #fff;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.grid > div:hover {
+  filter: contrast(150%);
+  background-position: bottom;
+  box-shadow: 1px 1px 15px 0 #000;
+}
+.grid > div:hover .details {
+  background: Rgb(0 0 0/50%);
+  padding: 0.5em;
+}
+.grid > div:hover .details .rank {
+  border-radius: 10px;
+  width: 75px;
+}
+.grid > div:hover .details .title {
+  opacity: 1;
+  border-top: 2px solid rgba(255, 255, 255, 0.75);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+}
+.grid > div.large {
+  font-size: 1.1rem;
+}
+.grid > div.large .rank {
+  height: 35px;
+}
+@media (min-width: 768px) {
+  .grid > div.large:hover .details {
+    transform: translate(10%, 20%);
+  }
+}
+.grid > div.one {
+  grid-area: one;
+}
+.grid > div.two {
+  grid-area: two;
+}
+.grid > div.three {
+  grid-area: three;
+}
+.grid > div.four {
+  grid-area: four;
+}
+.grid > div.five {
+  grid-area: five;
+}
+.grid > div.six {
+  grid-area: six;
+}
+.grid > div.seven {
+  grid-area: seven;
+}
+.grid > div.eight {
+  grid-area: eight;
+}
+.grid > div.nine {
+  grid-area: nine;
+}
+.grid > div.ten {
+  grid-area: ten;
+}
