@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  padding: 1em;
+  font-family: "Major Mono Display", monospace;
+  display: grid;
+  justify-content: center;
+  gap: 1.5em;
+  background: radial-gradient(hsl(215deg, 33%, 90%), hsl(215deg, 33%, 60%));
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5.5vmax;
+  background: #fdbfff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-stroke: 3.5px #212529;
+  -webkit-text-stroke: 3.5px #212529;
+  color: transparent;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.container {
+  color: #212529;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: hsl(0deg, 0%, 95%);
+  padding: 0.5em;
+  border: 2px solid #212529;
+  box-shadow: rgba(6, 24, 44, 0.4) 0 0 0 2px, rgba(6, 24, 44, 0.65) 0 4px 6px -1px, rgba(255, 255, 255, 0.08) 0 1px 0 inset;
+  flex-direction: column;
+  height: 75vh;
+  overflow-y: scroll;
+}
+.container.mandatory {
+  scroll-snap-type: y mandatory;
+}
+.container.mandatory > div:first-child {
+  margin-left: 0;
+  background: #ffb49b;
+}
+.container.mandatory > div:first-child i {
+  --fa-primary-color: #f00;
+  --fa-secondary-color: #fff;
+}
+.container.mandatory > div:nth-child(2) {
+  background: #89ff99;
+}
+.container.mandatory > div:nth-child(2) i {
+  --fa-primary-color: #000;
+  --fa-secondary-color: #0000ff ;
+}
+.container.mandatory > div:nth-child(3) {
+  background: #a4f4ff;
+}
+.container.mandatory > div:nth-child(3) i {
+  --fa-primary-color: #fff;
+  --fa-secondary-color: #000;
+}
+.container.mandatory > div:nth-child(4) {
+  background: #fff895;
+}
+.container.mandatory > div:nth-child(4) i {
+  --fa-primary-color: hsl(144, 95%, 36%);
+  --fa-secondary-color: hsl(359, 99%, 51%);
+}
+.container.mandatory > div:nth-child(5) {
+  background: #fdbfff;
+}
+.container.mandatory > div:nth-child(5) i {
+  --fa-primary-color: #000;
+  --fa-secondary-color: #000000;
+}
+.container.mandatory > div:nth-child(6) {
+  background: #8587ff;
+}
+.container.mandatory > div:nth-child(6) i {
+  --fa-primary-color: #000(144, 95%, 36%);
+  --fa-secondary-color: hsl(359, 99%, 51%);
+}
+.container.mandatory > div:nth-child(7) {
+  background: #0faf45;
+}
+.container.mandatory > div:nth-child(7) i {
+  --fa-primary-color: #000(144, 95%, 36%);
+  --fa-secondary-color: hsl(0, 0%, 100%);
+}
+.container.mandatory > div:nth-child(8) {
+  background: #ffb730;
+}
+.container.mandatory > div:nth-child(8) i {
+  --fa-primary-color: hsl(51, 100%, 70%);
+  --fa-secondary-color: #000;
+}
+.container.mandatory > div:nth-child(9) {
+  background: #4eb8ff;
+}
+.container.mandatory > div:nth-child(9) i {
+  --fa-primary-color: #c200c2;
+  --fa-secondary-color: #000;
+}
+.container.mandatory > div:last-child {
+  background: #cfffb4;
+}
+.container.mandatory > div:last-child i {
+  --fa-primary-color: green;
+  --fa-secondary-color: green;
+}
+.container.proximity {
+  scroll-snap-type: y proximity;
+}
+.container.proximity > div:first-child {
+  margin-left: 0;
+  background: hsl(64deg, 100%, 75%);
+}
+.container.proximity > div:first-child i {
+  --fa-primary-color: rgb(0, 141, 54);
+  --fa-secondary-color: hsl(0, 59%, 25%);
+}
+.container.proximity > div:nth-child(2) {
+  margin-left: 0;
+  background: hsl(145deg, 81%, 39%);
+}
+.container.proximity > div:nth-child(2) i {
+  --fa-primary-color: hsl(240, 100%, 60%);
+  --fa-secondary-color: hsl(69, 100%, 65%);
+}
+.container.proximity > div:nth-child(3) {
+  margin-left: 0;
+  background: hsl(0deg, 0%, 35%);
+}
+.container.proximity > div:nth-child(3) i {
+  --fa-primary-color: orange;
+  --fa-secondary-color: #fff;
+}
+.container.proximity > div:nth-child(4) {
+  margin-left: 0;
+  background: hsl(0deg, 15%, 65%);
+}
+.container.proximity > div:nth-child(4) i {
+  --fa-primary-color: red;
+  --fa-secondary-color: hsl(0, 59%, 8%);
+}
+.container.proximity > div:nth-child(5) {
+  margin-left: 0;
+  background: hsl(189deg, 100%, 40%);
+}
+.container.proximity > div:nth-child(5) i {
+  --fa-primary-color: rgb(143, 42, 42);
+  --fa-secondary-color: hsl(0, 0%, 100%);
+}
+.container.proximity > div:nth-child(6) {
+  margin-left: 0;
+  background: hsl(323deg, 100%, 57%);
+}
+.container.proximity > div:nth-child(6) i {
+  --fa-secondary-color: hsl(0, 0%, 100%);
+}
+.container.proximity > div:nth-child(7) {
+  margin-left: 0;
+  background: hsl(49deg, 100%, 61%);
+}
+.container.proximity > div:nth-child(7) i {
+  --fa-primary-color: hsl(0, 3%, 30%);
+  --fa-secondary-color: hsl(0, 59%, 20%);
+}
+.container.proximity > div:nth-child(8) {
+  margin-left: 0;
+  background: hsl(48deg, 17%, 77%);
+}
+.container.proximity > div:nth-child(8) i {
+  --fa-primary-color: hsl(0, 3%, 30%);
+  --fa-secondary-color: hsl(251, 100%, 22%);
+}
+.container.proximity > div:nth-child(9) {
+  margin-left: 0;
+  background: hsl(39deg, 100%, 34%);
+}
+.container.proximity > div:nth-child(9) i {
+  --fa-primary-color: hsl(140, 100%, 69%);
+  --fa-secondary-color: hsl(39, 100%, 100%);
+}
+.container.proximity > div:last-child {
+  margin-left: 0;
+  background: hsl(155deg, 65%, 38%);
+}
+.container.proximity > div:last-child i {
+  --fa-secondary-color: #fff;
+}
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row;
+    width: 75vw;
+    height: auto;
+    overflow-x: scroll;
+  }
+  .container.mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .container.proximity {
+    scroll-snap-type: x proximity;
+  }
+}
+.container > div {
+  scroll-snap-align: start;
+  width: 88vw;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+@media (min-width: 800px) {
+  .container > div {
+    width: 175px;
+  }
+}
+.container > div i {
+  font-size: 4.5em;
+}

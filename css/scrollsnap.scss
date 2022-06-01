@@ -1,0 +1,280 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+  
+  body {
+    padding: 1em;
+    font-family: 'Major Mono Display', monospace;
+    display: grid;
+    justify-content: center;
+    gap: 1.5em;
+    background: radial-gradient(hsl(215, 33%, 90%), hsl(215, 33%, 60%));
+  }
+
+  h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 5.5vmax;
+    background: #fdbfff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-stroke: 3.5px #212529;
+    -webkit-text-stroke: 3.5px #212529;
+    color: transparent;
+    letter-spacing: 5px;
+    text-align: center;
+}
+  
+  .container {
+      color: #212529;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: hsl(0, 0%, 95%);
+      padding: 0.5em;
+      border: 2px solid #212529;
+      box-shadow: rgba(6, 24, 44, 0.4) 0 0 0 2px,
+      rgba(6, 24, 44, 0.65) 0 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0 1px 0 inset;
+
+      flex-direction: column;
+      height: 75vh;
+      overflow-y: scroll;
+
+      &.mandatory {
+        scroll-snap-type: y mandatory;
+
+        > div {
+
+            &:first-child {
+                margin-left: 0;
+                background: #ffb49b;
+    
+                i {
+                    --fa-primary-color: #f00;
+                    --fa-secondary-color: #fff;
+                }
+            }
+
+            &:nth-child(2) {
+                background: #89ff99;
+    
+                i {
+                    --fa-primary-color: #000;
+                    --fa-secondary-color: #0000ff
+                }
+            }
+        
+            &:nth-child(3) {
+                background: #a4f4ff;
+    
+                i {
+                    --fa-primary-color: #fff;
+                    --fa-secondary-color: #000;
+                }
+            }
+        
+            &:nth-child(4) {
+                background: #fff895;
+    
+                i {
+                    --fa-primary-color: hsl(144, 95%, 36%);
+                    --fa-secondary-color: hsl(359, 99%, 51%);
+                }
+            }
+        
+            &:nth-child(5) {
+                background: #fdbfff;
+    
+                i {
+                    --fa-primary-color: #000;
+                    --fa-secondary-color: #000000;
+                }
+            }
+        
+            &:nth-child(6) {
+                background: #8587ff;
+    
+                i {
+                    --fa-primary-color: #000(144, 95%, 36%);
+                    --fa-secondary-color: hsl(359, 99%, 51%);
+                }
+            }
+        
+            &:nth-child(7) {
+                background: #0faf45;
+    
+                i {
+                    --fa-primary-color: #000(144, 95%, 36%);
+                    --fa-secondary-color: hsl(0, 0%, 100%);
+                }
+            }
+        
+            &:nth-child(8) {
+                background: #ffb730;
+    
+                i {
+                    --fa-primary-color: hsl(51, 100%, 70%);
+                    --fa-secondary-color: #000;
+                }
+            }
+        
+            &:nth-child(9) {
+                background: #4eb8ff;
+    
+                i {
+                    --fa-primary-color: #c200c2;
+                    --fa-secondary-color: #000;
+                }
+            }
+        
+            &:last-child {
+                background: #cfffb4;
+    
+                i {
+                    --fa-primary-color: green;
+                    --fa-secondary-color: green;
+                }
+            }
+        }
+      }
+
+      &.proximity {
+        scroll-snap-type: y proximity;
+
+        > div {
+
+            &:first-child {
+                margin-left: 0;
+                background: hsl(64, 100%, 75%);
+    
+                i {
+                    --fa-primary-color: rgb(0, 141, 54);
+                    --fa-secondary-color: hsl(0, 59%, 25%);
+                }
+            }
+
+            &:nth-child(2) {
+                margin-left: 0;
+                background: hsl(145, 81%, 39%);
+    
+                i {
+                    --fa-primary-color: hsl(240, 100%, 60%);
+                    --fa-secondary-color: hsl(69, 100%, 65%);
+                }
+            }
+
+            &:nth-child(3) {
+                margin-left: 0;
+                background: hsl(0, 0%, 35%);
+    
+                i {
+                    --fa-primary-color: orange;
+                    --fa-secondary-color: #fff;
+                }
+            }
+
+            &:nth-child(4) {
+                margin-left: 0;
+                background: hsl(0, 15%, 65%);
+    
+                i {
+                    --fa-primary-color: red;
+                    --fa-secondary-color: hsl(0, 59%, 8%);
+                }
+            }
+
+            &:nth-child(5) {
+                margin-left: 0;
+                background: hsl(189, 100%, 40%);
+    
+                i {
+                    --fa-primary-color: rgb(143, 42, 42);
+                    --fa-secondary-color: hsl(0, 0%, 100%);
+                }
+            }
+
+            &:nth-child(6) {
+                margin-left: 0;
+                background: hsl(323, 100%, 57%);
+    
+                i {
+                    --fa-secondary-color: hsl(0, 0%, 100%);
+                }
+            }
+
+            &:nth-child(7) {
+                margin-left: 0;
+                background: hsl(49, 100%, 61%);
+    
+                i {
+                    --fa-primary-color: hsl(0, 3%, 30%);
+                    --fa-secondary-color: hsl(0, 59%, 20%);
+                }
+            }
+
+            &:nth-child(8) {
+                margin-left: 0;
+                background: hsl(48, 17%, 77%);
+    
+                i {
+                    --fa-primary-color: hsl(0, 3%, 30%);
+                    --fa-secondary-color: hsl(251, 100%, 22%);
+                }
+            }
+
+            &:nth-child(9) {
+                margin-left: 0;
+                background: hsl(39, 100%, 34%);
+    
+                i {
+                    --fa-primary-color: hsl(140, 100%, 69%);
+                    --fa-secondary-color: hsl(39, 100%, 100%);
+                }
+            }
+
+            &:last-child {
+                margin-left: 0;
+                background: hsl(155, 65%, 38%);
+    
+                i {
+                    --fa-secondary-color: #fff;
+                }
+            }
+        }
+      }
+
+      @media(min-width: 800px) {
+          flex-direction: row;
+          width: 75vw;
+          height: auto;
+          overflow-x: scroll;
+
+          &.mandatory {
+            scroll-snap-type: x mandatory;
+          }
+    
+          &.proximity {
+            scroll-snap-type: x proximity;
+          }
+      }
+
+      > div {
+        scroll-snap-align: start;
+        width: 88vw;
+        padding: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        flex-shrink: 0;
+
+        @media (min-width: 800px) {
+            width: 175px;
+        }
+
+        i {
+            font-size: 4.5em;
+        }
+      }
+  }
+  
