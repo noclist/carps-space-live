@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/transform.css">
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <title>CSS Transforms</title>
+</head>
+
+<body>
+    <h1>css Transforms</h1>
+    <main>
+        <section>
+            <code>transform: rotate(<span id="label-rotate">0</span> degrees)</code>
+            <i id="icon-rotate" class="fa-duotone fa-donut"></i>
+            <input id="slider-rotate" type="range" min="-360" max="360" step="1" value="0" oninput="transform('rotate')">
+        </section>
+        <section>
+            <code>transform: scale(<span id="label-scale">1</span>x)</code>
+            <i id="icon-scale" class="fa-duotone fa-donut"></i>
+            <input id="slider-scale" type="range" min="0.1" max="2" step="0.1" value="1" oninput="transform('scale')">
+        </section>
+        <section>
+            <code>transform: skew(<span id="label-skew">0</span> degrees)</code>
+            <i id="icon-skew" class="fa-duotone fa-donut"></i>
+            <input id="slider-skew" type="range" min="-75" max="75" step="1" value="0" oninput="transform('skew')">
+        </section>
+        <section>
+            <code>transform: translate(<span id="label-translate">0</span>px)</code>
+            <i id="icon-translate" class="fa-duotone fa-donut"></i>
+            <input id="slider-translate" type="range" min="-100" max="100" step="1" value="0" oninput="transform('translate')">
+        </section>
+        <section class="cube-container"> 
+            <h2>A Rotating Cube</h2>
+            <div class="scene">
+                <div id="cube" class="cube">
+                <div class="cube-face front">front</div>
+                <div class="cube-face back">back</div>
+                <div class="cube-face right">right</div>
+                <div class="cube-face left">left</div>
+                <div class="cube-face top">top</div>
+                <div class="cube-face bottom">bottom</div>
+                </div> 
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" id="top" name="direction" value="top" onclick="rotate('top')">
+                    <span for="top">Top</span>
+                </label>
+                <label>
+                    <input type="radio" id="bottom" name="direction" value="bottom" onclick="rotate('bottom')">
+                    <span for="bottom">Bottom</span>
+                </label>
+                <label>
+                    <input type="radio" id="front" name="direction" value="front" onclick="rotate('front')">
+                    <span for="front">Front</span>
+                </label>
+                <label>
+                    <input type="radio" id="back" name="direction" value="back" onclick="rotate('back')">
+                    <span for="back">Back</span>
+                </label>
+                <label>
+                    <input type="radio" id="left" name="direction" value="left" onclick="rotate('left')">
+                    <span for="left">Left</span>
+                </label>
+                <label>
+                    <input type="radio" id="right" name="direction" value="right" onclick="rotate('right')">
+                    <span for="right">Right</span>
+                </label>
+              </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+<script>
+    function transform(transformType) {
+        var rangeValue = document.getElementById('slider-' + transformType).value;
+        document.getElementById('icon-' + transformType).style.transform = transformType + '(' + rangeValue + ')';
+        if(transformType == 'rotate' || transformType == 'skew')
+            document.getElementById('icon-' + transformType).style.transform = transformType + '(' + rangeValue + 'deg)';
+        if(transformType == 'translate')
+            document.getElementById('icon-' + transformType).style.transform = transformType + '(' + rangeValue + 'px)';
+        document.getElementById('label-' + transformType).innerHTML = rangeValue;
+    }
+
+    function rotate(direction) {
+        document.getElementById('cube').className = '';
+        document.getElementById('cube').classList.add('cube', direction + "-rotate");
+    }
+</script>
+
+
