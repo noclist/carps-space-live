@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>form conTroLs</h1>
+    <h2>responsive & acccessible</h2>
+    <div class="container">
+      <form>
+        <div>
+          <div>
+            <div class="form-group">
+              <label for="text-input">Text input</label>
+              <input class="form-field" type="text" id="text-input" name="text-input" placeholder="Master Splinter" />
+            </div>
+            <div class="form-group">
+              <label for="textarea">Textarea</label>
+              <textarea class="form-field" id="textarea" 
+                name="textarea">Splinter is the mutant rat sensei and adoptive father of the Ninja Turtles.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="standard-select">Select</label>
+              <div class="form-field select">
+                <select id="standard-select" name="standard-select">
+                  <option value="Option 1">Leonardo</option>
+                  <option value="Option 2">Michaelangelo</option>
+                  <option value="Option 3">Donatello</option>
+                  <option value="Option 4">Raphael</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="form-group">
+              <label class="form-control checkbox">
+                <span class="form-control__input checkbox__input">
+                  <input type="checkbox" name="checkbox" />
+                  <span class="input__control">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="5" d="M1.73 12.91l6.37 6.37L22.79 4.59" />
+                    </svg>
+                  </span>
+                </span>
+                Checkbox
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="form-control checkbox">
+                <span class="form-control__input checkbox__input">
+                  <input type="checkbox" name="checked" checked />
+                  <span class="input__control">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="5" d="M1.73 12.91l6.37 6.37L22.79 4.59" />
+                    </svg>
+                  </span>
+                </span>
+                Checkbox - Checked
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="form-control radio">
+                <span class="form-control__input radio__input">
+                  <input type="radio" name="radio" />
+                  <span class="input__control"> </span>
+                </span>
+                Radio
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="form-control radio">
+                <span class="form-control__input radio__input">
+                  <input type="radio" name="radio" checked />
+                  <span class="input__control"> </span>
+                </span>
+                Radio - Checked
+              </label>
+            </div>
+          </div>
+          <div>
+            <a href="#" class="btn btn-blue">button</a>
+            <a href="#" class="btn btn-orange">button!</a>
+            <a href="#" class="btn btn-pink">button!!</a>
+          </div>
+        </div>
+      </form>
+      <div class="board">
+        <h2 class="span-2">
+          <i class="fa-thin fa-input-text"></i>
+        </h2>
+        <h2><i class="fa-thin fa-pen-line"></i></h2>
+        <h2><i class="fa-thin fa-note-sticky"></i></h2>
+        <h2><i class="fa-thin fa-font-case"></i></h2>
+        <h2 class="span-2"><i class="fa-thin fa-code"></i></h2>
+        <h2><i class="fa-thin fa-calendar-days"></i></h2>
+        <h2><i class="fa-thin fa-tally"></i></h2>
+        <h2><i class="fa-thin fa-underline"></i></h2>
+        <h2 class="span-2"><i class="fa-thin fa-chart-pie"></i></h2>
+      </div>
+    </div>
+</body>
+</html>
+

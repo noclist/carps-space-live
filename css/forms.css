@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  background: hsl(222deg, 100%, 97%);
+  color: #212529;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  position: relative;
+  width: 95vw;
+  padding: 2em 1em;
+  background: hsl(222deg, 100%, 99%);
+  border: 2px solid #212529;
+  border-radius: 5px;
+  box-shadow: Rgb(0 0 0/45%) 6px 6px 3px;
+}
+@media (min-width: 992px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  min-height: 40vh;
+}
+.board > h2 {
+  border: 0.5rem solid #fff;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 2rem;
+}
+.board > h2:nth-child(odd) {
+  background: hsl(270deg, 50%, 70%);
+}
+.board > h2:nth-child(even) {
+  background: pink;
+}
+.board > h2.span-2 {
+  grid-column-end: span 2;
+  background: hsl(39deg, 100%, 80%);
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5.5vmax;
+  background: #97C01A;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-stroke: 3.5px #000;
+  -webkit-text-stroke: 3.5px #000;
+  color: transparent;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Major Mono Display", monospace;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+@media (min-width: 1450px) {
+  form {
+    flex-direction: row;
+  }
+}
+form > div:first-child {
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+}
+@media (min-width: 625px) {
+  form > div:first-child {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1450px) {
+  form > div:first-child {
+    flex: 0 0 560px;
+  }
+}
+form > div:last-child {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+form > div:last-child img {
+  width: auto;
+}
+@media (min-width: 850px) {
+  form > div:last-child {
+    flex-direction: row;
+  }
+  form > div:last-child img {
+    width: 25%;
+  }
+}
+
+.form-group + .form-group {
+  margin-top: 1.5rem;
+}
+.form-group--inline {
+  display: inline-block;
+}
+
+label {
+  font-weight: 400;
+  line-height: 1;
+}
+label:not(.form-control) {
+  display: block;
+}
+label + .form-field {
+  margin-top: 0.5em;
+}
+
+.form-field {
+  width: 100%;
+  max-width: 50ch;
+  padding: 0.25em 0.5em;
+  border: 2px solid currentColor;
+  background-color: #fafbff;
+  color: inherit;
+  font-family: inherit;
+}
+.form-field:focus-within {
+  outline: max(2px, 0.08em) dashed currentColor;
+  outline-offset: max(2px, 0.08em);
+}
+
+textarea {
+  height: 70px;
+}
+
+.form-field.select {
+  display: grid;
+  position: relative;
+  grid-template-areas: "select";
+  align-items: center;
+}
+.form-field.select select, .form-field.select::after {
+  grid-area: select;
+}
+.form-field.select::after {
+  content: "";
+  justify-self: end;
+  width: 0.8em;
+  height: 0.5em;
+  background-color: currentColor;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+.form-field.select select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 1em 0 0;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: inherit;
+}
+.form-field.select select {
+  outline: none;
+}
+
+.form-control {
+  display: inline-grid;
+  grid-template-columns: 1em 1fr;
+  gap: 0.5em;
+}
+.form-control input {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  opacity: 0;
+}
+.form-control input:focus + .input__control {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.15em hsl(120deg, 100%, 40%);
+}
+.form-control.radio input:focus + .input__control {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.15em hsl(32deg, 100%, 63%);
+}
+.form-control__input {
+  display: grid;
+  grid-template-areas: "input";
+  place-content: center;
+  font-size: 1em;
+}
+.form-control__input > * {
+  grid-area: input;
+}
+.form-control .input__control {
+  display: grid;
+  place-content: center;
+  width: 1em;
+  height: 1em;
+  border: 0.1em solid #212529;
+}
+
+.checkbox .input__control {
+  border-radius: 0.25em;
+  color: hsl(120deg, 100%, 40%);
+}
+.checkbox .input__control svg {
+  width: 0.65em;
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+}
+.checkbox input:checked + .input__control svg {
+  transform: scale(1);
+}
+
+.radio .input__control {
+  border-radius: 50%;
+}
+.radio .input__control::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border-radius: 50%;
+  box-shadow: inset 1em 1em hsl(32deg, 100%, 63%);
+}
+.radio input:checked + .input__control::before {
+  transform: scale(1);
+}
+
+.btn {
+  color: var(--btn-clr, black);
+  border: 2px solid var(--btn-clr, black);
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 7em;
+  padding: 0.5em 1.5em;
+  background: 0;
+  font-family: inherit;
+  text-decoration: none;
+  line-height: inherit;
+  transition: transform 300ms linear;
+  cursor: pointer;
+}
+.btn:not(:first-child) {
+  margin-top: 0.5em;
+}
+.btn.btn-blue {
+  --btn-clr: #0484af;
+  --origin: left;
+}
+.btn.btn-pink {
+  --btn-clr: #ff34d0;
+}
+.btn.btn-orange {
+  --btn-clr: #ff8600;
+  --origin: right;
+}
+.btn:hover, .btn:focus {
+  color: white;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: var(--btn-clr);
+  transform: scale(0, 1);
+  transform-origin: var(--origin, center);
+  transition: transform 300ms ease;
+}
+.btn:hover::after {
+  transform: scale(1, 1);
+}
