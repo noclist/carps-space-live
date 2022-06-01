@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0), linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
+  background-size: 30px 30px;
+}
+
+.circle {
+  position: relative;
+  width: 70vmin;
+  height: 70vmin;
+  background: hsl(204deg, 10%, 50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 7px 7px 15px 1px #0d0d0d;
+  z-index: 1;
+  animation: rotate 0.35s linear infinite alternate;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(2.5deg) translate(18px, 5px);
+  }
+}
+.circle:before, .circle:after {
+  position: absolute;
+  content: "";
+}
+.circle:before {
+  width: 50vmin;
+  height: 10vmin;
+  background: hsl(204deg, 10%, 50%);
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  right: -46.3vmin;
+  top: 12vmin;
+  transform: rotate(343deg);
+  box-shadow: 9px 2px 8px 1px #0d0d0d;
+  z-index: -1;
+}
+.circle:after {
+  width: 58vmin;
+  height: 58vmin;
+  background: hsl(204deg, 10%, 50%);
+  border: 0.75vmin solid #000;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.egg {
+  position: relative;
+  width: 40vmin;
+  height: 45vmin;
+  border-radius: 50% 60% 50% 50%/70% 70% 40% 40%;
+  transform: rotate(2deg);
+  background: #fff;
+  box-shadow: 10px 5px 5px #000;
+  z-index: 3;
+  animation: eggrotate 1.5s linear infinite alternate;
+  transform: translate(18px, 10px);
+}
+@keyframes eggrotate {
+  to {
+    transform: rotate(55deg) translate(-38px, -25px);
+  }
+}
+.egg:before, .egg:after {
+  position: absolute;
+  content: "";
+}
+.egg:before {
+  width: 25vmin;
+  height: 25vmin;
+  background: #F5C500;
+  border-radius: 50%;
+  left: calc(50% - 12.5vmin);
+  bottom: 5vmin;
+}
+.egg:after {
+  width: 3vmin;
+  height: 1.8vmin;
+  background: #f00;
+  left: calc(50% - 1.5vmin);
+  bottom: 13.3vmin;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.egg .face {
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  background: #000;
+  border-radius: 50%;
+  top: 25vmin;
+  left: 14vmin;
+  box-shadow: 9.3vmin 0 #000;
+}
+.egg .face:before, .egg .face:after {
+  position: absolute;
+  content: "";
+}
+.egg .face:before {
+  width: 2vmin;
+  height: 2vmin;
+  background: hsl(0deg, 100%, 70%);
+  border-radius: 50% 60% 50% 50%/70% 70% 40% 40%;
+  top: 3.5vmin;
+  left: -1.8vmin;
+  box-shadow: 13.7vmin 0 hsl(0deg, 100%, 70%);
+}
+.egg .face:after {
+  width: 5vmin;
+  height: 2.8vmin;
+  background: #000;
+  top: 4.3vmin;
+  left: 3.5vmin;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
