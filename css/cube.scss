@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    background: hsl(219, 78%, 39%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .circle {
+    width:50vmin;
+    height: 50vmin;
+    background: #fff;
+    border-radius: 48% 52% 50% 50% / 63% 64% 36% 37%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+.cube-scene {
+    perspective: 300px;
+
+    .cube {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-75px);
+        animation: rotate-cube 10s linear infinite;
+
+        .cube-face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 3px solid rgba(102, 51, 153, 1);
+        }
+
+        .front { 
+            background: radial-gradient(circle at 100% 50%, rgba(102, 51, 153, 0.1) 20%, #ff00f7 21%, #efff00 34%, rgba(102, 51, 153, 0.1) 35%, rgba(102, 51, 153, 0.1)),
+                        radial-gradient(circle at 0% 50%, rgba(102, 51, 153, 0.1) 20%, #00D4F0 21%, #27ff00 34%, rgba(102, 51, 153, 0.1) 35%, rgba(102, 51, 153, 0.1)) 0 -50px;
+
+            transform: rotateY(0deg) translateZ(75px);
+        }
+
+        .right {
+            background: radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+                        radial-gradient(at 100% 100%,rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),hsla(270, 50%, 40%, 0.2);
+            background-size: 20px 20px;
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        .back {
+            background: linear-gradient(hsla(174, 100%, 50%, 0.7) 50%, hsla(34, 100%, 50%, 0.7) 0);
+            background-size: 100% 30px;
+            transform: rotateY(180deg) translateZ(75px);
+        }
+
+        .left {
+            background: linear-gradient(135deg, hsla(128, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%),
+                        linear-gradient(225deg, hsla(140, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%),
+                        linear-gradient(315deg, hsla(115, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%),
+                        linear-gradient(45deg, hsla(125, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%),
+                        Hsl(0deg 0% 100% / 30%);
+            background-size: 35px 32px;
+            background-position: -20px 0, -20px 0, 0 0, 0 0;
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+
+        .top {
+            background:
+                linear-gradient(135deg, transparent 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px),
+                linear-gradient(225deg, transparent 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px)0 64px;
+            background-color:hsla(212, 62%, 42%, 0.5);
+            background-size: 64px 128px;
+            transform: rotateX( 90deg) translateZ(75px);
+        }
+
+        .bottom {
+            background:
+                linear-gradient(45deg, hsla(0, 100%, 75%, 0.5) 45px, transparent 45px)64px 64px,
+                linear-gradient(45deg, hsla(0, 100%, 75%, 0.5) 45px, transparent 45px,transparent 91px, hsla(73, 100%, 50%, 0.5) 91px, hsla(73, 100%, 50%, 0.5) 135px, transparent 135px),
+                linear-gradient(-45deg, hsla(0, 100%, 75%, 0.5) 23px, transparent 23px, transparent 68px,hsla(0, 100%, 75%, 0.5) 68px,hsla(0, 100%, 75%, 0.5) 113px,transparent 113px,transparent 158px,hsla(0, 100%, 75%, 0.5) 158px);
+            background-color:hsla(73, 100%, 50%, 0.5);
+            background-size: 128px 128px;
+            transform: rotateX(-90deg) translateZ(75px);
+        }
+    }
+}
+
+  @keyframes rotate-cube {
+    0% {
+        transform: translateZ(-75px) rotateY(0deg) translateX(0); //front
+    }
+    
+    17% {
+        
+        transform: translateZ(-75px) rotateX(-90deg); //top
+    }
+
+    34% {
+        transform: translateZ(-75px) rotateY(-180deg); //back
+    }
+
+    50% {
+        transform: translateZ(-75px) rotateY(-90deg); //right
+    }
+
+    67% {
+        transform: translateZ(-75px) rotateX(90deg); //bottom
+    }
+
+    84% {
+        transform: translateZ(-75px) rotateY(90deg); //left
+    }
+}
