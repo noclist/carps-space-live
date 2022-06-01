@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Art</title>
+    <link rel="stylesheet" href="css/art.css">
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>CSS Art Gallery</h1>
+    <div class="gallery">
+        <div class="dino col-span-2" onClick="navigate('dino')"> 
+            <i class="dino-icon"></i> 
+        </div>
+        <div class="bear" onClick="navigate('panda')">
+            <i class="fas fa-teddy-bear"></i>
+        </div>
+        <div class="tree row-span-2" onClick="navigate('tree')">
+            <i class="fas fa-tree-alt"></i>
+        </div>
+        <div class="cube" onClick="navigate('cube')">
+            <i class="fas fa-cube"></i>
+        </div>
+        <div class="robot row-span-2" onClick="navigate('robot')">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="monkey col-span-2" onClick="navigate('monkey')">
+            <i class="fas fa-monkey"></i>
+        </div>
+        <div class="ball" onClick="navigate('ball')">
+            <i class="fas fa-ball-pile"></i>
+        </div>
+        <div class="q-block col-span-2" onClick="navigate('question-block')">
+            <i class="fas fa-block-question"></i>
+        </div>
+        <div class="alien" onClick="navigate('alien')">
+            <i class="fas fa-alien"></i>
+        </div>
+        <div class="egg col-span-2 col-start-3" onClick="navigate('egg')"> 
+            <i class="fas fa-egg-fried"></i>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function navigate(url) {
+        window.location.href='/' + url + '.html';
+    }
+</script>
