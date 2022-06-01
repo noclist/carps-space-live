@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  background: #51ff6e;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  width: 70vmin;
+  height: 70vmin;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tree {
+  position: relative;
+  top: -23vmin;
+  left: -19vmin;
+}
+
+.branches {
+  position: absolute;
+  border: 0.5vmin solid black;
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 50%;
+  background: #4E9A06;
+  z-index: 2;
+  box-shadow: 8vmin 3vmin #4E9A06, 8vmin 3vmin 0 0.5vmin #000;
+}
+.branches:before, .branches:after {
+  content: "";
+  position: absolute;
+  border: 0.5vmin solid black;
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 50%;
+  background: #4E9A06;
+}
+.branches:before {
+  top: -6.6vmin;
+  left: 5vmin;
+  box-shadow: 16vmin 0 #4E9A06, 16vmin 0 0 0.5vmin #000;
+}
+.branches:after {
+  top: -7vmin;
+  left: 12vmin;
+  box-shadow: 9vmin 8vmin #4e9a06, 9vmin 8vmin 0 0.5vmin #000;
+}
+.branches:nth-child(2) {
+  top: 11vmin;
+  left: -4vmin;
+}
+
+.trunk {
+  position: absolute;
+  height: 25vmin;
+  width: 7.5vmin;
+  background: #8F5902;
+  top: 24vmin;
+  left: 13vmin;
+  border: 0.5vmin solid black;
+}
+.trunk:before, .trunk:after {
+  content: "";
+  position: absolute;
+}
+.trunk:before {
+  width: 12.4vmin;
+  height: 5.4vmin;
+  background: #000;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  bottom: -1.4vmin;
+  left: -2.9vmin;
+}
+.trunk:after {
+  width: 11.2vmin;
+  height: 5.1vmin;
+  background: #8F5902;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  bottom: -1.1vmin;
+  left: -2.3vmin;
+}
+
+.cherry {
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  background: #E90001;
+  border: 0.25vmin solid #000;
+  z-index: 3;
+  left: 16vmin;
+  box-shadow: 2.5vmin 0.5vmin #E90001, 2.5vmin 0.5vmin 0 0.2vmin #000;
+}
+.cherry:before {
+  content: "";
+  position: absolute;
+  background: #FE2B29;
+  width: 1.1vmin;
+  height: 1.5vmin;
+  border-radius: 50%;
+  transform: rotate(136deg);
+  right: 0.4vmin;
+  top: 0.2vmin;
+  box-shadow: -1.7vmin -2.2vmin #fe2b29;
+}
+.cherry:nth-child(2) {
+  left: 24vmin;
+  top: 22vmin;
+}
+.cherry:nth-child(3) {
+  left: 1.5vmin;
+  top: 5vmin;
+}
+.cherry:nth-child(4) {
+  left: 30vmin;
+  top: 3vmin;
+}
+.cherry:nth-child(5) {
+  left: -1vmin;
+  top: 20vmin;
+}
+.cherry:last-child {
+  left: 13vmin;
+  top: 13vmin;
+}
+
+.stem {
+  position: absolute;
+  height: 4vmin;
+  width: 0.5vmin;
+  background: #7D5A3C;
+  transform: rotate(26deg);
+  border: 0.1vmin solid #000;
+  top: -3.2vmin;
+  left: 1.7vmin;
+}
+.stem:before {
+  content: "";
+  position: absolute;
+  height: 4vmin;
+  width: 0.3vmin;
+  background: #7D5A3C;
+  top: -0.6vmin;
+  left: 1.2vmin;
+  transform: rotate(315deg);
+  border: 0.1vmin solid #000;
+}
+
+.leaf {
+  position: absolute;
+  width: 5.7vmin;
+  height: 2.5vmin;
+  background: #00C926;
+  border-radius: 36% 64% 0% 100%/38% 85% 15% 62%;
+  top: -2.9vmin;
+  left: 3.2vmin;
+  transform: rotate(7deg);
+  border: 0.1vmin solid #000;
+}
+.leaf:before, .leaf:after {
+  content: "";
+  position: absolute;
+}
+.leaf:before {
+  width: 0.2vmin;
+  height: 4.1vmin;
+  background: #000;
+  transform: rotate(104deg);
+  left: 2.4vmin;
+  top: -0.9vmin;
+}
+.leaf:after {
+  width: 0.3vmin;
+  height: 0.75vmin;
+  background: #5EA002;
+  transform: rotate(105deg);
+  left: -0.7vmin;
+  top: 0;
+  border: 0.1vmin solid #000;
+}
