@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  background: #573d0e;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  width: 70vmin;
+  height: 70vmin;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.circle:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 15vmin;
+  height: 15vmin;
+  background: black;
+  border-radius: 50%;
+  top: 10.2vmin;
+  left: 12.4vmin;
+  box-shadow: 30vmin 0 #000;
+}
+
+.panda {
+  position: relative;
+  border: 1.5vmin solid black;
+  width: 45vmin;
+  height: 45vmin;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 2;
+}
+
+.eyes {
+  position: relative;
+}
+.eyes > * {
+  position: absolute;
+  width: 11vmin;
+  height: 15vmin;
+  background: #000;
+  border-radius: 70px/100px;
+  left: 8.7vmin;
+  top: 9vmin;
+  transform: rotate(12deg);
+}
+.eyes > *:before, .eyes > *:after {
+  content: "";
+  position: absolute;
+}
+.eyes > *:before {
+  width: 4vmin;
+  height: 6vmin;
+  background: white;
+  border-radius: 76px/100px;
+  left: 5vmin;
+  top: 3.2vmin;
+  transform: rotate(348deg);
+}
+.eyes > *:after {
+  width: 2vmin;
+  height: 3vmin;
+  background: black;
+  border-radius: 76px/100px;
+  left: 6.3vmin;
+  top: 5vmin;
+  transform: rotate(348deg);
+}
+.eyes :last-child {
+  transform: scale(-1, 1) rotate(12deg);
+  left: 22.3vmin;
+}
+
+.snout {
+  position: absolute;
+  width: 25vmin;
+  height: 18vmin;
+  top: 23vmin;
+  left: 8.5vmin;
+  bottom: 5vmin;
+  background: #fff;
+  border-radius: 50%;
+  border: 1.5vmin solid black;
+}
+.snout:before {
+  content: "";
+  position: absolute;
+  width: 1.5vmin;
+  height: 5vmin;
+  left: 10vmin;
+  top: 7vmin;
+  background: black;
+}
+
+.nose {
+  position: absolute;
+  width: 10vmin;
+  height: 7vmin;
+  left: 5.7vmin;
+  top: 0.5vmin;
+  background: black;
+  border-radius: 50% 50% 48% 52%/21% 21% 79% 79%;
+}
+
+.mouth {
+  position: absolute;
+  width: 9.6vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  border-bottom: 1.5vmin solid black;
+  bottom: 1.6vmin;
+  left: 6vmin;
+}
