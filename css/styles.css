@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+:root {
+  --dark: hsl(210, 11%, 15%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Major Mono Display", monospace;
+  background: hsl(0deg, 0%, 98%);
+  color: var(--dark);
+}
+
+.container {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border: 0.5vmin solid var(--dark);
+  padding: 1.5em 3em;
+  margin-top: 4em;
+  margin-bottom: 2em;
+  background: linear-gradient(90deg, hsl(150deg, 58%, 75%) 40%, hsl(220deg, 94%, 65%));
+  box-shadow: hsl(0deg, 0%, 100%) 8px -8px 0 -1px, #ee6352 8px -8px 0 2px, #fff 20px -20px 0 -2px, #d45379 20px -20px 0 1px, #fff 30px -30px 0 -3px, #a4558f 30px -30px, #fff 40px -40px 0 -3px, #6d588e 40px -40px, #fff 50px -50px 0 -3px, #405378 50px -50px;
+}
+
+h1 {
+  font-size: 5.5vmax;
+}
+
+p {
+  font-size: 1.3em;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  p {
+    text-align: left;
+  }
+}
+
+main {
+  display: grid;
+  gap: 1em;
+}
+@media (min-width: 740px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1050px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1175px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main section.col-span-2 {
+    grid-column-end: span 2;
+  }
+  main section.row-span-2 {
+    grid-row-end: span 2;
+  }
+  main section.col-start-1 {
+    grid-column-start: 1;
+  }
+  main section.col-start-2 {
+    grid-column-start: 2;
+  }
+  main section.col-start-3 {
+    grid-column-start: 3;
+  }
+  main section.row-start-3 {
+    grid-row-start: 3;
+  }
+  main section.row-start-5 {
+    grid-row-start: 5;
+  }
+}
+main section {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 1em;
+  background: conic-gradient(at 0% 0%, snow, white);
+  border: 0.5vmin solid var(--dark);
+  cursor: pointer;
+  filter: drop-shadow(6px 6px 2px hsl(0deg, 0%, 40%));
+}
+main section:hover {
+  background: conic-gradient(from 0.5turn at bottom center, hsl(306deg, 100%, 80%), white);
+}
+main section.art {
+  padding: 2em;
+  border-radius: 50%;
+}
+main section.art i {
+  --fa-primary-color: #2BA9C8;
+  --fa-secondary-color: #EEC194;
+}
+main section.film {
+  border-radius: 50%;
+}
+main section.film i {
+  --fa-primary-color: #212529;
+  --fa-secondary-color: #A5ABAB;
+}
+main section.grid i {
+  --fa-secondary-color: #01718D;
+  --fa-primary-color: #01718D;
+}
+main section.form i {
+  --fa-secondary-color: hsl(0, 0%, 70%);
+  --fa-primary-color: #5873E1;
+}
+main section.grail i {
+  --fa-primary-color: hsl(39, 89%, 47%);
+  --fa-secondry-color: #4B5161;
+}
+main section.ddd i {
+  --fa-primary-color: #212529;
+  --fa-secondary-color: hsla(197, 100%, 50%, 0.749);
+}
+main section.shadow i {
+  --fa-primary-color: hsl(210, 11%, 30%);
+  --fa-secondary-color: hsl(48, 100%, 50%);
+}
+main section.masonry i {
+  --fa-primary-color: #B1AD94;
+  --fa-secondary-color: #BE5A3E;
+}
+main section.cquery i {
+  --fa-secondary-color: #000;
+  --fa-secondary-color: hsl(3, 54%, 50%);
+}
+main section.snap i {
+  --fa-primary-color: #212529;
+  --fa-secondary-color: #BEBCBD;
+}
+main section.subgrid i {
+  --fa-primary-color: hsl(120, 49%, 55%);
+  --fa-secondary-color: hsl(210, 11%, 30%);
+}
+main section.dash i {
+  --fa-primary-color: #BDE5F5;
+  --fa-secondary-color: #212529;
+}
+main section.cards i {
+  --fa-primary-color: hsl(210, 11%, 30%);
+  --fa-secondary-color: hsl(0, 100%, 40%);
+}
+main section.aliens i {
+  --fa-primary-color: #212529;
+  --fa-secondary-color: #00F600;
+}
+main section.cleveland i {
+  --fa-primary-color: #B9B9B9;
+  --fa-secondary-color: #1D3741;
+}
+main section.terminal i {
+  --fa-primary-color: hsl(198, 79%, 15%);
+  --fa-secondary-color: #fff;
+}
+main section.transform i {
+  --fa-primary-color: hsl(0, 1%, 25%);
+  --fa-secondary-color: hsl(206, 96%, 55%);
+}
+main section.books {
+  border-radius: 50%;
+}
+main section.books i {
+  --fa-secondary-color: hsl(208, 70%, 50%);
+  --fa-primary-color: hsl(58, 55%, 60%);
+}
+main section.turtle i {
+  --fa-primary-color: hsl(33, 24%, 40%);
+  --fa-secondary-color: green;
+}
+main section.maze i {
+  --fa-secondary-color: hsl(270, 50%, 60%);
+}
+
+i {
+  font-size: 3em;
+  --fa-secondary-opacity: 0.8;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+.xl i {
+  font-size: 4.5em;
+}
+.xl h2 {
+  font-size: 2em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+footer a {
+  color: hsl(0deg, 0%, 95%);
+  filter: drop-shadow(3px 3px 3px hsl(0deg, 0%, 40%));
+}
+@media (min-width: 650px) {
+  footer {
+    justify-content: space-between;
+  }
+}
+
+dialog button {
+  background-color: #e67300;
+  border-radius: 4px;
+  color: #fff;
+  border: 0;
+  text-transform: uppercase;
+  height: 36px;
+  padding: 0 16px;
+}
+dialog .cancel {
+  background: #fff;
+  color: #395070;
+  border: 1px solid #395070;
+}
