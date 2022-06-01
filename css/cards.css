@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  place-content: center;
+  gap: 1rem;
+  background: hsl(263deg, 100%, 95%);
+  padding: 1rem;
+  min-height: 100vh;
+}
+body > div {
+  background-color: hsl(39deg, 100%, 40%);
+  perspective: 1000px;
+  height: 100px;
+  box-shadow: hsla(39deg, 100%, 40%, 0.3) 7px -7px;
+}
+body > div:hover > div {
+  transform: rotateY(180deg) skew(-0.06turn, 18deg);
+}
+body > div > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+body > div > div > div {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+body > div > div > div i {
+  font-size: 3rem;
+}
+body > div > div > div:first-child {
+  background-color: hsl(39deg, 100%, 80%);
+  color: #212529;
+  border: 5px solid #212529;
+}
+body > div > div > div:nth-child(2) {
+  background-color: hsl(39deg, 100%, 60%);
+  color: white;
+  border: 5px solid white;
+  transform: rotateY(180deg);
+}
+body > div:nth-child(n+7):nth-child(-n+12) {
+  background: hsl(120deg, 100%, 40%);
+  box-shadow: hsla(120deg, 100%, 40%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+7):nth-child(-n+12) > div > div:first-child {
+  background-color: hsl(120deg, 100%, 80%);
+}
+body > div:nth-child(n+7):nth-child(-n+12) > div > div:nth-child(2) {
+  background-color: hsl(120deg, 100%, 60%);
+}
+body > div:nth-child(n+13):nth-child(-n+18) {
+  background-color: hsl(241deg, 100%, 60%);
+  box-shadow: hsla(241deg, 100%, 60%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+13):nth-child(-n+18) > div > div:first-child {
+  background-color: hsl(241deg, 100%, 40%);
+  color: hsl(210deg, 11%, 80%);
+}
+body > div:nth-child(n+13):nth-child(-n+18) > div > div:nth-child(2) {
+  background: hsl(241deg, 100%, 80%);
+}
+body > div:nth-child(n+19):nth-child(-n+24) {
+  background-color: hsl(60deg, 100%, 40%);
+  box-shadow: hsla(60deg, 100%, 40%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+19):nth-child(-n+24) > div > div:first-child {
+  background-color: hsl(60deg, 100%, 80%);
+}
+body > div:nth-child(n+19):nth-child(-n+24) > div > div:nth-child(2) {
+  background: hsl(60deg, 100%, 60%);
+}
+body > div:nth-child(n+25):nth-child(-n+30) {
+  background-color: hsl(0deg, 0%, 40%);
+  box-shadow: hsla(0deg, 0%, 40%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+25):nth-child(-n+30) > div > div:first-child {
+  background-color: hsl(0deg, 0%, 80%);
+}
+body > div:nth-child(n+25):nth-child(-n+30) > div > div:nth-child(2) {
+  background: hsl(0deg, 0%, 60%);
+}
+body > div:nth-child(n+31):nth-child(-n+36) {
+  background-color: hsl(0deg, 100%, 60%);
+  box-shadow: hsla(0deg, 100%, 60%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+31):nth-child(-n+36) > div > div:first-child {
+  background-color: hsl(0deg, 100%, 40%);
+  color: hsl(210deg, 11%, 80%);
+}
+body > div:nth-child(n+31):nth-child(-n+36) > div > div:nth-child(2) {
+  background: hsl(0deg, 100%, 80%);
+}
+body > div:nth-child(n+37):nth-child(-n+42) {
+  background-color: hsl(270deg, 50%, 40%);
+  box-shadow: hsla(270deg, 50%, 40%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+37):nth-child(-n+42) > div > div:first-child {
+  background-color: hsl(270deg, 50%, 80%);
+}
+body > div:nth-child(n+37):nth-child(-n+42) > div > div:nth-child(2) {
+  background: hsl(270deg, 50%, 60%);
+}
+body > div:nth-child(n+43):nth-child(-n+48) {
+  background-color: hsl(30deg, 100%, 9%);
+  box-shadow: hsla(30deg, 100%, 39%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+43):nth-child(-n+48) > div > div:first-child {
+  background-color: hsl(30deg, 35%, 64%);
+}
+body > div:nth-child(n+43):nth-child(-n+48) > div > div:nth-child(2) {
+  background: hsl(30deg, 100%, 29%);
+}
+body > div:nth-child(n+49):nth-child(-n+54) {
+  background-color: hsl(241deg, 100%, 40%);
+  box-shadow: hsla(241deg, 100%, 40%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+49):nth-child(-n+54) > div > div:first-child {
+  background-color: hsl(241deg, 100%, 80%);
+}
+body > div:nth-child(n+49):nth-child(-n+54) > div > div:nth-child(2) {
+  background: hsl(241deg, 100%, 60%);
+}
+body > div:nth-child(n+55):nth-child(-n+60) {
+  background-color: hsl(0deg, 100%, 40%);
+  box-shadow: hsla(0deg, 100%, 40%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+55):nth-child(-n+60) > div > div:first-child {
+  background-color: hsl(0deg, 100%, 80%);
+}
+body > div:nth-child(n+55):nth-child(-n+60) > div > div:nth-child(2) {
+  background: hsl(0deg, 100%, 60%);
+}
+body > div:nth-child(n+61):nth-child(-n+66) {
+  background: hsl(120deg, 100%, 60%);
+  box-shadow: hsla(120deg, 100%, 60%, 0.3) 7px -7px;
+}
+body > div:nth-child(n+61):nth-child(-n+66) > div > div:first-child {
+  background-color: hsl(120deg, 100%, 40%);
+  color: hsl(210deg, 11%, 80%);
+}
+body > div:nth-child(n+61):nth-child(-n+66) > div > div:nth-child(2) {
+  background-color: hsl(120deg, 100%, 80%);
+}
