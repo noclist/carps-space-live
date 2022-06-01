@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Mosk-bold";
+    src: url(/fonts/Mosk-Bold-700.ttf);
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --text-color: hsl(270, 50%, 40%);
+  --bg-color: hsl(0 0% 100%);
+  --bg-size: 150px;
+
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-areas: "aliens";
+  overflow: hidden;
+  font-family: "Mosk-bold", sans-serif;
+  background-color: var(--bg-color);
+}
+
+body::before {
+  --size: 100vmax;
+
+  grid-area: aliens;
+  content: '';
+  width: var(--size);
+  height: var(--size);
+  background-image: url("/icons/alien-monster-light.svg");
+  background-size: var(--bg-size);
+  background-repeat: repeat;
+  opacity: 0.25;
+  animation: bg 30s linear infinite;
+}
+
+
+
+.text {
+  grid-area: aliens;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1rem, 12vmin, 6rem);
+}
+
+.heading span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;;
+
+    &.filled {
+      color: var(--text-color);
+  }
+
+  &:not(.filled) {
+    --stroke: min(0.25vmin, 2px) var(--text-color);
+  
+    color: var(--bg-color);
+    -webkit-text-stroke: var(--stroke);
+    text-stroke: var(--stroke);
+  }
+}
+
+.subheading {
+  position: relative;
+  margin: 1rem 2rem 0 auto;
+  font-size: 0.5em;
+  color: var(--text-color);
+}
+
+@keyframes bg {
+  to {
+    background-position: 0 calc(var(--bg-size) * 10);
+  }
+}
