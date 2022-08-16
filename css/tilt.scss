@@ -1,0 +1,121 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+body {
+    padding: 1em;
+    font-family: 'Major Mono Display', monospace;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 5.5vmax;
+    background: hsl(0, 0%, 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-stroke: 3.5px #212529;
+    -webkit-text-stroke: 3.5px #212529;
+    color: transparent;
+    letter-spacing: 5px;
+    text-align: center;
+    // filter: drop-shadow(10px 10px 4px #3a3a41);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    
+}
+
+.card {
+    --perspective: 500px;
+    --rotateX: 0;
+    --rotateY: 0;
+    --angle: 15deg;
+
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    aspect-ratio: 1 / 1.5;
+    background: url('https://picsum.photos/420/630') 100%/cover no-repeat;
+    transform: 
+        perspective(var(--perspective))
+        rotateX(var(--rotateX))
+        rotateY(var(--rotateY));
+    transition: transform 350ms ease;
+}
+  
+.mouse-position-tracker {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    z-index: 2;
+
+    &:nth-of-type(3n) {
+        grid-column: 3 / 4;
+    }
+
+    &:nth-of-type(3n - 1) {
+        grid-column: 2 / 3;
+    }
+
+    &:nth-of-type(3n - 2) {
+        grid-column: 1 / 2;
+    }
+
+    &:nth-child(n + 1):nth-child(-n + 3) {
+        grid-row: 1 / 2;
+    }
+
+    &:nth-child(n + 4):nth-child(-n + 6) {
+        grid-row: 2 / 3;
+    }
+
+    &:nth-child(n + 7):nth-child(-n + 9) {
+        grid-row: 3 / 4;
+    }
+
+    &:nth-child(1):hover ~ .card {
+        --rotateX: 15deg;
+        --rotateY: -15deg;
+    }
+
+    &:nth-child(2):hover ~ .card {
+        --rotateX: 15deg;
+    }
+
+    &:nth-child(3):hover ~ .card {
+        --rotateX: 15deg;
+        --rotateY: 15deg;
+    }
+
+    &:nth-child(4):hover ~ .card {
+        --rotateY: -15deg;
+    }
+
+    &:nth-child(6):hover ~ .card {
+        --rotateY: 15deg;
+    }
+
+    &:nth-child(7):hover ~ .card {
+        --rotateX: -15deg;
+        --rotateY: -15deg;
+    }
+
+    &:nth-child(8):hover ~ .card {
+        --rotateX: -15deg;
+    }
+
+    &:nth-child(9):hover ~ .card {
+        --rotateX: -15deg;
+        --rotateY: 15deg;
+    }
+}

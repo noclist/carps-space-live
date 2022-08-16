@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  padding: 1em;
+  font-family: "Major Mono Display", monospace;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5.5vmax;
+  background: hsl(0deg, 0%, 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-stroke: 3.5px #212529;
+  -webkit-text-stroke: 3.5px #212529;
+  color: transparent;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  position: relative;
+}
+
+.card {
+  --perspective: 500px;
+  --rotateX: 0;
+  --rotateY: 0;
+  --angle: 15deg;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  aspect-ratio: 1/1.5;
+  background: url("https://picsum.photos/420/630") 100%/cover no-repeat;
+  transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  transition: transform 350ms ease;
+}
+
+.mouse-position-tracker {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  z-index: 2;
+}
+.mouse-position-tracker:nth-of-type(3n) {
+  grid-column: 3/4;
+}
+.mouse-position-tracker:nth-of-type(3n - 1) {
+  grid-column: 2/3;
+}
+.mouse-position-tracker:nth-of-type(3n - 2) {
+  grid-column: 1/2;
+}
+.mouse-position-tracker:nth-child(n+1):nth-child(-n+3) {
+  grid-row: 1/2;
+}
+.mouse-position-tracker:nth-child(n+4):nth-child(-n+6) {
+  grid-row: 2/3;
+}
+.mouse-position-tracker:nth-child(n+7):nth-child(-n+9) {
+  grid-row: 3/4;
+}
+.mouse-position-tracker:nth-child(1):hover ~ .card {
+  --rotateX: 15deg;
+  --rotateY: -15deg;
+}
+.mouse-position-tracker:nth-child(2):hover ~ .card {
+  --rotateX: 15deg;
+}
+.mouse-position-tracker:nth-child(3):hover ~ .card {
+  --rotateX: 15deg;
+  --rotateY: 15deg;
+}
+.mouse-position-tracker:nth-child(4):hover ~ .card {
+  --rotateY: -15deg;
+}
+.mouse-position-tracker:nth-child(6):hover ~ .card {
+  --rotateY: 15deg;
+}
+.mouse-position-tracker:nth-child(7):hover ~ .card {
+  --rotateX: -15deg;
+  --rotateY: -15deg;
+}
+.mouse-position-tracker:nth-child(8):hover ~ .card {
+  --rotateX: -15deg;
+}
+.mouse-position-tracker:nth-child(9):hover ~ .card {
+  --rotateX: -15deg;
+  --rotateY: 15deg;
+}
