@@ -122,6 +122,15 @@ main {
         &.art {
             padding: 2em;
             border-radius: 50%;
+            transition: transform 350ms ease;
+
+            &:hover {
+                transform: 
+                    perspective(500px)
+                    rotateX(15deg)
+                    rotateY(-15deg);
+            }
+
             i {
                 --fa-primary-color: #2BA9C8;
                 --fa-secondary-color: #EEC194;
