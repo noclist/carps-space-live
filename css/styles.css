@@ -51,6 +51,7 @@ main {
   display: grid;
   gap: 1em;
 }
+
 @media (min-width: 740px) {
   main {
     grid-template-columns: 1fr 1fr;
@@ -195,6 +196,12 @@ main section.turtle i {
 }
 main section.maze i {
   --fa-secondary-color: hsl(270, 50%, 60%);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 i {

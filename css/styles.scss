@@ -273,6 +273,12 @@ main {
     }
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 i {
     font-size: 3em;
     --fa-secondary-opacity: 0.8;

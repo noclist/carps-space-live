@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <style>
+        .fa-thumbs-up, .fa-thumbs-down {
+            color: #fff;
+            cursor: pointer;
+            filter: drop-shadow(0 0 0.75rem hsl(350, 3%, 44%));
+            font-size: 4rem;
+        }
+    </style>
     <div class="container">
         <header>
             <h1>carps space</h1>
+            <div id="like"></div>
             <!-- <a href="index-enhanced.html"><img src="/images/color.png"></a> -->
         </header>
+        
         <p>ben carpenter is a front end developer in cleveland, ohio!</p>
         <main>
             <section class="art xl col-span-2 row-span-2" onClick="navigate('art')"> 
@@ -130,3 +139,11 @@
         window.location.href='/' + url + '.html';
     }
 </script> 
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script src="like_button.js"></script>
+
+</body>
