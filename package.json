@@ -1,7 +1,6 @@
 {
   "name": "june-1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp"
@@ -17,8 +16,12 @@
   },
   "homepage": "https://github.com/noclist/carp22#readme",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "sass": "^1.52.1"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
