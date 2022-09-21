@@ -265,6 +265,13 @@ main {
             }
         }
 
+        &.has {
+            i {
+                --fa-primary-color: #63E698;
+                --fa-secondary-color: #e67300;
+            }
+        }
+
         &.maze {
             i {
                 --fa-secondary-color: hsl(270, 50%, 60%);

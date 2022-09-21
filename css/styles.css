@@ -51,7 +51,6 @@ main {
   display: grid;
   gap: 1em;
 }
-
 @media (min-width: 740px) {
   main {
     grid-template-columns: 1fr 1fr;
@@ -107,10 +106,7 @@ main section.art {
   transition: transform 350ms ease;
 }
 main section.art:hover {
-  transform: 
-    perspective(500px)
-    rotateX(15deg)
-    rotateY(-15deg);
+  transform: perspective(500px) rotateX(15deg) rotateY(-15deg);
 }
 main section.art i {
   --fa-primary-color: #2BA9C8;
@@ -193,6 +189,10 @@ main section.books i {
 main section.turtle i {
   --fa-primary-color: hsl(33, 24%, 40%);
   --fa-secondary-color: green;
+}
+main section.has i {
+  --fa-primary-color: #63E698;
+  --fa-secondary-color: #e67300;
 }
 main section.maze i {
   --fa-secondary-color: hsl(270, 50%, 60%);

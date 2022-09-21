@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  gap: 1.5em;
+  text-align: center;
+  padding: 0.5em;
+  background: #fff;
+  display: grid;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5.5vmax;
+  letter-spacing: 20px;
+  font-size: 5.5vmax;
+  background: hsl(195deg, 53%, 79%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-stroke: 3.5px #212529;
+  -webkit-text-stroke: 3.5px #212529;
+  color: transparent;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #212529;
+  width: 90vw;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.parent {
+  border: 2px solid #212529;
+  background: purple;
+  color: #fff;
+}
+.parent:has(a) {
+  background: pink;
+}
