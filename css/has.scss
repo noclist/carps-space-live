@@ -9,15 +9,13 @@ body {
     padding: 0.5em;
     background: #fff;
     display: grid;
-    justify-content: center;
+    justify-items: center;
 }
 
 h1 {
     font-family: 'Major Mono Display', monospace;
     font-size: 5.5vmax;
     letter-spacing: 20px;
-
-    font-size: 5.5vmax;
     background: hsl(195, 53%, 79%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -36,12 +34,38 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+
 .parent {
     border: 2px solid #212529;
-    background: purple;
-    color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &:has(a) {
-        background: pink;
+    i {
+        font-size: 5rem;
+        padding: 2rem;
+        color: hsl(120, 61%, 33%);
+        filter: drop-shadow(0.4rem 0.4rem 0.125rem rgba(0, 0, 0, 1));
+    }
+
+    &:has(.fa-planet-ringed) {
+        background: hsl(344, 37%, 67%);
+    }
+
+    &:has(.fa-meat) {
+        background: hsl(300, 4%, 67%);
+    }
+
+    &:has(.fa-football-helmet) {
+        background: hsl(223, 43%, 67%);
+    }
+
+    &:has(.fa-star-shooting) {
+        background: hsl(30, 100%, 67%);
+    }
+
+    code {
+        font-size: 1.5rem;
     }
 }
