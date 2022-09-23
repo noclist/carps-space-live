@@ -46,10 +46,17 @@ body {
   font-family: "Roboto", sans-serif;
   gap: 1.5em;
   text-align: center;
-  padding: 0.5em;
-  background: #fff;
+  background: hsl(49deg, 35%, 83%);
   display: grid;
-  justify-items: center;
+  width: 70vw;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid hsl(0deg, 0%, 60%);
 }
 
 h1 {
@@ -62,11 +69,15 @@ h1 {
   text-stroke: 3.5px #212529;
   -webkit-text-stroke: 3.5px #212529;
   color: transparent;
-  letter-spacing: 5px;
-  text-align: center;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #212529;
-  width: 90vw;
+  letter-spacing: 20px;
+  line-height: 0.9;
+}
+
+.container {
+  background: hsl(0deg, 0%, 90%);
+  padding: 2rem;
+  border-left: 1px solid hsl(0deg, 0%, 60%);
+  border-right: 1px solid hsl(0deg, 0%, 60%);
 }
 
 main {
