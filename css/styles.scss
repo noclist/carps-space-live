@@ -139,6 +139,15 @@ main {
 
         &.film {
             border-radius: 50%;
+            transition: transform 350ms ease;
+
+            &:hover {
+                transform: 
+                    perspective(500px)
+                    rotateX(15deg)
+                    rotateY(15deg);
+            }
+
             i {
                 --fa-primary-color: #212529;
                 --fa-secondary-color: #A5ABAB;
@@ -252,6 +261,15 @@ main {
 
         &.books {
             border-radius: 50%;
+            transition: transform 350ms ease;
+
+            &:hover {
+                transform: 
+                    perspective(500px)
+                    rotateX(15deg)
+                    rotateY(-15deg);
+            }
+
             i {
                 --fa-secondary-color: hsl(208, 70%, 50%); 
                 --fa-primary-color: hsl(58, 55%, 60%);

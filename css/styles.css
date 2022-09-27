@@ -114,6 +114,10 @@ main section.art i {
 }
 main section.film {
   border-radius: 50%;
+  transition: transform 350ms ease;
+}
+main section.film:hover {
+  transform: perspective(500px) rotateX(15deg) rotateY(15deg);
 }
 main section.film i {
   --fa-primary-color: #212529;
@@ -181,6 +185,10 @@ main section.transform i {
 }
 main section.books {
   border-radius: 50%;
+  transition: transform 350ms ease;
+}
+main section.books:hover {
+  transform: perspective(500px) rotateX(15deg) rotateY(-15deg);
 }
 main section.books i {
   --fa-secondary-color: hsl(208, 70%, 50%);
