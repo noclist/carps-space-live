@@ -68,6 +68,9 @@ main {
   main section.col-span-2 {
     grid-column-end: span 2;
   }
+  main section.col-span-3 {
+    grid-column-end: span 3;
+  }
   main section.row-span-2 {
     grid-row-end: span 2;
   }
@@ -98,15 +101,11 @@ main section {
   filter: drop-shadow(6px 6px 2px hsl(0deg, 0%, 40%));
 }
 main section:hover {
-  background: conic-gradient(from 0.5turn at bottom center, hsl(306deg, 100%, 80%), white);
+  background: conic-gradient(from 0.5turn at bottom center, hsl(306deg, 100%, 90%), white);
 }
 main section.art {
   padding: 2em;
   border-radius: 50%;
-  transition: transform 350ms ease;
-}
-main section.art:hover {
-  transform: perspective(500px) rotateX(15deg) rotateY(-15deg);
 }
 main section.art i {
   --fa-primary-color: #2BA9C8;
@@ -114,10 +113,6 @@ main section.art i {
 }
 main section.film {
   border-radius: 50%;
-  transition: transform 350ms ease;
-}
-main section.film:hover {
-  transform: perspective(500px) rotateX(15deg) rotateY(15deg);
 }
 main section.film i {
   --fa-primary-color: #212529;
@@ -141,7 +136,7 @@ main section.ddd i {
 }
 main section.shadow i {
   --fa-primary-color: hsl(210, 11%, 30%);
-  --fa-secondary-color: hsl(48, 100%, 50%);
+  --fa-secondary-color: hsl(48, 100%, 75%);
 }
 main section.masonry i {
   --fa-primary-color: #B1AD94;
@@ -185,10 +180,6 @@ main section.transform i {
 }
 main section.books {
   border-radius: 50%;
-  transition: transform 350ms ease;
-}
-main section.books:hover {
-  transform: perspective(500px) rotateX(15deg) rotateY(-15deg);
 }
 main section.books i {
   --fa-secondary-color: hsl(208, 70%, 50%);
@@ -197,6 +188,10 @@ main section.books i {
 main section.turtle i {
   --fa-primary-color: hsl(33, 24%, 40%);
   --fa-secondary-color: green;
+}
+main section.tilt i {
+  --fa-primary-color: hsl(240, 100%, 40%);
+  --fa-secondary-color: hsl(240, 100%, 80%);
 }
 main section.has i {
   --fa-primary-color: #63E698;

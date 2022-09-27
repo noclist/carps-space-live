@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="icons/favicon-basic.ico" /> 
     <title>carps space</title>
     <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/modules/hover.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
@@ -31,105 +32,106 @@
         
         <p>ben carpenter is a front end developer in cleveland, ohio!</p>
         <main>
-            <section class="art xl col-span-2 row-span-2" onClick="navigate('art')"> 
+            <section class="art xl col-span-2 row-span-2 rotateXY-left" onClick="navigate('art')"> 
                 <i class="fad fa-palette"></i>
                 <h2>css art gallery</h2>
             </section>
 
-            <section class="grail" onClick="navigate('holygrail')">
-                <i class="fad fa-trophy"></i>
+            <section class="grail hvr-icon-float" onClick="navigate('holygrail')">
+                <i class="fad fa-trophy hvr-icon"></i>
                 <h2>the holy grail layout</h2>
             </section>
 
-            <section class="ddd" onClick="navigate('bounce')">
-                <i class="fad fa-cubes"></i>
+            <section class="ddd hvr-icon-bob" onClick="navigate('bounce')">
+                <i class="fad fa-cubes hvr-icon"></i>
                 <h2>3d css</h2>
             </section>
 
-            <section class="cquery" onClick="navigate('container')">
-                <i class="fad fa-truck-container"></i>
+            <section class="cquery hvr-icon-wobble-horizontal" onClick="navigate('container')">
+                <i class="fad fa-truck-container hvr-icon"></i>
                 <h2>container queries</h2>
             </section>
 
-            <section class="form" onClick="navigate('forms')">
-                <i class="fad fa-pen-field"></i>
+            <section class="form hvr-icon-shrink" onClick="navigate('forms')">
+                <i class="fad fa-pen-field hvr-icon"></i>
                 <h2>form controls</h2>
             </section>
 
-            <section class="film xl col-span-2 row-span-2 col-start-3 row-start-3" onClick="navigate('_site/movies/2021/index')">
+            <section class="film xl col-span-2 row-span-2 col-start-3 row-start-3 rotateXY-right" onClick="navigate('_site/movies/2021/index')">
                 <i class="fad fa-film-alt"></i>
                 <h2>top ten films</h2>
             </section>
 
-            <section class="subgrid" onClick="navigate('subgrid')">
+            <section class="subgrid rotateX-right" onClick="navigate('subgrid')">
                 <i class="fad fa-game-board-simple"></i>
                 <h2>subgrid</h2>
             </section>
 
-            <section class="transform" onClick="navigate('transform')">
-                <i class="fad fa-transporter-1"></i>
+            <section class="transform hvr-icon-float-away" onClick="navigate('transform')">
+                <i class="fad fa-transporter-1 hvr-icon"></i>
                 <h2>css transforms</h2>
             </section>
 
-            <section class="snap col-start-1" onClick="navigate('scrollsnap')">
-                <i class="fad fa-mouse"></i>
+            <section class="snap col-start-1 hvr-icon-buzz" onClick="navigate('scrollsnap')">
+                <i class="fad fa-mouse hvr-icon"></i>
                 <h2>scroll snap</h2>
             </section>
 
-            <section class="shadow " onClick="navigate('shadows')">
-                <i class="fad fa-lightbulb-on"></i>
+            <section class="shadow hvr-icon-pulse" onClick="navigate('shadows')">
+                <i class="fad fa-lightbulb-on hvr-icon"></i>
                 <h2>box shadows</h2>
             </section>
 
-            <section class="books xl col-span-2 row-span-2 row-start-5" onClick="navigate('books')">
+            <section class="books xl col-span-2 row-span-2 row-start-5 rotateXY-left" onClick="navigate('books')">
                 <i class="fad fa-books"></i> 
                 <h2>css grid library</h2>
             </section>
 
-            <section class="cards" onClick="navigate('cards')">
+            <section class="cards hvr-curl-bottom-left" onClick="navigate('cards')">
                 <i class="fad fa-cards"></i>
                 <h2>flipping cards</h2>
             </section>
 
-            <section class="masonry" onClick="navigate('masonry')">
+            <section class="masonry hvr-curl-bottom-right" onClick="navigate('masonry')">
                 <i class="fad fa-chimney"></i>
                 <h2>masonry layout</h2>
             </section>
 
-            <section class="cleveland" onClick="navigate('terminal')">
+            <section class="cleveland hvr-curl-top-right" onClick="navigate('terminal')">
                 <i class="fad fa-wind-turbine"></i>
                 <h2>cleveland</h2>
             </section>
 
-            <section class="aliens" onClick="navigate('aliens')">
-                <i class="fad fa-alien-monster"></i> 
+            <section class="aliens hvr-icon-float-away" onClick="navigate('aliens')">
+                <i class="fad fa-alien-monster hvr-icon"></i> 
                 <h2>aliens!</h2>
             </section>
 
-            <section class="turtle col-span-2" onClick="navigate('turtles')">
-                <i class="fad fa-turtle"></i> 
+            <section class="turtle col-span-3 hvr-icon-forward" onClick="navigate('turtles')">
+                <i class="fad fa-turtle hvr-icon"></i> 
                 <h2>ninja turtle grid</h2>
             </section>
 
-            <section class="grid col-span-2" onClick="navigate('grid')">
+            <section class="tilt hvr-icon-spin row-span-2" onClick="navigate('tilt')">
+                <i class="fa-duotone fa-rotate hvr-icon"></i>
+                <h2>tilt</h2>
+            </section>
+
+            <section class="grid col-span-2 rotateX-left" onClick="navigate('grid')">
                 <i class="fad fa-grid-4"></i>
                 <h2>auto-fit grid</h2>
             </section>
 
-            <section class="maze col-start-2 col-span-2" onClick="navigate('lines')">
+            <section class="has row-span-2 hvr-icon-pop" onClick="navigate('has')">
+                <i class="fad fa-rectangles-mixed hvr-icon"></i> 
+                <h2>:has</h2>
+            </section>
+
+            <section class="maze skew" onClick="navigate('lines')">
                 <i class="fad fa-wave-square"></i> 
                 <h2>a responsive maze</h2>
             </section>
 
-            <section class="has row-span-2" onClick="navigate('has')">
-                <i class="fad fa-rectangles-mixed"></i> 
-                <h2>:has</h2>
-            </section>
-
-            <section class="tilt" onClick="navigate('tilt')">
-                <i class="fa-duotone fa-rotate"></i>
-                <h2>tilt</h2>
-            </section>
         </main>
         <footer>
             <a href="https://www.twitter.com/afewgoodben" target="_blank"><i class="fab fa-twitter-square"></i></a>
