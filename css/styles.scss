@@ -73,7 +73,8 @@ main {
     }
 
     @media(min-width: 1175px) {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(8, 1fr);
 
         section.col-span-2 {
             grid-column-end: span 2;
@@ -99,8 +100,20 @@ main {
             grid-column-start: 3;
         }
 
+        section.col-start-4 {
+            grid-column-start: 4;
+        }
+
+        section.col-start-5 {
+            grid-column-start: 5;
+        }
+
         section.row-start-3 {
             grid-row-start: 3;
+        }
+
+        section.row-start-4 {
+            grid-row-start: 4;
         }
 
         section.row-start-5 {
@@ -125,7 +138,7 @@ main {
 
         &.art {
             padding: 2em;
-            border-radius: 50%;
+            border-radius: 58% 42% 64% 36% / 63% 36% 64% 37%;
 
             i {
                 --fa-primary-color: #2BA9C8;
@@ -134,7 +147,7 @@ main {
         }
 
         &.film {
-            border-radius: 50%;
+            border-radius: 36% 64% 100% 0% / 43% 56% 44% 57%;
 
             i {
                 --fa-primary-color: #212529;
@@ -248,7 +261,7 @@ main {
         }
 
         &.books {
-            border-radius: 50%;
+            border-radius: 36% 64% 37% 63% / 43% 0% 100% 57%;
 
             i {
                 --fa-secondary-color: hsl(208, 70%, 50%); 
@@ -257,6 +270,8 @@ main {
         }
 
         &.turtle {
+            border-radius: 36% 64% 37% 63% / 43% 56% 44% 57%;
+
             i {
                 --fa-primary-color: hsl(33, 24%, 40%);
                 --fa-secondary-color: green;
@@ -271,6 +286,8 @@ main {
         }
 
         &.has {
+            border-radius: 90% 10% 93% 7% / 7% 89% 11% 93%;
+            
             i {
                 --fa-primary-color: #63E698;
                 --fa-secondary-color: #e67300;
@@ -281,6 +298,11 @@ main {
             i {
                 --fa-secondary-color: hsl(270, 50%, 60%);
             }
+        }
+
+        &.test {
+            grid-row-start: 10;
+            grid-column-end: span 4;
         }
     }
 }

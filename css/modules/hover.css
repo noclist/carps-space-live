@@ -2878,7 +2878,7 @@
 
 /* Icon Forward */
 .hvr-icon-forward {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -3120,7 +3120,7 @@
 }
 /* Icon Float Away */
 .hvr-icon-float-away {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -3257,7 +3257,7 @@
   }
 }
 .hvr-icon-pulse {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -3889,7 +3889,7 @@
   }
 }
 .hvr-icon-buzz {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -4058,7 +4058,7 @@
 
 /* Curl Top Right */
 .hvr-curl-top-right {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -4089,7 +4089,7 @@
 
 /* Curl Bottom Right */
 .hvr-curl-bottom-right {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -4120,7 +4120,7 @@
 
 /* Curl Bottom Left */
 .hvr-curl-bottom-left {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
