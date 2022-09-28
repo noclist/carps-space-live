@@ -4177,8 +4177,8 @@
 .rotateXY-left:hover {
     transform: 
     perspective(500px)
-    rotateX(15deg)
-    rotateY(-15deg);
+    rotateX(10deg)
+    rotateY(-10deg);
 }
 
 /* RotateXY Right */
@@ -4189,8 +4189,8 @@
 .rotateXY-right:hover {
     transform: 
     perspective(500px)
-    rotateX(15deg)
-    rotateY(15deg);
+    rotateX(-10deg)
+    rotateY(10deg);
 }
 
 /* Skew */
