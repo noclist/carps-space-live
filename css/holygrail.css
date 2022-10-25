@@ -113,6 +113,36 @@ body main {
   background: hsla(122deg, 100%, 85%, 0.5);
   padding-bottom: 1.5em;
 }
+body main p {
+  font-family: "Karla", sans-serif;
+  margin: 0 1.5rem;
+  font-size: 1.5rem;
+  background: hsla(0deg, 0%, 99%, 0.8);
+  background: linear-gradient(90deg, rgba(238, 174, 202, 0) 0%, hsl(0deg, 0%, 99%) 50%, rgba(148, 187, 233, 0) 100%);
+  color: #242529;
+  padding: 1rem;
+  border-top: 1px solid #212529;
+  border-bottom: 1px solid #212529;
+}
+body main p span {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: transparent;
+  background: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+  background-size: 250px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  animation: shimmer 1.5s linear infinite alternate;
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
 body aside {
   grid-area: aside;
   grid-auto-columns: 30ch;
@@ -138,17 +168,6 @@ body footer i {
   --fa-secondary-color: #f00;
   --fa-secondary-opacity: 0.4;
   top: -4px;
-}
-
-p {
-  font-family: "Karla", sans-serif;
-  margin: 0 1.5rem;
-  font-size: 1.5rem;
-  background: hsla(0deg, 0%, 99%, 0.8);
-  color: #242529;
-  padding: 1rem;
-  border-top: 1px solid #212529;
-  border-bottom: 1px solid #212529;
 }
 
 script {
