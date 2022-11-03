@@ -132,6 +132,12 @@ main section.grid i {
   --fa-secondary-color: #01718D;
   --fa-primary-color: #01718D;
 }
+main section.form {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
 main section.form i {
   --fa-secondary-color: hsl(0, 0%, 70%);
   --fa-primary-color: #5873E1;
@@ -207,7 +213,7 @@ main section.tilt i {
   --fa-secondary-color: hsl(240, 100%, 80%);
 }
 main section.has {
-  border-radius: 90% 10% 93% 7%/7% 89% 11% 93%;
+  border-radius: 25%;
 }
 main section.has i {
   --fa-primary-color: #63E698;
@@ -216,9 +222,14 @@ main section.has i {
 main section.maze i {
   --fa-secondary-color: hsl(270, 50%, 60%);
 }
-main section.test {
-  grid-row-start: 10;
-  grid-column-end: span 4;
+main section.blank {
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+  background-image: radial-gradient(circle closest-side, transparent 0%, transparent 75%, rgba(255, 255, 255, 0.3) 76%, rgba(255, 255, 255, 0.3) 85%, rgba(255, 255, 255, 0.9) 86%, rgba(255, 255, 255, 0.9) 94%, #FFFFFF 95%, #FFFFFF 103%, rgba(255, 255, 255, 0.5) 104%, rgba(255, 255, 255, 0.5) 112%, rgba(0, 0, 0, 0.2) 113%, rgba(0, 0, 0, 0.2) 121%, #FFFFFF 122%, #FFFFFF 130%, rgba(255, 255, 255, 0.4) 131%, rgba(255, 255, 255, 0.4) 140%), radial-gradient(circle closest-side, transparent 0%, transparent 75%, rgba(255, 255, 255, 0.3) 76%, rgba(255, 255, 255, 0.3) 85%, rgba(255, 255, 255, 0.9) 86%, rgba(255, 255, 255, 0.9) 94%, #FFFFFF 95%, #FFFFFF 103%, rgba(255, 255, 255, 0.5) 104%, rgba(255, 255, 255, 0.5) 112%, rgba(0, 0, 0, 0.2) 113%, rgba(0, 0, 0, 0.2) 121%, #FFFFFF 122%, #FFFFFF 130%, rgba(255, 255, 255, 0.4) 131%, rgba(255, 255, 255, 0.4) 140%);
+  transition: background-color 1s ease-in;
+}
+main section.blank:hover {
+  background-color: #384F89;
 }
 
 header {
