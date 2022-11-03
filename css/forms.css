@@ -83,29 +83,47 @@ h2 {
 .container form {
   display: grid;
   grid-template-columns: 1fr;
-  place-items: center;
+  align-items: center;
   gap: 1rem;
   font-size: 1.2rem;
+  place-items: center;
 }
 .container form i {
-  font-size: 5.5rem;
-  --fa-primary-color: hsl(0, 0%, 0%);
-  --fa-secondary-color: hsl(60, 100%, 60%);
+  display: flex;
+  justify-content: center;
+  font-size: 6.5rem;
+}
+.container form i.fa-pizza {
+  --fa-primary-color: hwb(19 19% 65%);
+  --fa-secondary-color: hsl(0, 100%, 60%);
   --fa-primary-opacity: 1;
-  --fa-secondary-opacity: 0.85;
-  filter: drop-shadow(3px 3px 0 hsl(0deg, 0%, 0%));
+  --fa-secondary-opacity: 0.75;
+}
+.container form i.fa-sword {
+  --fa-primary-color: hsl(229, 100%, 34%);
+  --fa-secondary-color: hwb(19 38% 55%);
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 0.5;
 }
 @media (min-width: 992px) {
   .container form {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
   }
 }
 
-.form-group + .form-group {
-  margin-top: 1.5rem;
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
-.form-group--inline {
-  display: inline-block;
+.row:has(.input__control) {
+  margin-bottom: 0.5rem;
+}
+.row .form-group {
+  width: 100%;
+}
+.row .form-group:not(:last-of-type):not(:has(textarea)) {
+  margin-right: 0.5rem;
 }
 
 label {
@@ -117,9 +135,6 @@ label:not(.form-control) {
 }
 label + .form-field {
   margin-top: 0.5em;
-}
-label.checkbox {
-  font-size: 1.3rem;
 }
 
 .form-field {
@@ -247,7 +262,7 @@ textarea {
   isolation: isolate;
   display: block;
   width: 7em;
-  padding: 0.5em 1.5em;
+  padding: 0.5em 1em;
   background: 0;
   font-family: inherit;
   text-decoration: none;
@@ -268,6 +283,9 @@ textarea {
 .btn.btn-orange {
   --btn-clr: #ff8600;
   --origin: right;
+}
+.btn.btn-green {
+  --btn-clr: hsl(138, 100%, 40%);
 }
 .btn:hover, .btn:focus {
   color: white;

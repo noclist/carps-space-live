@@ -44,35 +44,60 @@ h2 {
     form {
       display: grid;
       grid-template-columns: 1fr;
-      place-items: center;
+      align-items: center;
       gap: 1rem;
       font-size: 1.2rem;
+      place-items: center;
 
       i {
-        font-size: 5.5rem;
-        --fa-primary-color: hsl(0, 0%, 0%);
-        --fa-secondary-color: hsl(60, 100%, 60%);
-        --fa-primary-opacity: 1;
-        --fa-secondary-opacity: 0.85;
+        display: flex;
+        justify-content: center;
+        font-size: 6.5rem;
 
-        filter: drop-shadow(3px 3px 0 hsl(0, 0%, 0%));
+        &.fa-pizza {
+          --fa-primary-color: hwb(19 19% 65%);
+          --fa-secondary-color: hsl(0, 100%, 60%);
+          --fa-primary-opacity: 1;
+          --fa-secondary-opacity: 0.75;
+        }
+
+        &.fa-sword {
+          --fa-primary-color: hsl(229, 100%, 34%);
+          --fa-secondary-color: hwb(19 38% 55%);
+          --fa-primary-opacity: 1;
+          --fa-secondary-opacity: 0.5;
+        }
       }
 
       @media(min-width: 992px) {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
       }
     }
 }
 
-.form-group {
-  + .form-group {
-    margin-top: 1.5rem;
+// .middle {
+//   width: 100%;
+//   margin-left: 2.5rem;
+// }
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  &:has(.input__control) {
+    margin-bottom: 0.5rem;
   }
 
-  &--inline {
-      display: inline-block;
+  .form-group {
+    width: 100%;
+
+    &:not(:last-of-type):not(:has(textarea)) {
+      margin-right: 0.5rem;
+    }
   }
 }
+
 
 label {
   font-weight: 400;
@@ -84,10 +109,6 @@ label {
 
   + .form-field {
     margin-top: 0.5em;
-  }
-
-  &.checkbox {
-    font-size: 1.3rem;
   }
 }
 
@@ -238,7 +259,7 @@ textarea {
   isolation: isolate;
   display: block;
   width: 7em;
-  padding: 0.5em 1.5em;
+  padding: 0.5em 1em;
   background: 0;
   font-family: inherit;
   text-decoration: none;
@@ -262,6 +283,10 @@ textarea {
   &.btn-orange {
     --btn-clr: #ff8600;
     --origin: right;
+  }
+
+  &.btn-green {
+    --btn-clr: hsl(138, 100%, 40%);
   }
 
   &:hover,
