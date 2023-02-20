@@ -5,7 +5,9 @@
 }
 
 .canvas {
-    background: #573d0e;
+    // background: #BC9A7A;
+    background: linear-gradient(to right, #b79891, #94716b); 
+    
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -14,17 +16,35 @@
     position: relative;
   }
 
+.circle-wrap {
+  filter: drop-shadow(-1px 0 10px rgba(0,0,0, 0.6));
+}
+
   .circle {
     width: 70vmin;
     height: 70vmin;
     background: #ffffff;
-    border-radius: 50%;
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
 
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 10vmin;
+      height: 10vmin;
+      background: hsl(350, 100%, 90%);
+      border-radius: 50%;
+      top: 19.5vmin;
+      left: 15vmin;
+      box-shadow: 30vmin 0 hsl(350, 100%, 90%);
+      z-index: 2;
+    }
+    
     &:after {
       content: '';
       position: absolute;
@@ -33,20 +53,22 @@
       height: 15vmin;
       background: black;
       border-radius: 50%;
-      top: 10.2vmin;
+      top: 17vmin;
       left: 12.4vmin;
       box-shadow: 30vmin 0 #000;
     }
   }
 
   .panda {
-    position: relative;
+    position: absolute;
+    bottom: 5vmin;
     border: 1.5vmin solid black;
     width: 45vmin;
     height: 45vmin;
     border-radius: 50%;
     background: #fff;
     z-index: 2;
+    box-shadow: inset -22px 5px 7px 3px rgba(0,0,0, 0.2);
   }
 
   .eyes {
@@ -71,11 +93,22 @@
         &:before {
             width: 4vmin;
             height: 6vmin;
-            background: white;
+            // background-color: white;
+            background: linear-gradient(to top, #000 50%, #fff 50%) top;
+            background-size: 100% 200%;
+            background-position: top;
             border-radius: 76px / 100px;
             left: 5vmin;
             top: 3.2vmin;
             transform: rotate(348deg);
+            animation: eyes 1s linear infinite alternate;
+
+            @keyframes eyes {
+              to {
+                // background-position: bottom;
+              }
+            }
+
         }
 
         &:after {
@@ -102,9 +135,16 @@
         top: 23vmin;
         left: 8.5vmin;
         bottom: 5vmin;
-        background: #fff;
         border-radius: 50%;
         border: 1.5vmin solid black;
+
+        background:
+          radial-gradient(black 15%, transparent 16%) 0 0,
+          radial-gradient(black 15%, transparent 16%) 3px 4px,
+          radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+          radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+        background-color:hsl(0, 0%, 90%);
+        background-size: 7px 7px;
 
         &:before {
             content: '';
@@ -128,11 +168,122 @@
   }
 
   .mouth {
-        position: absolute;
-        width: 9.6vmin;
-        height: 5vmin;
-        border-radius: 50%;
-        border-bottom: 1.5vmin solid black;
-        bottom: 1.6vmin;
-        left: 6vmin;
+      position: absolute;
+      width: 9.6vmin;
+      height: 2vminvmin;
+      border-radius: 50%;
+      border-bottom: 1.5vmin solid black;
+      bottom: 1.6vmin;
+      left: 6vmin;
   }
+
+  .bolt {
+    position: absolute;
+    top: 10vmin;
+    border: 13px solid rgba(0, 0, 0, 0);
+    border-bottom: 47px solid #ffdf00;
+    transform: rotateZ(-160deg);
+    padding: 2px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    overflow: visible;
+    border-top: 0 solid;
+    border-radius: 0;
+    filter: drop-shadow(-8px 5px 3px rgba(0,0,0, 0.5));
+    
+  
+    &:after {
+      content: "";
+      top: -10px;
+      left: -15px;
+      border: 10.1px solid rgba(0, 0, 0, 0);
+      border-bottom: 32px solid #ffdf00;
+      transform: rotateZ(4deg);
+      padding: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+      margin: 0;
+      overflow: visible;
+      border-top: 0 solid;
+      border-radius: 0;
+      transform-origin: 50% 50% 0;
+
+    }
+
+    &.bolt:first-of-type {
+      transform-origin: 50% 50% 0;
+      animation: pulse 0.15s linear infinite alternate;
+    }
+  
+    &.bolt:nth-of-type(2) {
+      transform-origin: 140% 52% 0;
+      animation: pulse .2s linear infinite alternate;
+    }
+  
+    &.bolt:nth-of-type(3) {
+      transform-origin: -45% 70% 0;
+      animation: pulse 0.3s linear infinite alternate;
+    }
+
+    @keyframes pulse {
+      to {
+        transform: scale(1.05) rotateZ(-160deg);
+      }
+    }
+  }
+
+  .teardrop {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 50% 50% 50%;
+    transform: rotate(45deg);
+    transform-origin: top;
+    height: 2vmin;
+    width: 2vmin;
+    background: hsl(195, 53%, 70%);
+    position: absolute;
+    top: 43%;
+    left: 57.6%;
+    z-index: 2;
+    animation: teardrop 2s linear infinite alternate;
+
+    @keyframes teardrop {
+      to {
+        transform: scale(1.5) rotate(45deg);
+      }
+    }
+}
+
+  i {
+
+    &.fa-light {
+      position: absolute;
+      color: hsl(0, 100%, 70%);
+      font-size: 3rem;
+      top: 18vmin;
+      left: 1vmin;
+      transform: rotate(45deg);
+    }
+
+    &.fa-solid {
+      position: absolute;
+      color: hsl(240, 100%, 70%);
+      font-size: 3.5rem;
+      top: 3vmin;
+      left: 21vmin;
+      transform: rotate(348deg);
+    }
+
+    &.fa-duotone {
+      position: absolute;
+      font-size: 2.5rem;
+      color: green;
+      top: 22vmin;
+      left: 33vmin;
+      transform: rotate(105deg);
+    }
+}
+
