@@ -9,21 +9,53 @@
   background-size: 20px 20px;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   position: relative;
 }
 
 .circle {
   width: 70vmin;
-  height: 70vmin;
+  height: 60vmin;
   background: #ffffff;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.robot {
+  position: relative;
+  border: 0.5vmin solid black;
+  width: 30vmin;
+  height: 30vmin;
+  margin-top: 10vmin;
+  border-radius: 49% 51% 49% 51%/71% 72% 28% 29%;
+  background: #999999;
+  box-shadow: inset -22px 5px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.robot:before, .robot:after {
+  content: "";
+  position: absolute;
+}
+.robot:before {
+  top: -5.6vmin;
+  left: 5vmin;
+  width: 1vmin;
+  height: 10vmin;
+  border: 0.5vmin solid black;
+  border-bottom: 0;
+  border-top: 0;
+  background: #999;
+}
+.robot:after {
+  top: -8.6vmin;
+  left: 3.5vmin;
+  background: red;
+  width: 4vmin;
+  height: 4vmin;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  border: 0.5vmin solid black;
+  box-shadow: inset -3px -1px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
 .transmission {
@@ -33,9 +65,9 @@
   border-bottom: 0.5vmin dashed hsl(252deg, 100%, 74%);
   border-right: 0.5vmin dashed hsl(252deg, 100%, 74%);
   transform: rotate(45deg);
-  position: relative;
-  top: -3.3vmin;
-  left: -1.9vmin;
+  position: absolute;
+  top: -8.9vmin;
+  left: 10.1vmin;
   animation: transmit 0.5s linear infinite alternate;
 }
 .transmission:before {
@@ -69,40 +101,6 @@
     border-top: 0.5vmin dashed hsl(252deg, 100%, 74%);
     border-left: 0.5vmin dashed hsl(252deg, 100%, 74%);
   }
-}
-
-.robot {
-  position: relative;
-  border: 0.5vmin solid black;
-  width: 30vmin;
-  height: 30vmin;
-  border-radius: 49% 51% 49% 51%/71% 72% 28% 29%;
-  background: #999999;
-  box-shadow: inset -22px 5px 7px 3px rgba(0, 0, 0, 0.2);
-}
-.robot:before, .robot:after {
-  content: "";
-  position: absolute;
-}
-.robot:before {
-  top: -5.6vmin;
-  left: 5vmin;
-  width: 1vmin;
-  height: 10vmin;
-  border: 0.5vmin solid black;
-  border-bottom: 0;
-  border-top: 0;
-  background: #999;
-}
-.robot:after {
-  top: -8.6vmin;
-  left: 3.5vmin;
-  background: red;
-  width: 4vmin;
-  height: 4vmin;
-  border-radius: 50%;
-  border: 0.5vmin solid black;
-  box-shadow: inset -3px -1px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
 .eyes {
