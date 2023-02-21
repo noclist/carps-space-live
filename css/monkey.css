@@ -5,7 +5,7 @@
 }
 
 .canvas {
-  background: #f54747;
+  background: linear-gradient(to right, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -20,10 +20,72 @@
   background: #ffffff;
   border-radius: 50%;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
-  flex-direction: column;
   position: relative;
+  box-shadow: inset -22px 5px 7px 3px rgba(17, 29, 185, 0.2);
+}
+
+.bubble-wrap {
+  width: 50vmin;
+  height: 35vmin;
+  background: radial-gradient(yellow 30%, transparent 16%) 0 0, radial-gradient(yellow 15%, transparent 16%) 8px 8px;
+  background-color: #212529;
+  background-size: 16px 17px;
+  background-position: left;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  transform: scaleX(-1);
+  z-index: 3;
+  position: absolute;
+  top: -10vmin;
+  right: -26vmin;
+  animation: background-size 10s linear infinite alternate;
+}
+@keyframes background-size {
+  to {
+    background-position: right;
+  }
+}
+
+.talk-bubble {
+  width: 45vmin;
+  height: 30vmin;
+  background: #FAFFCC;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  z-index: 3;
+  position: absolute;
+  top: 1.9vmin;
+  right: 2.6vmin;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 5.5rem 5.5rem;
+  place-items: center;
+}
+.talk-bubble i {
+  font-size: 4.2rem;
+  color: hsl(60deg, 100%, 40%);
+}
+.talk-bubble i.fa-thin {
+  color: #212529;
+}
+.talk-bubble i.fa-regular {
+  color: yellow;
+  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
+}
+.talk-bubble i.fa-sharp.fa-solid {
+  color: #EEB833;
+}
+.talk-bubble i.fa-sharp.fa-regular {
+  color: hsl(26deg, 72%, 65%);
+  text-shadow: none;
+}
+.talk-bubble i.fa-banana:nth-child(6) {
+  --fa-primary-color: hsl(35, 43%, 80%);
+  --fa-secondary-color: hsl(35, 43%, 80%);
+}
+.talk-bubble i.fa-banana:nth-child(5) {
+  --fa-primary-color: #8A983E;
+  --fa-secondary-color: #8A983E;
 }
 
 .monkey {
@@ -32,7 +94,8 @@
   height: 35vmin;
   border-radius: 50%;
   background: #7F5232;
-  top: -7vmin;
+  bottom: 20vmin;
+  box-shadow: inset -22px 5px 7px 3px rgba(0, 0, 0, 0.2);
 }
 .monkey:before {
   position: absolute;
@@ -43,6 +106,7 @@
   border-radius: 50%;
   bottom: -13vmin;
   left: -3vmin;
+  box-shadow: inset -22px 5px 7px 3px rgba(0, 0, 0, 0.2);
 }
 
 .ears {
@@ -52,7 +116,7 @@
   background: #7F5232;
   position: absolute;
   left: 5vmin;
-  bottom: 28vmin;
+  bottom: 23vmin;
   box-shadow: 45.8vmin 0 #7f5232;
 }
 .ears:before {
@@ -65,6 +129,31 @@
   top: 2vmin;
   left: 1.7vmin;
   box-shadow: 46.3vmin 0 #F3E0C0;
+}
+.ears:after {
+  content: "";
+  position: absolute;
+  width: 5vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  border: 1vmin solid #212529;
+  border-top: none;
+  border-right: none;
+  left: 4vmin;
+  top: 4vmin;
+  transform: rotate(15deg);
+}
+.ears .inner-ear {
+  position: absolute;
+  width: 5vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  border: 1vmin solid #212529;
+  border-top: none;
+  border-right: none;
+  left: 51vmin;
+  top: 4vmin;
+  transform: rotate(-15deg) scaleX(-1);
 }
 
 .forehead {
@@ -150,4 +239,38 @@
   border-bottom: 1.5vmin solid #7F5232;
   top: 2.5vmin;
   left: 7vmin;
+}
+.mouth:after {
+  content: "";
+  position: absolute;
+  width: 8vmin;
+  height: 0vmin;
+  background-color: red;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 0.75vmin solid #212529;
+  border-top: 0;
+  top: 17vmin;
+  left: 15.4vmin;
+  animation: tongue 1s linear infinite alternate;
+}
+.mouth .tongue {
+  position: relative;
+  width: 0.5vmin;
+  height: 0;
+  background: #212529;
+  animation: tongue2 1s linear infinite alternate;
+  top: 17vmin;
+  left: 50%;
+  z-index: 2;
+}
+@keyframes tongue {
+  to {
+    height: 6vmin;
+  }
+}
+@keyframes tongue2 {
+  to {
+    height: 5vmin;
+  }
 }
