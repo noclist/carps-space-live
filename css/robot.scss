@@ -5,7 +5,14 @@
 }
 
 .canvas {
-    background: #9479ff;
+    // background: #9479ff;
+
+    background:
+        radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgb(255, 255, 255) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+        radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, rgb(255, 255, 255) 10px, rgba(96, 16, 48, 0) 11px),
+        hsl(252, 100%, 74%);
+    background-size: 20px 20px;
+
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -25,6 +32,54 @@
     flex-direction: column;
   }
 
+.transmission {
+    width: 5vmin;
+    height: 5vmin;
+    background: #fff;
+    border-bottom: 0.5vmin dashed hsl(252, 100%, 74%);
+    border-right: 0.5vmin dashed hsl(252, 100%, 74%);
+    transform: rotate(45deg);
+    position: relative;
+    top: -3.3vmin;
+    left: -1.9vmin;
+    animation: transmit 0.5s linear infinite alternate;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 5vmin;
+        height: 5vmin;
+        background: #fff;
+        border-bottom: 0.5vmin dashed hsl(252, 100%, 74%);
+        border-right: 0.5vmin dashed hsl(252, 100%, 74%);
+        top: -5.4vmin;
+        left: 4.5vmin;
+        animation: transmit 0.5s linear infinite alternate-reverse;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 5vmin;
+        height: 5vmin;
+        background: #fff;
+        border-bottom: 0.5vmin dashed hsl(252, 100%, 74%);
+        border-right: 0.5vmin dashed hsl(252, 100%, 74%);
+        top: -10.4vmin;
+        left: 9.5vmin;
+        animation: transmit 0.5s linear infinite alternate;
+    }
+
+    @keyframes transmit {
+        to {
+            border-bottom: none;
+            border-right: none;
+            border-top: 0.5vmin dashed hsl(252, 100%, 74%);
+            border-left: 0.5vmin dashed hsl(252, 100%, 74%);
+        }
+    }
+}
+
   .robot {
     position: relative;
     border: 0.5vmin solid black;
@@ -32,6 +87,7 @@
     height: 30vmin;
     border-radius: 49% 51% 49% 51% / 71% 72% 28% 29%;
     background: #999999;
+    box-shadow: inset -22px 5px 7px 3px rgba(0,0,0, 0.2);
 
     &:before,
     &:after {
@@ -58,6 +114,7 @@
         height: 4vmin;
         border-radius: 50%;
         border: 0.5vmin solid black;
+        box-shadow: inset -3px -1px 0px 1px rgba(0,0,0, 0.2);
     }
   }
 
@@ -111,5 +168,41 @@
           width: 2vmin;
           height: 5vmin;
           background: #C7C7C7;
+
+          &:first-child {
+            animation: flash 1s linear infinite;
+            animation-delay: 0.5s;
+          }
+
+          &:nth-child(2) {
+            animation: flash 0.5s linear infinite alternate;
+            animation-delay: 2s;
+          }
+
+          &:nth-child(3) {
+            animation: flash 1.5s linear infinite alternate;
+            animation-delay: 3.5s;
+          }
+
+          &:nth-child(4) {
+            animation: flash 1.5s linear infinite alternate;
+            animation-delay: 5s;
+          }
+
+          &:nth-child(5) {
+            animation: flash 0.5s linear infinite alternate;
+            animation-delay: 6.5s;
+          }
+
+          &:nth-child(6) {
+            animation: flash 1s linear infinite alternate;
+            animation-delay: 8s;
+          }
+
+          @keyframes flash {
+            to {
+                background: yellow;
+            }
+          }
       }
   }
