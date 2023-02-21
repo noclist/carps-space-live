@@ -135,8 +135,11 @@ h1 {
   top: -2.5vmin;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
-.gallery div.bear {
-  color: hsl(0deg, 6%, 55%);
+.gallery div.bandage {
+  color: #C59065;
+}
+.gallery div.bandage i {
+  transform: rotate(45deg);
 }
 .gallery div.alien {
   color: hsl(109deg, 100%, 50%);

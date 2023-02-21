@@ -74,8 +74,12 @@ h1 {
           @include frame;
         }
     
-        &.bear {
-            color: hsl(0, 6%, 55%)
+        &.bandage {
+            color: #C59065;
+
+            i {
+              transform: rotate(45deg);
+            }
         }
       
         &.alien {
