@@ -10,7 +10,8 @@
 }
 
 .canvas {
-    background: #0060B8;
+    background-image: url(/images/mario.jpg);
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -20,29 +21,33 @@
   }
 
   .circle {
+    background-size: cover;
     width: 85vmin;
     height: 85vmin;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.8);
+    // background: rgba(255, 213, 3, 0.75);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
+    box-shadow:
+        inset 0 0 30px #00f, 0 0 30px #00f,
+        inset -22px 5px 7px 3px rgba(0,0,0, 0.2);
+
   }
 
 .block {
-    position: relative;
+    position: absolute;
     width: 40vmin;
     height: 40vmin;
     background: #FFD503;
     border: 15px solid #000;
     border-radius: 20px;
     transition: transform 0.1s ease-out;
-
-    &:hover {
-        transform: translateY(-12px) scale(1.03);
-    }
+    top: 34vmin;
+    z-index: 3;
 
     .rivets {
         height: 100%;
@@ -77,5 +82,96 @@
         position: absolute;
         top: -1.9vmin;
         left: 9.3vmin;
+    }
+}
+
+.mushroom {
+    z-index: 2;
+    transform: translateY(31vmin);
+    animation: mushroom 3s ease infinite alternate;
+
+    @keyframes mushroom {
+        to {
+            transform: translateY(-1.5vmin);
+        }
+    }
+}
+
+.cap {
+    position: relative;
+    width: 30vmin;
+    height: 25vmin;
+
+    border-top-right-radius: 95% 120%;
+    border-top-left-radius: 95% 120%;
+    border-bottom-right-radius: 60% 80%;
+    border-bottom-left-radius: 60% 80%;
+
+    background: #E60013;
+    border: 1vmin solid #212529;
+    z-index: 2;
+    top: -20.3vmin;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 12vmin;
+        height: 12vmin;
+        border-radius: 50%;
+        background: #fff;
+        top: 3.6vmin;
+        left: 7.6vmin;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 12vmin;
+        height: 12vmin;
+        border-radius: 50%;
+        background: #fff;
+        top: 7vmin;
+        left: -7.2vmin;
+        box-shadow: 29.8vmin 0 #fff;
+    }
+}
+
+.stem {
+    position: relative;
+    width: 17vmin;
+    height: 12vmin;
+    background: #FCE3BA;
+    border: 1vmin solid #212529;
+    border-top-right-radius: 60% 35%;
+    border-top-left-radius: 60% 35%;
+    border-bottom-right-radius: 40% 80%;
+    border-bottom-left-radius: 40% 80%;
+    left: 6.6vmin;
+    top: -26.9vmin;
+    z-index: 2;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 2vmin;
+        height: 5vmin;
+        border-radius: 50%;
+        background: #212529;
+        left: 3.3vmin;
+        top: 1.3vmin;
+        box-shadow: 6.2vmin 0 #212529;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 1vmin;
+        height: 2.3vmin;
+        border-radius: 50%;
+        background: #fff;
+        left: 3.8vmin;
+        top: 1.8vmin;
+        box-shadow: 6.2vmin 0 #fff;
     }
 }
