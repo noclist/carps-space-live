@@ -5,19 +5,34 @@
 }
 
 .canvas {
-    background: #ffd079;
+    background-color:#000;
+    background-image:
+      radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+      radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+      radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    animation: stars 10s linear infinite alternate;
+
+    @keyframes stars {
+      to {
+        background-position: 0 0, 200px 0px, 100px 330px, 45px 127px;
+      }
+    }
   }
 
   .circle {
     width: 70vmin;
     height: 70vmin;
-    background: #ffffff;
+    background: rgba(255,255,255,.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -84,4 +99,21 @@
         border-bottom: 0.75vmin solid black;
         bottom: 1.6vmin;
         left: 15.8vmin;
+  }
+
+  i.fa-duotone {
+    position: absolute;
+    font-size: 12vmin;
+    top: 42.2vmin;
+    z-index: 2;
+    --fa-primary-color: hsl(0, 0%, 75%);
+    --fa-secondary-color: hsl(207, 100%, 84%);
+    animation: orbit 10s linear infinite;
+
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(35vmin) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(35vmin) rotate(-360deg); }
+  }
+
+    
   }
