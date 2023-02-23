@@ -9,7 +9,7 @@
     background: linear-gradient(hsl(61, 100%, 88%) 50%, rgba(255,255,255,0) 0) 0 0,
       radial-gradient(circle closest-side, hsl(61, 100%, 88%) 53%, rgba(255,255,255,0) 0) 0 0,
       radial-gradient(circle closest-side, hsl(61, 100%, 88%) 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
-    background-size: 110px 90vmin;
+    background-size: 110px 190vmin;
     background-repeat: repeat-x;
     background-position-x: 0, 0, 55px;
     height: 100vh;
@@ -19,6 +19,10 @@
     justify-content: center;
     position: relative;
     animation: waves 1s linear infinite alternate;
+
+    @media(min-width: 500px) {
+      background-size: 110px 90vmin;
+    }
 
     @keyframes waves {
       to {
@@ -250,28 +254,48 @@
     border: 2px solid #3d93ff;
 
     &.left-1 {
-      top: 56vmin;
+      top: 156vmin;
       left: 26vmin;
+
+      @media(min-width: 500px) {
+        top: 56vmin;
+      }
     }
 
     &.left-2 {
-      top: 77vmin;
+      top: 177vmin;
       left: 11vmin;
+
+      @media(min-width: 500px) {
+        top: 77vmin;
+      }
     }
 
     &.left-3 {
-      top: 85vmin;
+      top: 185vmin;
       left: 45vmin;
+
+      @media(min-width: 500px) {
+        top: 85vmin;
+      }
     }
 
     &.right-1 {
-      top: 60vmin;
+      top: 160vmin;
       right: 3vmin;
+
+      @media(min-width: 500px) {
+        top: 60vmin;
+      }
     }
 
     &.right-2 {
-      top: 79vmin;
+      top: 179vmin;
       right: 33vmin;
+
+      @media(min-width: 500px) {
+        top: 79vmin;
+      }
     }
 
     &:before {
@@ -280,7 +304,6 @@
       height: 100%;
       width: 100%;
       background: #318CFE;
-      // background: #48b;
       border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
       box-shadow: inset -6px 6px 10px #48b, inset 2px 6px 10px #1a74e5, inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
     }
@@ -292,8 +315,8 @@
       width: 2vmin;
       background: #E6FDFB;
       border-radius: 44% 56% 46% 54%/36% 50% 50% 64%;
-      left: 44px;
-      top: 17px;
+      left: 5vmin;
+      top: 1.5vmin;
       box-shadow: 12px 17px 0 -3px #E6FDFB;
       opacity: 0.8;
     }

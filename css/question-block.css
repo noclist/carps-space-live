@@ -72,7 +72,7 @@
   top: 5vmin;
   left: 9.3vmin;
 }
-@media (min-width: 600px) {
+@media (min-width: 992px) {
   .block span {
     font-size: 22.8vmin;
     top: -1.9vmin;

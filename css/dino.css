@@ -6,7 +6,7 @@
 
 .canvas {
   background: linear-gradient(hsl(61deg, 100%, 88%) 50%, rgba(255, 255, 255, 0) 0) 0 0, radial-gradient(circle closest-side, hsl(61deg, 100%, 88%) 53%, rgba(255, 255, 255, 0) 0) 0 0, radial-gradient(circle closest-side, hsl(61deg, 100%, 88%) 50%, rgba(255, 255, 255, 0) 0) 55px 0 #48B;
-  background-size: 110px 90vmin;
+  background-size: 110px 190vmin;
   background-repeat: repeat-x;
   background-position-x: 0, 0, 55px;
   height: 100vh;
@@ -16,6 +16,11 @@
   justify-content: center;
   position: relative;
   animation: waves 1s linear infinite alternate;
+}
+@media (min-width: 500px) {
+  .canvas {
+    background-size: 110px 90vmin;
+  }
 }
 @keyframes waves {
   to {
@@ -205,24 +210,49 @@
   border: 2px solid #3d93ff;
 }
 .bubbles.left-1 {
-  top: 56vmin;
+  top: 156vmin;
   left: 26vmin;
 }
+@media (min-width: 500px) {
+  .bubbles.left-1 {
+    top: 56vmin;
+  }
+}
 .bubbles.left-2 {
-  top: 77vmin;
+  top: 177vmin;
   left: 11vmin;
 }
+@media (min-width: 500px) {
+  .bubbles.left-2 {
+    top: 77vmin;
+  }
+}
 .bubbles.left-3 {
-  top: 85vmin;
+  top: 185vmin;
   left: 45vmin;
 }
+@media (min-width: 500px) {
+  .bubbles.left-3 {
+    top: 85vmin;
+  }
+}
 .bubbles.right-1 {
-  top: 60vmin;
+  top: 160vmin;
   right: 3vmin;
 }
+@media (min-width: 500px) {
+  .bubbles.right-1 {
+    top: 60vmin;
+  }
+}
 .bubbles.right-2 {
-  top: 79vmin;
+  top: 179vmin;
   right: 33vmin;
+}
+@media (min-width: 500px) {
+  .bubbles.right-2 {
+    top: 79vmin;
+  }
 }
 .bubbles:before {
   content: "";
@@ -240,8 +270,8 @@
   width: 2vmin;
   background: #E6FDFB;
   border-radius: 44% 56% 46% 54%/36% 50% 50% 64%;
-  left: 44px;
-  top: 17px;
+  left: 5vmin;
+  top: 1.5vmin;
   box-shadow: 12px 17px 0 -3px #E6FDFB;
   opacity: 0.8;
 }
