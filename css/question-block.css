@@ -68,10 +68,16 @@
   -webkit-text-fill-color: #fff;
   -webkit-text-stroke-width: 1vmin;
   -webkit-text-stroke-color: #000;
-  font-size: 22.8vmin;
   position: absolute;
-  top: -1.9vmin;
   left: 9.3vmin;
+  font-size: 19.7vmin;
+  top: -0.4;
+}
+@media (min-width: 500px) {
+  .block span {
+    font-size: 22.8vmin;
+    top: -1.9vmin;
+  }
 }
 
 .mushroom {
