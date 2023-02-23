@@ -10,8 +10,22 @@
 }
 
 .canvas {
-    background-image: url(/images/mario.jpg);
-    background-size: cover;
+    // background-image: url(/images/mario.jpg);
+    // background: #6986FE;
+    background:
+        conic-gradient(from 120deg at 50% 86.5%, hsl(50, 100%, 71%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from 120deg at 50% 86.5%, hsl(50, 100%, 71%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from 120deg at 50% 74%, #6986FE 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from 60deg at 60% 50%, hsl(50, 100%, 71%) 0 60deg, hsl(50, 100%, 51%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from 180deg at 40% 50%, hsl(50, 100%, 30%) 0 60deg, hsl(50, 100%, 71%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from 0deg at 90% 35%, #6986FE 0 90deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from -90deg at 10% 35%, #6986FE 0 90deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from 0deg at 90% 35%, #6986FE 0 90deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from -90deg at 10% 35%, #6986FE 0 90deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from -60deg at 50% 13.5%, hsl(50, 100%, 71%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from -60deg at 50% 13.5%, hsl(50, 100%, 71%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        conic-gradient(from -60deg at 50% 41%, hsl(50, 100%, 51%) 0 60deg, hsl(50, 100%, 30%) 0 120deg, #fff0 0 360deg) 50% / calc(10px * 12.8) calc(10px * 22),
+        #6986FE;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -24,8 +38,7 @@
     background-size: cover;
     width: 85vmin;
     height: 85vmin;
-    background: rgba(255, 255, 255, 0.8);
-    // background: rgba(255, 213, 3, 0.75);
+    background: hsl(228 99% 70% / 0.6);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -33,9 +46,9 @@
     flex-direction: column;
     position: relative;
     box-shadow:
-        inset 0 0 30px #00f, 0 0 30px #00f,
-        inset -22px 5px 7px 3px rgba(0,0,0, 0.2);
-
+        inset 0 0 30px rgb(0, 0, 0),
+        inset -22px 5px 7px 3px rgba(0,0,0, 0.2),
+        0 0 30px rgb(0, 0, 0);
   }
 
 .block {
@@ -79,10 +92,11 @@
         -webkit-text-stroke-width: 1vmin;
         -webkit-text-stroke-color: #000;
         position: absolute;
+        font-size: 22.8vmin;
+        top: 1.4vmin;
+        left: 9.3vmin;
 
-        top: 1.1vmin;
-
-        @media(min-width: 500px) {
+        @media(min-width: 600px) {
             font-size: 22.8vmin;
             top: -1.9vmin;
             left: 9.3vmin;
