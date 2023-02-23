@@ -76,6 +76,7 @@
 @media (min-width: 500px) {
   .block span {
     font-size: 22.8vmin;
+    top: -1vmin;
   }
 }
 
