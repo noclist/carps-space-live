@@ -157,10 +157,10 @@
 .bolt {
   position: absolute;
   top: 10vmin;
-  border: 13px solid rgba(0, 0, 0, 0);
-  border-bottom: 47px solid #ffdf00;
+  border: 1.65vmin solid rgba(0, 0, 0, 0);
+  border-bottom: 5.8vmin solid #ffdf00;
   transform: rotateZ(-160deg);
-  padding: 2px;
+  padding: 0.25vmin;
   width: 0;
   height: 0;
   margin: 0;
