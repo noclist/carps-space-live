@@ -262,7 +262,7 @@
     &.fa-light {
       position: absolute;
       color: hsl(0, 100%, 70%);
-      font-size: 3rem;
+      font-size: 5.8vmin;
       top: 18vmin;
       left: 1vmin;
       transform: rotate(45deg);
@@ -271,7 +271,7 @@
     &.fa-solid {
       position: absolute;
       color: hsl(240, 100%, 70%);
-      font-size: 3.5rem;
+      font-size: 6.8vmin;
       top: 3vmin;
       left: 21vmin;
       transform: rotate(348deg);
@@ -279,7 +279,7 @@
 
     &.fa-duotone {
       position: absolute;
-      font-size: 2.5rem;
+      font-size: 4.9vmin;
       color: green;
       top: 22vmin;
       left: 33vmin;
