@@ -210,7 +210,7 @@
   border: 2px solid #3d93ff;
 }
 .bubbles.left-1 {
-  top: 156vmin;
+  top: 141vmin;
   left: 26vmin;
 }
 @media (min-width: 500px) {
@@ -219,7 +219,7 @@
   }
 }
 .bubbles.left-2 {
-  top: 177vmin;
+  top: 162vmin;
   left: 11vmin;
 }
 @media (min-width: 500px) {
@@ -228,7 +228,7 @@
   }
 }
 .bubbles.left-3 {
-  top: 185vmin;
+  top: 170vmin;
   left: 45vmin;
 }
 @media (min-width: 500px) {
@@ -237,7 +237,7 @@
   }
 }
 .bubbles.right-1 {
-  top: 160vmin;
+  top: 145vmin;
   right: 3vmin;
 }
 @media (min-width: 500px) {
@@ -246,7 +246,7 @@
   }
 }
 .bubbles.right-2 {
-  top: 179vmin;
+  top: 164vmin;
   right: 33vmin;
 }
 @media (min-width: 500px) {
