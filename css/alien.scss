@@ -104,7 +104,6 @@
   i.fa-duotone {
     position: absolute;
     font-size: 12vmin;
-    top: 42.2vmin;
     z-index: 2;
     --fa-primary-color: hsl(0, 0%, 75%);
     --fa-secondary-color: hsl(207, 100%, 84%);
@@ -113,7 +112,5 @@
     @keyframes orbit {
       from { transform: rotate(0deg) translateX(35vmin) rotate(0deg); }
       to   { transform: rotate(360deg) translateX(35vmin) rotate(-360deg); }
-  }
-
-    
+    }
   }
