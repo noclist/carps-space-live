@@ -5,7 +5,9 @@
 }
 
 .canvas {
-  background: hsl(219deg, 78%, 39%);
+  background: linear-gradient(45deg, hsl(219deg, 78%, 60%) 45px, transparent 45px) 64px 64px, linear-gradient(45deg, hsl(219deg, 78%, 60%) 45px, transparent 45px, transparent 91px, hsl(219deg, 78%, 39%) 91px, hsl(219deg, 78%, 39%) 135px, transparent 135px), linear-gradient(-45deg, hsl(219deg, 78%, 60%) 23px, transparent 23px, transparent 68px, hsl(219deg, 78%, 60%) 68px, hsl(219deg, 78%, 60%) 113px, transparent 113px, transparent 158px, hsl(219deg, 78%, 60%) 158px);
+  background-color: hsl(219deg, 78%, 39%);
+  background-size: 128px 128px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -15,84 +17,88 @@
 }
 
 .circle {
-  width: 50vmin;
-  height: 50vmin;
-  background: #fff;
+  width: 65vmin;
+  height: 65vmin;
+  background: hsla(0deg, 0%, 100%, 0.75);
   border-radius: 48% 52% 50% 50%/63% 64% 36% 37%;
+  border-radius: 17% 83% 13% 87%/77% 14% 86% 23%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
+  animation: shadow 1s linear infinite alternate;
+  box-shadow: inset rgba(240, 46, 170, 0.4) 5px 5px, inset rgba(240, 46, 170, 0.3) 10px 10px, inset rgba(240, 46, 170, 0.2) 15px 15px, inset rgba(240, 46, 170, 0.1) 20px 20px, inset rgba(240, 46, 170, 0.05) 25px 25px, inset rgba(240, 46, 170, 0.4) -5px -5px, inset rgba(240, 46, 170, 0.3) -10px -10px, inset rgba(240, 46, 170, 0.2) -15px -15px, inset rgba(240, 46, 170, 0.1) -20px -20px, inset rgba(240, 46, 170, 0.05) -25px -25px, hsl(61deg, 100%, 50%) 0px 0px 70px 4px;
+}
+@keyframes shadow {
+  to {
+    box-shadow: inset rgba(240, 46, 170, 0.4) 5px 5px, inset rgba(240, 46, 170, 0.3) 10px 10px, inset rgba(240, 46, 170, 0.2) 15px 15px, inset rgba(240, 46, 170, 0.1) 20px 20px, inset rgba(240, 46, 170, 0.05) 25px 25px, inset rgba(240, 46, 170, 0.4) -5px -5px, inset rgba(240, 46, 170, 0.3) -10px -10px, inset rgba(240, 46, 170, 0.2) -15px -15px, inset rgba(240, 46, 170, 0.1) -20px -20px, inset rgba(240, 46, 170, 0.05) -25px -25px, hsl(61deg, 100%, 50%) 0px 0px 70px 20px;
+  }
 }
 
 .cube-scene {
   perspective: 300px;
 }
 .cube-scene .cube {
-  width: 150px;
-  height: 150px;
+  width: 36.6vmin;
+  height: 36.6vmin;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(-75px);
+  transform: translateZ(-18.3vmin);
   animation: rotate-cube 10s linear infinite;
 }
 .cube-scene .cube .cube-face {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  border: 3px solid rgb(102, 51, 153);
+  width: 36.6vmin;
+  height: 36.6vmin;
+  border: 5px solid rgb(102, 51, 153);
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, transparent 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px), linear-gradient(225deg, transparent 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px) 0 64px;
+  background-color: hsla(212deg, 62%, 50%, 0.5);
+  background-size: 7.8vmin 15.6vmin;
+}
+.cube-scene .cube .cube-face i {
+  font-size: 20vmin;
+  color: #fff;
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
 }
 .cube-scene .cube .front {
-  background: radial-gradient(circle at 100% 50%, rgba(102, 51, 153, 0.1) 20%, #ff00f7 21%, #efff00 34%, rgba(102, 51, 153, 0.1) 35%, rgba(102, 51, 153, 0.1)), radial-gradient(circle at 0% 50%, rgba(102, 51, 153, 0.1) 20%, #00D4F0 21%, #27ff00 34%, rgba(102, 51, 153, 0.1) 35%, rgba(102, 51, 153, 0.1)) 0 -50px;
-  transform: rotateY(0deg) translateZ(75px);
+  transform: rotateY(0deg) translateZ(18.3vmin);
 }
 .cube-scene .cube .right {
-  background: radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px, radial-gradient(at 100% 100%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px), hsla(270deg, 50%, 40%, 0.2);
-  background-size: 20px 20px;
-  transform: rotateY(90deg) translateZ(75px);
+  transform: rotateY(90deg) translateZ(18.3vmin);
 }
 .cube-scene .cube .back {
-  background: linear-gradient(hsla(174deg, 100%, 50%, 0.7) 50%, hsla(34deg, 100%, 50%, 0.7) 0);
-  background-size: 100% 30px;
-  transform: rotateY(180deg) translateZ(75px);
+  transform: rotateY(180deg) translateZ(18.3vmin);
 }
 .cube-scene .cube .left {
-  background: linear-gradient(135deg, hsla(128deg, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%), linear-gradient(225deg, hsla(140deg, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%), linear-gradient(315deg, hsla(115deg, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%), linear-gradient(45deg, hsla(125deg, 100%, 50%, 0.5) 25%, rgba(0, 0, 0, 0) 25.1%), Hsl(0deg 0% 100%/30%);
-  background-size: 35px 32px;
-  background-position: -20px 0, -20px 0, 0 0, 0 0;
-  transform: rotateY(-90deg) translateZ(75px);
+  transform: rotateY(-90deg) translateZ(18.3vmin);
 }
 .cube-scene .cube .top {
-  background: linear-gradient(135deg, transparent 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px), linear-gradient(225deg, transparent 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px) 0 64px;
-  background-color: hsla(212deg, 62%, 42%, 0.5);
-  background-size: 64px 128px;
-  transform: rotateX(90deg) translateZ(75px);
+  transform: rotateX(90deg) translateZ(18.3vmin);
 }
 .cube-scene .cube .bottom {
-  background: linear-gradient(45deg, hsla(0deg, 100%, 75%, 0.5) 45px, transparent 45px) 64px 64px, linear-gradient(45deg, hsla(0deg, 100%, 75%, 0.5) 45px, transparent 45px, transparent 91px, hsla(73deg, 100%, 50%, 0.5) 91px, hsla(73deg, 100%, 50%, 0.5) 135px, transparent 135px), linear-gradient(-45deg, hsla(0deg, 100%, 75%, 0.5) 23px, transparent 23px, transparent 68px, hsla(0deg, 100%, 75%, 0.5) 68px, hsla(0deg, 100%, 75%, 0.5) 113px, transparent 113px, transparent 158px, hsla(0deg, 100%, 75%, 0.5) 158px);
-  background-color: hsla(73deg, 100%, 50%, 0.5);
-  background-size: 128px 128px;
-  transform: rotateX(-90deg) translateZ(75px);
+  transform: rotateX(-90deg) translateZ(18.3vmin);
 }
 
 @keyframes rotate-cube {
   0% {
-    transform: translateZ(-75px) rotateY(0deg) translateX(0);
+    transform: translateZ(-18.3vmin) rotateY(0deg) translateX(0);
   }
   17% {
-    transform: translateZ(-75px) rotateX(-90deg);
+    transform: translateZ(-18.3vmin) rotateX(-90deg);
   }
   34% {
-    transform: translateZ(-75px) rotateY(-180deg);
+    transform: translateZ(-18.3vmin) rotateY(-180deg);
   }
   50% {
-    transform: translateZ(-75px) rotateY(-90deg);
+    transform: translateZ(-18.3vmin) rotateY(-90deg);
   }
   67% {
-    transform: translateZ(-75px) rotateX(90deg);
+    transform: translateZ(-18.3vmin) rotateX(90deg);
   }
   84% {
-    transform: translateZ(-75px) rotateY(90deg);
+    transform: translateZ(-18.3vmin) rotateY(90deg);
   }
 }
