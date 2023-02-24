@@ -38,8 +38,13 @@
   z-index: 3;
   position: absolute;
   top: -10vmin;
-  right: -26vmin;
+  right: 0;
   animation: background-size 10s linear infinite alternate;
+}
+@media (min-width: 1028px) {
+  .bubble-wrap {
+    right: -26vmin;
+  }
 }
 @keyframes background-size {
   to {
@@ -58,11 +63,11 @@
   right: 2.6vmin;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 5.5rem 5.5rem;
+  grid-template-rows: 11.1vmin 11.5vmin;
   place-items: center;
 }
 .talk-bubble i {
-  font-size: 4.2rem;
+  font-size: 9.1vmin;
   color: hsl(60deg, 100%, 40%);
 }
 .talk-bubble i.fa-thin {
