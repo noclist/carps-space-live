@@ -7,9 +7,8 @@
 .canvas {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   position: relative;
   background: linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0), linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
   background-size: 30px 30px;
@@ -44,11 +43,18 @@
   background: hsl(204deg, 10%, 50%);
   border-top-right-radius: 40%;
   border-bottom-right-radius: 40%;
-  right: -46.3vmin;
-  top: 12vmin;
-  transform: rotate(343deg);
+  right: -14.3vmin;
+  top: -23vmin;
+  transform: rotate(294deg);
   box-shadow: 9px 2px 8px 1px #0d0d0d;
   z-index: -1;
+}
+@media (min-width: 600px) {
+  .circle:before {
+    right: -46.3vmin;
+    top: 12vmin;
+    transform: rotate(343deg);
+  }
 }
 .circle:after {
   width: 58vmin;
