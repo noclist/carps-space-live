@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
 body, html {
   margin: 0;
   padding: 0;
@@ -42,17 +43,22 @@ li {
   list-style-type: none;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: radial-gradient(hsl(0deg, 72%, 65%), hsl(235deg, 62%, 90%));
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
   min-height: 100vh;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 h1 {
   font-size: 5rem;
-  font-family: "Sacramento", cursive;
+  font-family: "Rampart One", cursive;
   text-shadow: 1px 1px 2px rgb(255, 67, 98);
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -74,10 +80,12 @@ h1 {
 @media (min-width: 1100px) {
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: repeat(4, auto);
   }
   .gallery div.col-span-2 {
     grid-column-end: span 2;
+  }
+  .gallery div.col-span-3 {
+    grid-column-end: span 3;
   }
   .gallery div.row-span-2 {
     grid-row-end: span 2;
@@ -108,7 +116,7 @@ h1 {
 }
 .gallery div.dino {
   color: #8EC0DB;
-  background-color: hsl(60deg, 18%, 20%);
+  background-color: hsl(0deg, 0%, 32%);
   border: solid 5vmin #eee;
   border-bottom-color: #fff;
   border-left-color: #eee;
@@ -137,9 +145,39 @@ h1 {
 }
 .gallery div.bandage {
   color: #C59065;
+  background-color: hsl(0deg, 0%, 32%);
+  border: solid 5vmin #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+.gallery div.bandage:before, .gallery div.bandage:after {
+  content: "";
+  position: absolute;
+}
+.gallery div.bandage:before {
+  bottom: -2vmin;
+  left: -2vmin;
+  right: -2vmin;
+  top: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+.gallery div.bandage:after {
+  bottom: -2.5vmin;
+  left: -2.5vmin;
+  right: -2.5vmin;
+  top: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
 .gallery div.bandage i {
+  font-size: 12vmin;
   transform: rotate(45deg);
+}
+.gallery div.bandage:hover i {
+  transform: scale(1.2) rotate(40deg);
 }
 .gallery div.alien {
   color: hsl(109deg, 100%, 50%);
@@ -148,11 +186,37 @@ h1 {
   color: hsl(0deg, 0%, 50%);
 }
 .gallery div.monkey {
-  color: #ff7b00;
+  color: hsl(29deg, 100%, 65%);
+  background-color: hsl(0deg, 0%, 32%);
+  border: solid 5vmin #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+.gallery div.monkey:before, .gallery div.monkey:after {
+  content: "";
+  position: absolute;
+}
+.gallery div.monkey:before {
+  bottom: -2vmin;
+  left: -2vmin;
+  right: -2vmin;
+  top: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+.gallery div.monkey:after {
+  bottom: -2.5vmin;
+  left: -2.5vmin;
+  right: -2.5vmin;
+  top: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
 .gallery div.tree {
   color: #b2ff6b;
-  background-color: hsl(60deg, 18%, 20%);
+  background-color: hsl(0deg, 0%, 32%);
   border: solid 5vmin #eee;
   border-bottom-color: #fff;
   border-left-color: #eee;
@@ -184,65 +248,18 @@ h1 {
 }
 .gallery div.cube {
   color: hsl(320deg, 100%, 75%);
-  background-color: hsl(60deg, 18%, 20%);
-  border: solid 5vmin #eee;
-  border-bottom-color: #fff;
-  border-left-color: #eee;
-  border-radius: 2px;
-  border-right-color: #eee;
-  border-top-color: #ddd;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
-}
-.gallery div.cube:before, .gallery div.cube:after {
-  content: "";
-  position: absolute;
-}
-.gallery div.cube:before {
-  bottom: -2vmin;
-  left: -2vmin;
-  right: -2vmin;
-  top: -2vmin;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
-}
-.gallery div.cube:after {
-  bottom: -2.5vmin;
-  left: -2.5vmin;
-  right: -2.5vmin;
-  top: -2.5vmin;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
 .gallery div.q-block {
-  color: yellow;
-  background-color: hsl(60deg, 18%, 20%);
-  border: solid 5vmin #eee;
-  border-bottom-color: #fff;
-  border-left-color: #eee;
-  border-radius: 2px;
-  border-right-color: #eee;
-  border-top-color: #ddd;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
-}
-.gallery div.q-block:before, .gallery div.q-block:after {
-  content: "";
-  position: absolute;
-}
-.gallery div.q-block:before {
-  bottom: -2vmin;
-  left: -2vmin;
-  right: -2vmin;
-  top: -2vmin;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
-}
-.gallery div.q-block:after {
-  bottom: -2.5vmin;
-  left: -2.5vmin;
-  right: -2.5vmin;
-  top: -2.5vmin;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  --fa-primary-color: #E11A00;
+  --fa-secondary-color: #F0CBA8;
+  --fa-secondary-opacity: 0.75;
 }
 .gallery div.egg {
   color: #f3e77f;
-  background-color: hsl(60deg, 18%, 20%);
+  --fa-primary-color: hsl(39, 100%, 49%);
+  --fa-secondary-color: hsl(60, 100%, 83%);
+  --fa-secondary-opacity: 1;
+  background-color: hsl(0deg, 0%, 32%);
   border: solid 5vmin #eee;
   border-bottom-color: #fff;
   border-left-color: #eee;
@@ -279,4 +296,7 @@ h1 {
   background: url("/icons/dinosaur.png");
   background-size: 100%;
   background-repeat: no-repeat;
+}
+.gallery div.col-span-2.row-span-2 i {
+  font-size: 27vmin;
 }

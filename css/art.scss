@@ -1,18 +1,24 @@
 @import 'modules/reset';
 @import 'mixins/frame';
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background: radial-gradient(hsl(360, 72%, 65%), hsl(235, 62%, 90%));
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
   min-height: 100vh;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 h1 {
   font-size: 5rem;
-  font-family: 'Sacramento', cursive;
+  font-family: 'Rampart One', cursive;
   text-shadow: 1px 1px 2px rgb(255, 67, 98);
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -31,10 +37,13 @@ h1 {
 
     @media(min-width: 1100px) {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-template-rows: repeat(4, auto);
 
       div.col-span-2 {
         grid-column-end: span 2;
+      }
+
+      div.col-span-3 {
+        grid-column-end: span 3; 
       }
 
       div.row-span-2 {
@@ -47,7 +56,7 @@ h1 {
     }
 
     div {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.5rem; 
         background: #fff;
         display: grid;
         place-content: center;
@@ -76,9 +85,17 @@ h1 {
     
         &.bandage {
             color: #C59065;
+            @include frame;
 
             i {
+              font-size: 12vmin;
               transform: rotate(45deg);
+            }
+
+            &:hover {
+              i {
+                transform: scale(1.2) rotate(40deg);
+              }
             }
         }
       
@@ -91,7 +108,8 @@ h1 {
         }
       
         &.monkey {
-            color: #ff7b00;
+            color: hsl(29, 100%, 65%);
+            @include frame;
         }
       
         &.tree {
@@ -105,16 +123,20 @@ h1 {
 
         &.cube {
           color: hsl(320, 100%, 75%);
-          @include frame;
         }
 
         &.q-block {
-          color: yellow;
-          @include frame;
+          --fa-primary-color: #E11A00;
+          --fa-secondary-color: #F0CBA8;
+          --fa-secondary-opacity: 0.75;
         }
 
         &.egg {
           color: #f3e77f;
+
+          --fa-primary-color: hsl(39, 100%, 49%);
+          --fa-secondary-color: hsl(60, 100%, 83%);
+          --fa-secondary-opacity: 1;
           @include frame;
         }
         
@@ -129,6 +151,12 @@ h1 {
             background: url('/icons/dinosaur.png');
             background-size: 100%;
             background-repeat: no-repeat;
+          }
+        }
+
+        &.col-span-2.row-span-2 {
+          i {
+            font-size: 27vmin;
           }
         }
     }
