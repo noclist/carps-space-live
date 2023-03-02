@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: radial-gradient(17px, #ECBE13 97%, rgba(0, 0, 0, 0)), radial-gradient(17px, #ECBE13 97%, rgba(0, 0, 0, 0)) 68px 68px, repeating-conic-gradient(from 45deg, rgba(0, 0, 0, 0) 0 25%, #309292 0 50%) -24.038px -24.038px, repeating-linear-gradient(135deg, #ECBE13 17px 17px, #309292 0 79.152px);
+  background-size: 136px 136px;
+}
+
+.circle {
+  position: relative;
+  width: 70vmin;
+  height: 70vmin;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  background: #FFEFBA;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.frog {
+  position: relative;
+  width: 40vmin;
+  height: 32vmin;
+  border-radius: 50%;
+  top: -18vmin;
+  box-shadow: inset -10px -12px 7px 3px rgba(0, 0, 0, 0.2);
+  background-color: #9FCA4A;
+  background-image: radial-gradient(hsl(78deg, 51%, 50%) 15%, transparent 16%), radial-gradient(hsl(78deg, 52%, 50%) 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+.frog .eyes {
+  position: absolute;
+  width: 13vmin;
+  height: 7vmin;
+  border-radius: 10rem 10rem 0 0;
+  border-bottom: none;
+  left: 2vmin;
+  top: -3.4vmin;
+  transform: rotate(334deg);
+  background-color: #9FCA4A;
+  background-image: radial-gradient(hsl(78deg, 51%, 50%) 15%, transparent 16%), radial-gradient(hsl(78deg, 52%, 50%) 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: -7px -11px, 30px 30px;
+}
+.frog .eyes .pupil {
+  position: absolute;
+  width: 5.8vmin;
+  height: 5.8vmin;
+  background: #212529;
+  border-radius: 50%;
+  z-index: 2;
+  top: 2.9vmin;
+  left: 3.5vmin;
+  box-shadow: 18.8vmin 0 #000;
+  transform: rotate(27deg);
+}
+.frog .eyes .pupil:before {
+  content: "";
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  background: #fff;
+  border-radius: 50%;
+  left: 0.6vmin;
+  top: 0.7vmin;
+  box-shadow: 20.4vmin 0 #fff;
+}
+.frog .eyes:before {
+  content: "";
+  position: absolute;
+  width: 12vmin;
+  height: 6vmin;
+  border-radius: 10rem 10rem 0 0;
+  border-bottom: none;
+  left: 19.2vmin;
+  top: 9.7vmin;
+  transform: rotate(52deg);
+  background-color: #9FCA4A;
+  background-image: radial-gradient(hsl(78deg, 51%, 50%) 15%, transparent 16%), radial-gradient(hsl(78deg, 52%, 50%) 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: -7px -11px, 30px 30px;
+}
+.frog .eyes:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 8vmin;
+  height: 8vmin;
+  border-radius: 50%;
+  left: 2.4vmin;
+  top: 1.9vmin;
+  transform: rotate(27deg);
+  box-shadow: 18.7vmin 0 #fff;
+}
+.frog .body {
+  position: absolute;
+  width: 42vmin;
+  height: 37vmin;
+  background: #ABCF39;
+  border-radius: 21vmin/18.5vmin;
+  transform: rotate(90deg);
+  top: 22vmin;
+  z-index: -1;
+  left: -1.6vmin;
+}
+.frog .body:before {
+  content: "";
+  position: absolute;
+  width: 34vmin;
+  height: 28vmin;
+  border-radius: 50%;
+  background: #E4F49B;
+  top: 4.4vmin;
+  left: 4vmin;
+}
+.frog .arms {
+  position: absolute;
+  width: 44vmin;
+  height: 42vmin;
+  border: 4vmin solid #7E9F32;
+  transform: rotate(90deg);
+  top: 20.4vmin;
+  z-index: -1;
+  left: -2.5vmin;
+  border-radius: 21vmin/21vmin;
+  border-right: none;
+}
+.frog .leg-left {
+  position: absolute;
+  width: 12vmin;
+  height: 22vmin;
+  background: #ABCF39;
+  border-radius: 6vmin/11vmin;
+  top: 39.5vmin;
+  left: -5vmin;
+  transform: rotate(306deg);
+  z-index: -2;
+  box-shadow: inset -6px 5px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.frog .shadow-left-leg {
+  position: absolute;
+  width: 7vmin;
+  height: 13.5vmin;
+  border-radius: 3.5vmin/6.5vmin;
+  background: #98B83D;
+  top: 44.3vmin;
+  transform: rotate(329deg);
+  z-index: -1;
+  left: -4.1vmin;
+}
+.frog .foot-left {
+  position: absolute;
+  width: 14.2vmin;
+  height: 7.5vmin;
+  background: #ABCF39;
+  border-top-left-radius: 8vmin;
+  border-top-right-radius: 8vmin;
+  top: 51.7vmin;
+  left: -7.8vmin;
+  z-index: -3;
+  box-shadow: inset 3px 6px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.frog .shadow-left-foot {
+  position: absolute;
+  background: #98B83D;
+  width: 11.2vmin;
+  height: 4.5vmin;
+  border-top-left-radius: 4.5vmin;
+  border-top-right-radius: 4.5vmin;
+  top: 54.7vmin;
+  left: -5.7vmin;
+  z-index: -1;
+}
+.frog .leg-right {
+  position: absolute;
+  width: 12vmin;
+  height: 22vmin;
+  background: #ABCF39;
+  border-radius: 6vmin/11vmin;
+  top: 39vmin;
+  left: 31vmin;
+  transform: rotate(50deg);
+  z-index: -2;
+  box-shadow: inset 5px 6px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.frog .shadow-right-leg {
+  position: absolute;
+  width: 6.5vmin;
+  height: 13.5vmin;
+  border-radius: 3.5vmin/6.5vmin;
+  background: #98B83D;
+  top: 44.3vmin;
+  transform: rotate(209deg);
+  z-index: -1;
+  left: 35.5vmin;
+}
+.frog .foot-right {
+  position: absolute;
+  width: 14.2vmin;
+  height: 7.5vmin;
+  background: #ABCF39;
+  border-top-left-radius: 8vmin;
+  border-top-right-radius: 8vmin;
+  top: 51.7vmin;
+  left: 32.8vmin;
+  z-index: -3;
+  box-shadow: inset -1px 5px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.frog .shadow-right-foot {
+  position: absolute;
+  background: #98B83D;
+  width: 11.2vmin;
+  height: 4.5vmin;
+  border-top-left-radius: 4.5vmin;
+  border-top-right-radius: 4.5vmin;
+  top: 54.7vmin;
+  left: 33.8vmin;
+  z-index: -1;
+}
+.frog .finger-left1 {
+  position: absolute;
+  width: 1.6vmin;
+  height: 6vmin;
+  background: #7E9F32;
+  top: 54.4vmin;
+  transform: rotate(94deg);
+  left: 7.7vmin;
+}
+.frog .finger-left1:before {
+  content: "";
+  position: absolute;
+  width: 5vmin;
+  height: 13vmin;
+  background: #FFEFBA;
+  top: -13.2vmin;
+  left: 4.2vmin;
+}
+.frog .finger-left1:after {
+  content: "";
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  background: #7E9F32;
+  top: -0.7vmin;
+  left: -0.9vmin;
+}
+.frog .finger-left2 {
+  position: absolute;
+  width: 1.6vmin;
+  height: 6vmin;
+  background: #7E9F32;
+  top: 56.1vmin;
+  transform: rotate(180deg);
+  left: 4.7vmin;
+}
+.frog .finger-left2:after {
+  content: "";
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  background: #7E9F32;
+  top: -0.7vmin;
+  left: -0.9vmin;
+  box-shadow: -4.4vmin 0 #7e9f32;
+  transform: rotate(356deg);
+}
+.frog .finger-right1 {
+  position: absolute;
+  width: 1.6vmin;
+  height: 6vmin;
+  background: #7E9F32;
+  top: 54.5vmin;
+  transform: rotate(269deg);
+  left: 29.1vmin;
+}
+.frog .finger-right1:before {
+  content: "";
+  position: absolute;
+  width: 5vmin;
+  height: 13vmin;
+  background: #FFEFBA;
+  top: -12.2vmin;
+  left: -7.9vmin;
+}
+.frog .finger-right1:after {
+  content: "";
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  background: #7E9F32;
+  top: -0.7vmin;
+  left: -0.7vmin;
+}
+.frog .finger-right2 {
+  position: absolute;
+  width: 1.6vmin;
+  height: 6vmin;
+  background: #7E9F32;
+  top: 56.4vmin;
+  transform: rotate(180deg);
+  left: 32.3vmin;
+}
+.frog .finger-right2:after {
+  content: "";
+  position: absolute;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  background: #7E9F32;
+  top: -0.7vmin;
+  left: -0.8vmin;
+  box-shadow: 5.1vmin 0 #7e9f32;
+  transform: rotate(3deg);
+}
+.frog:before {
+  position: absolute;
+  content: "";
+  width: 30vmin;
+  height: 14.5vmin;
+  border: 0.75vmin solid #212529;
+  border-radius: 50%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  top: 11vmin;
+  left: 4.5vmin;
+}
+.frog:after {
+  content: "";
+  position: absolute;
+  width: 0.8vmin;
+  height: 2vmin;
+  background: #212529;
+  border-radius: 50%;
+  top: 21.3vmin;
+  left: 15.6vmin;
+  box-shadow: 7.4vmin 0 #212529;
+}
