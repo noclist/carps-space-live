@@ -396,7 +396,7 @@
   border: 0.25vmin solid #212529;
   top: -2.4vmin;
   left: -1.8vmin;
-  box-shadow: inset -10px -12px 7px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset -10px -12px 7px 3px rgba(255, 0, 0, 0.2);
   transform: translateZ(-10px);
 }
 .fly .eye-left:before {
@@ -428,7 +428,7 @@
   border: 0.25vmin solid #212529;
   top: -1.9vmin;
   left: 1.5vmin;
-  box-shadow: inset -3px -4px 7px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset -3px -4px 7px 3px rgba(255, 0, 0, 0.2);
 }
 .fly .eye-right:before {
   content: "";
