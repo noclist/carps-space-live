@@ -33,12 +33,45 @@
   width: 40vmin;
   height: 32vmin;
   border-radius: 50%;
-  top: -18vmin;
+  top: -13vmin;
   box-shadow: inset -10px -12px 7px 3px rgba(0, 0, 0, 0.2);
   background-color: #9FCA4A;
   background-image: radial-gradient(hsl(78deg, 51%, 50%) 15%, transparent 16%), radial-gradient(hsl(78deg, 52%, 50%) 15%, transparent 16%);
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
+}
+.frog:before {
+  position: absolute;
+  content: "";
+  width: 30vmin;
+  height: 14.5vmin;
+  border: 0.75vmin solid #212529;
+  border-radius: 50%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  top: 11vmin;
+  left: 4.5vmin;
+  animation: mouth 10s ease-out infinite alternate;
+}
+@keyframes mouth {
+  to {
+    border: 4vmin solid #212529;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+.frog:after {
+  content: "";
+  position: absolute;
+  width: 0.8vmin;
+  height: 2vmin;
+  background: #212529;
+  border-radius: 50%;
+  top: 21.3vmin;
+  left: 15.6vmin;
+  box-shadow: 7.4vmin 0 #212529;
 }
 .frog .eyes {
   position: absolute;
@@ -73,9 +106,15 @@
   height: 3vmin;
   background: #fff;
   border-radius: 50%;
-  left: 0.6vmin;
-  top: 0.7vmin;
-  box-shadow: 20.4vmin 0 #fff;
+  left: 0.4vmin;
+  top: 1.4vmin;
+  box-shadow: 18.8vmin 0 #fff;
+  animation: look 5s ease-out infinite alternate;
+}
+@keyframes look {
+  to {
+    left: 2.5vmin;
+  }
 }
 .frog .eyes:before {
   content: "";
@@ -229,7 +268,7 @@
   left: 33.8vmin;
   z-index: -1;
 }
-.frog .finger-left1 {
+.frog .fingers div:first-child {
   position: absolute;
   width: 1.6vmin;
   height: 6vmin;
@@ -238,7 +277,7 @@
   transform: rotate(94deg);
   left: 7.7vmin;
 }
-.frog .finger-left1:before {
+.frog .fingers div:first-child:before {
   content: "";
   position: absolute;
   width: 5vmin;
@@ -247,7 +286,7 @@
   top: -13.2vmin;
   left: 4.2vmin;
 }
-.frog .finger-left1:after {
+.frog .fingers div:first-child:after {
   content: "";
   position: absolute;
   width: 3vmin;
@@ -257,7 +296,7 @@
   top: -0.7vmin;
   left: -0.9vmin;
 }
-.frog .finger-left2 {
+.frog .fingers div:nth-child(2) {
   position: absolute;
   width: 1.6vmin;
   height: 6vmin;
@@ -266,7 +305,7 @@
   transform: rotate(180deg);
   left: 4.7vmin;
 }
-.frog .finger-left2:after {
+.frog .fingers div:nth-child(2):after {
   content: "";
   position: absolute;
   width: 3vmin;
@@ -278,7 +317,7 @@
   box-shadow: -4.4vmin 0 #7e9f32;
   transform: rotate(356deg);
 }
-.frog .finger-right1 {
+.frog .fingers div:nth-child(3) {
   position: absolute;
   width: 1.6vmin;
   height: 6vmin;
@@ -287,7 +326,7 @@
   transform: rotate(269deg);
   left: 29.1vmin;
 }
-.frog .finger-right1:before {
+.frog .fingers div:nth-child(3):before {
   content: "";
   position: absolute;
   width: 5vmin;
@@ -296,7 +335,7 @@
   top: -12.2vmin;
   left: -7.9vmin;
 }
-.frog .finger-right1:after {
+.frog .fingers div:nth-child(3):after {
   content: "";
   position: absolute;
   width: 3vmin;
@@ -306,7 +345,7 @@
   top: -0.7vmin;
   left: -0.7vmin;
 }
-.frog .finger-right2 {
+.frog .fingers div:last-child {
   position: absolute;
   width: 1.6vmin;
   height: 6vmin;
@@ -315,7 +354,7 @@
   transform: rotate(180deg);
   left: 32.3vmin;
 }
-.frog .finger-right2:after {
+.frog .fingers div:last-child:after {
   content: "";
   position: absolute;
   width: 3vmin;
@@ -327,27 +366,345 @@
   box-shadow: 5.1vmin 0 #7e9f32;
   transform: rotate(3deg);
 }
-.frog:before {
-  position: absolute;
-  content: "";
-  width: 30vmin;
-  height: 14.5vmin;
-  border: 0.75vmin solid #212529;
-  border-radius: 50%;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  top: 11vmin;
-  left: 4.5vmin;
+
+.fly {
+  position: relative;
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 36% 64% 50% 50%/29% 49% 51% 71%;
+  border: 0.25vmin solid #212529;
+  top: -41vmin;
+  left: 47vmin;
+  transform: rotate(338deg);
+  transform-style: preserve-3d;
+  box-shadow: inset -10px -12px 7px 3px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(hsl(210deg, 11%, 40%) 1px, transparent 1px), linear-gradient(to right, hsl(210deg, 11%, 40%) 1px, #6F7E83 1px);
+  background-size: 5px 5px;
+  animation: buzz 0.1s linear infinite;
 }
-.frog:after {
+@keyframes buzz {
+  to {
+    transform: translate(-2px, 2px) rotate(340deg);
+  }
+}
+.fly .eye-left {
+  position: absolute;
+  width: 5vmin;
+  height: 5vmin;
+  background: #fff;
+  border-radius: 50%;
+  border: 0.25vmin solid #212529;
+  top: -2.4vmin;
+  left: -1.8vmin;
+  box-shadow: inset -10px -12px 7px 3px rgba(0, 0, 0, 0.2);
+  transform: translateZ(-10px);
+}
+.fly .eye-left:before {
   content: "";
   position: absolute;
-  width: 0.8vmin;
+  width: 1vmin;
+  height: 1vmin;
+  border-radius: 50%;
+  background: #212529;
+  top: 1.5vmin;
+  left: 1.3vmin;
+}
+.fly .eye-left:after {
+  content: "";
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  border-radius: 50%;
+  background: #fff;
+  top: 1.5vmin;
+  left: 1.3vmin;
+}
+.fly .eye-right {
+  position: absolute;
+  width: 5vmin;
+  height: 5vmin;
+  background: #fff;
+  border-radius: 50%;
+  border: 0.25vmin solid #212529;
+  top: -1.9vmin;
+  left: 1.5vmin;
+  box-shadow: inset -3px -4px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.fly .eye-right:before {
+  content: "";
+  position: absolute;
+  width: 1vmin;
+  height: 1vmin;
+  border-radius: 50%;
+  background: #212529;
+  top: 1.8vmin;
+  left: 1.6vmin;
+}
+.fly .eye-right:after {
+  content: "";
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  border-radius: 50%;
+  background: #fff;
+  top: 1.7vmin;
+  left: 1.6vmin;
+}
+.fly .eyebrows {
+  position: absolute;
+  width: 1.5vmin;
   height: 2vmin;
+  border-radius: 50%;
+  border: 0.35vmin solid #212529;
+  top: -3.6vmin;
+  left: 0.8vmin;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  transform: rotate(10deg);
+}
+.fly .eyebrows:before {
+  content: "";
+  position: absolute;
+  width: 1.5vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  border: 0.35vmin solid #212529;
+  top: -0.1vmin;
+  left: 3.2vmin;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  transform: rotate(18deg);
+}
+.fly .nose {
+  position: absolute;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 36% 64% 50% 50%/29% 49% 51% 71%;
+  border: 0.4vmin solid #212529;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  top: 1.6vmin;
+  left: -2.1vmin;
+  transform: rotate(45deg);
+}
+.fly .nose:before {
+  content: "";
+  position: absolute;
+  width: 3.7vmin;
+  height: 5vmin;
+  border-radius: 36% 64% 50% 50%/29% 49% 51% 71%;
+  border: 1.8vmin solid #6F7E83;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  left: -0.2vmin;
+  top: 0.2vmin;
+  transform: rotate(2deg);
+}
+.fly .nose:after {
+  content: "";
+  position: absolute;
+  width: 4.3vmin;
+  height: 3.2vmin;
+  border-radius: 36% 64% 50% 50%/29% 49% 51% 71%;
+  border: 0.4vmin solid #212529;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  top: 1vmin;
+  left: 1vmin;
+  transform: rotate(21deg);
+}
+.fly .nose .nostrils {
+  position: absolute;
+  height: 1.5vmin;
+  width: 1.5vmin;
+  border-radius: 50%;
+  background: #6F7E83;
+  top: 4.1vmin;
+  left: 0.1vmin;
+  border: 0.25vmin solid #212529;
+  border-top: none;
+  border-right: none;
+}
+.fly .nose .nostrils:before {
+  content: "";
+  position: absolute;
+  height: 1.5vmin;
+  width: 1.5vmin;
+  border-radius: 50%;
+  background: #6F7E83;
+  top: -0.7vmin;
+  left: 0.7vmin;
+  border: 0.25vmin solid #212529;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(74deg);
+}
+.fly .wings {
+  position: absolute;
+  width: 6.1vmin;
+  height: 13vmin;
+  border-radius: 50% 0 50% 50%;
+  border: 3px solid black;
+  background: #95CDE6;
+  top: -10.7vmin;
+  left: 6vmin;
+  transform: rotate(174deg) translateZ(-10px);
+  box-shadow: inset 6px -4px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.fly .wings .wing-lines-left {
+  position: absolute;
+  width: 0.3vmin;
+  height: 9vmin;
+  background: #212529;
+  top: 2vmin;
+  left: 2.6vmin;
+  transform: rotate(2deg);
+}
+.fly .wings .wing-lines-left:before {
+  content: "";
+  position: absolute;
+  width: 0.3vmin;
+  height: 2.6vmin;
+  background: #212529;
+  top: 5.3vmin;
+  left: -0.7vmin;
+  transform: rotate(30deg);
+}
+.fly .wings .wing-lines-left:after {
+  content: "";
+  position: absolute;
+  width: 0.3vmin;
+  height: 2.8vmin;
+  background: #212529;
+  top: 1.3vmin;
+  left: 1vmin;
+  transform: rotate(318deg);
+}
+.fly .wings .wing-lines-right {
+  position: absolute;
+  width: 0.3vmin;
+  height: 9.6vmin;
+  background: #212529;
+  top: -5.8vmin;
+  left: -3.1vmin;
+  transform: rotate(77deg);
+  z-index: 1;
+}
+.fly .wings .wing-lines-right:before {
+  content: "";
+  position: absolute;
+  width: 0.3vmin;
+  height: 2.6vmin;
+  background: #212529;
+  top: 5.3vmin;
+  left: -0.7vmin;
+  transform: rotate(30deg);
+}
+.fly .wings .wing-lines-right:after {
+  content: "";
+  position: absolute;
+  width: 0.3vmin;
+  height: 2.8vmin;
+  background: #212529;
+  top: 1.3vmin;
+  left: 1vmin;
+  transform: rotate(318deg);
+}
+.fly .wings:after {
+  content: "";
+  position: absolute;
+  width: 5.5vmin;
+  height: 13vmin;
+  border-radius: 50% 0 50% 50%;
+  border: 3px solid black;
+  background: #95CDE6;
+  top: -7.7vmin;
+  left: -6.4vmin;
+  transform: rotate(76deg);
+  box-shadow: inset 6px -4px 7px 3px rgba(0, 0, 0, 0.2);
+}
+.fly .legs div:first-child {
+  position: absolute;
+  height: 2.5vmin;
+  width: 2vmin;
+  border-radius: 50%;
+  border-left: 0.4vmin solid #212529;
+  top: 6.3vmin;
+  left: -0.5vmin;
+  transform: rotate(23deg);
+}
+.fly .legs div:first-child:before {
+  content: "";
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
   background: #212529;
   border-radius: 50%;
-  top: 21.3vmin;
-  left: 15.6vmin;
-  box-shadow: 7.4vmin 0 #212529;
+  top: 2.2vmin;
+  left: 0vmin;
+}
+.fly .legs div:nth-child(2) {
+  position: absolute;
+  height: 3.2vmin;
+  width: 2vmin;
+  border-radius: 50%;
+  border-left: 0.4vmin solid #212529;
+  top: 6.8vmin;
+  left: 1.1vmin;
+  transform: rotate(17deg);
+}
+.fly .legs div:nth-child(2):before {
+  content: "";
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  background: #212529;
+  border-radius: 50%;
+  top: 2.9vmin;
+  left: 0.1vmin;
+}
+.fly .legs div:nth-child(3) {
+  position: absolute;
+  height: 2.5vmin;
+  width: 2vmin;
+  border-radius: 50%;
+  border-left: 0.4vmin solid #212529;
+  top: 9.4vmin;
+  left: 4.8vmin;
+  transform: rotate(4deg);
+}
+.fly .legs div:nth-child(3):before {
+  content: "";
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  background: #212529;
+  border-radius: 50%;
+  top: 2.2vmin;
+  left: 0vmin;
+}
+.fly .legs div:last-child {
+  position: absolute;
+  height: 3.2vmin;
+  width: 2vmin;
+  border-radius: 50%;
+  border-left: 0.4vmin solid #212529;
+  top: 8vmin;
+  left: 6.6vmin;
+  transform: rotate(347deg);
+}
+.fly .legs div:last-child:before {
+  content: "";
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  background: #212529;
+  border-radius: 50%;
+  top: 2.9vmin;
+  left: 0.1vmin;
 }
