@@ -107,6 +107,11 @@ h1 {
         &.frog {
           color: green;
         }
+
+        &.fly {
+          color:hsl(350, 100%, 75%);
+          @include frame;
+        }
       
         &.robot {
             color: hsl(0, 0%, 50%);
