@@ -1,29 +1,41 @@
 @import 'modules/reset';
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
 
 body {
-
-    font-family: 'Roboto', sans-serif;
-    gap: 1.5em;
-    text-align: center;
-    background: hsl(46, 60%, 75%);
+    height: 100vh;
+    width: 100vw;
     display: grid;
-    width: 70vw;
-    margin: 0 auto;
-    min-height: 100vh;
+    place-items: center;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e5e5f7;
+    background: repeating-linear-gradient( -45deg, hsl(237, 92%, 90%), hsl(237, 92%, 90%) 5px, #ffffff 5px, #ffffff 25px );
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 75vw;
+    height: 95vh;
+    padding: 2rem;
+    background: hsl(237, 92%, 90%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 header {
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid hsl(0, 0%, 60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 h1 {
     font-family: 'Major Mono Display', monospace;
     font-size: 5.5vmax;
     letter-spacing: 20px;
-    background: hsl(195, 53%, 79%);
+    background: hsl(237, 92%, 80%);
     background-clip: text;
     -webkit-background-clip: text;
     text-stroke: 3.5px #212529;
@@ -33,11 +45,10 @@ h1 {
     line-height: 0.9;
 }
 
-.container {
-    background: hsl(0, 0%, 90%);
-    padding: 2rem;
-    border-left: 1px solid hsl(0, 0%, 60%);
-    border-right: 1px solid hsl(0, 0%, 60%);
+p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    margin: 1rem 0 0 0;
 }
 
 main {
@@ -52,28 +63,34 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s linear;
+
+    &:hover i {
+        transform: rotate(22.5deg);
+    }
 
     i {
         font-size: 5rem;
         padding: 2rem;
-        color: hsl(120, 61%, 33%);
+        color: hsl(237, 92%, 80%);
         filter: drop-shadow(0.4rem 0.4rem 0.125rem rgba(0, 0, 0, 1));
+        transition: all 0.25s linear;
     }
 
     &:has(.fa-planet-ringed) {
-        background: hsl(344, 37%, 67%);
+        background: hsl(344, 100%, 91%);
     }
 
-    &:has(.fa-meat) {
-        background: hsl(300, 4%, 67%);
+    &:has(.fa-popsicle) {
+        background: hsl(134, 100%, 88%);
     }
 
     &:has(.fa-football-helmet) {
-        background: hsl(223, 43%, 67%);
+        background: hsl(223deg 100% 80%);
     }
 
     &:has(.fa-star-shooting) {
-        background: hsl(30, 100%, 67%);
+        background: hsl(30, 100%, 84%);
     }
 
     code {
