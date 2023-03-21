@@ -319,6 +319,9 @@ h1 {
   top: -2.5vmin;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
+.gallery div.tv {
+  color: #00ABBD;
+}
 .gallery div i {
   font-size: 15vmin;
   text-align: center;

@@ -1,0 +1,236 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-image:  linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, #0F2027 1px);
+    background-size: 50px 30px;
+}
+
+.border {
+  position: relative;
+  width: 49.6vw;
+  height: 30.7vw;
+  border-radius: 2.5rem;
+  background: #fff;
+  z-index: 0;
+  top: 4vmin;
+}
+
+  .tv {
+    position: relative;
+    width: 40vw;
+    aspect-ratio: 1.5 / 1;
+    border-radius: 2rem;
+    top: 3.8vmin;
+    left: 3.6vmin;
+    animation: tv-static 7s linear infinite;
+
+    @keyframes tv-static {
+      0% {
+        background-image: repeating-radial-gradient(circle at 50% 50%, white, black 0.00085px);
+        background-size: 50% 50%;
+      }
+
+      50% {
+        background-image: repeating-radial-gradient(circle at 50% 50%, white, black 0.00085px);
+        background-size: 100% 100%;
+      }
+
+      75% {
+        background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
+      }
+
+      100% {
+        background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
+      }
+    }
+  
+    @keyframes rotation {
+      0% {
+          --gradient-angle: 0deg;
+      }
+  
+      100% {
+          --gradient-angle: 360deg;
+      }
+    }
+
+    &:before, 
+    &:after {
+        content: '';
+        position: absolute;
+        inset: -1.5rem;
+        inset-inline-end: -7rem;
+        z-index: -1;
+
+        background: conic-gradient(
+            from var(--gradient-angle),
+            #0e4b50,
+            #2d8f85,
+            #637c54,
+            #2d8f85,
+            #0e4b50
+        );
+        
+        border-radius: inherit;
+        animation: rotation 5s linear infinite;
+    }
+
+    &:before {
+        filter: blur(3.5rem);
+    }
+  }
+
+  .antenna {
+    position: absolute;
+    width: 20vmin;
+    height: 20vmin;
+    border: 1.5vmin solid hsl(0, 0%, 75%);
+    top: -23vmin;
+    left: 23.1vmin;
+    transform: rotate(15deg);
+    transform-origin: bottom right;
+    border-top: none;
+    border-left: none;
+    animation: antenna 3s steps(8, end) infinite alternate;
+
+    @keyframes antenna {
+      to {
+        transform: rotate(85deg);
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 4vmin;
+      height: 4vmin;
+      border-radius: 50%;
+      bottom: -2.7vmin;
+      left: -3.2vmin;
+      background: radial-gradient(circle at 50% 120%, hsl(0, 0%, 40%), #0a0a0a 80%, #000000 100%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 4vmin;
+      height: 4vmin;
+      border-radius: 50%;
+      bottom: 17.3vmin;
+      left: 17vmin;
+      background: radial-gradient(circle at 50% 120%, hsl(0, 0%, 40%), #0a0a0a 80%, #000000 100%);
+    }
+  }
+
+  .panel {
+    position: absolute;
+    width: 9vmin;
+    height: 24vmin;
+    background: #B2B2CD;
+    border: 1px solid #212529;
+    right: -11.3vmin;
+    top: 2.3vmin;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0.25vmin;
+      height: 3.5vmin;
+      background: #212529;
+      transform: rotate(45deg);
+      top: 3.9vmin;
+      left: 4.1vmin;
+      z-index: 1;
+      box-shadow: 5.7vmin 5.6vmin #212529;
+    }
+
+    .knobs {
+      position: absolute;
+      height: 5.5vmin;
+      width: 5.5vmin;
+      border-radius: 50%;
+      background: #212529;
+      box-shadow: 0 8vmin #212529;
+      top: 3vmin;
+      left: 1.6vmin;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 3.5vmin;
+        width: 3.5vmin;
+        border-radius: 50%;
+        background: linear-gradient(0deg, rgba(178,178,205,1) 0%, rgba(255,255,255,1) 50%, rgba(178,178,205,1) 100%);
+        background-size: 100% 100%;
+        top: 1vmin;
+        left: 1vmin;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        height: 3.5vmin;
+        width: 3.5vmin;
+        border-radius: 50%;
+        background: linear-gradient(0deg, rgba(178,178,205,1) 0%, rgba(255,255,255,1) 50%, rgba(178,178,205,1) 100%);
+        background-size: 100% 100%;
+        top: 9vmin;
+        left: 1vmin;
+      }
+    }
+
+    .button {
+      position: absolute;
+      height: 3.1vmin;
+      width: 3.1vmin;
+      border-radius: 50%;
+      background: #212529;
+      top: 18.6vmin;
+      left: 2.8vmin;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 1.9vmin;
+        width: 1.9vmin;
+        border-radius: 50%;
+        background: linear-gradient(0deg, rgba(178,178,205,1) 0%, rgba(255,255,255,1) 50%, rgba(178,178,205,1) 100%);
+        background-size: 100% 100%;
+        top: 0.6vmin;
+        left: 0.6vmin;
+
+      }
+    }
+  }
+
+  .speaker {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 9vmin;
+    height: 19.1vmin;
+    background: #212529;
+    right: -11.3vmin;
+    top: 28.7vmin;
+
+    > * {
+      width: 8vmin;
+      height: 0.6vmin; 
+      background: rgba(178,178,205,1);
+    }
+  }

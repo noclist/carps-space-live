@@ -149,6 +149,10 @@ h1 {
           --fa-secondary-opacity: 1;
           @include frame;
         }
+
+        &.tv {
+          color: #00ABBD;
+        }
         
     
         i {
