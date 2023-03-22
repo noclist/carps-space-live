@@ -19,9 +19,9 @@ body {
 
 .border {
   position: relative;
-  width: 49.6vw;
-  height: 30.7vw;
-  border-radius: 2.5rem;
+  width: 93.2vmin;
+  height: 57.7vmin;
+  border-radius: 5vmin;
   background: #fff;
   z-index: 0;
   top: 4vmin;
@@ -29,9 +29,9 @@ body {
 
 .tv {
   position: relative;
-  width: 40vw;
-  aspect-ratio: 1.5/1;
-  border-radius: 2rem;
+  width: 75.2vmin;
+  height: 50.1vmin;
+  border-radius: 4vmin;
   top: 3.8vmin;
   left: 3.6vmin;
   background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
@@ -63,8 +63,8 @@ body {
 .tv:before, .tv:after {
   content: "";
   position: absolute;
-  inset: -1.5rem;
-  inset-inline-end: -7rem;
+  inset: -3vmin;
+  inset-inline-end: -13.7vmin;
   z-index: -1;
   background: conic-gradient(from var(--gradient-angle), #0e4b50, #2d8f85, #637c54, #2d8f85, #0e4b50);
   border-radius: inherit;
