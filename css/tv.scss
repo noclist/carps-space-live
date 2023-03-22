@@ -35,25 +35,24 @@ body {
     border-radius: 2rem;
     top: 3.8vmin;
     left: 3.6vmin;
+    background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
+    background-size: 100% 100%;
     animation: tv-static 7s linear infinite;
 
     @keyframes tv-static {
-      0% {
-        background-image: repeating-radial-gradient(circle at 50% 50%, white, black 0.00085px);
-        background-size: 50% 50%;
+      50% {
+        background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
+        background-size: 100% 100%;
       }
 
-      50% {
+      51% {
         background-image: repeating-radial-gradient(circle at 50% 50%, white, black 0.00085px);
         background-size: 100% 100%;
       }
 
-      75% {
-        background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
-      }
-
       100% {
-        background-image: linear-gradient(90deg, #EBD2B3 0% 14.25%, #E19A42 14.25% 28.5%, #7AACA1 28.5% 42.75%, #1DA570 42.75% 57%, #7F395B 57% 71.25%, #D3544B 71.25% 85.5%, #7BAEC1 85.5% 100%);
+        background-image: repeating-radial-gradient(circle at 50% 50%, white, black 0.00085px);
+        background-size: 50% 50%;
       }
     }
   
@@ -148,11 +147,11 @@ body {
       content: '';
       position: absolute;
       width: 0.25vmin;
-      height: 3.5vmin;
+      height: 3.6vmin;
       background: #212529;
       transform: rotate(45deg);
       top: 3.9vmin;
-      left: 4.1vmin;
+      left: 4.2vmin;
       z-index: 1;
       box-shadow: 5.7vmin 5.6vmin #212529;
     }
