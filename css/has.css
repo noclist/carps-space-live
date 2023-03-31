@@ -89,11 +89,12 @@ p {
 }
 
 main {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-@media (min-width: 640px) {
+@media (min-width: 760px) {
   main {
     grid-template-columns: 1fr 1fr;
   }
@@ -101,21 +102,26 @@ main {
 
 .parent {
   border: 2px solid #212529;
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
   transition: all 0.5s linear;
 }
 .parent:hover i {
   transform: rotate(22.5deg);
 }
 .parent i {
-  font-size: 5rem;
-  padding: 2rem;
+  font-size: 3rem;
   color: hsl(244deg, 100%, 70%);
   filter: drop-shadow(0.4rem 0.4rem 0.125rem rgb(0, 0, 0));
   transition: all 0.25s linear;
+}
+@media (min-width: 500px) {
+  .parent i {
+    font-size: 5rem;
+  }
 }
 .parent:has(.fa-planet-ringed) {
   background: hsl(344deg, 100%, 91%);
@@ -130,5 +136,10 @@ main {
   background: hsl(30deg, 100%, 84%);
 }
 .parent code {
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+@media (min-width: 500px) {
+  .parent code {
+    font-size: 1.5rem;
+  }
 }

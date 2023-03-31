@@ -48,21 +48,23 @@ p {
 }
 
 main {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 
-    @media(min-width: 640px) {
+    @media(min-width: 760px) {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 .parent {
     border: 2px solid #212529;
-    padding: 0.5rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1.5rem;
     transition: all 0.5s linear;
 
     &:hover i {
@@ -70,11 +72,14 @@ main {
     }
 
     i {
-        font-size: 5rem;
-        padding: 2rem;
+        font-size: 3rem;
         color: hsl(244, 100%, 70%);
         filter: drop-shadow(0.4rem 0.4rem 0.125rem rgba(0, 0, 0, 1));
         transition: all 0.25s linear;
+
+        @media(min-width: 500px) {
+            font-size: 5rem;
+        }
     }
 
     &:has(.fa-planet-ringed) {
@@ -94,6 +99,10 @@ main {
     }
 
     code {
-        font-size: 1.5rem;
+        font-size: 1rem;
+
+        @media(min-width: 500px) {
+            font-size: 1.5rem;
+        }
     }
 }
