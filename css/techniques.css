@@ -74,10 +74,8 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-h2.gradient {
-  background: linear-gradient(120deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+h2.nowrap {
+  white-space: nowrap;
 }
 
 main {
