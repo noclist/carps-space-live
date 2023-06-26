@@ -94,12 +94,13 @@ h2.gradient {
 main {
   display: grid;
   grid-template-rows: 160px repeat(4, 1fr);
-  width: min(100% - 3rem, 85vw);
+  width: calc(100% - 3rem);
   margin-inline: auto;
   padding: 2rem 0;
 }
 @media (min-width: 955px) {
   main {
+    width: 85vw;
     grid-template-columns: repeat(10, 1fr);
   }
 }
