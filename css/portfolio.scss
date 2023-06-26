@@ -1,0 +1,111 @@
+@import 'reset';
+@import 'header';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --text: #081104;
+    --background: #e3f6da;
+    --primary: #26a13c;
+    --accent: #124e3b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: radial-gradient(ellipse at left top, var(--background) 0%, #c9eeb9 62%, #b1e698 100%);
+}
+
+main {
+    @media (min-width: 700px) {
+        grid-template-rows: 0.33fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    display: grid;
+    gap: 1rem;
+    width: min(100% - 3rem, 85vw);
+    margin-inline: auto;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+header { 
+    @media(min-width: 700px) {
+        grid-column: span 2;
+    }
+}
+
+#img {
+    background-image: url('/images/bike.png');
+    background-position: center;
+    background-size: cover;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+}
+
+.items {
+    justify-self: center;
+    align-self: center;
+
+    @media(min-width: 955px) {
+        align-self: start;
+    }
+
+    a {
+        font-size: 5.5vmax;
+        display: block;
+        cursor: pointer;
+        position: relative;
+        width: fit-content;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+    
+        &:has(+ a) {
+            margin-bottom: 0.25rem;
+        }
+    
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+    
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 250ms ease-in;
+        }
+    
+        &:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+}
+
+section:has(.art:hover) + #img {
+    background-image: url('/images/edgewater.png') !important;
+    background-position: center;
+}
+
+section:has(.technique:hover) + #img {
+    background-image: url('/images/bike2.png') !important;
+    background-position: center;
+}
+
+section:has(.film:hover) + #img {
+    background-image: url('/images/breakwall.png') !important;
+    background-position: top;
+}
+
+section:has(.experiments:hover) + #img {
+    background-image: url('/images/shoreway.png') !important;
+    background-position: bottom;
+}
+
+section:not(:hover) + #img {
+    background-image: url('/images/bike.png');
+    background-position: center;
+}

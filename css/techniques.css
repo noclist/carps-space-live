@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+}
+header h2:has(+ h2) {
+  margin-bottom: 0.5rem;
+}
+header a {
+  color: var(--text);
+  text-decoration: none;
+}
+header span.name {
+  display: flex;
+  gap: 0.5rem;
+}
+header span.name i {
+  font-size: 1.6rem;
+  --fa-primary-color: #124e3b;
+  --fa-secondary-color: #26a13c;
+}
+header span.links {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  margin-left: auto;
+}
+header span.links a:link,
+header span.links a:visited,
+header span.links a:hover,
+header span.links a:active {
+  color: var(--accent);
+  cursor: pointer;
+}
+header span.links i {
+  font-size: 1.5rem;
+}
+
+:root {
+  --background: #fafbf9;
+  --text: #3C3C43;
+  --primary: #00a2de;
+  --accent: #00a98e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+h2.gradient {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 160px repeat(9, 1fr);
+  width: min(100% - 3rem, 85vw);
+  margin-inline: auto;
+  padding: 2rem 0;
+}
+@media (min-width: 955px) {
+  main {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 955px) {
+  main header {
+    grid-column: span 12;
+  }
+}
+main > div {
+  padding: 1rem 0;
+  display: grid;
+  place-items: center;
+}
+main > div:has([class]) {
+  border-bottom: 4px solid var(--primary);
+  transition: background 500ms ease;
+}
+main > div:has([class]):hover {
+  background: hsl(196deg, 100%, 97%);
+}
+main > div:not(:has([class])) {
+  display: none;
+}
+@media (min-width: 955px) {
+  main > div:not(:has([class])) {
+    display: block;
+  }
+}
+main > div a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  transition: transform 500ms ease;
+}
+main > div a:hover {
+  transform: translateX(13vmin);
+}
+main > div i {
+  font-size: 5.5vmax;
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 1;
+}
+main > div.auto-fit i {
+  --fa-secondary-color: #3ec13e;
+  --fa-primary-color: #5858e9;
+}
+@media (min-width: 955px) {
+  main > div.auto-fit {
+    grid-column: span 9;
+  }
+}
+main > div.masonry i {
+  --fa-primary-color: #B1AD94;
+  --fa-secondary-color: #BE5A3E;
+}
+@media (min-width: 955px) {
+  main > div.masonry {
+    grid-column: span 12;
+  }
+}
+main > div.scroll-snap i {
+  --fa-primary-color: hsl(210, 11%, 25%);
+  --fa-secondary-color: hsl(330, 2%, 70%);
+}
+@media (min-width: 955px) {
+  main > div.scroll-snap {
+    grid-column: span 9;
+  }
+}
+main > div.grail i {
+  --fa-primary-color: hsl(39, 89%, 47%);
+  --fa-secondary-color: hsl(39, 89%, 65%);
+}
+@media (min-width: 955px) {
+  main > div.grail {
+    grid-column: span 12;
+    border-top: 4px solid var(--primary);
+  }
+}
+main > div.container i {
+  --fa-primary-color: hsl(0, 0%, 25%);
+  --fa-secondary-color: hsl(3, 54%, 55%);
+}
+@media (min-width: 955px) {
+  main > div.container {
+    grid-column: span 11;
+  }
+}
+main > div.has i {
+  --fa-secondary-color: rgb(255, 0, 200);
+  --fa-primary-color: hsl(240, 100%, 80%);
+}
+@media (min-width: 955px) {
+  main > div.has {
+    grid-column: span 10;
+  }
+}
+main > div.transforms i {
+  --fa-primary-color: hsl(0, 1%, 25%);
+  --fa-secondary-color: hsl(206, 96%, 55%);
+}
+@media (min-width: 955px) {
+  main > div.transforms {
+    grid-column: span 11;
+  }
+}
+main > div.shadows i {
+  --fa-primary-color: hsl(210, 11%, 50%);
+  --fa-secondary-color: hsl(60, 100%, 37%);
+}
+@media (min-width: 955px) {
+  main > div.shadows {
+    grid-column: span 10;
+  }
+}
+main > div.subgrid i {
+  --fa-primary-color: hsl(120, 49%, 55%);
+  --fa-secondary-color: hsl(210, 11%, 30%);
+}
+@media (min-width: 955px) {
+  main > div.subgrid {
+    grid-column: span 8;
+  }
+}
+main a {
+  color: var(--text);
+  text-decoration: none;
+}
+main h3 {
+  font-size: 5.5vmax;
+}

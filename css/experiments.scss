@@ -1,0 +1,210 @@
+@import 'reset';
+@import 'header';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --text: #081104;
+    --background: #e3f6da;
+    --primary: #26a13c;
+    --accent: #124e3b;
+
+    --background: #fafbf9;
+    --text: #3C3C43;
+    --primary: #00a2de;
+    --accent: #00a98e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+  
+header {
+    @media(min-width: 955px) {
+        grid-column: span 10;
+    } 
+}
+
+h2.gradient {
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 160px repeat(4, 1fr);
+    width: min(100% - 3rem, 85vw);
+    margin-inline: auto;
+    padding: 2rem 0;
+
+    @media(min-width: 955px) {
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    > div {
+        padding: 2rem;
+        display: grid;
+        place-items: center;
+
+        &:has([class]) {
+            border-bottom: 4px dashed var(--primary);
+            transition: background 500ms ease;
+
+            &:hover {
+                background: hsl(101, 61%, 87%);
+            }
+        }
+
+        &:not(:has([class])) {
+            display: none;
+
+            @media(min-width: 955px) {
+                display: block;
+                background: hsl(101, 61%, 87%) !important;
+            }
+        }
+
+        a {
+            display: grid;
+            place-items: center;
+            gap: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        i {
+            font-size: 15vmin;
+            --fa-primary-opacity: 1;
+            --fa-secondary-opacity: 1;
+        }
+
+        &.library {
+            border-top: 4px dashed var(--primary);
+            i {
+                --fa-secondary-color: hsl(208, 70%, 50%); 
+                --fa-primary-color: hsl(58, 55%, 60%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 4;
+            }
+        }
+
+        &.tilt {
+            i {
+                --fa-primary-color: hsl(120, 63%, 52%);
+                --fa-secondary-color: hsl(206, 11%, 27%);
+            }
+
+            @media(min-width: 955px) {
+                border-top: 4px dashed var(--primary);
+                grid-column: span 6;
+            }
+        }
+
+        &.cleveland {
+            i {
+                --fa-primary-color: #B9B9B9;
+                --fa-secondary-color: #1D3741;
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 6;
+            }
+        }
+
+        &.cube {
+            i {
+                --fa-primary-color: hsl(39, 89%, 47%);
+                --fa-secondary-color: hsl(39, 89%, 65%); 
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 4;
+            }
+        }
+
+        &.alien {
+            i {
+                --fa-primary-color: hsl(0, 1%, 25%);
+                --fa-secondary-color: hsl(206, 96%, 55%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 4;
+            }
+        }
+
+        &.cards {
+            i {
+                --fa-primary-color: #e6e35a;
+                --fa-secondary-color: #4d83e7;
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 6;
+            }
+        }
+
+        &.turtle {
+            i {
+                --fa-primary-color: hsl(33, 24%, 40%);
+                --fa-secondary-color: green;
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 6;
+            }
+        }
+
+        &.maze {
+            i {
+                --fa-primary-color: hsl(210, 11%, 50%);
+                --fa-secondary-color: hsl(305, 100%, 55%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 4;
+            }
+        }
+
+        &.subgrid {
+            i {
+                --fa-primary-color: hsl(120, 49%, 55%);
+                --fa-secondary-color: hsl(210, 11%, 30%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 4;
+            }
+        }
+
+        &.form {
+            i {
+                --fa-secondary-color: hsl(0, 0%, 70%);
+                --fa-primary-color: #5873E1;
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 6;
+            }
+        }
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}

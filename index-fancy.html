@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/favicon-basic.ico" /> 
+    <title>carps space</title>
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/modules/hover.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <style>
+        .fa-thumbs-up, .fa-thumbs-down {
+            color: #fff;
+            cursor: pointer;
+            filter: drop-shadow(0 0 0.75rem hsl(350, 3%, 44%));
+            font-size: 4rem;
+        }
+    </style>
+    <div class="container">
+        <header>
+            <h1>carps space</h1>
+            <!-- <div id="like"></div> -->
+        </header>
+        
+        <p>ben carpenter is a front end developer in cleveland, ohio!</p>
+        <main>
+            <section class="art xl col-span-2 row-span-2 rotateXY-left" onClick="navigate('art')"> 
+                <i class="fad fa-palette"></i>
+                <h2>css art gallery</h2>
+            </section>
+
+            <section class="grail hvr-icon-float" onClick="navigate('holygrail')">
+                <i class="fad fa-trophy hvr-icon"></i>
+                <h2>the holy grail layout</h2>
+            </section>
+
+            <section class="ddd hvr-icon-bob" onClick="navigate('bounce')">
+                <i class="fad fa-cubes hvr-icon"></i>
+                <h2>3d css</h2>
+            </section>
+
+            <section class="cquery hvr-icon-wobble-horizontal" onClick="navigate('container')">
+                <i class="fad fa-truck-container hvr-icon"></i>
+                <h2>container queries</h2>
+            </section>
+
+            <section class="film xl col-span-2 row-span-2 col-start-3 row-start-3 rotateXY-right" onClick="navigate('_site/movies/2021/index')">
+                <i class="fad fa-film-alt"></i>
+                <h2>top ten films</h2>
+            </section>
+
+            <section class="subgrid rotateX-right" onClick="navigate('subgrid')">
+                <i class="fad fa-game-board-simple"></i>
+                <h2>subgrid</h2>
+            </section>
+
+            <section class="form xl hvr-icon-shrink col-span-2" onClick="navigate('forms')">
+                <i class="fad fa-pen-field hvr-icon"></i>
+                <h2>form controls</h2>
+            </section>
+
+            <section class="transform hvr-icon-float-away" onClick="navigate('transform')">
+                <i class="fad fa-transporter-1 hvr-icon"></i>
+                <h2>css transforms</h2>
+            </section>
+
+            <section class="snap xl row-span-2 hvr-icon-buzz" onClick="navigate('scrollsnap')">
+                <i class="fad fa-mouse hvr-icon"></i>
+                <h2>scroll snap</h2>
+            </section>
+
+            <section class="shadow xl row-start-4 col-start-5 row-span-2 hvr-icon-pulse" onClick="navigate('shadows')">
+                <i class="fad fa-lightbulb-on hvr-icon"></i>
+                <h2>box shadows</h2>
+            </section>
+
+            <section class="maze skew" onClick="navigate('lines')">
+                <i class="fad fa-wave-square"></i> 
+                <h2>a responsive maze</h2>
+            </section>  
+
+            <section class="books xl col-span-2 row-span-2 row-start-5 rotateXY-left" onClick="navigate('books')">
+                <i class="fad fa-books"></i> 
+                <h2>css grid library</h2>
+            </section>
+
+            <section class="cards hvr-curl-bottom-left" onClick="navigate('cards')">
+                <i class="fad fa-cards"></i>
+                <h2>flipping cards</h2>
+            </section>
+
+            <section class="masonry hvr-curl-bottom-right" onClick="navigate('masonry')">
+                <i class="fad fa-chimney"></i>
+                <h2>masonry layout</h2>
+            </section>
+
+            <section class="cleveland hvr-curl-top-right" onClick="navigate('terminal')">
+                <i class="fad fa-wind-turbine"></i>
+                <h2>cleveland</h2>
+            </section>
+
+            <section class="aliens hvr-icon-float-away" onClick="navigate('aliens')">
+                <i class="fad fa-alien-monster hvr-icon"></i> 
+                <h2>aliens!</h2>
+            </section>
+
+            <section class="turtle xl col-span-2 row-span-2 col-start-4 hvr-icon-forward" onClick="navigate('turtles')">
+                <i class="fad fa-turtle hvr-icon"></i> 
+                <h2>ninja turtle grid</h2>
+            </section>
+
+            <section class="tilt xl hvr-icon-spin row-span-2" onClick="navigate('tilt')">
+                <i class="fa-duotone fa-rotate hvr-icon"></i>
+                <h2>tilt</h2>
+            </section>
+
+            <section class="grid xl col-span-2 rotateX-left" onClick="navigate('grid')">
+                <i class="fad fa-grid-4"></i>
+                <h2>auto-fit grid</h2>
+            </section>
+
+            <section class="has xl col-span-3 hvr-icon-pop" onClick="navigate('has')">
+                <i class="fad fa-rectangles-mixed hvr-icon"></i> 
+                <h2>:has</h2>
+            </section>
+        </main>
+        <footer>
+            <a href="https://www.twitter.com/afewgoodben" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com/spacejam" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/beneleventwelve/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+            <a href="https://www.strava.com/athletes/45181835" target="_blank"><i class="fab fa-strava"></i></a>
+            <a href="https://www.last.fm/user/noclist" target="_blank"><i class="fab fa-lastfm-square"></i></a>
+            <a href="https://www.linkedin.com/in/ben-carpenter-2556299/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/noclist/" target="_blank"><i class="fab fa-github-square"></i></a>
+        </footer>
+   </div>
+</html>
+
+<script>
+    function navigate(url) {
+        window.location.href='/' + url + '.html';
+    }
+</script> 
+
+<script src="like_button.jsx" type="text/babel"></script>
+
+</body>

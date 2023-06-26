@@ -1,0 +1,194 @@
+@import 'reset';
+@import 'header';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --background: #fafbf9;
+    --text: #3C3C43;
+    --primary: #00a2de;
+    --accent: #00a98e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+  
+h2.gradient {
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 160px repeat(9, 1fr);
+    width: min(100% - 3rem, 85vw);
+    margin-inline: auto;
+    padding: 2rem 0;
+
+    @media(min-width: 955px) { 
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    header {
+        @media(min-width: 955px) {
+            grid-column: span 12;
+        }
+    }
+
+    > div {
+        padding: 1rem 0;
+        display: grid;
+        place-items: center;
+
+        &:has([class]) {
+            border-bottom: 4px solid var(--primary);
+            transition: background 500ms ease;
+
+            &:hover {
+                background: hsl(196, 100%, 97%);
+            }
+        }
+
+        &:not(:has([class])) {
+            display: none;
+
+            @media(min-width: 955px) {
+                display: block;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            transition: transform 500ms ease;
+
+            &:hover {
+                transform: translateX(13vmin);
+            }
+        }
+
+        i {
+            font-size: 5.5vmax;
+            --fa-primary-opacity: 1;
+            --fa-secondary-opacity: 1;
+        }
+
+        &.auto-fit {
+            i {
+                --fa-secondary-color: #3ec13e;
+                --fa-primary-color: #5858e9;
+            }
+            @media(min-width: 955px) {
+                grid-column: span 9;
+            }
+        }
+
+        &.masonry {
+            i {
+                --fa-primary-color: #B1AD94;
+                --fa-secondary-color: #BE5A3E;
+            }
+            @media(min-width: 955px) {
+                grid-column: span 12;
+            }
+        }
+
+        &.scroll-snap {
+            i {
+                --fa-primary-color: hsl(210, 11%, 25%);
+                --fa-secondary-color: hsl(330, 2%, 70%);
+            }
+            @media(min-width: 955px) {
+                grid-column: span 9;
+            }
+        }
+
+        &.grail {
+            i {
+                --fa-primary-color: hsl(39, 89%, 47%);
+                --fa-secondary-color: hsl(39, 89%, 65%); 
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 12;
+                border-top: 4px solid var(--primary);
+            }
+        }
+
+        &.container {
+            i {
+                --fa-primary-color: hsl(0, 0%, 25%);
+                --fa-secondary-color: hsl(3, 54%, 55%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 11;
+            }
+        }
+
+        &.has {
+            i {
+                --fa-secondary-color: rgb(255, 0, 200);
+                --fa-primary-color: hsl(240, 100%, 80%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 10;
+            }
+        }
+
+        &.transforms {
+            i {
+                --fa-primary-color: hsl(0, 1%, 25%);
+                --fa-secondary-color: hsl(206, 96%, 55%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 11;
+            }
+        }
+
+        &.shadows {
+            i {
+                --fa-primary-color: hsl(210, 11%, 50%);
+                --fa-secondary-color: hsl(60, 100%, 37%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 10;
+            }
+        }
+
+        &.subgrid {
+            i {
+                --fa-primary-color: hsl(120, 49%, 55%);
+                --fa-secondary-color: hsl(210, 11%, 30%);
+            }
+
+            @media(min-width: 955px) {
+                grid-column: span 8; 
+            }
+        }
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    h3 {
+        // font-size: 1.5rem;
+        font-size: 5.5vmax;
+    }
+}
