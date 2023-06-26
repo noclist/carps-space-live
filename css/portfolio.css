@@ -69,6 +69,7 @@ body {
 }
 
 main {
+  grid-template-rows: 75px 0.75fr 1fr;
   display: grid;
   gap: 1rem;
   width: min(100% - 3rem, 85vw);
@@ -78,8 +79,8 @@ main {
 }
 @media (min-width: 700px) {
   main {
-    grid-template-rows: 0.33fr 1fr;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 1fr;
   }
 }
 

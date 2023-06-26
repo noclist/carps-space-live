@@ -16,17 +16,18 @@ body {
 }
 
 main {
-    @media (min-width: 700px) {
-        grid-template-rows: 0.33fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
-
+    grid-template-rows: 75px 0.75fr 1fr;
     display: grid;
     gap: 1rem;
     width: min(100% - 3rem, 85vw);
     margin-inline: auto;
     min-height: 100vh;
     padding: 2rem 0;
+
+    @media (min-width: 700px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 160px 1fr;
+    }
 }
 
 header { 
