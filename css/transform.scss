@@ -3,16 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap');
 
-// body {
-//     padding: 0.5em;
-//     display: grid;
-//     place-content: center;
-//     justify-items: center;
-//     gap: 1rem;
-//     background: hsl(240, 100%, 90%);
-//     text-align: center;
-// }
-
 body {
     min-height: 100vh;
     display: grid;
@@ -21,7 +11,6 @@ body {
     padding: 1em;
     background: hsl(240, 49%, 82%);
     text-align: center;
-    // font-family: 'Major Mono Display', monospace;
 }
 
 h1 {
@@ -45,12 +34,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 90vw;
-    // flex-direction: column;
-
-    // @media(min-width: 800px) {
-    //     flex-direction: row;
-    // }
+    width: 98vw;
 }
 
 section {
@@ -85,116 +69,5 @@ section {
 
     label {
         font-size: 1.1em;
-    }
-}
-
-.cube-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-    margin-left: 5em;
-
-    h2 {
-        grid-column: 1 / 3;
-    }
-}
-
-.scene {
-    width: 200px;
-    height: 200px;
-    perspective: 600px;
-}
-  
-.cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: translateZ(-100px);
-    transition: transform 1s ease-out;
-  }
-  
-  .cube-face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 2px solid black;
-    line-height: 200px;
-    font-size: 3rem;
-    text-shadow: #000 2px 2px 4px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-  }
-
-.front  { transform: rotateY(  0deg) translateZ(100px); background: rgba(119, 255, 106, 0.7); }
-.right  { transform: rotateY( 90deg) translateZ(100px); background: hsla(194, 100%, 76%, 0.7); }
-.back   { transform: rotateY(180deg) translateZ(100px); background: rgba(255, 183, 101, 0.7); }
-.left   { transform: rotateY(-90deg) translateZ(100px); background: hsla(315, 100%, 75%, 0.7); }
-.top    { transform: rotateX( 90deg) translateZ(100px); background: hsla(88, 100%, 80%, 0.7); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); background: hsla(0, 100%, 74%, 0.7); }
-
-.top-rotate { transform: translateZ(-100px) rotateX(-90deg); }
-.front-rotate { transform: translateZ(-100px) rotateY(0deg); }
-.right-rotate { transform: translateZ(-100px) rotateY(-90deg); }
-.back-rotate { transform: translateZ(-100px) rotateY(-180deg); }
-.left-rotate { transform: translateZ(-100px) rotateY(90deg); }
-.bottom-rotate { transform: translateZ(-100px) rotateX(90deg); }
-
-
-.radio {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-
-    label {
-        display: block;
-        cursor: pointer; 
-        text-align: left;
-        margin-bottom: .25em;
-
-        input {
-            display: none;
-
-            & + span {
-                display: inline-block; 
-                position: relative;
-                padding-left: 30px;
-
-                &:before {
-                    content: '';
-                    display: block; 
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    margin-right: 5px;
-                    width: 20px;
-                    height: 20px;
-                    border: 3px solid rebeccapurple;
-                    background: #fff;
-                    transform: rotate(22.5deg);
-                }
-
-                &:after {
-                    content: '';
-                    display: block; 
-                    width: 12px;
-                    height: 12px;
-                    background: hsl(270, 50%, 70%);
-                    position: absolute;
-                    top: 4px;
-                    left: 4px;
-                    opacity: 0;
-                    transform: scale(0,0) rotate(22.5deg); 
-                    transition: all .2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
-                }
-            }
-
-            &:checked+span:after {
-                opacity: 1;
-                transform: scale(1,1) rotate(22.5deg);
-            }
-        }
     }
 }
