@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 body, html {
   margin: 0;
   padding: 0;
@@ -50,11 +49,10 @@ li {
 
 body {
   min-height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   gap: 1.5em;
   text-align: center;
   padding: 1.5em;
-  background: hsl(0deg, 0%, 99%);
   display: grid;
   grid-template-areas: "header header header" "nav main aside" "footer footer footer";
   grid-auto-columns: 30ch 1fr 30ch;
@@ -75,20 +73,19 @@ body {
   }
 }
 body h1 {
-  font-family: "Major Mono Display", monospace;
-  font-size: 3.5vmax;
+  font-size: 3.5rem;
 }
 body h2 {
-  font-family: "Major Mono Display", monospace;
-  font-size: 3vmax;
+  font-size: 2.5rem;
 }
 body > * {
   display: grid;
   place-content: center;
   gap: 1em;
-  background: hsla(0deg, 13%, 57%, 0.13);
-  border: 3px solid #212529;
+  position: relative;
+  border: 0px solid #212529;
   padding: 0.5em 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 body > * i {
   font-size: 5em;
@@ -97,12 +94,12 @@ body > * i {
 }
 body header {
   grid-area: header;
-  background: hsla(205deg, 87%, 80%, 0.5);
+  background: hsl(205deg, 87%, 95%);
 }
 body nav {
   grid-area: nav;
   grid-auto-columns: 30ch;
-  background: hsla(0deg, 100%, 80%, 0.5);
+  background: hsl(25deg, 100%, 95%);
 }
 body nav i {
   --fa-primary-color: hsl(19, 13%, 65%);
@@ -110,30 +107,27 @@ body nav i {
 }
 body main {
   grid-area: main;
-  background: hsla(122deg, 100%, 85%, 0.5);
   padding-bottom: 1.5em;
+  gap: 0.5em;
 }
 body main p {
-  font-family: "Karla", sans-serif;
   margin: 0 1.5rem;
   font-size: 1.5rem;
-  background: hsla(0deg, 0%, 99%, 0.8);
-  background: linear-gradient(90deg, rgba(238, 174, 202, 0) 0%, hsl(0deg, 0%, 99%) 50%, rgba(148, 187, 233, 0) 100%);
-  color: #242529;
-  padding: 1rem;
+  color: #212529;
+  padding: 1rem 1rem 0 1rem;
   border-top: 1px solid #212529;
-  border-bottom: 1px solid #212529;
+  text-wrap: balance;
 }
-body main p span {
+body main span {
   font-weight: 700;
-  font-size: 1.75rem;
+  font-size: 3.5rem;
   color: transparent;
   background: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
   background-size: 250px 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  animation: shimmer 1.5s linear infinite alternate;
+  animation: shimmer 5s linear infinite alternate;
 }
 @keyframes shimmer {
   0% {
@@ -146,7 +140,7 @@ body main p span {
 body aside {
   grid-area: aside;
   grid-auto-columns: 30ch;
-  background: hsla(25deg, 100%, 75%, 0.5);
+  background: hsl(25deg, 100%, 95%);
 }
 body aside i {
   --fa-primary-color: hsl(19, 13%, 65%);
@@ -156,7 +150,7 @@ body footer {
   grid-area: footer;
   grid-auto-flow: column;
   align-items: baseline;
-  background: hsla(60deg, 100%, 75%, 0.5);
+  background: hsl(60deg, 100%, 95%);
   gap: 0;
 }
 body footer h2 {
