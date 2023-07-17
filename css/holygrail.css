@@ -42,6 +42,14 @@ li {
   list-style-type: none;
 }
 
+:root {
+  --text: #0a080c;
+  --background: #fcfcfd;
+  --primary: #c3b0a2;
+  --secondary: #dfdae7;
+  --accent: #5f9576;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -53,23 +61,18 @@ body {
   gap: 1.5em;
   text-align: center;
   padding: 1.5em;
+  color: var(--text);
+  background: var(--background);
   display: grid;
-  grid-template-areas: "header header header" "nav main aside" "footer footer footer";
-  grid-auto-columns: 30ch 1fr 30ch;
-  grid-auto-rows: 125px 1fr 100px;
+  grid-template-rows: 150px 1fr 1fr 1fr 100px;
 }
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   body {
-    grid-template-areas: "header header" "nav aside" "main main" "footer footer";
-    grid-auto-columns: 1fr 1fr;
-    grid-auto-rows: 110px 1fr 1fr 100px;
+    grid-template-columns: 30ch 1fr 30ch;
+    grid-template-rows: 125px 1fr 100px;
   }
-}
-@media (max-width: 600px) {
-  body {
-    grid-template-areas: "header" "nav" "main" "aside" "footer";
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 150px 1fr 1fr 1fr 100px;
+  body header, body footer {
+    grid-column: span 3;
   }
 }
 body h1 {
@@ -91,24 +94,21 @@ body > * i {
   font-size: 5em;
   --fa-secondary-opacity: 1;
   --fa-secondary-opacity: 1;
+  --fa-primary-color: hsl(0, 0%, 50%);
+  --fa-secondary-color: hsl(0, 0%, 60%);
 }
 body header {
-  grid-area: header;
-  background: hsl(205deg, 87%, 95%);
+  background: var(--secondary);
 }
-body nav {
-  grid-area: nav;
-  grid-auto-columns: 30ch;
-  background: hsl(25deg, 100%, 95%);
-}
-body nav i {
-  --fa-primary-color: hsl(19, 13%, 65%);
-  --fa-secondary-color: hsl(19, 13%, 70%);
+body nav, body aside {
+  display: grid;
+  place-items: center;
+  background: hsla(25deg, 22%, 70%, 0.2);
 }
 body main {
-  grid-area: main;
   padding-bottom: 1.5em;
   gap: 0.5em;
+  background: hsl(240deg, 20%, 97%);
 }
 body main p {
   margin: 0 1.5rem;
@@ -137,21 +137,10 @@ body main span {
     background-position: top right;
   }
 }
-body aside {
-  grid-area: aside;
-  grid-auto-columns: 30ch;
-  background: hsl(25deg, 100%, 95%);
-}
-body aside i {
-  --fa-primary-color: hsl(19, 13%, 65%);
-  --fa-secondary-color: hsl(19, 13%, 70%);
-}
 body footer {
-  grid-area: footer;
   grid-auto-flow: column;
   align-items: baseline;
-  background: hsl(60deg, 100%, 95%);
-  gap: 0;
+  background: var(--secondary);
 }
 body footer h2 {
   font-size: 3rem;
@@ -162,6 +151,14 @@ body footer i {
   --fa-secondary-color: #f00;
   --fa-secondary-opacity: 0.4;
   top: -4px;
+}
+body button {
+  background: hsl(146deg, 22%, 60%);
+  font-size: 2.5rem;
+  padding: 1rem;
+  width: fit-content;
+  border: 0;
+  border-radius: 4px;
 }
 
 script {
