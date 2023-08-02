@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
 body, html {
   margin: 0;
   padding: 0;
@@ -44,14 +44,14 @@ li {
 
 body {
   padding: 1em;
-  font-family: "Major Mono Display", monospace;
+  font-family: "Belanosima", sans-serif;
   display: grid;
   place-content: center;
   min-height: 100vh;
+  background: linear-gradient(120deg, hsl(67deg, 97%, 90%), hsl(187deg, 97%, 90%));
 }
 
 h1 {
-  font-family: "Major Mono Display", monospace;
   font-size: 5.5vmax;
   background: hsl(0deg, 0%, 100%);
   background-clip: text;
@@ -68,6 +68,7 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   position: relative;
+  cursor: crosshair;
 }
 
 .card {
@@ -83,7 +84,10 @@ h1 {
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   aspect-ratio: 1/1.5;
-  background: url("https://picsum.photos/420/630") 100%/cover no-repeat;
+  width: 50vmin;
+  height: 75vmin;
+  background: url("/images/arbor.jpg") 100%/cover no-repeat;
+  background-position: center;
   transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(var(--rotateY));
   transition: transform 350ms ease;
 }
