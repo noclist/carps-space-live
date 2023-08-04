@@ -41,7 +41,7 @@ h2.gradient {
 
 main {
     display: grid;
-    grid-template-rows: 160px repeat(4, 1fr);
+    grid-template-rows: 160px repeat(5, 1fr);
     width: calc(100% - 3rem);
     margin-inline: auto;
     padding: 2rem 0;
@@ -88,8 +88,18 @@ main {
             --fa-secondary-opacity: 1;
         }
 
-        &.library {
+        &.neighbor {
             border-top: 4px dashed var(--primary);
+            grid-column: span 10;
+
+            i {
+                --fa-secondary-color: #87919B; 
+                --fa-primary-color: green;
+            }
+        }
+
+        &.library {
+            
             i {
                 --fa-secondary-color: hsl(208, 70%, 50%); 
                 --fa-primary-color: hsl(58, 55%, 60%);
@@ -107,7 +117,6 @@ main {
             }
 
             @media(min-width: 955px) {
-                border-top: 4px dashed var(--primary);
                 grid-column: span 6;
             }
         }
