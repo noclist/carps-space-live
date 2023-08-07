@@ -65,7 +65,17 @@ header span.links i {
 body {
   font-family: "Inter", sans-serif;
   color: var(--text);
-  background: radial-gradient(ellipse at left top, var(--background) 0%, #c9eeb9 62%, #b1e698 100%);
+  background: radial-gradient(ellipse at left top, var(--background) 0%, #dff5d6 62%, #b1e698 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color);
+  text-align: center;
+  background-position: top;
+  background-image: url("/images/lego3.jpg");
 }
 
 main {
@@ -91,7 +101,7 @@ main {
 }
 
 #img {
-  background-image: url("/images/bike.png");
+  background-image: url("/images/bike.jpg");
   background-position: center;
   background-size: cover;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
@@ -137,26 +147,26 @@ main {
 }
 
 section:has(.art:hover) + #img {
-  background-image: url("/images/edgewater.png") !important;
+  background-image: url("/images/edgewater.jpg") !important;
   background-position: center;
 }
 
 section:has(.technique:hover) + #img {
-  background-image: url("/images/bike2.png") !important;
+  background-image: url("/images/bike2.jpg") !important;
   background-position: center;
 }
 
 section:has(.film:hover) + #img {
-  background-image: url("/images/breakwall.png") !important;
+  background-image: url("/images/breakwall.jpg") !important;
   background-position: top;
 }
 
 section:has(.experiments:hover) + #img {
-  background-image: url("/images/shoreway.png") !important;
+  background-image: url("/images/shoreway.jpg") !important;
   background-position: bottom;
 }
 
 section:not(:hover) + #img {
-  background-image: url("/images/bike.png");
+  background-image: url("/images/bike.jpg");
   background-position: center;
 }
