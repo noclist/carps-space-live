@@ -21,46 +21,28 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: var(--color);
-    text-align: center;
     background-position: top;
     background-image: url('/images/lego3.jpg');
 }
 
 main {
-    grid-template-rows: 75px 0.75fr 1fr;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr;
     gap: 1rem;
     width: min(100% - 3rem, 85vw);
     margin-inline: auto;
     min-height: 100vh;
     padding: 2rem 0;
-
+    
     @media (min-width: 700px) {
-        grid-template-columns: 1fr 1fr;
         grid-template-rows: 160px 1fr;
     }
 }
 
-header { 
-    @media(min-width: 700px) {
-        grid-column: span 2;
-    }
-}
-
-#img {
-    background-image: url('/images/bike.jpg');
-    background-position: center;
-    background-size: cover;
-    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
-}
-
 .items {
     justify-self: center;
-    align-self: center;
-
-    @media(min-width: 955px) {
-        align-self: start;
-    }
+    align-self: start; 
 
     a {
         font-size: 5.5vmax;
@@ -97,27 +79,34 @@ header {
     }
 }
 
-section:has(.art:hover) + #img {
-    background-image: url('/images/edgewater.jpg') !important;
-    background-position: center;
-}
+// #img {
+//     background-image: url('/images/bike.jpg');
+//     background-position: center;
+//     background-size: cover;
+//     filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+// }
 
-section:has(.technique:hover) + #img {
-    background-image: url('/images/bike2.jpg') !important;
-    background-position: center;
-}
+// section:has(.art:hover) + #img {
+//     background-image: url('/images/edgewater.jpg') !important;
+//     background-position: center;
+// }
 
-section:has(.film:hover) + #img {
-    background-image: url('/images/breakwall.jpg') !important;
-    background-position: top;
-}
+// section:has(.technique:hover) + #img {
+//     background-image: url('/images/bike2.jpg') !important;
+//     background-position: center;
+// }
 
-section:has(.experiments:hover) + #img {
-    background-image: url('/images/shoreway.jpg') !important;
-    background-position: bottom;
-}
+// section:has(.film:hover) + #img {
+//     background-image: url('/images/breakwall.jpg') !important;
+//     background-position: top;
+// }
 
-section:not(:hover) + #img {
-    background-image: url('/images/bike.jpg');
-    background-position: center;
-}
+// section:has(.experiments:hover) + #img {
+//     background-image: url('/images/shoreway.jpg') !important;
+//     background-position: bottom;
+// }
+
+// section:not(:hover) + #img {
+//     background-image: url('/images/bike.jpg');
+//     background-position: center;
+// }
