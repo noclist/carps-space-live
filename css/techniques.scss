@@ -3,8 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
-    --background: #fafbf9;
-    --text: #3C3C43;
+    --text: #fafbf9;
     --primary: #00a2de;
     --accent: #00a98e;
 }
@@ -16,9 +15,12 @@
 }
 
 body {
-  background: var(--background);
   color: var(--text);
   font-family: 'Inter', sans-serif;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url('https://images.unsplash.com/photo-1578310894285-2afef3af50c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
 }
   
 h2.nowrap {
@@ -51,10 +53,6 @@ main {
         &:has([class]) {
             border-bottom: 4px solid var(--primary);
             transition: background 500ms ease;
-
-            &:hover {
-                background: hsl(196, 100%, 97%);
-            }
         }
 
         &:not(:has([class])) {
@@ -187,7 +185,6 @@ main {
     }
 
     h3 {
-        // font-size: 1.5rem;
         font-size: 5.5vmax;
     }
 }
