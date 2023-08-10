@@ -81,9 +81,24 @@ header span.links i {
 }
 
 body {
-  background: var(--background);
   color: var(--text);
   font-family: "Inter", sans-serif;
+  position: relative;
+}
+body:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-image: url("https://images.unsplash.com/photo-1542762735-ddc16fb8daaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (min-width: 955px) {
@@ -101,6 +116,7 @@ h2.gradient {
 
 main {
   display: grid;
+  position: relative;
   grid-template-rows: 160px repeat(5, 1fr);
   width: calc(100% - 3rem);
   margin-inline: auto;
@@ -116,22 +132,8 @@ main > div {
   padding: 2rem;
   display: grid;
   place-items: center;
-}
-main > div:has([class]) {
   border-bottom: 4px dashed var(--primary);
-  transition: background 500ms ease;
-}
-main > div:has([class]):hover {
-  background: hsl(101deg, 61%, 87%);
-}
-main > div:not(:has([class])) {
-  display: none;
-}
-@media (min-width: 955px) {
-  main > div:not(:has([class])) {
-    display: block;
-    background: hsl(101deg, 61%, 87%) !important;
-  }
+  transition: all 2s ease;
 }
 main > div a {
   display: grid;
