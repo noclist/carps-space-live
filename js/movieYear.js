@@ -9,7 +9,7 @@ docReady(function() {
     const grid = document.querySelector('.grid');
     const gridItems = grid.querySelectorAll(':scope > div');
     // const year = window.location.href.substring(29, 33); //dev
-    const year = window.location.href.substring(35, 39); //prod
+    const year = window.location.href.substring(33, 37); //prod
     document.getElementById('movieYear').value = year;
 
     gridItems.forEach((item, i) => {
