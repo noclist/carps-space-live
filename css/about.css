@@ -51,19 +51,26 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   background: #fff;
   height: 100%;
+}
+@media (min-width: 1100px) {
+  main {
+    flex-direction: row;
+  }
 }
 
 section {
   flex: 0 0 50%;
 }
 section:first-child {
-  padding: 6rem;
+  padding: 6.2vw;
 }
 section:last-child {
   background-image: url("/images/portrait.jpg");
   background-size: cover;
+  background-position: top left;
 }
 
 h1 {
