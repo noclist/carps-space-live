@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-pink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background: #7A8692;
+  padding: 5rem 3rem;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  display: flex;
+  background: #fff;
+  height: 100%;
+}
+
+section {
+  flex: 0 0 50%;
+}
+section:first-child {
+  padding: 6rem;
+}
+section:last-child {
+  background-image: url("/images/portrait.jpg");
+  background-size: cover;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
