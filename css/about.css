@@ -13,7 +13,7 @@ body, html {
 
 ::selection {
   color: #fff;
-  background: var(--color-pink);
+  background: hsl(349deg, 100%, 74%);
 }
 
 h1,
