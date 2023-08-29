@@ -2,18 +2,18 @@
 @import 'underline-indicators';
 
 :root {
-    --header-font: 1rem;
+    --header-font: 1.6rem;
 }
 
 @media (min-width: 35em) {
     :root {
-        --header-font: 1.25rem;
+        --header-font: 1.75rem;
     }
 }
 
 @media (min-width: 45em) {
     :root {
-        --header-font: 1.75rem;
+        --header-font: 2rem;
     }
 }
 

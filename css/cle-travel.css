@@ -62,17 +62,17 @@ li {
 }
 
 :root {
-  --header-font: 1rem;
+  --header-font: 1.6rem;
 }
 
 @media (min-width: 35em) {
   :root {
-    --header-font: 1.25rem;
+    --header-font: 1.75rem;
   }
 }
 @media (min-width: 45em) {
   :root {
-    --header-font: 1.75rem;
+    --header-font: 2rem;
   }
 }
 h1, h2, h3, h4, h5, h6, p {
