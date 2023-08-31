@@ -99,6 +99,9 @@ body.music {
 body.food {
   background-image: url("/images/market.jpg");
 }
+body.sports {
+  background-image: url("/images/mobile-lebon.jpg");
+}
 @media (min-width: 35rem) {
   body {
     background-image: url("https://images.unsplash.com/photo-1507486076008-3c60cfcce36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80");
@@ -108,6 +111,9 @@ body.food {
   }
   body.food {
     background-image: url("https://images.unsplash.com/photo-1478122251258-df9e3b3b3e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  }
+  body.sports {
+    background-image: url("https://images.unsplash.com/photo-1534095199036-ba4fd1eed616?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
   }
 }
 @media (min-width: 45rem) {
@@ -119,6 +125,9 @@ body.food {
   }
   body.food {
     background-image: url("https://images.unsplash.com/photo-1548126324-8457f62a0a22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  }
+  body.sports {
+    background-image: url("/images/guardians.jpg");
   }
 }
 
@@ -132,6 +141,17 @@ h1 {
 h1 span {
   font-family: "Bellefair", serif;
   color: #fff;
+}
+
+@media (min-width: 35em) {
+  .sports h1 {
+    color: hsl(230deg, 35%, 7%);
+  }
+}
+@media (min-width: 45em) {
+  .sports h1 {
+    text-shadow: 1px 1px 2px #fff;
+  }
 }
 
 p {
@@ -200,7 +220,8 @@ p {
     max-width: 50ch;
   }
   .music p,
-.food p {
+.food p,
+.sports p {
     background: #fff;
     padding: 0.5rem;
     border-radius: 5px;
@@ -272,7 +293,7 @@ p {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: hsl(var(--clr-white)/0.1);
+  background: hsla(0deg, 0%, 100%, 0.1);
   border-radius: 50%;
   opacity: 0;
   transition: opacity 500ms linear, transform 750ms ease-in-out;
