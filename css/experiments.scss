@@ -95,12 +95,21 @@ main {
         }
 
         &.neighbor {
-            border-top: 4px dashed var(--primary);
             grid-column: span 10;
 
             i {
                 --fa-secondary-color: #87919B; 
                 --fa-primary-color: green;
+            }
+        }
+
+        &.vacation {
+            border-top: 4px dashed var(--primary);
+            grid-column: span 10;
+
+            i {
+                --fa-secondary-color: #AC7441; 
+                --fa-primary-color: #7DAA0D;
             }
         }
 
@@ -118,8 +127,8 @@ main {
 
         &.tilt {
             i {
-                --fa-primary-color: hsl(120, 63%, 52%);
-                --fa-secondary-color: hsl(206, 11%, 27%);
+                --fa-primary-color: hsl(0, 39%, 61%);
+                --fa-secondary-color: hsl(206, 11%, 40%);
             }
 
             @media(min-width: 955px) {
@@ -129,7 +138,7 @@ main {
 
         &.cleveland {
             i {
-                --fa-primary-color: #B9B9B9;
+                --fa-primary-color: hsl(0, 0%, 63%);
                 --fa-secondary-color: #1D3741;
             }
 

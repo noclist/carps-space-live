@@ -62,6 +62,10 @@ header span.links a:active {
 header span.links i {
   font-size: 1.5rem;
 }
+header img {
+  height: 20px;
+  margin-top: 2px;
+}
 
 :root {
   --text: #081104;
@@ -148,12 +152,19 @@ main > div i {
   --fa-secondary-opacity: 1;
 }
 main > div.neighbor {
-  border-top: 4px dashed var(--primary);
   grid-column: span 10;
 }
 main > div.neighbor i {
   --fa-secondary-color: #87919B;
   --fa-primary-color: green;
+}
+main > div.vacation {
+  border-top: 4px dashed var(--primary);
+  grid-column: span 10;
+}
+main > div.vacation i {
+  --fa-secondary-color: #AC7441;
+  --fa-primary-color: #7DAA0D;
 }
 main > div.library i {
   --fa-secondary-color: hsl(208, 70%, 50%);
@@ -165,8 +176,8 @@ main > div.library i {
   }
 }
 main > div.tilt i {
-  --fa-primary-color: hsl(120, 63%, 52%);
-  --fa-secondary-color: hsl(206, 11%, 27%);
+  --fa-primary-color: hsl(0, 39%, 61%);
+  --fa-secondary-color: hsl(206, 11%, 40%);
 }
 @media (min-width: 955px) {
   main > div.tilt {
@@ -174,7 +185,7 @@ main > div.tilt i {
   }
 }
 main > div.cleveland i {
-  --fa-primary-color: #B9B9B9;
+  --fa-primary-color: hsl(0, 0%, 63%);
   --fa-secondary-color: #1D3741;
 }
 @media (min-width: 955px) {

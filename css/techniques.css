@@ -62,6 +62,10 @@ header span.links a:active {
 header span.links i {
   font-size: 1.5rem;
 }
+header img {
+  height: 20px;
+  margin-top: 2px;
+}
 
 :root {
   --text: #fafbf9;
