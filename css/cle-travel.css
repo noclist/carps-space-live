@@ -64,7 +64,6 @@ li {
 :root {
   --header-font: 1.6rem;
 }
-
 @media (min-width: 35em) {
   :root {
     --header-font: 1.75rem;
@@ -75,6 +74,7 @@ li {
     --header-font: 2rem;
   }
 }
+
 h1, h2, h3, h4, h5, h6, p {
   font-weight: 400;
 }
@@ -150,7 +150,8 @@ h1 span {
 }
 @media (min-width: 45em) {
   .sports h1 {
-    text-shadow: 1px 1px 2px #fff;
+    color: #fff;
+    text-shadow: 2px 4px 3px hsl(230deg, 35%, 7%);
   }
 }
 
@@ -285,6 +286,10 @@ p {
 
 .food .large-button {
   background-color: hsl(25deg, 71%, 73%);
+}
+
+.sports .large-button {
+  background-color: hsl(357deg, 54%, 69%);
 }
 
 .large-button::after {

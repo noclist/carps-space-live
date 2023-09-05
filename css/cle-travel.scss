@@ -3,16 +3,12 @@
 
 :root {
     --header-font: 1.6rem;
-}
 
-@media (min-width: 35em) {
-    :root {
+    @media (min-width: 35em) {
         --header-font: 1.75rem;
     }
-}
 
-@media (min-width: 45em) {
-    :root {
+    @media (min-width: 45em) {
         --header-font: 2rem;
     }
 }
@@ -100,7 +96,8 @@ h1 {
     }
 
     @media (min-width: 45em) {
-        text-shadow: 1px 1px 2px #fff;
+        color: #fff;
+        text-shadow: 2px 4px 3px hsl(230deg, 35%, 7%)
     }
 }
 
@@ -242,6 +239,12 @@ p {
 .food {
     .large-button {
         background-color: hsl(25, 71%, 73%);
+    }
+}
+
+.sports {
+    .large-button {
+        background-color: hsl(357, 54%, 69%);
     }
 }
 
