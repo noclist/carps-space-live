@@ -1,0 +1,56 @@
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: span 2;
+
+    @media(min-width: 700px) {
+        flex-direction: row;
+    }
+
+    h2:has(+ h2) {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    span.name {
+
+        i {
+            font-size: 1.6rem;
+            --fa-primary-color: #124e3b;
+            --fa-secondary-color: #26a13c;
+        }
+    }
+
+    span.links {
+        display: flex;
+        
+        gap: 1rem;
+
+        @media(min-width: 700px) {
+            justify-content: end;
+            margin-left: auto;
+        }
+
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: var(--accent);
+            cursor: pointer;
+        }
+    
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    img {
+        height: 20px;
+        margin-top: 2px;
+    }
+}
