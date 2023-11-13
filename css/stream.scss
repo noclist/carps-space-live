@@ -1,0 +1,248 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
+    min-height: 100vh;
+    background: #1A1A1A;
+    display: grid;
+    grid-template-rows: 65px 1fr;
+    padding: 2.5rem 7.5rem;
+    color: hsl(300, 2%, 72%);
+    font-family: Inter;
+    font-size: 0.9rem;
+
+    perspective: 18cm;
+    transform-style: preserve-3d;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+
+    transition: 500ms all ease;
+    transform-origin: left;
+
+    &.rotate {
+        transform: rotateY(45deg);
+        
+        > div {
+            &:hover {
+                transform: translate3d(90px, 0, 60px);
+                scale: 1.075;
+            }
+
+            &.hulu:hover, &.dc:hover, &.prime:hover, &.max:hover {
+                transform: translate3d(30px, 0, 60px);
+            }
+        }   
+    }
+
+    perspective: 18cm;
+    transform-style: preserve-3d;
+
+    > div {
+        background: #2A2829;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        align-items: end;
+        transition: 1s all ease, background 3s ease, transform 500ms ease, scale 500ms ease;
+
+        &:hover {
+            scale: 1.150;
+            color: transparent;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        &.marvel {
+            background-position: center center;
+            background-size: 25%;
+
+            > div {
+                width: 25%;
+                aspect-ratio: 2;
+                background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/marvel.jpg');
+                background-position: center center;
+                background-size: 100%;
+            }
+        }
+
+        &.netflix {
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            > div {
+                width: 33%;
+                aspect-ratio: 1;
+                background: url('/images/netflix.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/netflix-lines.jpg');
+                background-position: center center;
+                background-size: 200% 100%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &.hulu {
+            background-position: center center;
+            background-size: 200% 200%;
+            background-repeat: no-repeat;
+
+            > div {
+                width: 33%;
+                aspect-ratio: 2;
+                background: url('/images/hulu.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/hulu-intro.png');
+                background-position: center center;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &.dc {
+            background-position: center center;
+            background-size: 50%;
+
+            > div {
+                width: 33%;
+                aspect-ratio: 1;
+                background: url('/images/dc.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/dc-2.png');
+                background-position: 103% 180%;
+                background-size: 200%;
+            }
+        }
+
+        &.prime {
+            background-position: center center;
+            background-size: 100% 100%;
+
+            > div {
+                width: 33%;
+                aspect-ratio: 1.6;
+                background: url('/images/prime.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/amazon-bg.png');
+                background-position: center 1.3vw;
+                background-size: 157% 100%;
+            }
+        }
+
+        &.max {
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            > div {
+                width: 40%;
+                aspect-ratio: 3.6;
+                background: url('/images/max.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                margin-bottom: 0;
+
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/max-bg.jpg');
+                background-position: center center;
+                background-size: 265% 205%;
+                background-repeat: no-repeat;
+
+                > div {
+                    transition: 1s all ease;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.disney {
+            background-position: center bottom;
+            background-repeat: no-repeat;
+
+            > div {
+                width: 20%;
+                aspect-ratio: 1.8;
+                background: url('/images/disney.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                background: #2A2829 url('/images/disney-bg.jpg');
+                background-position: center -7.7vmin;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+  }
+
+p {
+    margin: 0;
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    // font-family: 'Sulphur Point', sans-serif;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    color: #3D7A94;
+    border-color: #3D7A94;
+    color: hsl(300, 2%, 72%);;
+    border-color: hsl(300, 2%, 72%);;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    align-self: center;
+    justify-self: end;
+
+    &:hover {
+        background-color: #3D7A94;
+        color: #fff;
+    }
+}
+
+  .col-span-2 {
+    grid-column: span 2;
+  }
+
+  .row-span-2 {
+    grid-row: span 2;
+  }
+
+  .col-span-3 {
+    grid-column: span 3;
+  }

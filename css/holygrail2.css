@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background: #efefef;
+  padding: 1rem;
+  min-height: 100vh;
+  font: 500 100% system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.grid {
+  height: calc(100vh - 2rem);
+  display: grid;
+  grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
+  grid-template-rows: 0.25fr min-content 1fr 0.1fr;
+  gap: 1rem;
+}
+.grid > * {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.33);
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+  .grid > * {
+    grid-column: 1/-1 !important;
+    grid-row: auto !important;
+  }
+}
+
+header {
+  grid-column: 1/-1;
+  background: hsl(0deg, 0%, 25%);
+  background: #413C58;
+  color: #fff;
+  padding: 1.5rem 2.5rem !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  color: #fff;
+}
+header a {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  color: #fff;
+}
+header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+header a.active {
+  background-color: #008CBA;
+  color: white;
+}
+
+aside {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  background: hsl(0deg, 0%, 85%);
+  background: #A3C4BC;
+  background: hsl(251deg, 19%, 90%);
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+aside details {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  padding: 2rem;
+}
+aside details summary {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+aside a {
+  align-self: center;
+}
+
+nav {
+  grid-column: 2/3;
+  background: hsl(0deg, 0%, 90%);
+  background: #BFD7B5;
+  background: hsl(251deg, 19%, 95%);
+  border: 1px solid #000;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background-color: #ddd;
+}
+nav ul li a.active {
+  color: white;
+  background-color: #008CBA;
+}
+
+main {
+  grid-column: 2/3;
+  background: hsl(0deg, 0%, 95%);
+  background: #E7EFC5;
+  border: 1px solid #000;
+}
+main .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1613834926943-9e4ac2945744?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+main .hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -130%);
+  color: white;
+}
+main .hero-text p {
+  margin-bottom: 1rem;
+}
+
+footer {
+  grid-column: 1/-1;
+  background: #ffecb3;
+  background: hsl(0deg, 0%, 80%);
+  background: #F2E7C9;
+  background: hsl(251deg, 19%, 95%);
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+footer span {
+  display: flex;
+  gap: 2rem;
+}
+footer span a:hover {
+  text-decoration: underline;
+}
+footer span i {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.btn {
+  border: 2px solid #000;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  display: inline-block;
+}
+.btn:hover {
+  background-color: #ddd;
+}
+.btn .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carps space</title>
+    <link rel="stylesheet" href="css/stream.css">
+</head>
+<body>
+    <button class="rotate btn mb-3" onclick="rotate()">Make it 3D!</button>
+    <div class="grid">
+       <div class="col-span-2 marvel">
+        <div></div>
+        <p>The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe centered on a series of Superhero films produced by Marvel Studios.</p>
+       </div>
+       <div class="row-span-2 dc">
+        <div></div>
+        <p>The DC Extended Universe (DCEU) is an American media franchise and shared universe centered on a series of superhero films and television series produced by DC Films and distributed by Warner Bros. Pictures.</p>
+       </div>
+       <div class="prime">
+        <div></div>
+        <p>Amazon Prime Video, or simply Prime Video, is an American subscription video-on-demand over-the-top streaming platform.</p>
+       </div>
+       <div class="row-span-2 netflix">
+        <div></div>
+        <p>Netflix, Inc. is an American subscription streaming service and prodution company based in Los Gatos, California.</p>
+       </div>
+       <div class="hulu">
+        <div></div>
+        <p>Hulu is an American subscription streaming service majority-owned by The Walt Disney Company.</p>
+       </div>
+       <div class="max">
+        <div></div>
+        <p>Max is an American subscription video on demand (SVOD) service owned by Warner Bros. Discovery.</p>
+       </div>
+       <div class="col-span-3 disney">
+        <div></div>
+        <p>Disney+ is the home for your favorite movies and TV shows from Disney, Pixar, Marvel, Star Wars and National Geographic</p>
+       </div>
+    </div>
+</body>
+
+<script>
+function rotate() {
+    if(document.querySelector(".grid").classList.contains('rotate')) {
+        document.querySelector(".btn").textContent="Make it 3D!";
+        document.querySelector(".grid").classList.remove("rotate");
+
+    } else {
+        document.querySelector(".grid").classList.add("rotate");
+        document.querySelector(".btn").textContent="Make it 2D!";
+    }
+}
+</script>
+
+</html>
