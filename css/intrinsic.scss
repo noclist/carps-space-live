@@ -89,6 +89,12 @@ body {
                 background: hsl(0, 0%, 50%) url('https://upload.wikimedia.org/wikipedia/commons/2/28/Macronaria_scrubbed_enh.jpg') left center/cover no-repeat;
             }
         }
+
+        &.has {
+            div:first-child {
+                background: linear-gradient(to right, #ff4b1f, #1fddff);
+            }
+        }
         
 
         > div:last-child {

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/has2.css">
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <title>has</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>:has()</h1>
+            <div>
+                <a href="#" class="btn">A Parent</a>
+                <a href="#" class="btn">Selector</a>
+            </div>
+        </header>
+        <main>
+            <nav>
+                <ul>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+
+                </ul>
+            </nav>
+            <section>
+                
+                <div class="card">
+                    <img src="https://picsum.photos/286/181">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <p class="card-text">This is a normal card and only takes the default card styles.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/182">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <p class="card-text">This card <strong>:has(.fancy)</strong> button and applies unique style rules.</p>
+                        <a href="#" class="btn btn-fancy">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/180">
+                    <div class="card-body">
+                        <h5 class="secondary">Card title</h5>
+                        <p class="card-text">This card <strong>:has(.secondary)</strong> title and applies unique style rules.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/183">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <p class="alternate">This card <strong>:has(.alternate)</strong> description and applies unique style rules.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/184">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <p class="card-text">This card <strong>:has(.special)</strong> button and applies unique style rules.</p>
+                        <a href="#" class="btn btn-special">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/185" class="small">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <hr />
+                        <p class="card-text">This card <strong>:has(.small)</strong> image and applies unique style rules.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/186">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <p class="card-text">
+                            This card <strong>:has(.btn + .btn)</strong>
+                            <br />
+                            (2 buttons)
+                        </p>
+                        <a href="#" class="btn mb">Go somewhere</a>
+                        <a href="#" class="btn">Go somewhere else</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/286/187">
+                    <div class="card-body">
+                        <h5>Card title</h5>
+                        <p class="card-text">This is a normal card and only takes the default card styles.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>This is a footer.</footer>
+    </div>
+</body>
+
+</html>

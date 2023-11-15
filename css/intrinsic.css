@@ -103,6 +103,9 @@ body {
 .grid .card.subgrid div:first-child {
   background: hsl(0deg, 0%, 50%) url("https://upload.wikimedia.org/wikipedia/commons/2/28/Macronaria_scrubbed_enh.jpg") left center/cover no-repeat;
 }
+.grid .card.has div:first-child {
+  background: linear-gradient(to right, #ff4b1f, #1fddff);
+}
 .grid .card > div:last-child {
   display: grid;
   align-items: center;
