@@ -11,12 +11,17 @@ body {
     margin: 3rem;
 }
 
-.masonry > .course {
+.course {
     break-inside: avoid;
     margin-bottom: clamp(1rem, 3vmin, 2rem);
     padding: 1rem;
     background-color: #fff;
     border-radius: 10px;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .status {
@@ -26,7 +31,7 @@ body {
     gap: 5px;
 }
 
-.c-details span {
+.details span {
     font-weight: 300;
     font-size: 13px
 }
@@ -78,22 +83,22 @@ body {
 
 .progress {
     height: 10px;
-    border-radius: 10px
-}
+    border-radius: 10px;
 
-.progress div {
-    background-color: red;
-
-    &.open {
-        background-color: green;
+    div {
+        background-color: red;
+    
+        &.open {
+            background-color: green;
+        }
     }
-}
 
-.text1 {
-    font-size: 14px;
-    font-weight: 600
-}
-
-.text2 {
-    color: #a5aec0
+    .filled {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .full {
+        color: #a5aec0;
+    }
 }
