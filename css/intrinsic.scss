@@ -95,6 +95,12 @@ body {
                 background: linear-gradient(to right, #ff4b1f, #1fddff);
             }
         }
+
+        &.courses {
+            div:first-child {
+                background: #FAFFE9 url('/images/college.png') center center/contain no-repeat;
+            }
+        }
         
 
         > div:last-child {

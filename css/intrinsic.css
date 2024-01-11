@@ -106,6 +106,9 @@ body {
 .grid .card.has div:first-child {
   background: linear-gradient(to right, #ff4b1f, #1fddff);
 }
+.grid .card.courses div:first-child {
+  background: #FAFFE9 url("/images/college.png") center center/contain no-repeat;
+}
 .grid .card > div:last-child {
   display: grid;
   align-items: center;

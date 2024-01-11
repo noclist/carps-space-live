@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: #eee;
+}
+
+.masonry {
+  columns: 300px;
+  gap: clamp(1rem, 3vmin, 2rem);
+  margin: 3rem;
+}
+
+.masonry > .course {
+  break-inside: avoid;
+  margin-bottom: clamp(1rem, 3vmin, 2rem);
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.c-details span {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px;
+}
+
+.badge span {
+  height: 25px;
+  padding: 3px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.badge span.eng {
+  background-color: hsl(183deg, 78%, 95%);
+  color: hsl(183deg, 78%, 35%);
+}
+.badge span.science {
+  background-color: hsl(162deg, 100%, 95%);
+  color: hsl(162deg, 100%, 35%);
+}
+.badge span.math {
+  background-color: hsl(39deg, 100%, 95%);
+  color: hsl(39deg, 100%, 35%);
+}
+.badge span.comm {
+  background-color: hsl(300deg, 100%, 95%);
+  color: hsl(300deg, 100%, 35%);
+}
+.badge span.art {
+  background-color: #ffffec;
+  color: #fed85d;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 10px;
+}
+
+.progress div {
+  background-color: red;
+}
+.progress div.open {
+  background-color: green;
+}
+
+.text1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text2 {
+  color: #a5aec0;
+}
