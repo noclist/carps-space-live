@@ -1,0 +1,153 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+:root {
+    --body-color: #083D77;
+    --nav-color: #F95738
+}
+
+body {
+    margin: 0;
+    font-family: 'Luckiest Guy', system-ui;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    background: var(--body-color);
+    color: #fff;
+  }
+
+  nav {
+    background: var(--nav-color);
+    position: sticky;
+    top: 0;
+  }
+
+  main {
+    margin: 4rem 0;
+    display: grid;
+    place-content: center;
+
+    h1 {
+        font-family: system-ui;
+    }
+
+    div {
+        width: 50vw;
+        box-shadow:
+            0 0 15px 7.5px #fff,
+            0 0 25px 15px #f0f,
+            0 0 45px 22.5px #0ff;
+    }
+
+    .kong {
+        aspect-ratio: .49;
+        background: url('/images/king-kong.png') center center/contain no-repeat;
+    }
+
+    .jaws {
+        aspect-ratio: 2/3;
+        background: url('/images/jaws.png') center center/contain no-repeat;
+    }
+
+    .alien {
+        aspect-ratio: .71;
+        background: url('/images/alien.png') center center/contain no-repeat;
+    }
+
+    .godzilla {
+        aspect-ratio: .71;
+        background: url('/images/godzilla.png') center center/contain no-repeat;
+    }
+
+    .mummy {
+        aspect-ratio: .71;
+        background: url('/images/mummy.png') center center/contain no-repeat;
+    }
+
+    .dracula {
+        aspect-ratio: .66;
+        background: url('/images/dracula.png') center center/contain no-repeat;
+    }
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 0;
+    font-size: 2.25rem;
+    position: sticky;
+    top: 0;
+
+    li {
+        padding: 1rem 1rem 1rem 1.5rem;
+        margin-left: 0.5rem;
+        border-radius: 100vw 0 0 100vw;
+
+        &.active {
+            background: var(--body-color);
+            position: relative;
+            view-transition-name: activeNavTab;
+
+            &:before, 
+            &:after {
+                content: '';
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                background: var(--nav-color);
+                right: 0;
+                
+            }
+
+            &:before {
+                top: -1rem;
+                border-radius: 0 0 100vw 0;
+                box-shadow: 5px 5px 0 5px var(--body-color);
+            }
+
+            &:after {
+                bottom: -1rem;
+                border-radius: 0 100vw 0 0;
+                box-shadow: 5px -5px 0 5px var(--body-color);
+            }
+        }
+
+        &:nth-child(1) a {
+            view-transition-name: navLink-1;
+        }
+
+        &:nth-child(2) a {
+            view-transition-name: navLink-2;
+        }
+
+        &:nth-child(3) a {
+            view-transition-name: navLink-3;
+        }
+
+        &:nth-child(4) a {
+            view-transition-name: navLink-4;
+        }
+
+        &:nth-child(5) a {
+            view-transition-name: navLink-5;
+        }
+
+        &:nth-child(6) a {
+            view-transition-name: navLink-6;
+        }
+    }
+
+    a {
+        color: #fff;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+  }
+
+  ::view-transition-group(activeNavTab) {
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+}

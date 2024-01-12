@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+:root {
+  --body-color: #083D77;
+  --nav-color: #F95738 ;
+}
+
+body {
+  margin: 0;
+  font-family: "Luckiest Guy", system-ui;
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  background: var(--body-color);
+  color: #fff;
+}
+
+nav {
+  background: var(--nav-color);
+  position: sticky;
+  top: 0;
+}
+
+main {
+  margin: 4rem 0;
+  display: grid;
+  place-content: center;
+}
+main h1 {
+  font-family: system-ui;
+}
+main div {
+  width: 50vw;
+  box-shadow: 0 0 15px 7.5px #fff, 0 0 25px 15px #f0f, 0 0 45px 22.5px #0ff;
+}
+main .kong {
+  aspect-ratio: 0.49;
+  background: url("/images/king-kong.png") center center/contain no-repeat;
+}
+main .jaws {
+  aspect-ratio: 2/3;
+  background: url("/images/jaws.png") center center/contain no-repeat;
+}
+main .alien {
+  aspect-ratio: 0.71;
+  background: url("/images/alien.png") center center/contain no-repeat;
+}
+main .godzilla {
+  aspect-ratio: 0.71;
+  background: url("/images/godzilla.png") center center/contain no-repeat;
+}
+main .mummy {
+  aspect-ratio: 0.71;
+  background: url("/images/mummy.png") center center/contain no-repeat;
+}
+main .dracula {
+  aspect-ratio: 0.66;
+  background: url("/images/dracula.png") center center/contain no-repeat;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-size: 2.25rem;
+  position: sticky;
+  top: 0;
+}
+ul li {
+  padding: 1rem 1rem 1rem 1.5rem;
+  margin-left: 0.5rem;
+  border-radius: 100vw 0 0 100vw;
+}
+ul li.active {
+  background: var(--body-color);
+  position: relative;
+  view-transition-name: activeNavTab;
+}
+ul li.active:before, ul li.active:after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: var(--nav-color);
+  right: 0;
+}
+ul li.active:before {
+  top: -1rem;
+  border-radius: 0 0 100vw 0;
+  box-shadow: 5px 5px 0 5px var(--body-color);
+}
+ul li.active:after {
+  bottom: -1rem;
+  border-radius: 0 100vw 0 0;
+  box-shadow: 5px -5px 0 5px var(--body-color);
+}
+ul li:nth-child(1) a {
+  view-transition-name: navLink-1;
+}
+ul li:nth-child(2) a {
+  view-transition-name: navLink-2;
+}
+ul li:nth-child(3) a {
+  view-transition-name: navLink-3;
+}
+ul li:nth-child(4) a {
+  view-transition-name: navLink-4;
+}
+ul li:nth-child(5) a {
+  view-transition-name: navLink-5;
+}
+ul li:nth-child(6) a {
+  view-transition-name: navLink-6;
+}
+ul a {
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+::view-transition-group(activeNavTab) {
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+}

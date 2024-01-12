@@ -109,6 +109,9 @@ body {
 .grid .card.courses div:first-child {
   background: #FAFFE9 url("/images/college.png") center center/contain no-repeat;
 }
+.grid .card.monster div:first-child {
+  background: #FAFFE9 url("/images/lagoon.png") center center/cover no-repeat;
+}
 .grid .card > div:last-child {
   display: grid;
   align-items: center;

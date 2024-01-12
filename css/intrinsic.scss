@@ -101,6 +101,12 @@ body {
                 background: #FAFFE9 url('/images/college.png') center center/contain no-repeat;
             }
         }
+
+        &.monster {
+            div:first-child {
+                background: #FAFFE9 url('/images/lagoon.png') center center/cover no-repeat;
+            }
+        }
         
 
         > div:last-child {
