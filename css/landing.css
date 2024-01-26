@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@600&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background: linear-gradient(to bottom, #E1F1DC, #fafafa 65%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #383833;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 80% auto auto;
+  gap: 3rem;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background: radial-gradient(100% 142vh at 50% calc(100% + 35vh), #5A8464 calc(50% - 2px), rgba(56, 117, 70, 0) 50%) 50%/calc(100% + 60vh) 100%;
+  height: 36vh;
+  display: grid;
+  place-content: center;
+  color: #fff;
+  padding-bottom: 20vmin;
+  gap: 2rem;
+}
+footer:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(#F5F8F4, #FAFAFA);
+  height: 30vmin;
+  width: 30vmin;
+  top: -50%;
+  left: calc(50% - 15vmin);
+}
+footer span.logo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  font-family: "Mali", cursive;
+  padding-bottom: 9vmin;
+  align-items: center;
+}
+footer span.logo i {
+  color: #387546;
+  font-size: 6.5rem;
+  transition: rotate 500ms ease-in-out;
+}
+footer span.logo i:hover {
+  rotate: 360deg;
+}
+footer span.logo span {
+  font-size: 2.5rem;
+  color: #212529;
+  line-height: 28px;
+}
+footer .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 7.5rem;
+  text-align: center;
+}
+footer .icon-wrapper i {
+  font-size: 2.3rem;
+}
+
+h1 {
+  font-size: 3.8rem;
+  line-height: 4rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #F19A33;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.card {
+  place-self: center;
+  padding-left: 6rem;
+}
+
+button {
+  display: flex;
+  gap: 1rem;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
+button i {
+  margin-left: 0.5rem;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+header p {
+  max-width: 35ch;
+}
+header button {
+  background: #F19A33;
+}
+header .pickle {
+  position: relative;
+  left: -12vmin;
+  width: 40%;
+  aspect-ratio: 1.5;
+  background: transparent url("/images/pickles.png") bottom left/contain no-repeat;
+  filter: drop-shadow(15px 10px 6px rgba(0, 0, 0, 0.35));
+  transition: all 250ms linear;
+}
+header .pickle:hover {
+  scale: 1.05;
+  filter: drop-shadow(15px 10px 8px rgba(0, 0, 0, 0.35));
+}
+header .circle {
+  position: relative;
+  width: 114vmin;
+  aspect-ratio: 1.15;
+  top: -20vh;
+  right: -20vh;
+  border-radius: 50%;
+  background: #387546;
+}
+header .circle .burger {
+  position: relative;
+  width: 55%;
+  top: 25%;
+  left: 18%;
+  aspect-ratio: 1.04;
+  background: url("/images/burger.png") center center/85% no-repeat;
+  rotate: 12deg;
+  filter: drop-shadow(22px 22px 6px rgba(0, 0, 0, 0.5));
+  transition: all 250ms linear;
+}
+header .circle .burger:hover {
+  rotate: 18deg;
+}
+
+main {
+  display: grid;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+section.about {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+section.about p {
+  max-width: 65ch;
+}
+section.about button {
+  background: #387546;
+}
+section.about .circle {
+  position: relative;
+  aspect-ratio: 1.15;
+  left: -32vmin;
+  border-radius: 50%;
+  background: #387546;
+}
+section.about .circle .burgerfries {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.6;
+  background: url("/images/burgerfries.png") center center/90% no-repeat;
+  filter: drop-shadow(22px 22px 6px rgba(0, 0, 0, 0.5));
+  top: 4vmin;
+  left: 20vmin;
+  transition: all 250ms linear;
+}
+section.about .circle .burgerfries:hover {
+  translate: 5vmin 0;
+}
+
+section.menu {
+  display: grid;
+}
+section.menu .card {
+  padding-left: 0;
+  text-align: center;
+}
+section.menu .wrapper {
+  padding: 0 10rem 3rem 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+section.menu .burger-card {
+  display: grid;
+  grid-template-rows: 30vmin 12vmin;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  color: #696965;
+  cursor: pointer;
+  transition: all 100ms linear;
+}
+section.menu .burger-card:hover {
+  scale: 1.0125;
+}
+section.menu .burger-card .description {
+  display: grid;
+  align-items: center;
+  padding: 1rem;
+}
+section.menu .burger-card .description .flex {
+  display: flex;
+  justify-content: space-between;
+}
+section.menu .burger-card .description .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+section.menu .burger-card .description p {
+  margin: 0;
+  font-size: 1rem;
+}
+section.menu .burger-card:nth-child(1) .photo {
+  background: url("/images/burgercard1.jpg") 100%/cover no-repeat;
+}
+section.menu .burger-card:nth-child(2) .photo {
+  background: url("/images/burgercard2.jpg") 100%/cover no-repeat;
+}
+section.menu .burger-card:nth-child(3) .photo {
+  background: url("/images/burgercard3.jpg") 100%/cover no-repeat;
+}
+
+section.clients h1 {
+  text-align: center;
+}
+section.clients .client-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem 10rem;
+}
+section.clients .client-wrapper div {
+  height: 25vmin;
+}
+section.clients .client-wrapper div:first-child {
+  background: url("/images/burger-client1.jpg") 100%/cover no-repeat;
+}
+section.clients .client-wrapper div:nth-child(2) {
+  background: url("/images/burger-client2.jpg") 100%/cover no-repeat;
+}
+section.clients .client-wrapper div:nth-child(3) {
+  background: url("/images/burger-client3.jpg") 100%/cover no-repeat;
+}
+section.clients .client-wrapper div:nth-child(4) {
+  background: url("/images/burger-client4.jpg") 100%/cover no-repeat;
+}
+section.clients .client-wrapper div:nth-child(5) {
+  background: url("/images/burger-client5.jpg") 100%/cover no-repeat;
+}
+section.clients .client-wrapper div:nth-child(6) {
+  background: url("/images/burger-client6.jpg") 100%/cover no-repeat;
+}
+
+section.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  padding: 0 12rem 5rem 12rem;
+}
+section.info > div {
+  flex-grow: 1;
+  text-align: center;
+  background: #fff;
+  padding: 0.9rem 0 1.5rem 0;
+  border-radius: 70px;
+  box-shadow: rgba(50, 50, 93, 0.15) 0px 20px 27px -5px, rgba(0, 0, 0, 0.2) 0px 20px 16px -8px;
+  transition: scale 100ms ease-in-out;
+}
+section.info > div:hover {
+  scale: 1.0125;
+}
+section.info > div i {
+  font-size: 2.5rem;
+  color: #387546;
+}
+section.info > div p {
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+section.info > div span {
+  font-size: 0.9rem;
+}
+
+.wobble {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+}
+.wobble i {
+  transform: translateZ(0);
+}
+.wobble:hover i {
+  animation: wobble 1s ease-in-out;
+}
+
+@keyframes wobble {
+  16.65% {
+    transform: translateX(6px);
+  }
+  33.3% {
+    transform: translateX(-5px);
+  }
+  49.95% {
+    transform: translateX(4px);
+  }
+  66.6% {
+    transform: translateX(-2px);
+  }
+  83.25% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
