@@ -110,7 +110,7 @@ body {
 
         &.burgers {
             div:first-child {
-                background: hsl(270, 50%, 75%) url('/images/burgertile.png') center center/cover no-repeat;
+                background: hsl(270, 50%, 75%) url('/images/burgertile.png') center center/contain no-repeat;
             }
         }
         
