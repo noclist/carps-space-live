@@ -107,6 +107,12 @@ body {
                 background: #FAFFE9 url('/images/lagoon.png') center center/cover no-repeat;
             }
         }
+
+        &.burgers {
+            div:first-child {
+                background: hsl(270, 50%, 75%) url('/images/burgertile.png') center center/cover no-repeat;
+            }
+        }
         
 
         > div:last-child {
