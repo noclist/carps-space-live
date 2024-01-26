@@ -170,7 +170,7 @@ header .pickle {
   left: -12vmin;
   width: 40%;
   aspect-ratio: 1.5;
-  background: transparent url("/images/pickles.png") bottom left/contain no-repeat;
+  background: transparent url("/images/pickles.PNG") bottom left/contain no-repeat;
   filter: drop-shadow(15px 10px 6px rgba(0, 0, 0, 0.35));
   transition: all 250ms linear;
 }
@@ -229,7 +229,7 @@ section.about .circle .burgerfries {
   position: relative;
   width: 100%;
   aspect-ratio: 1.6;
-  background: url("/images/burgerfries.png") center center/90% no-repeat;
+  background: url("/images/burgerfries.PNG") center center/90% no-repeat;
   filter: drop-shadow(22px 22px 6px rgba(0, 0, 0, 0.5));
   top: 4vmin;
   left: 20vmin;
