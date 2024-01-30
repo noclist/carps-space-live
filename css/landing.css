@@ -51,62 +51,23 @@ body {
   color: #383833;
   overflow-x: hidden;
   display: grid;
-  grid-template-rows: 80% auto auto;
+  margin: 1rem;
   gap: 3rem;
 }
+@media (min-width: 600px) {
+  body {
+    grid-template-rows: 80% auto auto;
+    margin: 0;
+  }
+}
 
-footer {
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  background: radial-gradient(100% 142vh at 50% calc(100% + 35vh), #5A8464 calc(50% - 2px), rgba(56, 117, 70, 0) 50%) 50%/calc(100% + 60vh) 100%;
-  height: 36vh;
-  display: grid;
-  place-content: center;
-  color: #fff;
-  padding-bottom: 20vmin;
-  gap: 2rem;
+.d-none {
+  display: none !important;
 }
-footer:after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(#F5F8F4, #FAFAFA);
-  height: 30vmin;
-  width: 30vmin;
-  top: -50%;
-  left: calc(50% - 15vmin);
-}
-footer span.logo {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 1;
-  font-family: "Mali", cursive;
-  padding-bottom: 9vmin;
-  align-items: center;
-}
-footer span.logo i {
-  color: #387546;
-  font-size: 6.5rem;
-  transition: rotate 500ms ease-in-out;
-}
-footer span.logo i:hover {
-  rotate: 360deg;
-}
-footer span.logo span {
-  font-size: 2.5rem;
-  color: #212529;
-  line-height: 28px;
-}
-footer .icon-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 7.5rem;
-  text-align: center;
-}
-footer .icon-wrapper i {
-  font-size: 2.3rem;
+@media (min-width: 600px) {
+  .d-none {
+    display: block !important;
+  }
 }
 
 h1 {
@@ -131,14 +92,22 @@ ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 8rem;
+  justify-content: center;
+  gap: 1rem;
   font-weight: 700;
   font-size: 1.5rem;
 }
+@media (min-width: 600px) {
+  ul {
+    gap: 8rem;
+  }
+}
 
-.card {
-  place-self: center;
-  padding-left: 6rem;
+@media (min-width: 600px) {
+  .card {
+    place-self: center;
+    padding-left: 6rem;
+  }
 }
 
 button {
@@ -157,7 +126,13 @@ button i {
 
 header {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+}
+@media (min-width: 600px) {
+  header {
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+  }
 }
 header p {
   max-width: 35ch;
@@ -180,23 +155,34 @@ header .pickle:hover {
 }
 header .circle {
   position: relative;
-  width: 114vmin;
-  aspect-ratio: 1.15;
-  top: -20vh;
-  right: -20vh;
-  border-radius: 50%;
   background: #387546;
+  border-radius: 50%;
+  aspect-ratio: 1.15;
+}
+@media (min-width: 600px) {
+  header .circle {
+    width: 114vmin;
+    top: -20vh;
+    right: -20vh;
+  }
 }
 header .circle .burger {
   position: relative;
-  width: 55%;
-  top: 25%;
-  left: 18%;
+  top: 3%;
+  left: 15%;
+  width: 75%;
   aspect-ratio: 1.04;
   background: url("/images/burger.png") center center/85% no-repeat;
   rotate: 12deg;
   filter: drop-shadow(22px 22px 6px rgba(0, 0, 0, 0.5));
   transition: all 250ms linear;
+}
+@media (min-width: 600px) {
+  header .circle .burger {
+    top: 25%;
+    left: 18%;
+    width: 55%;
+  }
 }
 header .circle .burger:hover {
   rotate: 18deg;
@@ -210,7 +196,13 @@ main {
 
 section.about {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+}
+@media (min-width: 600px) {
+  section.about {
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+  }
 }
 section.about p {
   max-width: 65ch;
@@ -224,6 +216,12 @@ section.about .circle {
   left: -32vmin;
   border-radius: 50%;
   background: #387546;
+  order: 1;
+}
+@media (min-width: 600px) {
+  section.about .circle {
+    order: 0;
+  }
 }
 section.about .circle .burgerfries {
   position: relative;
@@ -247,14 +245,20 @@ section.menu .card {
   text-align: center;
 }
 section.menu .wrapper {
-  padding: 0 10rem 3rem 10rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
+}
+@media (min-width: 600px) {
+  section.menu .wrapper {
+    flex-direction: row;
+    padding: 0 10rem 3rem 10rem;
+  }
 }
 section.menu .burger-card {
   display: grid;
-  grid-template-rows: 30vmin 12vmin;
+  grid-template-rows: 30vmin auto;
+  flex-grow: 1;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #696965;
@@ -293,12 +297,17 @@ section.menu .burger-card:nth-child(3) .photo {
 
 section.clients h1 {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 section.clients .client-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  padding: 2rem 10rem;
+}
+@media (min-width: 600px) {
+  section.clients .client-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem 10rem;
+  }
 }
 section.clients .client-wrapper div {
   height: 25vmin;
@@ -325,8 +334,15 @@ section.clients .client-wrapper div:nth-child(6) {
 section.info {
   display: flex;
   justify-content: space-between;
-  gap: 6rem;
-  padding: 0 12rem 5rem 12rem;
+  gap: 2rem;
+  flex-direction: column;
+}
+@media (min-width: 600px) {
+  section.info {
+    padding: 0 12rem 5rem 12rem;
+    flex-direction: row;
+    gap: 6rem;
+  }
 }
 section.info > div {
   flex-grow: 1;
@@ -352,6 +368,78 @@ section.info > div p {
 }
 section.info > div span {
   font-size: 0.9rem;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background: radial-gradient(100% 142vh at 50% calc(100% + 35vh), #5A8464 calc(50% - 2px), rgba(56, 117, 70, 0) 50%) 50%/calc(100% + 60vh) 100%;
+  height: 36vh;
+  display: grid;
+  place-content: end;
+  color: #fff;
+  padding-bottom: 10vmin;
+  gap: 2rem;
+  justify-content: center;
+}
+@media (min-width: 600px) {
+  footer {
+    padding-bottom: 20vmin;
+    place-content: center;
+  }
+}
+footer:after {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(#F5F8F4, #FAFAFA);
+  height: 30vmin;
+  width: 30vmin;
+  top: -50%;
+  left: calc(50% - 15vmin);
+}
+@media (min-width: 600px) {
+  footer:after {
+    content: "";
+  }
+}
+footer span.logo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  font-family: "Mali", cursive;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  footer span.logo {
+    padding-bottom: 9vmin;
+  }
+}
+footer span.logo i {
+  font-size: 6.5rem;
+  --fa-primary-color: #452713;
+  --fa-secondary-color: #C9753B;
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 1;
+  transition: rotate 500ms ease-in-out;
+}
+footer span.logo i:hover {
+  rotate: 360deg;
+}
+footer span.logo span {
+  font-size: 2.5rem;
+  color: #212529;
+  line-height: 28px;
+}
+footer .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 7.5rem;
+  text-align: center;
+}
+footer .icon-wrapper i {
+  font-size: 2.3rem;
 }
 
 .wobble {
