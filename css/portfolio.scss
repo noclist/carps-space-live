@@ -1,5 +1,5 @@
 @import 'reset';
-@import 'header';
+// @import 'header';
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
@@ -10,26 +10,89 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    background: radial-gradient(ellipse at left top, var(--background) 0%, #dff5d6 62%, #b1e698 100%);
-
-    min-height: 100vh;
     display: flex;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: #dff5d6 url('/images/lego4.jpg') center 75vmin/cover no-repeat;
     background-attachment: fixed;
-    color: var(--color);
-    background-position: top;
-    background-image: url('/images/lego3.jpg');
+
+    // background: radial-gradient(ellipse at left top, var(--background) 0%, #dff5d6 62%, #b1e698 100%);
+
+    @media(min-width: 600px) {
+      background: #dff5d6 url('/images/lego3.jpg') center top/cover no-repeat;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-column: span 2;
+    align-items: center;
+
+    @media(min-width: 600px) {
+      align-items: start;
+      flex-direction: row;
+    }
+
+    .name {
+      h2 {
+        font-size: 2rem;
+      }
+
+      i {
+        font-size: 1.8rem;
+        --fa-primary-color: #124e3b;
+        --fa-secondary-color: #26a13c;
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: end;
+      gap: 1rem;
+      margin-left: 0;
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: var(--accent);
+        cursor: pointer;
+      }
+
+      i {
+        font-size: 2rem;
+
+        @media(min-width: 600px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media(min-width: 600px) {
+        margin-left: auto;
+      }
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    img {
+      height: 20px;
+      margin-top: 2px;
+    }
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100px 1fr;
-    gap: 1rem;
+    gap: 2rem;
     width: min(100% - 3rem, 85vw);
     margin-inline: auto;
     min-height: 100vh;
