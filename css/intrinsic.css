@@ -115,6 +115,9 @@ body {
 .grid .card.burgers div:first-child {
   background: hsl(270deg, 50%, 75%) url("/images/burgertile.png") center center/contain no-repeat;
 }
+.grid .card.toy div:first-child {
+  background: url("/images/toytile.jpg") center center/cover no-repeat;
+}
 .grid .card > div:last-child {
   display: grid;
   align-items: center;

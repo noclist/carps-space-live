@@ -1,0 +1,177 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  main {
+    padding: 3rem 1rem 1rem 1rem;
+    height: calc(100% - 4rem);
+  }
+
+  section {
+    display: grid;
+    background: #FF6362;
+    padding: 2rem;
+    color: #fff;
+
+    .card {
+        display: grid;
+        gap: 1rem;
+        place-content: start;
+    }
+  }
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.3rem;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 135%;
+        left: 0;
+        bottom: -10px;
+        background: #212529;
+    }
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 400;
+
+    &.name {
+        color: #B0B0B0;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    &.title {
+        font-size: 1.4rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+a {
+    color: #FF6362;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 1.5px;
+        width: 100%;
+        left: 0;
+        bottom: -4px;
+        background: #FF6362;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    li {
+        cursor: pointer;
+        position: relative;
+        transition: all 500ms ease-in-out;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: #FF6362;
+            opacity: 0;
+            transition: all 500ms ease-in-out;
+        }
+
+        &:hover {
+            color: #FF6362;
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+button {
+    font-family: 'Ubuntu', sans-serif;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+
+    &.btn-light {
+        background: #FF6362;
+        color: #fff;
+        border: 2px solid #fff;
+        align-self: start;
+        justify-self: end;
+        transition: all 500ms ease-in-out;
+
+        &:hover {
+            background: #fff;
+            color: #FF6362;
+            border: 2px solid #FF6362;
+        }
+    }
+
+    &.btn-dark {
+        background: #fff;
+        color: #FF6362;
+        border: 2px solid #FF6362;
+        justify-self: start;
+        transition: all 500ms ease-in-out;
+
+        &:hover {
+            background: #FF6362;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    z-index: 1;
+}
+
+.toys {
+    background: #fff url('/images/toys2.jpg') left center/contain no-repeat;
+    height: 79.6vmin;
+    width: 75.8vmin;
+    filter: hue-rotate(302deg);
+}

@@ -113,6 +113,12 @@ body {
                 background: hsl(270, 50%, 75%) url('/images/burgertile.png') center center/contain no-repeat;
             }
         }
+
+        &.toy {
+            div:first-child {
+                background: url('/images/toytile.jpg') center center/cover no-repeat;
+            }
+        }
         
 
         > div:last-child {
