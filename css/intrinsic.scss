@@ -119,6 +119,12 @@ body {
                 background: url('/images/toytile.jpg') center center/cover no-repeat;
             }
         }
+
+        &.nba {
+            div:first-child {
+                background: url('/images/nbajamtile.png') center center/cover no-repeat;
+            }
+        }
         
 
         > div:last-child {
