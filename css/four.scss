@@ -64,6 +64,11 @@ section {
         display: grid;
         place-content: center;
         position: relative;
+        padding: 1rem 0;
+
+        @media(min-width: 600px) {
+            padding: 0;
+        }
 
         &:before, &:after {
             font-family: "Font Awesome 6 Duotone";
@@ -75,23 +80,27 @@ section {
             width: 10vmin;
             height: 10vmin;
             top: calc(50% - 5vmin);
-
-
         }
 
         &:before {
-            content: "\f434";
             --fa-primary-color: black;
             color: var(--fa-primary-color, inherit);
             opacity: var(--fa-primary-opacity, 1.0);
             box-shadow: 0px 0px 0px 25px #fff;
+
+            @media(min-width: 600px) {
+                content: "\f434";
+            }
         }
 
         &:after {
-            content: "\f434\f434";
             --fa-secondary-color: orange;
             color: var(--fa-secondary-color, inherit);
             opacity: var(--fa-secondary-opacity, 1.0);
+
+            @media(min-width: 600px) {
+                content: "\f434\f434";
+            }
         }
     }
 
@@ -116,6 +125,11 @@ section {
     &:first-child {
         background: url('/images/Nbajam.jpg') right bottom/cover no-repeat;
         transition: all 1s ease-in-out;
+        height: 25vh;
+
+        @media(min-width: 600px) {
+            height: auto;
+        }
 
         &:hover {
             background-position: left center;
@@ -125,6 +139,11 @@ section {
     &:nth-child(4) {
         background: url('/images/nba-jam.jpg') right center/cover no-repeat;
         transition: all 1s ease-in-out;
+        height: 25vh;
+
+        @media(min-width: 600px) {
+            height: auto;
+        }
 
         &:hover {
             background-position: left center;
