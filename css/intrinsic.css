@@ -56,18 +56,28 @@ body {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-  padding: 5rem;
+  padding: 2rem;
   padding-top: 3rem;
+}
+@media (min-width: 600px) {
+  .grid {
+    padding: 5rem;
+  }
 }
 .grid .card {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  aspect-ratio: 1/1.5;
+  aspect-ratio: 1/0.8;
   border: 1px solid #212529;
   border-radius: 5px;
   background: hsl(206deg, 25%, 20%);
   cursor: pointer;
   transition: all 250ms ease;
+}
+@media (min-width: 600px) {
+  .grid .card {
+    aspect-ratio: 1/1.5;
+  }
 }
 .grid .card:hover {
   scale: 1.0125;
