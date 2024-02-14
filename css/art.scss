@@ -2,6 +2,8 @@
 @import 'mixins/frame';
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap'); 
 
 * {
   margin: 0;
@@ -11,166 +13,122 @@
 
 body {
   background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  background-attachment: fixed;
   min-height: 100vh;
-  padding: 0 2rem 2rem 2rem;
+}
+ 
+header {
+  background: hsl(162, 85%, 35%);
+  text-align: center;
+
+  @media(min-width: 1000px) {
+    padding: 0.5rem 0rem 1.5rem 11rem;
+  }
 }
 
 h1 {
-  font-size: 5rem;
-  font-family: 'Rampart One', cursive;
-  text-shadow: 1px 1px 2px rgb(255, 67, 98);
-  text-align: center;
+  color: #ec4913;
+  font-family: 'Rancho', cursive;
+  font-size: max(3.5rem, min(12vw, 6rem));
+  width: 100%;
+  text-shadow: 0.015em 0.015em hsl(15, 85%, 30%), -.03em -.03em hsl(185, 100%, 98%);
+  letter-spacing: 0.3rem;
+  position: relative;
+
+  @media(min-width: 1000px) {
+    width: fit-content;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 133%;
+    background: #212529;
+    left: 0;
+    bottom: -5px;
+  }
 }
 
 .gallery {
     display: grid;
-    gap: 2rem;
-    margin-top: 2rem;
-
-    @media(min-width: 500px) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media(min-width: 800px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media(min-width: 1100px) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-template-rows: repeat(5, 250px);
-
-      div.col-span-2 {
-        grid-column-end: span 2;
-      }
-
-      div.col-span-3 {
-        grid-column-end: span 3; 
-      }
-
-      div.row-span-2 {
-        grid-row-end: span 2;
-      }
-
-      div.col-start-3 {
-        grid-column-start: 3;
-      }
-    }
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    grid-auto-rows: 215px;
+    gap: 4rem;
+    margin: 0 auto;
+    padding: 4rem;
+    max-width: 1300px;
 
     div {
-        padding: 1rem 0.5rem; 
-        background: #fff;
-        display: grid;
-        place-content: center;
         border: 2rem solid #212529;
         filter: drop-shadow(0 0 6px hsl(0, 0%, 0%));
         cursor: pointer;
 
-        @media(min-width: 1100px) {
-          padding: 2rem;
-        }
+        &.d-none {
+          display: none;
 
-        i {
-          transition: transform 0.1s ease-in;
-        }
-
-        &:hover {
-          i {
-            transform: scale(1.2) rotate(-5deg);
+          @media(min-width: 1000px) {
+            display: block;
+            border: 0;
           }
         }
 
-        &.dino {
-          color: #8EC0DB;
-          @include frame;
-        }
-    
-        &.bandage {
-            color: #C59065;
-            @include frame;
-
-            i {
-              font-size: 12vmin;
-              transform: rotate(45deg);
-            }
-
-            &:hover {
-              i {
-                transform: scale(1.2) rotate(40deg);
-              }
-            }
-        }
-      
-        &.alien {
-            color: hsl(109, 100%, 50%);
-        }
-
-        &.frog {
-          color: green;
-        }
-
-        &.fly {
-          color:hsl(350, 100%, 75%);
-          @include frame;
-        }
-      
-        &.robot {
-            color: hsl(0, 0%, 50%);
-        }
-      
         &.monkey {
-            color: hsl(29, 100%, 65%);
-            @include frame;
+          background: url('/images/monkey-art.jpg') center center/cover no-repeat;
         }
-      
-        &.tree {
-          color: #b2ff6b;
+
+        &.robot {
+          background: url('/images/robot-art.png') center center/cover no-repeat;
           @include frame;
         }
 
-        &.ball {
-          color: hsl(211, 100%, 40%);
+        &.ball { 
+          background: url('/images/poolball-art.jpg') center center/cover no-repeat;
         }
 
         &.cube {
-          color: hsl(320, 100%, 75%);
-        }
-
-        &.q-block {
-          --fa-primary-color: #E11A00;
-          --fa-secondary-color: #F0CBA8;
-          --fa-secondary-opacity: 0.75;
-        }
-
-        &.egg {
-          color: #f3e77f;
-
-          --fa-primary-color: hsl(39, 100%, 49%);
-          --fa-secondary-color: hsl(60, 100%, 83%);
-          --fa-secondary-opacity: 1;
+          background: url('/images/cube-art.jpg') center center/cover no-repeat;
           @include frame;
         }
 
+        &.egg {
+          background: url('/images/egg-art.jpg') center center/cover no-repeat;
+        }
+
+        &.alien {
+          background: url('/images/alien-art.jpg') center center/cover no-repeat;
+      }
+
+      &.mushroom {
+        background: url('/images/mushroom-art.jpg') left center/cover no-repeat;
+        @include frame;
+      }
+
+        &.dino {
+          background: url('/images/dino-art.jpg') center center/cover no-repeat;
+        }
+
         &.tv {
-          color: #00ABBD;
+          background: url('/images/tv-art.png') left center/cover no-repeat;
         }
-        
     
-        i {
-          font-size: 15vmin;
-          text-align: center;
-
-          &.dino-icon {
-            height: 150px;
-            width: 130px;
-            background: url('/icons/dinosaur.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-          }
+        &.fly {
+          background: url('/images/insect.jpg') right center/cover no-repeat;
+          @include frame;
         }
 
-        &.col-span-2.row-span-2 {
-          i {
-            font-size: 27vmin;
+        &.bear {
+            background: url('/images/panda-art.png') center center/cover no-repeat;
+        }
+      
+        &.frog {
+          background: url('/images/frog-art.png') center center/cover no-repeat;
+        }
+
+        &.large {
+          @media(min-width: 1000px) {
+            grid-column: span 2;
+            grid-row: span 2;
           }
         }
     }
