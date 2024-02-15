@@ -70,6 +70,16 @@ h1 {
           @media(min-width: 1000px) {
             display: block;
             border: 0;
+            opacity: 0.75;
+            cursor: auto;
+
+            background:
+              conic-gradient(#1a144a 25%,#0000 0) 0 0/calc(2*76px) calc(76px/9.5),
+              conic-gradient(#1a144a 25%,#0000 0) 0 0/calc(76px/9.5) calc(2*76px),
+              repeating-conic-gradient(#0000 0 25%, #1a144a 0 50%) 
+                76px 0 /calc(2*76px) calc(2*76px),
+              radial-gradient(50% 50%,#2eb044 98%, #1a144a) 
+                0 0/76px 76px;
           }
         }
 
