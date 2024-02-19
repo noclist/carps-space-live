@@ -1,0 +1,100 @@
+@import 'modules/reset';
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1F307F;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 3.7rem;
+    margin-top: 4rem;
+}
+
+p {
+    font-size: 1.3rem;
+    width: 25ch;
+    margin: auto;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+
+    > div {
+        height: 45vh;
+        width: 40vw;
+        rotate: 348deg;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        transition: all 500ms ease-in-out; 
+
+        .text {
+            display: grid;
+            place-content: center;
+            gap: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        &:after {
+            content: '';
+            background:url('/images/cavs-logo.png') left top/contain no-repeat;
+            position: absolute;
+            width: 5rem;
+            aspect-ratio: 1.1638;
+            margin-left: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        
+        &:first-child {
+            background: #C1AEA0;
+            translate: 35vmin -10vmin;
+
+            .image {
+                background: url('/images/garland.webp') left top/cover no-repeat;
+            }
+        }
+
+        &:nth-child(2) {
+            background: linear-gradient(#FD9A5C, #EB7125);
+            z-index: 2;
+            color: #fff;
+
+            .image {
+                background: url('/images/mitchell.webp') left top/cover no-repeat;
+            }
+        }
+
+        &:last-child {
+            background: linear-gradient(#C9E6EC, #9BC0C6);
+            translate: -35vmin 10vmin;
+            color: #212529;
+
+            .image {
+                background: url('/images/mobley.webp') left top/cover no-repeat;
+            }
+        }
+
+        &:hover {
+            z-index: 3;
+            scale: 1.025;
+        }
+    }
+}
+

@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1F307F;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 3.7rem;
+  margin-top: 4rem;
+}
+
+p {
+  font-size: 1.3rem;
+  width: 25ch;
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+.wrapper > div {
+  height: 45vh;
+  width: 40vw;
+  rotate: 348deg;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  transition: all 500ms ease-in-out;
+}
+.wrapper > div .text {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+.wrapper > div:after {
+  content: "";
+  background: url("/images/cavs-logo.png") left top/contain no-repeat;
+  position: absolute;
+  width: 5rem;
+  aspect-ratio: 1.1638;
+  margin-left: 0.75rem;
+  margin-top: 0.75rem;
+}
+.wrapper > div:first-child {
+  background: #C1AEA0;
+  translate: 35vmin -10vmin;
+}
+.wrapper > div:first-child .image {
+  background: url("/images/garland.webp") left top/cover no-repeat;
+}
+.wrapper > div:nth-child(2) {
+  background: linear-gradient(#FD9A5C, #EB7125);
+  z-index: 2;
+  color: #fff;
+}
+.wrapper > div:nth-child(2) .image {
+  background: url("/images/mitchell.webp") left top/cover no-repeat;
+}
+.wrapper > div:last-child {
+  background: linear-gradient(#C9E6EC, #9BC0C6);
+  translate: -35vmin 10vmin;
+  color: #212529;
+}
+.wrapper > div:last-child .image {
+  background: url("/images/mobley.webp") left top/cover no-repeat;
+}
+.wrapper > div:hover {
+  z-index: 3;
+  scale: 1.025;
+}

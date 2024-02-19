@@ -75,6 +75,12 @@ body {
             }
         }
 
+        &.players {
+            div:first-child {
+                background: #fff url('/images/cavs-net.webp') center/contain no-repeat;
+            }
+        }
+
         &.team {
             div:first-child {
                 background: url('https://www.w3schools.com/w3images/avatar3.png') 100%/cover no-repeat;

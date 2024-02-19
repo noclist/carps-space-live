@@ -101,6 +101,9 @@ body {
 .grid .card.vacation div:first-child {
   background: #fff url("/images/vacation.png") center/contain no-repeat;
 }
+.grid .card.players div:first-child {
+  background: #fff url("/images/cavs-net.webp") center/contain no-repeat;
+}
 .grid .card.team div:first-child {
   background: url("https://www.w3schools.com/w3images/avatar3.png") 100%/cover no-repeat;
 }
