@@ -102,7 +102,7 @@ p {
   margin-top: 0.75rem;
 }
 .wrapper > div:first-child {
-  background: #C1AEA0;
+  background: linear-gradient(#D1C2BC, #B7A69C);
   translate: 35vmin -10vmin;
 }
 .wrapper > div:first-child .image {
