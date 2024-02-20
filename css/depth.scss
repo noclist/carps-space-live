@@ -1,6 +1,8 @@
 @import 'modules/reset';
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 
+$bp: 1000px;
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +16,7 @@ body {
   overflow-x: hidden;
   font-family: "PT Sans Narrow", sans-serif;
 
-  @media(min-width: 1200px) {
+  @media(min-width: $bp) {
     place-content: center;
   }
 }
@@ -40,7 +42,7 @@ p {
     gap: 1rem;
     padding: 1rem;
 
-    @media(min-width: 1200px) {
+    @media(min-width: $bp) {
         flex-direction: row;
         margin: 0;
     }
@@ -52,7 +54,7 @@ p {
 
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-        @media(min-width: 1200px) {
+        @media(min-width: $bp) {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto;
             rotate: 348deg;
@@ -81,7 +83,7 @@ p {
         &:first-child {
             background: linear-gradient(#D1C2BC, #B7A69C);
 
-            @media(min-width: 1200px) {
+            @media(min-width: $bp) {
                 translate: 35vmin -10vmin;
             }
 
@@ -104,7 +106,7 @@ p {
             background: linear-gradient(#C9E6EC, #9BC0C6);
             color: #212529;
 
-            @media(min-width: 1200px) {
+            @media(min-width: $bp) {
                 translate: -35vmin 10vmin;
             }
 
