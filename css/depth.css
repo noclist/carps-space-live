@@ -52,10 +52,14 @@ li {
 body {
   background: #1F307F;
   display: grid;
-  place-content: center;
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "PT Sans Narrow", sans-serif;
+}
+@media (min-width: 600px) {
+  body {
+    place-content: center;
+  }
 }
 
 h1 {
@@ -76,7 +80,8 @@ p {
   display: flex;
   position: relative;
   flex-direction: column;
-  margin: 0.5rem;
+  gap: 1rem;
+  padding: 1rem;
 }
 @media (min-width: 600px) {
   .wrapper {
