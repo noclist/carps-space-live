@@ -143,6 +143,7 @@ section.intro {
     @media(min-width: 600px) {
         grid-template-columns: 1fr 1fr;
         padding: 3rem 4rem 0 12rem;
+        text-align: left;
     }
 
     .desc {
@@ -154,7 +155,6 @@ section.intro {
 }
 
 section.background-img {
-
     position: relative;
     aspect-ratio: 1.776;
     border-radius: 5px;
@@ -173,7 +173,6 @@ section.background-img {
     }
 
     &:before {
-
         position: absolute;
         width: 29rem;
         height: 6rem;
@@ -284,4 +283,5 @@ main {
 
 footer {
     background: #FFE2C1;
+
 }

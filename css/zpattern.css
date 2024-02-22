@@ -184,6 +184,7 @@ section.intro {
   section.intro {
     grid-template-columns: 1fr 1fr;
     padding: 3rem 4rem 0 12rem;
+    text-align: left;
   }
 }
 @media (min-width: 600px) {
