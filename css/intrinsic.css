@@ -131,6 +131,9 @@ body {
 .grid .card.toy div:first-child {
   background: url("/images/toytile.jpg") center center/cover no-repeat;
 }
+.grid .card.pop div:first-child {
+  background: url("/images/pop-tile.jpg") center center/cover no-repeat;
+}
 .grid .card.nba div:first-child {
   background: url("/images/nbajamtile.png") center center/cover no-repeat;
 }

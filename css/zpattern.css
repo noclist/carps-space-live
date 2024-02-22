@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFE2C1;
+  min-height: 100vh;
+  font-family: Oswald, sans-serif;
+}
+
+h1 {
+  font-size: 7.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 25rem;
+  line-height: 7.5rem;
+}
+
+h2 {
+  font-family: Helvetica, sans-serif;
+  width: 15rem;
+}
+
+h3 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.mb {
+  margin-bottom: 1rem;
+}
+
+.mt {
+  margin-top: 2rem;
+}
+
+.pt {
+  padding-top: 200px;
+}
+
+.pl {
+  padding-left: 2rem;
+}
+
+.pt-2 {
+  padding-top: 1.5rem;
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  width: 30ch;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+}
+p.bio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 25ch;
+  color: rgb(0, 0, 0);
+  line-height: 1.4;
+  letter-spacing: -0.75px;
+}
+
+a {
+  color: #000;
+}
+a:hover {
+  color: rgb(74, 52, 199);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  justify-self: center;
+  transition: all 250ms ease-in-out;
+  background: #000;
+  color: #FFE2C1;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-family: Oswald, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+button:hover {
+  background: #EFADBD;
+  color: #000;
+  border: 2px solid #000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+header .title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+header .list {
+  display: flex;
+  gap: 1rem;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.25rem;
+}
+
+section.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem 4rem 0 12rem;
+}
+section.intro .desc {
+  justify-self: end;
+  padding-right: 10rem;
+}
+
+section.background-img {
+  width: calc(100% - 8rem);
+  position: relative;
+  aspect-ratio: 1.776;
+  margin: 4.5rem 4rem 1rem 4rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+  background: url("/images/pop-art.webp") center/contain no-repeat;
+}
+section.background-img:hover:before {
+  color: #FFB35C;
+}
+section.background-img:before {
+  content: "Listen";
+  position: absolute;
+  width: 29rem;
+  height: 6rem;
+  background: #000;
+  font-size: 2rem;
+  right: -6px;
+  color: #FFE2C1;
+  display: grid;
+  padding-left: 1.75rem;
+  padding-top: 1rem;
+  top: -5.4rem;
+  border-radius: 12px;
+  z-index: -1;
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #C6BCFE;
+  translate: 0 -275px;
+  z-index: -1;
+  position: relative;
+  padding-top: 275px;
+  padding-bottom: 8rem;
+}
+main .btns {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 5rem;
+}
+main .headphones-grid {
+  display: grid;
+  grid-template-columns: 1fr 560px 375px;
+  grid-template-rows: 0.35fr 0.75fr 0.45fr 0.5fr;
+}
+main .headphones-grid .headline {
+  grid-row-start: 2;
+  position: relative;
+  left: 2.5rem;
+  background: #C6BCFE;
+  border-radius: 25px;
+  padding-top: 1rem;
+  padding-right: 2rem;
+}
+main .headphones-grid .headphones {
+  width: 560px;
+  aspect-ratio: 0.71;
+  position: relative;
+  grid-column-start: 2;
+  grid-row: span 4;
+}
+main .headphones-grid .headphones:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 210px;
+  aspect-ratio: 1.54;
+  background: url("/images/planet.webp") 100%/cover no-repeat;
+  bottom: -50px;
+  left: -60px;
+}
+main .headphones-grid .headphones img {
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+main .headphones-grid .casette {
+  width: 375px;
+  aspect-ratio: 1.396;
+}
+
+footer {
+  background: #FFE2C1;
+}
