@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 *,
@@ -11,7 +12,7 @@ body, html {
 
 ::selection {
   color: #fff;
-  background: var(--color-pink);
+  background: hsl(349deg, 100%, 74%);
 }
 
 h1,
@@ -121,9 +122,7 @@ h1 .select {
   height: 80vh;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 5fr 4fr 3fr 2fr 1fr 1fr;
-  grid-template-areas: "one one one one one" "two two two three three" "four four five five five" "six six six seven seven" "eight eight eight eight eight" "nine nine nine ten ten";
+  grid-template-rows: repeat(10, 250px);
 }
 @media (min-width: 768px) {
   .grid {
@@ -195,33 +194,35 @@ h1 .select {
     transform: translate(10%, 20%);
   }
 }
-.grid > div.one {
-  grid-area: one;
-}
-.grid > div.two {
-  grid-area: two;
-}
-.grid > div.three {
-  grid-area: three;
-}
-.grid > div.four {
-  grid-area: four;
-}
-.grid > div.five {
-  grid-area: five;
-}
-.grid > div.six {
-  grid-area: six;
-}
-.grid > div.seven {
-  grid-area: seven;
-}
-.grid > div.eight {
-  grid-area: eight;
-}
-.grid > div.nine {
-  grid-area: nine;
-}
-.grid > div.ten {
-  grid-area: ten;
+@media (min-width: 768px) {
+  .grid > div.one {
+    grid-area: one;
+  }
+  .grid > div.two {
+    grid-area: two;
+  }
+  .grid > div.three {
+    grid-area: three;
+  }
+  .grid > div.four {
+    grid-area: four;
+  }
+  .grid > div.five {
+    grid-area: five;
+  }
+  .grid > div.six {
+    grid-area: six;
+  }
+  .grid > div.seven {
+    grid-area: seven;
+  }
+  .grid > div.eight {
+    grid-area: eight;
+  }
+  .grid > div.nine {
+    grid-area: nine;
+  }
+  .grid > div.ten {
+    grid-area: ten;
+  }
 }

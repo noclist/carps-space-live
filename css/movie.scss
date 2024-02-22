@@ -58,15 +58,7 @@ h1 {
     height: 80vh;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 5fr 4fr 3fr 2fr 1fr 1fr;
-    grid-template-areas:
-                "one one one one one"
-                "two two two three three"
-                "four four five five five"
-                "six six six seven seven"
-                "eight eight eight eight eight"
-                "nine nine nine ten ten";
+    grid-template-rows: repeat(10, 250px);
 
     @media(min-width: $bp-sm) {
         grid-template-columns: 3fr 2fr 1fr 1fr;
@@ -158,44 +150,46 @@ h1 {
             }
         }
 
-        &.one {
-            grid-area: one;
-        }
+        @media(min-width: $bp-sm) {
+            &.one {
+                grid-area: one;
+            }
 
-        &.two {
-            grid-area: two;
-        }
+            &.two {
+                grid-area: two;
+            }
 
-        &.three {
-            grid-area: three;
-        }
+            &.three {
+                grid-area: three;
+            }
 
-        &.four {
-            grid-area: four;
-        }
+            &.four {
+                grid-area: four;
+            }
 
-        &.five {
-            grid-area: five;
-        }
+            &.five {
+                grid-area: five;
+            }
 
-        &.six {
-            grid-area: six;
-        }
+            &.six {
+                grid-area: six;
+            }
 
-        &.seven {
-            grid-area: seven;
-        }
+            &.seven {
+                grid-area: seven;
+            }
 
-        &.eight {
-            grid-area: eight;
-        }
+            &.eight {
+                grid-area: eight;
+            }
 
-        &.nine {
-            grid-area: nine;
-        }
+            &.nine {
+                grid-area: nine;
+            }
 
-        &.ten {
-            grid-area: ten;
+            &.ten {
+                grid-area: ten;
+            }
         }
     }
 }
