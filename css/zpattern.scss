@@ -1,7 +1,6 @@
 @import 'modules/reset';
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -15,16 +14,23 @@ body {
 }
 
 h1 {
-    font-size: 7.5rem;
+    font-size: 12vw;
     font-weight: 500;
     text-transform: uppercase;
     width: 25rem;
     line-height: 7.5rem;
+
+    @media(min-width: 600px) {
+        font-size: 7.5rem
+    }
 }
 
 h2 {
     font-family: Helvetica, sans-serif;
-    width: 15rem;
+
+    @media(min-width: 600px) {
+        width: 15rem;
+    }
 }
 
 h3 {
@@ -42,7 +48,9 @@ h3 {
 }
 
 .pt {
-    padding-top: 200px;
+    @media(min-width: 600px){
+        padding-top: 200px;
+    }
 }
 
 .pl {
@@ -55,10 +63,14 @@ h3 {
 
 p {
     font-family: Helvetica, sans-serif;
-    width: 30ch;
+
     font-size: 1.1rem;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.75);
+
+    @media(min-width: 600px) {
+        width: 30ch;
+    }
 
     &.bio {
         font-size: 1.5rem;
@@ -100,10 +112,16 @@ button {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 2rem 4rem;
-    
+    gap: 1rem;
+
+    @media(min-width: 600px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+    }
+
     .title {
         font-size: 2rem;
         font-weight: 500;
@@ -120,23 +138,33 @@ header {
 
 section.intro {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 3rem 4rem 0 12rem;
+    text-align: center;
+
+    @media(min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem 4rem 0 12rem;
+    }
 
     .desc {
-        justify-self: end;
-        padding-right: 10rem;
+        @media(min-width: 600px) {
+            justify-self: end;
+            padding-right: 10rem;
+        }
     }
 }
 
 section.background-img {
-    width: calc(100% - 8rem);
+
     position: relative;
     aspect-ratio: 1.776;
-    margin: 4.5rem 4rem 1rem 4rem;
     border-radius: 5px;
     border: 2px solid #000;
     background: url('/images/pop-art.webp') center/contain no-repeat;
+
+    @media (min-width: 600px) {
+        margin: 4.5rem 4rem 1rem 4rem;
+        width: calc(100% - 8rem);
+    }
 
     &:hover {
         &:before {
@@ -145,7 +173,7 @@ section.background-img {
     }
 
     &:before {
-        content: "Listen";
+
         position: absolute;
         width: 29rem;
         height: 6rem;
@@ -160,6 +188,10 @@ section.background-img {
         border-radius: 12px;
         z-index: -1;
         text-transform: uppercase;
+
+        @media (min-width: 600px) {
+            content: "Listen";
+        }
     }
 }
 
@@ -167,44 +199,59 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background: #C6BCFE;
-    translate: 0 -275px;
     z-index: -1;
     position: relative;
-    padding-top: 275px;
-    padding-bottom: 8rem;
+
+    @media(min-width: 600px) {
+        padding-top: 275px;
+        padding-bottom: 8rem;
+        translate: 0 -275px;
+    }
 
     .btns {
         display: flex;
+        flex-direction: column;
         gap: 1.2rem;
         margin-bottom: 5rem;
+
+        @media(min-width: 600px) {
+            flex-direction: row;
+        }
     }
 
     .headphones-grid {
         display: grid;
-        grid-template-columns: 1fr 560px 375px;
-        grid-template-rows: 0.35fr 0.75fr 0.45fr 0.5fr;
+
+        @media(min-width: 600px) {
+            grid-template-columns: 1fr 560px 375px;
+            grid-template-rows: 0.35fr 0.75fr 0.45fr 0.5fr;
+        }
 
         .headline {
-            grid-row-start: 2;
             position: relative;
-            left: 2.5rem;
             background: #C6BCFE;
             border-radius: 25px;
             padding-top: 1rem;
             padding-right: 2rem;
+
+            @media(min-width: 600px) {
+                grid-row-start: 2;
+                left: 2.5rem;
+            }
         }
 
         .headphones {
-            width: 560px;
             aspect-ratio: 0.71;
             position: relative;
-            grid-column-start: 2;
-            grid-row: span 4;
+
+            @media(min-width: 600px) {
+                width: 560px;
+                grid-column-start: 2;
+                grid-row: span 4;
+            }
 
             &:after {
-                content: '';
                 display: block;
                 position: absolute;
                 width: 210px;
@@ -212,6 +259,10 @@ main {
                 background: url('/images/planet.webp') 100%/cover no-repeat;
                 bottom: -50px;
                 left: -60px;
+
+                @media (min-width: 600px) {
+                    content: '';
+                }
             }
 
             img {
@@ -221,8 +272,12 @@ main {
         }
 
         .casette {
-            width: 375px;
-            aspect-ratio: 1.396;
+
+            @media(min-width: 600px) {
+                width: 375px;
+                aspect-ratio: 1.396;
+            }
+
         }
     }
 }
