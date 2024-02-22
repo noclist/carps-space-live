@@ -59,12 +59,18 @@ h1 {
   font-size: 12vw;
   font-weight: 500;
   text-transform: uppercase;
-  width: 25rem;
   line-height: 7.5rem;
+}
+h1.heading {
+  width: 25rem;
 }
 @media (min-width: 600px) {
   h1 {
     font-size: 7.5rem;
+  }
+  h1.footer {
+    font-size: 3.5rem;
+    line-height: normal;
   }
 }
 
@@ -317,5 +323,22 @@ main .headphones-grid .headphones img {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
   background: #FFE2C1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  translate: 0 -275px;
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+}
+footer .flex {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+footer .flex img {
+  width: 17vw;
+  border-radius: 10px;
 }
