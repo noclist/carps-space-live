@@ -298,18 +298,31 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    translate: 0 -275px;
+    translate: 0 -0;
     padding-top: 6rem;
     padding-bottom: 1rem;
 
+    @media(min-width: 600px) {
+        translate: 0 -275px;
+    }
+
     .flex {
         display: flex;
+        flex-direction: column;
         gap: 1.5rem; 
         margin-top: 3.5rem;
 
+        @media(min-width: 600px) {
+            flex-direction: row;
+        }
+
         img {
-            width: 17vw;
+            width: 75vw;
             border-radius: 10px;
+
+            @media(min-width: 600px) {
+                width: 17vw;
+            }
         }
     }
 }
