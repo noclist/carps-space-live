@@ -111,6 +111,10 @@ h3 {
   padding-top: 1.5rem;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 p {
   font-family: Helvetica, sans-serif;
   font-size: 1.1rem;
@@ -129,6 +133,9 @@ p.bio {
   color: rgb(0, 0, 0);
   line-height: 1.4;
   letter-spacing: -0.75px;
+}
+p.subscribe {
+  width: 20ch;
 }
 
 a {
@@ -328,33 +335,88 @@ footer {
   background: #FFE2C1;
   align-items: center;
   justify-content: center;
-  text-align: center;
   translate: 0 0;
   padding-top: 6rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 @media (min-width: 600px) {
   footer {
     translate: 0 -275px;
   }
 }
-footer .flex {
+footer .flex-tiles {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 3.5rem;
+  padding-bottom: 6rem;
 }
 @media (min-width: 600px) {
-  footer .flex {
+  footer .flex-tiles {
     flex-direction: row;
   }
 }
-footer .flex img {
+footer .flex-tiles img {
   width: 75vw;
   border-radius: 10px;
 }
 @media (min-width: 600px) {
-  footer .flex img {
+  footer .flex-tiles img {
     width: 17vw;
+  }
+}
+footer .flex-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 600px) {
+  footer .flex-info {
+    flex-direction: row;
+    padding: 0 10rem;
+  }
+}
+footer .flex-info p.alt {
+  width: 40ch;
+  margin-bottom: 2rem;
+}
+footer .flex-info input {
+  outline: 0;
+  background: transparent;
+  border: 2px solid #C4274C;
+  border-width: 0 0 2px;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+footer .flex-info label {
+  font-family: Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+footer .guitar {
+  width: 95vw;
+  aspect-ratio: 3.373;
+  background: url(/images/guitar.webp) center center/cover no-repeat;
+  margin-top: 6rem;
+  border-radius: 10px;
+  border: 2px solid black;
+  position: relative;
+}
+@media (min-width: 600px) {
+  footer .guitar {
+    width: 80vw;
+  }
+}
+footer .guitar:after {
+  position: absolute;
+  background: url(/images/ball.webp) center center/cover no-repeat;
+  width: 275px;
+  aspect-ratio: 1.14;
+  top: -20vmin;
+  left: 15vmin;
+}
+@media (min-width: 600px) {
+  footer .guitar:after {
+    content: "";
   }
 }
