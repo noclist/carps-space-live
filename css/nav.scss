@@ -10,9 +10,13 @@ body {
     margin: 0;
     font-family: 'Luckiest Guy', system-ui;
     display: grid;
-    grid-template-columns: 15rem 1fr;
+
     background: var(--body-color);
     color: #fff;
+
+    @media(min-width: 600px) {
+        grid-template-columns: 15rem 1fr;
+    }
   }
 
   nav {
