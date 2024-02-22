@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/stream.css">
 </head>
 <body>
-    <button class="rotate btn mb-3" onclick="rotate()">Make it 3D!</button>
+    <button class="rotate btn mb-3" onclick="rotate()">Make it 3D</button>
     <div class="grid">
        <div class="col-span-2 marvel">
         <div></div>
@@ -43,12 +43,12 @@
 <script>
 function rotate() {
     if(document.querySelector(".grid").classList.contains('rotate')) {
-        document.querySelector(".btn").textContent="Make it 3D!";
+        document.querySelector(".btn").textContent="Make it 3D";
         document.querySelector(".grid").classList.remove("rotate");
 
     } else {
         document.querySelector(".grid").classList.add("rotate");
-        document.querySelector(".btn").textContent="Make it 2D!";
+        document.querySelector(".btn").textContent="Make it 2D";
     }
 }
 </script>
