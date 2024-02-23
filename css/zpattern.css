@@ -465,6 +465,10 @@ footer .flex-links .menu, footer .flex-links .contact {
   flex-direction: column;
   gap: 1rem;
 }
+footer .flex-links .menu a, footer .flex-links .contact a {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.25rem;
+}
 footer .flex-links .menu .icons, footer .flex-links .contact .icons {
   display: flex;
   gap: 2rem;

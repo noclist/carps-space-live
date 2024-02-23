@@ -437,6 +437,11 @@ footer {
             flex-direction: column;
             gap: 1rem;
 
+            a {
+                font-family: Helvetica, sans-serif;
+                font-size: 1.25rem;
+            }
+
             .icons {
                 display: flex;
                 gap: 2rem;
