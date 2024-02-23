@@ -146,8 +146,13 @@ body {
                 background: url('/images/nbajamtile.png') center center/cover no-repeat;
             }
         }
-        
 
+        &.mi {
+            div:first-child {
+                background: url('/images/fuse-tile.jpg') center center/cover no-repeat;
+            }
+        }
+        
         > div:last-child {
             display: grid;
             align-items: center;
