@@ -37,6 +37,7 @@ button {
     cursor: pointer;
     padding: 0.75rem 2rem;
     justify-self: center;
+    align-self: center;
     transition: all 250ms ease-in-out;
     color: #fff;
 
@@ -68,6 +69,20 @@ button {
             border: 2px solid #fff;
             color: #7E55F6;
         } 
+    }
+
+    &.btn-white {
+        background: #fff;
+        border: 1px solid #000;
+        color: #000;
+        padding: 1.5rem 3rem;
+        align-self: end;
+
+        &:hover {
+            background: #7E55F6;
+            color: #fff;
+            border: 1px solid #7E55F6;
+        }
     }
 }
 
@@ -242,7 +257,6 @@ section.films {
     animation: bg-animate linear forwards;
     animation-timeline: view();
     animation-range: 10% 100%;
-    padding-bottom: 50vw;
 
     h2 {
         width: auto;
@@ -280,6 +294,73 @@ section.films {
                 animation: fade-in linear forwards;
                 animation-timeline: view();
                 animation-range: 0.1vh 40vh;
+            }
+        }
+    }
+}
+
+section.resources {
+    padding: 2rem;
+    display: grid;
+    background: #fff;
+    color: #000;
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+            border: 1px solid #000;
+
+            .img {
+                width: 100%;
+                aspect-ratio: 1.78;
+            }
+
+            &.mi2 .img {
+                background: url('/images/mi/mi-card1.webp') center center/cover no-repeat;
+            }
+
+            &.ghost .img {
+                background: url('/images/mi/mi-card2.webp') center center/cover no-repeat;
+            }
+
+            &.fallout .img {
+                background: url('/images/mi/mi-card3.webp') center center/cover no-repeat;
+            }
+
+            .text {
+                border-bottom: 2px solid #CCCCCC;
+                padding: 2rem 0 1rem 0;
+                margin: 0 1rem;
+
+                .date {
+                    font-size: 0.75rem;
+                    padding-bottom: 1.5rem;
+                }
+
+                p {
+                    width: auto;
+                }
+            }
+
+            .icons {
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem 1rem 2rem 1rem;
+                color: #3F3F3F;
+
+                .fa-fire {
+                    color: red;
+                }
+
+                .fa-mask {
+                    color: blue;
+                }
             }
         }
     }
