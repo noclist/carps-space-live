@@ -128,7 +128,10 @@ h3 {
 
 p {
     font-size: 1.5rem;
-    width: 20ch;
+
+    @media(min-width: 600px) {
+        width: 20ch;
+    }
 
     &.small {
         font-size: 1.2rem;

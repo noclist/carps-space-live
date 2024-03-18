@@ -229,7 +229,11 @@ h3 {
 
 p {
   font-size: 1.5rem;
-  width: 20ch;
+}
+@media (min-width: 600px) {
+  p {
+    width: 20ch;
+  }
 }
 p.small {
   font-size: 1.2rem;
