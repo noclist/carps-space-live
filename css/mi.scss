@@ -132,8 +132,11 @@ p {
 
     &.small {
         font-size: 1.2rem;
-        width: 40ch;
         line-height: 30px;
+
+        @media(min-width: 600px) {
+            width: 40ch;
+        }
     }
 
     @media(min-width: 600px) {
