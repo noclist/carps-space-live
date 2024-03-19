@@ -253,6 +253,7 @@ section.grid {
     
     @media(min-width: 600px) {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 575px 575px;
     }
 
     > div {
