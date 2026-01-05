@@ -5,22 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icons/favicon-basic.ico" /> 
-    <title>carps space</title>
+    <title>About | carps space</title>
     <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/command-palette.css">
 </head>
 <body>
+    <script src="js/command-palette.js"></script>
+    
     <main>
-        <section>
+        <section class="content">
+            <a href="index-v2.html" class="back-link">← Back to Home</a>
+            <span class="label">About</span>
             <h1>Meet Ben Carpenter</h1>
-            <p>
+            <p class="bio">
                 Crafting digital experiences that captivate and inspire. As a front-end web developer based in Cleveland,
-                I bring creativity and technical expertise to every project. When I'm not immersed in code,
-                you can find me pedaling through scenic routes on my bicycle, building intricate worlds with Legos,
-                or getting lost in the magic of movies. Let's connect and create something extraordinary together!
+                I bring creativity and technical expertise to every project.
             </p>
+            <p class="bio">
+                When I'm not immersed in code, you can find me pedaling through scenic routes on my bicycle, 
+                building intricate worlds with Legos, or getting lost in the magic of movies.
+            </p>
+            <p class="cta">Let's connect and create something extraordinary together!</p>
+            
+            <div class="interests">
+                <div class="interest">
+                    <span class="interest-icon">🚴</span>
+                    <span class="interest-label">Cycling</span>
+                </div>
+                <div class="interest">
+                    <span class="interest-icon">🧱</span>
+                    <span class="interest-label">LEGO</span>
+                </div>
+                <div class="interest">
+                    <span class="interest-icon">🎬</span>
+                    <span class="interest-label">Movies</span>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/noclist/" target="_blank" class="social-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/ben-carpenter-2556299/" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://www.twitter.com/afewgoodben" target="_blank" class="social-btn">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+            </div>
         </section>
-        <section></section>
+        <section class="portrait">
+            <img src="/images/portrait.jpg" alt="Ben Carpenter">
+        </section>
     </main>
 </body>
 </html>

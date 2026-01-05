@@ -8,8 +8,9 @@ docReady(function() {
 
     const grid = document.querySelector('.grid');
     const gridItems = grid.querySelectorAll(':scope > div');
-    // const year = window.location.href.substring(29, 33); //dev
-    const year = window.location.href.substring(33, 37); //prod
+    // Use regex to extract year from URL path - works regardless of domain/port
+    const yearMatch = window.location.pathname.match(/movies\/(\d{4})/);
+    const year = yearMatch ? yearMatch[1] : '2022';
     document.getElementById('movieYear').value = year;
 
     gridItems.forEach((item, i) => {

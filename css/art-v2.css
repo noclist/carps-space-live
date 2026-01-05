@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: hsl(349deg, 100%, 74%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  transition: color 0.2s ease;
+  margin-bottom: 0.25rem;
+}
+
+.back-link:hover {
+  color: #fff;
+}
+
+header {
+  background: rgba(30, 30, 30, 0.85);
+  text-align: center;
+  padding: 1rem 1rem 1.5rem;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+}
+
+@media (min-width: 1000px) {
+  header {
+    padding: 1rem 0rem 1.5rem 11rem;
+    text-align: left;
+  }
+}
+
+h1 {
+  font-family: "Rancho", cursive;
+  font-size: max(3.5rem, min(12vw, 6rem));
+  width: 100%;
+  letter-spacing: 0.3rem;
+  position: relative;
+  background: linear-gradient(to right, #86efac, #5eead4, #fde047, #fda4af, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@media (min-width: 1000px) {
+  h1 {
+    width: fit-content;
+  }
+}
+h1:after {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(90deg, #86efac, #5eead4, #fde047, #fda4af, #c4b5fd, #86efac);
+  background-size: 200% 100%;
+  left: 0;
+  bottom: -10px;
+  border-radius: 4px;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@media (min-width: 1000px) {
+  h1:after {
+    width: 133%;
+  }
+}
+
+/* Staggered load animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gallery {
+  column-count: 4;
+  column-gap: 2rem;
+  margin: 0 auto;
+  padding: 4rem;
+  max-width: 1400px;
+}
+
+@media (max-width: 1200px) {
+  .gallery { column-count: 3; }
+}
+
+@media (max-width: 900px) {
+  .gallery { column-count: 2; }
+}
+
+@media (max-width: 600px) {
+  .gallery { column-count: 1; }
+}
+
+.gallery div {
+  border: 2rem solid #212529;
+  filter: drop-shadow(0 0 6px hsl(0deg, 0%, 0%));
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  position: relative;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.08s);
+  opacity: 0;
+  break-inside: avoid;
+  margin-bottom: 2rem;
+}
+
+/* Hover effects with glow */
+.gallery div:not(.d-none):hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+.gallery div:not(.d-none)::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, var(--glow-color, rgba(134, 239, 172, 0.4)) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.gallery div:not(.d-none):hover::before {
+  opacity: 1;
+}
+
+/* Different glow colors for variety */
+.gallery div.monkey { --glow-color: rgba(253, 164, 175, 0.5); }
+.gallery div.robot { --glow-color: rgba(147, 197, 253, 0.5); }
+.gallery div.ball { --glow-color: rgba(134, 239, 172, 0.5); }
+.gallery div.cube { --glow-color: rgba(196, 181, 253, 0.5); }
+.gallery div.egg { --glow-color: rgba(253, 224, 71, 0.5); }
+.gallery div.alien { --glow-color: rgba(134, 239, 172, 0.5); }
+.gallery div.mushroom { --glow-color: rgba(253, 164, 175, 0.5); }
+.gallery div.dino { --glow-color: rgba(94, 234, 212, 0.5); }
+.gallery div.tv { --glow-color: rgba(147, 197, 253, 0.5); }
+.gallery div.fly { --glow-color: rgba(253, 224, 71, 0.5); }
+.gallery div.frog { --glow-color: rgba(134, 239, 172, 0.5); }
+.gallery div.bear { --glow-color: rgba(196, 181, 253, 0.5); }
+
+.gallery div:not(.d-none):active {
+  transform: translateY(-2px);
+}
+
+/* Title labels on hover */
+.gallery div .title {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(30, 30, 30, 0.9);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.gallery div:hover .title {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.gallery div.d-none {
+  display: none;
+}
+/* Frame varieties */
+.gallery div.frame-gold {
+  border: 2rem solid #b8860b;
+  border-image: linear-gradient(135deg, #d4af37, #ffd700, #b8860b, #996515) 1;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.gallery div.frame-wood {
+  border: 2rem solid #8b4513;
+  border-image: linear-gradient(135deg, #a0522d, #8b4513, #654321, #8b4513) 1;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4), 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.gallery div.frame-modern {
+  border: 0.5rem solid #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.gallery div.monkey {
+  background: url("/images/monkey-art.jpg") center center/cover no-repeat;
+}
+.gallery div.robot {
+  background: url("/images/robot-art.png") center center/cover no-repeat;
+  background-color: #DDDDCC;
+  border: solid 5vmin #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+.gallery div.robot:before, .gallery div.robot:after {
+  content: "";
+  position: absolute;
+}
+.gallery div.robot:before {
+  bottom: -2vmin;
+  left: -2vmin;
+  right: -2vmin;
+  top: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+.gallery div.robot:after {
+  bottom: -2.5vmin;
+  left: -2.5vmin;
+  right: -2.5vmin;
+  top: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.gallery div.ball {
+  background: url("/images/poolball-art.jpg") center center/cover no-repeat;
+}
+.gallery div.cube {
+  background: url("/images/cube-art.jpg") center center/cover no-repeat;
+  background-color: #DDDDCC;
+  border: solid 5vmin #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+.gallery div.cube:before, .gallery div.cube:after {
+  content: "";
+  position: absolute;
+}
+.gallery div.cube:before {
+  bottom: -2vmin;
+  left: -2vmin;
+  right: -2vmin;
+  top: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+.gallery div.cube:after {
+  bottom: -2.5vmin;
+  left: -2.5vmin;
+  right: -2.5vmin;
+  top: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.gallery div.egg {
+  background: url("/images/egg-art.jpg") center center/cover no-repeat;
+}
+.gallery div.alien {
+  background: url("/images/alien-art.jpg") center center/cover no-repeat;
+}
+.gallery div.mushroom {
+  background: url("/images/mushroom-art.jpg") left center/cover no-repeat;
+  background-color: #DDDDCC;
+  border: solid 5vmin #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+.gallery div.mushroom:before, .gallery div.mushroom:after {
+  content: "";
+  position: absolute;
+}
+.gallery div.mushroom:before {
+  bottom: -2vmin;
+  left: -2vmin;
+  right: -2vmin;
+  top: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+.gallery div.mushroom:after {
+  bottom: -2.5vmin;
+  left: -2.5vmin;
+  right: -2.5vmin;
+  top: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.gallery div.dino {
+  background: url("/images/dino-art.jpg") center center/cover no-repeat;
+}
+.gallery div.tv {
+  background: url("/images/tv-art.png") left center/cover no-repeat;
+}
+.gallery div.fly {
+  background: url("/images/insect.jpg") right center/cover no-repeat;
+  background-color: #DDDDCC;
+  border: solid 5vmin #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+.gallery div.fly:before, .gallery div.fly:after {
+  content: "";
+  position: absolute;
+}
+.gallery div.fly:before {
+  bottom: -2vmin;
+  left: -2vmin;
+  right: -2vmin;
+  top: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+.gallery div.fly:after {
+  bottom: -2.5vmin;
+  left: -2.5vmin;
+  right: -2.5vmin;
+  top: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.gallery div.bear {
+  background: url("/images/panda-art.png") center center/cover no-repeat;
+}
+.gallery div.frog {
+  background: url("/images/frog-art.png") center center/cover no-repeat;
+}
+/* Large items get more height in masonry */
+.gallery div.large {
+  min-height: 350px;
+}
+
+.gallery div:not(.large):not(.d-none) {
+  min-height: 200px;
+}
+

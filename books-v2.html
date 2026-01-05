@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="css/books-v2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <a href="tech23-v2.html" class="back"><span class="back-arrow">←</span> Back to Techniques</a>
+        <h1>Book Library</h1>
+        <p class="subtitle">A collection of favorites</p>
+    </header>
+    <main>
+        <section style="--delay: 0">
+            <header>
+                <h1>Emily Mandel</h1>
+            </header>
+            <p class="number">01</p>
+            <p class="title">Sea of Tranquility</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section style="--delay: 1">
+            <header>
+                <h1>Ernest Hemingway</h1>
+            </header>
+            <p class="number">02</p>
+            <p class="title">For Whom the Bell Tolls</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section style="--delay: 2">
+            <header>
+                <h1>J.D. Salinger</h1>
+            </header>
+            <p class="number">03</p>
+            <p class="title">The Catcher in the Rye</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section style="--delay: 3">
+            <header>
+                <h1>Aldous Huxley</h1>
+            </header>
+            <p class="number">04</p>
+            <p class="title">Brave New World</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section style="--delay: 4">
+            <header>
+                <h1>Jonathan Swift</h1>
+            </header>
+            <p class="number">05</p>
+            <p class="title">Gulliver's Travels</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section style="--delay: 5">
+            <header>
+                <h1>H.G. Wells</h1>
+            </header>
+            <p class="number">06</p>
+            <p class="title">The War of the Worlds</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+        <section style="--delay: 6">
+            <header>
+                <h1>Anthony Doerr</h1>
+            </header>
+            <p class="number">07</p>
+            <p class="title">Cloud Cuckoo Land</p>
+            <div class="box"></div>
+            <div class="book"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="interests">
+            <span class="interest-tag">Science Fiction</span>
+            <span class="interest-tag">Classic Literature</span>
+            <span class="interest-tag">Dystopian</span>
+            <span class="interest-tag">Adventure</span>
+        </div>
+        <p class="copyright">© Ben Carpenter</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // Set book background images
+    document.querySelectorAll('.book').forEach(function(book, i) {
+        book.style.backgroundImage = `url(images/books/${i+1}.jpg)`;
+    });
+
+    // Intersection Observer for view transitions
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('main section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+

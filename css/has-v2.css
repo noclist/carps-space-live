@@ -1,0 +1,345 @@
+/* :has() Selector Demo - V2 Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: #f5f5f0;
+    min-height: 100vh;
+    color: #1a1a1a;
+    position: relative;
+}
+
+/* Subtle background glows */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse 600px 400px at 10% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 500px 350px at 90% 70%, rgba(134, 239, 172, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 400px 300px at 50% 90%, rgba(251, 207, 232, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.back:hover {
+    color: #1a1a1a;
+}
+
+.back-arrow {
+    font-size: 1.25rem;
+}
+
+header h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: #7c3aed;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Demo Sections */
+.demo {
+    margin-bottom: 4rem;
+}
+
+.demo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.demo > p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.demo-area {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Validation Demo */
+.field {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+.field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.field input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.field .hint {
+    display: block;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.5rem;
+}
+
+/* :has() magic for form validation */
+.field:has(input:focus) {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.field:has(input:valid:not(:placeholder-shown)) {
+    border-color: #10b981;
+    background: #ecfdf5;
+}
+
+.field:has(input:invalid:not(:placeholder-shown)) {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+/* Card Variants Demo */
+.cards-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* :has() magic for card variants */
+.card:has(img) {
+    padding: 0;
+}
+
+.card:has(img)::after {
+    content: '📷 Has Image';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #10b981;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 100px;
+}
+
+.card:has(img) {
+    position: relative;
+}
+
+.card:not(:has(img)) {
+    background: repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 10px,
+        #f9fafb 10px,
+        #f9fafb 20px
+    );
+    border-color: #7c3aed;
+    border-style: dashed;
+}
+
+.card:not(:has(img)) .card-body {
+    padding: 2rem 1.5rem;
+}
+
+.card:not(:has(img)) h3 {
+    color: #7c3aed;
+}
+
+.card:not(:has(img))::before {
+    content: '🚫 No Image';
+    display: block;
+    background: #7c3aed;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+/* Todo List Demo */
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: #f9fafb;
+    transition: background 0.3s ease;
+}
+
+.todo-item:last-child {
+    margin-bottom: 0;
+}
+
+.todo-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #7c3aed;
+    cursor: pointer;
+}
+
+.todo-item label {
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* :has() magic for todo items */
+.todo-item:has(input:checked) {
+    background: #d1fae5;
+}
+
+.todo-item:has(input:checked) label {
+    color: #059669;
+    text-decoration: line-through;
+}
+
+/* Code Blocks */
+.code-block {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    display: block;
+    color: #e5e7eb;
+    line-height: 1.8;
+}
+
+.code-block .selector {
+    color: #a78bfa;
+}
+
+.code-block .value {
+    color: #34d399;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #999;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header, main {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    
+    .demo-area {
+        padding: 1.25rem;
+    }
+}
