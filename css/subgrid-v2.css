@@ -1,0 +1,285 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-warm: #faf8f5;
+    --text-dark: #2d2a26;
+    --text-muted: #6b6560;
+    --accent-mint: #7dd3c0;
+    --accent-coral: #f4a261;
+    --accent-yellow: #f9dc5c;
+    --accent-teal: #2d9596;
+    --accent-lavender: #b8a9c9;
+    --header-bg: #1a1a2e;
+    --grid-dark: #2B3745;
+    --grid-light: #D9D9E5;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-warm);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* Soft gradient glows */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+body::before {
+    top: 100px;
+    left: -200px;
+    background: radial-gradient(circle, var(--accent-mint) 0%, transparent 70%);
+}
+
+body::after {
+    bottom: -100px;
+    right: -200px;
+    background: radial-gradient(circle, var(--accent-coral) 0%, transparent 70%);
+}
+
+/* ===== Header ===== */
+header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 1.5rem 2rem 2rem;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--accent-mint) 0%, 
+        var(--accent-teal) 25%, 
+        var(--accent-coral) 50%, 
+        var(--accent-yellow) 75%, 
+        var(--accent-lavender) 100%
+    );
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--accent-mint);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+header h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-mint) 50%, var(--accent-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* ===== Aside ===== */
+aside {
+    display: none;
+}
+
+/* ===== Grid ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== Subgrid ===== */
+.subgrid {
+    grid-column: auto / span 3;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: subgrid;
+}
+
+.subgrid.top {
+    grid-column: auto / span 5;
+}
+
+.subgrid.square-2 {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    padding: 0;
+}
+
+.subgrid.square-2 > div {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    background-image: url("https://images.unsplash.com/photo-1525877442103-5ddb2089b2bb?q=80&w=2070&auto=format&fit=crop");
+    background-size: 152%;
+    background-position: 57% 18%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.subgrid.square-3 {
+    grid-row: auto / span 3;
+    padding: 0;
+    background: var(--bg-warm);
+}
+
+.subgrid.square-3 > div {
+    background: var(--grid-dark) url("https://images.unsplash.com/photo-1594745087095-65dc6316dab6?q=80&w=1974&auto=format&fit=crop") no-repeat;
+    background-size: 310%;
+    border-radius: 8px;
+}
+
+.subgrid.square-3 > div:first-child { background-position: left top; }
+.subgrid.square-3 > div:nth-child(2) { background-position: center top; }
+.subgrid.square-3 > div:nth-child(3) { background-position: right top; }
+.subgrid.square-3 > div:nth-child(4) { background-position: left center; }
+.subgrid.square-3 > div:nth-child(5) { background-position: center center; }
+.subgrid.square-3 > div:nth-child(6) { background-position: right center; }
+.subgrid.square-3 > div:nth-child(7) { background-position: left bottom; }
+.subgrid.square-3 > div:nth-child(8) { background-position: center bottom; }
+.subgrid.square-3 > div:nth-child(9) { background-position: right bottom; }
+
+.subgrid.rect {
+    grid-column: auto / span 5;
+    grid-row: auto / span 2;
+    padding: 0;
+}
+
+.subgrid.rect > div {
+    grid-column: auto / span 5;
+    grid-row: auto / span 2;
+    background-image: url("https://images.unsplash.com/photo-1626644930397-54f90e92e628?q=80&w=2071&auto=format&fit=crop");
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+/* ===== Grid Children ===== */
+.grid > div {
+    background-color: var(--grid-dark);
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.grid > div.orange { background: var(--accent-coral); }
+.grid > div.pink { background: var(--accent-lavender); }
+.grid > div.green { background: var(--accent-mint); }
+
+/* ===== Subgrid Children ===== */
+.subgrid > div {
+    background-color: var(--grid-light);
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.subgrid > div.blue {
+    background-color: var(--grid-dark);
+    color: #fff;
+}
+
+/* ===== Icons ===== */
+.icon {
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1.5rem;
+    }
+    
+    .subgrid.top,
+    .subgrid.rect {
+        grid-column: auto / span 4;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(80px, auto);
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .subgrid.top,
+    .subgrid.rect {
+        grid-column: auto / span 3;
+    }
+    
+    .subgrid {
+        grid-column: auto / span 2;
+    }
+    
+    .subgrid.square-3 {
+        display: none;
+    }
+    
+    header {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+    
+    .icon {
+        font-size: 1.5rem;
+    }
+}

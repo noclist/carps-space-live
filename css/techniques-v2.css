@@ -83,6 +83,7 @@ header h1 {
 .subtitle {
     font-size: 1.1rem;
     color: #666;
+    margin-top: 2rem;
 }
 
 /* Grid Layout */
@@ -220,6 +221,10 @@ header h1 {
 
 .card-image.tilt {
     background: #fff url('../images/cursor.png') 100%/contain no-repeat;
+}
+
+.card-image.subgrid {
+    background: url('../images/sub.png') center/cover no-repeat;
 }
 
 /* Footer */
