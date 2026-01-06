@@ -44,12 +44,28 @@ li {
 }
 
 body {
-  padding: 1em;
+  padding: 2rem;
   font-family: "Belanosima", sans-serif;
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background: linear-gradient(120deg, hsl(67deg, 97%, 90%), hsl(187deg, 97%, 90%));
+  gap: 1.5rem;
+}
+
+.back-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  width: 50vmin;
+  text-align: left;
+}
+
+.back-link:hover {
+  color: #000;
 }
 
 h1 {
@@ -77,20 +93,49 @@ h1 {
   --rotateX: 0;
   --rotateY: 0;
   --angle: 15deg;
+  --glare-x: 0%;
+  --glare-y: 0%;
+  --glare-opacity: 0.5;
+  --shadow-x: 0px;
+  --shadow-y: 3px;
+  --shadow-blur: 8px;
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: grid;
   place-content: center;
   text-align: center;
   padding: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) rgba(0, 0, 0, 0.3);
   aspect-ratio: 1/1.5;
   width: 50vmin;
   height: 75vmin;
   background: url("/images/arbor.jpg") 100%/cover no-repeat;
   background-position: center;
   transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(var(--rotateY));
-  transition: transform 350ms ease;
+  transition: transform 350ms ease, box-shadow 350ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine/glare effect - uses transform for smooth animation */
+.card::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.3) 15%,
+    transparent 50%
+  );
+  opacity: var(--glare-opacity);
+  transform: translate(var(--glare-x), var(--glare-y));
+  transition: transform 350ms ease, opacity 350ms ease;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .mouse-position-tracker {
@@ -117,31 +162,96 @@ h1 {
 .mouse-position-tracker:nth-child(n+7):nth-child(-n+9) {
   grid-row: 3/4;
 }
+/* Top-left hover - shadow goes bottom-right, glare bottom-right */
 .mouse-position-tracker:nth-child(1):hover ~ .card {
   --rotateX: 15deg;
   --rotateY: -15deg;
+  --glare-x: 15%;
+  --glare-y: 15%;
+  --glare-opacity: 1;
+  --shadow-x: 15px;
+  --shadow-y: 15px;
+  --shadow-blur: 25px;
 }
+/* Top-center hover - shadow goes bottom, glare bottom */
 .mouse-position-tracker:nth-child(2):hover ~ .card {
   --rotateX: 15deg;
+  --glare-x: 0%;
+  --glare-y: 15%;
+  --glare-opacity: 1;
+  --shadow-x: 0px;
+  --shadow-y: 20px;
+  --shadow-blur: 25px;
 }
+/* Top-right hover - shadow goes bottom-left, glare bottom-left */
 .mouse-position-tracker:nth-child(3):hover ~ .card {
   --rotateX: 15deg;
   --rotateY: 15deg;
+  --glare-x: -15%;
+  --glare-y: 15%;
+  --glare-opacity: 1;
+  --shadow-x: -15px;
+  --shadow-y: 15px;
+  --shadow-blur: 25px;
 }
+/* Middle-left hover - shadow goes right, glare right */
 .mouse-position-tracker:nth-child(4):hover ~ .card {
   --rotateY: -15deg;
+  --glare-x: 15%;
+  --glare-y: 0%;
+  --glare-opacity: 1;
+  --shadow-x: 20px;
+  --shadow-y: 5px;
+  --shadow-blur: 25px;
 }
+/* Middle-center hover - no tilt, subtle center glow */
+.mouse-position-tracker:nth-child(5):hover ~ .card {
+  --glare-x: 0%;
+  --glare-y: 0%;
+  --glare-opacity: 0.5;
+  --shadow-x: 0px;
+  --shadow-y: 10px;
+  --shadow-blur: 30px;
+}
+/* Middle-right hover - shadow goes left, glare left */
 .mouse-position-tracker:nth-child(6):hover ~ .card {
   --rotateY: 15deg;
+  --glare-x: -15%;
+  --glare-y: 0%;
+  --glare-opacity: 1;
+  --shadow-x: -20px;
+  --shadow-y: 5px;
+  --shadow-blur: 25px;
 }
+/* Bottom-left hover - shadow goes top-right, glare top-right */
 .mouse-position-tracker:nth-child(7):hover ~ .card {
   --rotateX: -15deg;
   --rotateY: -15deg;
+  --glare-x: 15%;
+  --glare-y: -15%;
+  --glare-opacity: 1;
+  --shadow-x: 15px;
+  --shadow-y: -10px;
+  --shadow-blur: 25px;
 }
+/* Bottom-center hover - shadow goes top, glare top */
 .mouse-position-tracker:nth-child(8):hover ~ .card {
   --rotateX: -15deg;
+  --glare-x: 0%;
+  --glare-y: -15%;
+  --glare-opacity: 1;
+  --shadow-x: 0px;
+  --shadow-y: -10px;
+  --shadow-blur: 25px;
 }
+/* Bottom-right hover - shadow goes top-left, glare top-left */
 .mouse-position-tracker:nth-child(9):hover ~ .card {
   --rotateX: -15deg;
   --rotateY: 15deg;
+  --glare-x: -15%;
+  --glare-y: -15%;
+  --glare-opacity: 1;
+  --shadow-x: -15px;
+  --shadow-y: -10px;
+  --shadow-blur: 25px;
 }
