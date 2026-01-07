@@ -3,7 +3,7 @@
 
 const portfolioPages = [
   // Main
-  { title: 'Home', icon: '🏠', url: 'index-v2.html', category: 'Main', tags: ['home', 'main', 'start'] },
+  { title: 'Home', icon: '🏠', url: 'index.html', category: 'Main', tags: ['home', 'main', 'start'] },
   { title: 'Techniques', icon: '⚡', url: 'techniques.html', category: 'Main', desc: 'Modern CSS demos & experiments', tags: ['techniques', 'demos', 'css'] },
   { title: 'CSS Art', icon: '🎨', url: 'art.html', category: 'Main', desc: 'Pure CSS illustrations', tags: ['art', 'gallery', 'creative'] },
   { title: 'Top Films', icon: '🎥', url: '/_site/movies/2022/index.html', category: 'Main', desc: 'Yearly film rankings', tags: ['films', 'movies', 'rankings', 'top'] },
