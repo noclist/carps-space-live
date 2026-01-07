@@ -1,3 +1,5 @@
+@import url('shared.css');
+
 body, html {
   margin: 0;
   padding: 0;
@@ -46,10 +48,53 @@ li {
   font-family: "Turtles";
   src: url("/fonts/Turtles.otf");
 }
+
+.back-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+body {
+  background: #3a5a40;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sewer brick pattern - brighter */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 48px,
+      rgba(0, 0, 0, 0.15) 48px,
+      rgba(0, 0, 0, 0.15) 50px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #4a7c59 0px,
+      #4a7c59 23px,
+      #3a5a40 23px,
+      #3a5a40 25px
+    );
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -2;
+}
+
 main {
   display: grid;
-  grid-template-columns: repeat(4, 25vw);
-  grid-template-rows: repeat(4, 24.8vh);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  min-height: 100vh;
   font-family: "Turtles", cursive;
 }
 main h2 {
@@ -57,17 +102,115 @@ main h2 {
   font-size: 6vw;
   letter-spacing: 0.5vw;
   color: #fff;
-  text-shadow: 10px 10px 3px hsla(210deg, 11%, 15%, 0.8);
+  text-shadow: 
+    3px 3px 0px #000,
+    6px 6px 0px rgba(0, 0, 0, 0.5),
+    10px 10px 10px rgba(0, 0, 0, 0.8);
   align-self: center;
+  -webkit-text-stroke: 2px #000;
 }
 @media (min-width: 1100px) {
   main h2 {
     align-self: auto;
   }
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  main h2 {
+    font-size: 10vw;
+    text-align: center;
+  }
+  
+  /* Stack turtle cards vertically */
+  main div.red,
+  main div.blue,
+  main div.purple,
+  main div.orange {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    min-height: 200px;
+    display: grid;
+    place-content: center;
+    padding: 2rem 1rem;
+  }
+  
+  /* Hide green spacer cells on mobile */
+  main .green {
+    display: none;
+  }
+  
+  /* Adjust background positions for mobile */
+  main div:before {
+    background-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  main h2 {
+    font-size: 12vw;
+    -webkit-text-stroke: 1.5px #000;
+  }
+  
+  main div.red,
+  main div.blue,
+  main div.purple,
+  main div.orange {
+    min-height: 180px;
+    padding: 1.5rem 1rem;
+  }
+}
 main div {
   position: relative;
   border: 3px solid #000;
+}
+
+/* Entrance animations for turtle cards - opacity only */
+main div.red,
+main div.blue,
+main div.purple,
+main div.orange {
+  opacity: 0;
+  animation: turtleFadeIn 0.5s ease-out forwards;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+
+main div.red { animation-delay: 0.1s; }
+main div.blue { animation-delay: 0.3s; }
+main div.purple { animation-delay: 0.5s; }
+main div.orange { animation-delay: 0.7s; }
+
+@keyframes turtleFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Green cells fade in */
+main .green {
+  opacity: 0;
+  animation: greenFade 0.4s ease-out forwards;
+}
+
+main .green-1 { animation-delay: 0s; }
+main .green-2 { animation-delay: 0.2s; }
+main .green-3 { animation-delay: 0.2s; }
+main .green-4 { animation-delay: 0.4s; }
+main .green-5 { animation-delay: 0.6s; }
+main .green-6 { animation-delay: 0.6s; }
+
+@keyframes greenFade {
+  to { opacity: 1; }
 }
 main div:before {
   content: "";
@@ -85,6 +228,55 @@ main div:before {
 main div:hover:before {
   background-position: 0 33%;
 }
+
+/* Enhanced hover effects for turtle cards */
+main div.red,
+main div.blue,
+main div.purple,
+main div.orange {
+  cursor: pointer;
+}
+
+main div.red:hover,
+main div.blue:hover,
+main div.purple:hover,
+main div.orange:hover {
+  transform: scale(1.08);
+  z-index: 10;
+}
+
+main div.red:hover {
+  box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+main div.blue:hover {
+  box-shadow: 0 0 30px 10px rgba(0, 100, 255, 0.5), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+main div.purple:hover {
+  box-shadow: 0 0 30px 10px rgba(160, 32, 240, 0.5), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+main div.orange:hover {
+  box-shadow: 0 0 30px 10px rgba(255, 165, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Text glow on hover */
+main div.red:hover h2,
+main div.blue:hover h2,
+main div.purple:hover h2,
+main div.orange:hover h2 {
+  text-shadow: 
+    3px 3px 0px #000,
+    6px 6px 0px rgba(0, 0, 0, 0.5),
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+main div.red:hover h2 { color: #ff6b6b; }
+main div.blue:hover h2 { color: #74b9ff; }
+main div.purple:hover h2 { color: #a29bfe; }
+main div.orange:hover h2 { color: #ffeaa7; }
 main div.red {
   grid-row: 1;
   grid-column: 3/5;
@@ -128,10 +320,13 @@ main div.orange:before {
   background-image: url("/images/tmnt/mike.png");
 }
 main .green {
-  background-color: hsl(91deg, 48%, 60%);
+  background: linear-gradient(135deg, hsl(91deg, 55%, 55%) 0%, hsl(91deg, 50%, 45%) 100%);
   z-index: -1;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: 
+    rgba(50, 50, 93, 0.2) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.2) 0px 30px 60px -30px, 
+    rgba(255, 255, 255, 0.1) 0px -2px 6px 0px inset,
+    inset 0 0 20px rgba(0, 0, 0, 0.15);
 }
 main .green.green-1 {
   grid-row: 1;
