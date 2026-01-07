@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
+@import url('shared.css');
+
 body, html {
   margin: 0;
   padding: 0;
@@ -55,17 +57,11 @@ body {
   gap: 1.5rem;
 }
 
-.back-link {
-  color: #333;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
+/* Align back-link with card's left edge */
+.back-wrapper {
   width: 50vmin;
-  text-align: left;
-}
-
-.back-link:hover {
-  color: #000;
+  display: flex;
+  justify-content: flex-start;
 }
 
 h1 {
