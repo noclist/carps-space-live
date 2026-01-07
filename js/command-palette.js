@@ -42,6 +42,8 @@ const portfolioPages = [
   { title: 'Cube', icon: '📦', url: 'cube.html', category: 'CSS Art', tags: ['cube', '3d', 'geometric'] },
   { title: 'TV', icon: '📺', url: 'tv.html', category: 'CSS Art', tags: ['tv', 'television', 'retro'] },
   { title: 'Question Block', icon: '🍄', url: 'question-block.html', category: 'CSS Art', tags: ['mario', 'mushroom', 'game'] },
+  
+  { title: '', icon: '🎮', url: 'index-fancy.html', category: '', desc: '', tags: ['playground', 'fun', 'fancy', 'secret', 'easter egg'] },
 ];
 
 let selectedIndex = 0;
@@ -125,7 +127,11 @@ function renderResults() {
   let globalIndex = 0;
 
   for (const [category, pages] of Object.entries(grouped)) {
-    html += `<div class="cmd-palette-category">${category}</div>`;
+    if (category) {
+      html += `<div class="cmd-palette-category">${category}</div>`;
+    } else {
+      html += `<div class="cmd-palette-separator"></div>`;
+    }
     
     pages.forEach(page => {
       const isSelected = globalIndex === selectedIndex;
