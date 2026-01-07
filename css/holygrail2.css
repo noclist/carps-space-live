@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url('shared.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 body, html {
   margin: 0;
   padding: 0;
@@ -44,10 +45,11 @@ li {
 }
 
 body {
-  background: #efefef;
+  background: #f5f5f0;
   padding: 1rem;
   min-height: 100vh;
-  font: 500 100% system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -58,8 +60,36 @@ body {
   grid-template-rows: 0.25fr min-content 1fr 0.1fr;
   gap: 1rem;
 }
+.back-link {
+  margin-bottom: 0.5rem;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .grid > * {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.33);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+}
+
+.grid > header { animation: fadeSlideIn 0.6s ease-out 0s forwards; }
+.grid > nav { animation: fadeSlideIn 0.6s ease-out 0.2s forwards; }
+.grid > main { animation: fadeSlideIn 0.6s ease-out 0.3s forwards; }
+.grid > aside { animation: fadeSlideIn 0.6s ease-out 0.4s forwards; }
+.grid > footer { animation: fadeSlideIn 0.6s ease-out 0.5s forwards; }
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @media (max-width: 600px) {
   .grid {
@@ -81,19 +111,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 8px;
 }
 header h1 {
   color: #fff;
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: 0.02em;
 }
 header a {
   padding: 0.75rem;
   font-size: 1.1rem;
   border-radius: 4px;
   color: #fff;
+  transition: all 0.25s ease;
 }
 header a:hover {
-  background-color: #ddd;
+  background-color: rgba(255, 255, 255, 0.9);
   color: black;
+  transform: translateY(-2px);
 }
 header a.active {
   background-color: #008CBA;
@@ -106,7 +142,7 @@ aside {
   background: hsl(0deg, 0%, 85%);
   background: #A3C4BC;
   background: hsl(251deg, 19%, 90%);
-  border: 1px solid #000;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -131,7 +167,8 @@ nav {
   background: hsl(0deg, 0%, 90%);
   background: #BFD7B5;
   background: hsl(251deg, 19%, 95%);
-  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
 }
 nav ul {
   list-style-type: none;
@@ -149,9 +186,11 @@ nav ul li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: all 0.25s ease;
 }
 nav ul li a:hover {
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #333;
 }
 nav ul li a.active {
   color: white;
@@ -162,7 +201,8 @@ main {
   grid-column: 2/3;
   background: hsl(0deg, 0%, 95%);
   background: #E7EFC5;
-  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
 }
 @media (max-width: 600px) {
   main {
@@ -183,8 +223,17 @@ main .hero-text {
   text-align: center;
   color: white;
 }
+main .hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
 main .hero-text p {
   margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 footer {
@@ -193,7 +242,7 @@ footer {
   background: hsl(0deg, 0%, 80%);
   background: #F2E7C9;
   background: hsl(251deg, 19%, 95%);
-  border: 1px solid #000;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -203,27 +252,41 @@ footer span {
   display: flex;
   gap: 2rem;
 }
+footer span a {
+  transition: color 0.25s ease;
+}
 footer span a:hover {
-  text-decoration: underline;
+  color: #008CBA;
 }
 footer span i {
   font-size: 1.3rem;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+footer span i:hover {
+  transform: scale(1.2);
+  color: #008CBA;
 }
 
+a.btn,
 .btn {
   border: 2px solid #000;
   background-color: white;
-  color: black;
+  color: black !important;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
   position: relative;
   border-radius: 4px;
   display: inline-block;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
+a.btn:hover,
 .btn:hover {
-  background-color: #ddd;
+  background-color: #4a4a4a !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .btn .badge {
   position: absolute;

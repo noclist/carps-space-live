@@ -1,4 +1,5 @@
 /* About Page - V2 Styling */
+@import url('shared.css');
 
 * {
   margin: 0;
@@ -32,19 +33,10 @@ body::before {
 
 /* Back Link */
 .back-link {
-  display: block;
-  color: #666;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
   position: relative;
   z-index: 1;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.back-link:hover {
-  color: #1a1a1a;
 }
 
 /* Main Layout */

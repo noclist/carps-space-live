@@ -4,8 +4,8 @@
 const portfolioPages = [
   // Main
   { title: 'Home', icon: '🏠', url: 'index-v2.html', category: 'Main', tags: ['home', 'main', 'start'] },
-  { title: 'Techniques', icon: '⚡', url: 'tech23-v2.html', category: 'Main', desc: 'Modern CSS demos & experiments', tags: ['techniques', 'demos', 'css'] },
-  { title: 'CSS Art', icon: '🎨', url: 'art-v2.html', category: 'Main', desc: 'Pure CSS illustrations', tags: ['art', 'gallery', 'creative'] },
+  { title: 'Techniques', icon: '⚡', url: 'techniques.html', category: 'Main', desc: 'Modern CSS demos & experiments', tags: ['techniques', 'demos', 'css'] },
+  { title: 'CSS Art', icon: '🎨', url: 'art.html', category: 'Main', desc: 'Pure CSS illustrations', tags: ['art', 'gallery', 'creative'] },
   { title: 'Top Films', icon: '🎥', url: '/_site/movies/2022/index.html', category: 'Main', desc: 'Yearly film rankings', tags: ['films', 'movies', 'rankings', 'top'] },
   { title: 'About', icon: '👤', url: 'about.html', category: 'Main', desc: 'Bio & contact info', tags: ['about', 'bio', 'contact'] },
   
@@ -15,7 +15,7 @@ const portfolioPages = [
   { title: 'Toy Shop', icon: '🧸', url: 'box.html', category: 'Techniques', desc: 'Grid layout', tags: ['toy', 'shop', 'grid'] },
   { title: 'LEGO Collection', icon: '🧱', url: 'container-v2.html', category: 'Techniques', desc: 'Container Queries', tags: ['container', 'queries', 'responsive', 'lego'] },
   { title: 'The Pop Show', icon: '🎤', url: 'zpattern.html', category: 'Techniques', desc: 'Z-Pattern layout', tags: ['landing', 'zpattern', 'pop'] },
-  { title: 'Meet Our Team', icon: '👥', url: 'modular-v2.html', category: 'Techniques', desc: 'Flexbox grid cards', tags: ['team', 'cards', 'flexbox', 'modular'] },
+  { title: 'Meet Our Team', icon: '👥', url: 'flexbox-grid.html', category: 'Techniques', desc: 'Flexbox grid cards', tags: ['team', 'cards', 'flexbox', 'modular'] },
   { title: 'Course Registration', icon: '📝', url: 'masonry2.html', category: 'Techniques', desc: 'Masonry layout', tags: ['course', 'masonry', 'registration'] },
   { title: 'Monster Movies', icon: '🎬', url: 'nav-godzilla.html', category: 'Techniques', desc: 'Navigation demo', tags: ['movies', 'monsters', 'navigation', 'godzilla'] },
   { title: 'Light the Fuse', icon: '💣', url: 'mi.html', category: 'Techniques', desc: 'Scroll animations', tags: ['scroll', 'animation', 'mission impossible'] },
@@ -27,7 +27,8 @@ const portfolioPages = [
   { title: 'Book Library', icon: '📚', url: 'books-v2.html', category: 'Techniques', desc: 'CSS Grid layout', tags: ['books', 'library', 'grid'] },
   { title: 'Ninja Turtle Grid', icon: '🐢', url: 'turtles.html', category: 'Techniques', desc: 'Grid Areas', tags: ['turtles', 'tmnt', 'grid', 'areas'] },
   { title: 'Tilting Card', icon: '🃏', url: 'tilt.html', category: 'Techniques', desc: '3D Transform effect', tags: ['tilt', 'card', '3d', 'transform'] },
-  { title: 'CSS Subgrid', icon: '📐', url: 'subgrid-v2.html', category: 'Techniques', desc: 'Nested grid alignment', tags: ['subgrid', 'grid', 'nested', 'alignment'] },
+  { title: 'CSS Subgrid', icon: '📐', url: 'subgrid.html', category: 'Techniques', desc: 'Nested grid alignment', tags: ['subgrid', 'grid', 'nested', 'alignment'] },
+  { title: 'The Holy Grail', icon: '🏆', url: 'holygrail.html', category: 'Techniques', desc: 'Classic CSS layout pattern', tags: ['holy grail', 'layout', 'grid', 'classic'] },
   
   // CSS Art
   { title: 'Frog', icon: '🐸', url: 'frog.html', category: 'CSS Art', tags: ['frog', 'animal', 'green'] },

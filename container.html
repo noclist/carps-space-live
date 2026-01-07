@@ -2,77 +2,349 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Container Queries</title>
-    <link rel="stylesheet" href="css/container.css">
-    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="icons/favicon-basic.ico" /> 
+    <title>Container Queries | carps space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/container-v2.css">
 </head>
 <body>
     <header>
-        <h1>conTaIner querIes</h1>
+        <a href="techniques.html" class="back-link">
+            <span class="back-arrow">←</span>
+            Back to Techniques
+        </a>
+        <h1>Container Queries</h1>
+        <p class="subtitle">Components that respond to their container size, not the viewport.</p>
     </header>
-    <nav>
-        <div class="card-wrapper">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images.unsplash.com/photo-1526505262320-81542978f63b"  width="1080" height="720" />
-                    <a href="https://unsplash.com/photos/5dgHxsvJ170" target="_blank">girl and boy holding balloon Lego minifigures</a> by <a href="https://unsplash.com/@helloimnik" target="_blank">Hello I'm Nik</a>
-                </div>
-                <div class="description">
-                    <p><code>This is a card component that appears differently depending on the size of it's parent.</code></p>
-                </div>
-                <a href="#" class="cta">CALL TO ACTION!</a>
-            </div>
-        </div>
-    </nav>
+
     <main>
-            <p>
-                <strong>@contain</strong><br />
-                Style an element based on the size of it's parent container!
-            </p>
+        <section class="demo-section">
+            <h2>Resize the containers</h2>
+            <p>Drag the bottom-right corner of each box to see how the same component adapts to different container widths.</p>
+            
+            <div class="demo-row">
+                <div class="resizable" style="width: 250px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+                                <span class="set-emoji">📸</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Icons</span>
+                                <h3>Polaroid Camera</h3>
+                                <p class="description">Vintage-style OneStep SX-70 camera with working shutter and ejecting photo.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">516</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$80</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
-        <div class="card-wrapper">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images.unsplash.com/photo-1526505262320-81542978f63b"  width="1080" height="720" />
-                    <a href="https://unsplash.com/photos/5dgHxsvJ170" target="_blank">girl and boy holding balloon Lego minifigures</a> by <a href="https://unsplash.com/@helloimnik" target="_blank">Hello I'm Nik</a>
+                <div class="resizable" style="width: 400px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);">
+                                <span class="set-emoji">🚀</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Space</span>
+                                <h3>Galaxy Explorer</h3>
+                                <p class="description">Classic space cruiser with retro design, opening cockpit, and satellite drone.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">1,254</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$99</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                <div class="description">
-                    <p><code>This is a card component that appears differently depending on the size of its parent.</code></p>
-                </div>
-                <a href="#" class="cta">CALL TO ACTION!</a>
             </div>
-        </div>
 
+            <div class="demo-row">
+                <div class="resizable wide" style="width: 600px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 100%);">
+                                <span class="set-emoji">🚢</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Icons</span>
+                                <h3>Titanic</h3>
+                                <p class="description">The largest LEGO set ever. Includes detailed interior cross-sections and authentic features.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">9,090</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$679</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Medium & Small -->
+            <div class="demo-row align-right">
+                <div class="resizable" style="width: 420px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);">
+                                <span class="set-emoji">✈️</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Star Wars</span>
+                                <h3>X-Wing Starfighter</h3>
+                                <p class="description">Ultimate Collector Series model with opening cockpit and display stand.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">1,949</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$240</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="resizable" style="width: 240px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #dcfce7 0%, #86efac 100%);">
+                                <span class="set-emoji">🌸</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Botanical</span>
+                                <h3>Orchid</h3>
+                                <p class="description">Beautiful display piece featuring white and pink blooms with dark green leaves.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">608</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$50</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Small & Large -->
+            <div class="demo-row">
+                <div class="resizable" style="width: 260px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);">
+                                <span class="set-emoji">🏎️</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Speed Champions</span>
+                                <h3>Porsche 911</h3>
+                                <p class="description">Two-in-one Turbo and Targa models capturing the essence of Porsche design.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">1,458</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$170</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="resizable" style="width: 520px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);">
+                                <span class="set-emoji">🧙</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Harry Potter</span>
+                                <h3>Hogwarts Castle</h3>
+                                <p class="description">Micro-scale castle with towers, dungeons, and over 25 microfigures from the wizarding world.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">6,020</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$470</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">16+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Large solo -->
+            <div class="demo-row">
+                <div class="resizable wide" style="width: 580px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%);">
+                                <span class="set-emoji">🏛️</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Architecture</span>
+                                <h3>Colosseum</h3>
+                                <p class="description">The largest LEGO Architecture set. Recreate the iconic Roman amphitheater in stunning detail.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">9,036</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$550</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5: Medium & Medium -->
+            <div class="demo-row align-right">
+                <div class="resizable" style="width: 400px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #d4d4d8 0%, #a1a1aa 100%);">
+                                <span class="set-emoji">🗼</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Icons</span>
+                                <h3>Eiffel Tower</h3>
+                                <p class="description">Over 1 meter tall! The tallest LEGO set featuring authentic architectural details.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">10,001</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$630</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="resizable" style="width: 380px;">
+                    <div class="container">
+                        <article class="lego-card">
+                            <div class="set-image" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+                                <span class="set-emoji">🏰</span>
+                            </div>
+                            <div class="set-info">
+                                <span class="theme">Disney</span>
+                                <h3>Disney Castle</h3>
+                                <p class="description">The ultimate Disney fan's dream with five levels of detailed interior rooms.</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <span class="stat-value">4,080</span>
+                                        <span class="stat-label">Pieces</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">$400</span>
+                                        <span class="stat-label">Price</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">16+</span>
+                                        <span class="stat-label">Ages</span>
+                                    </div>
+                                </div>
+                                <button class="btn">Add to Wishlist</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <aside>
-        <div class="card-wrapper">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images.unsplash.com/photo-1526505262320-81542978f63b"  width="1080" height="720" />
-                    <a href="https://unsplash.com/photos/5dgHxsvJ170" target="_blank">girl and boy holding balloon Lego minifigures</a> by <a href="https://unsplash.com/@helloimnik" target="_blank">Hello I'm Nik</a>
-                </div>
-                <div class="description">
-                    <p><code>This is a card component that appears differently depending on the size of it's parent.</code></p>
-                </div>
-                <a href="#" class="cta">CALL TO ACTION!</a>
-            </div>
-        </div>
-    </aside>
+
     <footer>
-        <div class="card-wrapper">
-            <div class="card">
-                <div class="image">
-                    <img src="https://images.unsplash.com/photo-1526505262320-81542978f63b"  width="1080" height="720" />
-                    <a href="https://unsplash.com/photos/5dgHxsvJ170" target="_blank">girl and boy holding balloon Lego minifigures</a> by <a href="https://unsplash.com/@helloimnik" target="_blank">Hello I'm Nik</a>
-                </div>
-                <div class="description">
-                    <p><code>This is a card component that appears differently depending on the size of it's parent.</code></p>
-                </div>
-                <a href="#" class="cta">CALL TO ACTION!</a>
-            </div>
-        </div>
+        <p>&copy; 2025 Ben Carpenter</p>
     </footer>
 </body>
 </html>

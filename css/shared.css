@@ -1,0 +1,53 @@
+/* ===== SHARED STYLES ===== */
+/* Import this at the top of page-specific CSS files */
+
+/* Back Link - Light Background (default) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(-4px);
+}
+
+.back-arrow {
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover .back-arrow {
+    transform: translateX(-3px);
+}
+
+/* Back Link - For Dark Page Backgrounds (subtle white pill) */
+.back-link--on-dark {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.back-link--on-dark:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Back Link - Dark Pill Variant (dark bg, light text) */
+.back-link--dark {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+.back-link--dark:hover {
+    background: rgba(0, 0, 0, 0.8);
+}

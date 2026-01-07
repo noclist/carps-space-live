@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap");
+@import url('shared.css');
 
 body, html {
   margin: 0;
@@ -82,23 +83,8 @@ header.page-header {
   z-index: 1;
 }
 
-.back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #666;
-  text-decoration: none;
-  font-size: 0.9rem;
+.back-link {
   margin-bottom: 1rem;
-  transition: color 0.2s ease;
-}
-
-.back:hover {
-  color: #1a1a1a;
-}
-
-.back-arrow {
-  font-size: 1.25rem;
 }
 
 header.page-header h1 {

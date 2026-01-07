@@ -1,118 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="icons/favicon-basic.ico" /> 
-    <title>:has() Selector | carps space</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/has-v2.css">
+    <title>:has() Selector | CSS Techniques</title>
 </head>
+
 <body>
-    <header>
-        <a href="tech23-v2.html" class="back">
-            <span class="back-arrow">←</span>
-            Back to Techniques
-        </a>
-        <h1>:has()</h1>
-        <p class="subtitle">The CSS parent selector we've been waiting for.</p>
-    </header>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <a href="techniques.html" class="back-link"><span class="back-arrow">←</span> Back to Techniques</a>
+            <h1>:has()</h1>
+            <p class="subtitle">The parent selector CSS waited 20 years for</p>
+        </header>
 
-    <main>
-        <!-- Demo 1: Form Validation -->
-        <section class="demo">
-            <h2>Form Validation</h2>
-            <p>The form field container changes style based on input state — no JavaScript needed.</p>
-            
-            <div class="demo-area">
-                <div class="field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="you@example.com" required>
-                    <span class="hint">Enter a valid email address</span>
-                </div>
-                
-                <div class="field">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Min 8 characters" minlength="8" required>
-                    <span class="hint">Must be at least 8 characters</span>
-                </div>
-            </div>
-
-            <div class="code-block">
-                <code><span class="selector">.field:has(input:focus)</span> { border-color: <span class="value">#3b82f6</span>; }</code>
-                <code><span class="selector">.field:has(input:valid)</span> { border-color: <span class="value">#10b981</span>; }</code>
-                <code><span class="selector">.field:has(input:invalid:not(:placeholder-shown))</span> { border-color: <span class="value">#ef4444</span>; }</code>
-            </div>
-        </section>
-
-        <!-- Demo 2: Card Variants -->
-        <section class="demo">
-            <h2>Card Variants</h2>
-            <p>Cards automatically adjust their layout based on whether they contain an image.</p>
-            
-            <div class="demo-area cards-demo">
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="Mountain landscape">
+        <main>
+            <section class="cards-grid">
+                <article class="card" style="--i: 0">
+                    <img src="https://picsum.photos/286/181" alt="Card image">
                     <div class="card-body">
-                        <h3>With Image</h3>
-                        <p>This card has an image, so it uses a vertical layout with the image on top.</p>
+                        <span class="code-label">Default Card</span>
+                        <h3>Card title</h3>
+                        <p class="card-text">White background, subtle shadow. This is the baseline—no :has() rules match here.</p>
+                        <a href="#" class="btn">Go somewhere</a>
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card" style="--i: 1">
+                    <img src="https://picsum.photos/286/182" alt="Card image">
                     <div class="card-body">
-                        <h3>Without Image</h3>
-                        <p>This card has no image, so it gets extra padding and a subtle background pattern.</p>
+                        <span class="code-label">.card:has(.btn-fancy)</span>
+                        <h3>Card title</h3>
+                        <p class="card-text">Mint gradient background + green border. The card reacts to its button's class.</p>
+                        <a href="#" class="btn btn-fancy">Fancy Button</a>
                     </div>
                 </article>
-            </div>
 
-            <div class="code-block">
-                <code><span class="selector">.card:has(img)</span> { padding: <span class="value">0</span>; }</code>
-                <code><span class="selector">.card:not(:has(img))</span> { background: <span class="value">linear-gradient(...)</span>; }</code>
-            </div>
-        </section>
+                <article class="card" style="--i: 2">
+                    <img src="https://picsum.photos/286/180" alt="Card image">
+                    <div class="card-body">
+                        <span class="code-label">.card:has(h3.secondary)</span>
+                        <h3 class="secondary">Card title</h3>
+                        <p class="card-text">Coral gradient + uppercase title. A heading class changes the entire card.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </article>
 
-        <!-- Demo 3: Todo List -->
-        <section class="demo">
-            <h2>Interactive Checkboxes</h2>
-            <p>Check items to see the parent list item change style — pure CSS, no JS.</p>
-            
-            <div class="demo-area">
-                <ul class="todo-list">
-                    <li class="todo-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Learn CSS :has() selector</label>
-                    </li>
-                    <li class="todo-item">
-                        <input type="checkbox" id="task2">
-                        <label for="task2">Build a demo page</label>
-                    </li>
-                    <li class="todo-item">
-                        <input type="checkbox" id="task3" checked>
-                        <label for="task3">Share with the team</label>
-                    </li>
-                    <li class="todo-item">
-                        <input type="checkbox" id="task4">
-                        <label for="task4">Celebrate! 🎉</label>
-                    </li>
-                </ul>
-            </div>
+                <article class="card" style="--i: 3">
+                    <img src="https://picsum.photos/286/183" alt="Card image">
+                    <div class="card-body">
+                        <span class="code-label">.card:has(.alternate)</span>
+                        <h3>Card title</h3>
+                        <p class="alternate">Dark teal theme with inverted text. One paragraph class flips the whole palette.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </article>
 
-            <div class="code-block">
-                <code><span class="selector">.todo-item:has(input:checked)</span> {</code>
-                <code>  background: <span class="value">#d1fae5</span>;</code>
-                <code>  text-decoration: <span class="value">line-through</span>;</code>
-                <code>}</code>
-            </div>
-        </section>
+                <article class="card" style="--i: 4">
+                    <img src="https://picsum.photos/286/184" alt="Card image">
+                    <div class="card-body">
+                        <span class="code-label">.card:has(.btn-special)</span>
+                        <h3>Card title</h3>
+                        <p class="card-text">Yellow gradient + amber border. The pill-shaped button triggers a warm theme.</p>
+                        <a href="#" class="btn btn-special">Special Button</a>
+                    </div>
+                </article>
 
-            </main>
+                <article class="card" style="--i: 5">
+                    <img src="https://picsum.photos/286/185" class="small" alt="Card image">
+                    <div class="card-body">
+                        <span class="code-label">.card:has(img.small)</span>
+                        <h3>Card title</h3>
+                        <hr />
+                        <p class="card-text">Lavender gradient + purple border. Image size affects the card's entire appearance.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </article>
 
-    <footer>
-        <p>&copy; 2025 Ben Carpenter</p>
-    </footer>
+                <article class="card" style="--i: 6">
+                    <img src="https://picsum.photos/286/186" alt="Card image">
+                    <div class="card-body">
+                        <span class="code-label">.card:has(.btn + .btn)</span>
+                        <h3>Card title</h3>
+                        <p class="card-text">Sky blue theme. Uses adjacent sibling combinator—style changes when 2+ buttons exist.</p>
+                        <div class="btn-group">
+                            <a href="#" class="btn">Primary</a>
+                            <a href="#" class="btn btn-secondary">Secondary</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" style="--i: 7">
+                    <img src="https://picsum.photos/286/187" alt="Card image">
+                    <div class="card-body">
+                        <span class="code-label">Default Card</span>
+                        <h3>Card title</h3>
+                        <p class="card-text">Back to baseline for comparison. Same markup structure, just no special classes.</p>
+                        <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>
+

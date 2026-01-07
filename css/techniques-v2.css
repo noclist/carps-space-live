@@ -1,4 +1,5 @@
 /* Techniques V2 - Matching Index V2 Style */
+@import url('shared.css');
 
 * {
     margin: 0;
@@ -53,23 +54,8 @@ header {
     z-index: 1;
 }
 
-.back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
+.back-link {
     margin-bottom: 1rem;
-    transition: color 0.2s ease;
-}
-
-.back:hover {
-    color: #1a1a1a;
-}
-
-.back-arrow {
-    font-size: 1.25rem;
 }
 
 header h1 {
@@ -225,6 +211,25 @@ header h1 {
 
 .card-image.subgrid {
     background: url('../images/sub.png') center/cover no-repeat;
+}
+
+.card-image.holygrail {
+    background: linear-gradient(
+        135deg,
+        #f59e0b 0%,
+        #fde047 25%,
+        #fbbf24 50%,
+        #f59e0b 75%,
+        #fde047 100%
+    );
+    background-size: 200% 200%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Footer */

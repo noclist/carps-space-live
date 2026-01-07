@@ -1,3 +1,5 @@
+@import url('shared.css');
+
 /* ===== CSS Variables ===== */
 :root {
     --bg-warm: #faf8f5;
@@ -86,17 +88,15 @@ header::after {
     margin: 0 auto;
 }
 
+/* Dark background override */
 .back-link {
-    display: inline-block;
-    color: var(--accent-mint);
-    text-decoration: none;
-    font-size: 0.9rem;
     margin-bottom: 1rem;
-    transition: color 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
 }
 
 .back-link:hover {
-    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 header h1 {
