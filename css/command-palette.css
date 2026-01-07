@@ -99,6 +99,12 @@
     padding-top: 0.25rem;
 }
 
+.cmd-palette-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0.75rem;
+}
+
 .cmd-palette-item {
     display: flex;
     align-items: center;
