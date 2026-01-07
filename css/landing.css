@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Mali:wght@600&display=swap");
+@import url('shared.css');
+
+.back-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -263,10 +272,13 @@ section.menu .burger-card {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #696965;
   cursor: pointer;
-  transition: all 100ms linear;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 section.menu .burger-card:hover {
-  scale: 1.0125;
+  transform: scale(1.03);
+  box-shadow: 
+    rgba(241, 154, 51, 0.4) 0px 15px 30px -5px,
+    rgba(0, 0, 0, 0.1) 0px 10px 20px -5px;
 }
 section.menu .burger-card .description {
   display: grid;
@@ -311,6 +323,12 @@ section.clients .client-wrapper {
 }
 section.clients .client-wrapper div {
   height: 25vmin;
+  background-size: 100%;
+  transition: background-size 0.4s ease, box-shadow 0.3s ease;
+}
+section.clients .client-wrapper div:hover {
+  background-size: 110%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 section.clients .client-wrapper div:first-child {
   background: url("/images/burger-client1.jpg") 100%/cover no-repeat;
@@ -475,4 +493,126 @@ footer .icon-wrapper i {
   100% {
     transform: translateX(0);
   }
+}
+
+/* ===== ENTRANCE ANIMATIONS ===== */
+
+/* Hero section */
+header .card {
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+header .circle {
+  opacity: 0;
+  animation: scaleIn 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* About section */
+section.about .card {
+  opacity: 0;
+  animation: slideInRight 0.8s ease-out 0.5s forwards;
+}
+
+section.about .circle {
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Menu cards - staggered (opacity only to allow hover transform) */
+section.menu .burger-card {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+section.menu .burger-card:nth-child(1) { animation-delay: 0.2s; }
+section.menu .burger-card:nth-child(2) { animation-delay: 0.4s; }
+section.menu .burger-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Client photos - staggered */
+section.clients .client-wrapper div {
+  opacity: 0;
+  animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+section.clients .client-wrapper div:nth-child(1) { animation-delay: 0.1s; }
+section.clients .client-wrapper div:nth-child(2) { animation-delay: 0.2s; }
+section.clients .client-wrapper div:nth-child(3) { animation-delay: 0.3s; }
+section.clients .client-wrapper div:nth-child(4) { animation-delay: 0.4s; }
+section.clients .client-wrapper div:nth-child(5) { animation-delay: 0.5s; }
+section.clients .client-wrapper div:nth-child(6) { animation-delay: 0.6s; }
+
+/* Info cards - staggered */
+section.info .info-card {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+section.info .info-card:nth-child(1) { animation-delay: 0.2s; }
+section.info .info-card:nth-child(2) { animation-delay: 0.4s; }
+section.info .info-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Footer */
+footer span.logo {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out 0.3s forwards;
+}
+
+footer ul {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease-out 0.5s forwards;
+}
+
+footer .icon-wrapper {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease-out 0.7s forwards;
 }

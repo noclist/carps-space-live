@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<a href="techniques.html" class="back-link"><span class="back-arrow">←</span> Back to Techniques</a>
 <header>
     <div class="card">
         <h1>Delicious & Juicy Burgers For You</h1>
@@ -131,5 +132,34 @@
         <i class="fa-brands fa-instagram"></i>
     </div>
 </footer>
+
+<script>
+// Parallax effect on scroll
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  
+  // Hero burger - moves slower than scroll
+  const heroBurger = document.querySelector('header .burger');
+  if (heroBurger) {
+    heroBurger.style.transform = `translateY(${scrollY * 0.3}px) rotate(12deg)`;
+  }
+  
+  // Hero circle - subtle scale
+  const heroCircle = document.querySelector('header .circle');
+  if (heroCircle && scrollY < 800) {
+    heroCircle.style.transform = `scale(${1 + scrollY * 0.0002})`;
+  }
+  
+  // About burger/fries - moves opposite
+  const aboutBurger = document.querySelector('.about .burgerfries');
+  if (aboutBurger) {
+    const aboutSection = document.querySelector('.about');
+    const rect = aboutSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      aboutBurger.style.transform = `translateY(${(rect.top - window.innerHeight) * -0.15}px)`;
+    }
+  }
+});
+</script>
 </body>
 </html>
