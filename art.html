@@ -4,38 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Art</title>
-    <link rel="stylesheet" href="css/art.css">
+    <title>CSS Art Gallery</title>
+    <link rel="stylesheet" href="css/art-v2.css">
+    <link rel="stylesheet" href="css/command-palette.css">
     <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <script src="js/command-palette.js"></script>
+    
     <header>
+        <a href="index-v2.html" class="back-link"><span class="back-arrow">←</span> Back to Home</a>
         <h1>CSS Art Gallery</h1>
     </header>
-    <!-- <div class="wrapper"> -->
-        <div class="gallery">
-            <div class="monkey" onClick="navigate('monkey')"></div>
-            <div class="robot large" onClick="navigate('robot')"></div>
-            <div class="d-none"></div>
-            <div class="d-none"></div>
-            <div class="ball" onClick="navigate('ball')"></div>
-            <div class="cube large" onClick="navigate('cube')"></div>
-            <div class="egg" onClick="navigate('egg')"> </div>
-            <div class="d-none"></div>
-            <div class="d-none"></div>
-            <div class="alien" onClick="navigate('alien')"></div>
-            <div class="mushroom" onClick="navigate('question-block')"></div>
-            <div class="dino large" onClick="navigate('dino')"> </div>
-            <div class="d-none"></div>
-            <div class="d-none"></div> 
-            <div class="tv" onClick="navigate('tv')"></div>
-            <div class="fly" onClick="navigate('fly')"></div>
-            <div class="d-none"></div>
-            <div class="frog large" onClick="navigate('frog')"> </div>
-            <div class="d-none"></div>
-            <div class="bear" onClick="navigate('panda')"></div>
-        </div>
-    <!-- </div> -->
+    <div class="gallery">
+        <!-- Column 1: gold, black, wood -->
+        <div class="monkey frame-gold" style="--i: 0" onClick="navigate('monkey')"><span class="title">Daydreams in Yellow</span></div>
+        <div class="alien" style="--i: 1" onClick="navigate('alien')"><span class="title">Close Encounters of the CSS Kind</span></div>
+        <div class="egg frame-wood" style="--i: 2" onClick="navigate('egg')"><span class="title">Out of the Frying Pan...</span></div>
+        
+        <!-- Column 2: fancy, large-black, modern -->
+        <div class="fly" style="--i: 3" onClick="navigate('fly')"><span class="title">Figure in Continuous Motion</span></div>
+        <div class="dino large" style="--i: 4" onClick="navigate('dino')"><span class="title">The Last Survivor</span></div>
+        <div class="tv frame-modern" style="--i: 5" onClick="navigate('tv')"><span class="title">Lost in Transmission</span></div>
+        
+        <!-- Column 3: black, large-fancy, gold -->
+        <div class="ball" style="--i: 6" onClick="navigate('ball')"><span class="title">Overflow: Pocket</span></div>
+        <div class="cube large" style="--i: 7" onClick="navigate('cube')"><span class="title">A Study in Infinite Rotation</span></div>
+        <div class="bear frame-gold" style="--i: 8" onClick="navigate('panda')"><span class="title">500: Internal Panda Error</span></div>
+        
+        <!-- Column 4: large-fancy, wood, large-black -->
+        <div class="robot large" style="--i: 9" onClick="navigate('robot')"><span class="title">Awaiting Response</span></div>
+        <div class="mushroom frame-wood" style="--i: 10" onClick="navigate('question-block')"><span class="title">One Hit Wonder</span></div>
+        <div class="frog large" style="--i: 11" onClick="navigate('frog')"><span class="title">Portrait of a Content Amphibian</span></div>
+    </div>
 </body>
 </html>
 
@@ -44,3 +45,4 @@
         window.location.href='/' + url + '.html';
     }
 </script>
+

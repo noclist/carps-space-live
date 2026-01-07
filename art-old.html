@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Art</title>
+    <link rel="stylesheet" href="css/art.css">
+    <script src="https://kit.fontawesome.com/b182c44c0a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>CSS Art Gallery</h1>
+    </header>
+    <!-- <div class="wrapper"> -->
+        <div class="gallery">
+            <div class="monkey" onClick="navigate('monkey')"></div>
+            <div class="robot large" onClick="navigate('robot')"></div>
+            <div class="d-none"></div>
+            <div class="d-none"></div>
+            <div class="ball" onClick="navigate('ball')"></div>
+            <div class="cube large" onClick="navigate('cube')"></div>
+            <div class="egg" onClick="navigate('egg')"> </div>
+            <div class="d-none"></div>
+            <div class="d-none"></div>
+            <div class="alien" onClick="navigate('alien')"></div>
+            <div class="mushroom" onClick="navigate('question-block')"></div>
+            <div class="dino large" onClick="navigate('dino')"> </div>
+            <div class="d-none"></div>
+            <div class="d-none"></div> 
+            <div class="tv" onClick="navigate('tv')"></div>
+            <div class="fly" onClick="navigate('fly')"></div>
+            <div class="d-none"></div>
+            <div class="frog large" onClick="navigate('frog')"> </div>
+            <div class="d-none"></div>
+            <div class="bear" onClick="navigate('panda')"></div>
+        </div>
+    <!-- </div> -->
+</body>
+</html>
+
+<script>
+    function navigate(url) {
+        window.location.href='/' + url + '.html';
+    }
+</script>
