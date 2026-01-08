@@ -8,58 +8,109 @@
     <link rel="stylesheet" href="css/parallax.css">
 </head>
 <body>
+    <a href="techniques.html" class="back-link">
+        <span class="back-arrow">←</span>
+        Back to Techniques
+    </a>
     <section class="parallax parallax-header">
-        <h1>The Neighborhoods of Cleveland</h1>
-        <!-- <p>
-            A front end developer in Cleveland, Ohio
-        </p> -->
+        <div class="header-content">
+            <h1>The Neighborhoods of Cleveland</h1>
+            <p class="subtitle">Discover the vibrant communities that make Cleveland unique</p>
+        </div>
     </section>
     
     <section class="buffer"></section>
     
     <section class="parallax parallax-content">
-        <div class="card">
-            <div class="img"></div>
-            <h3>Ohio City</h3>
-            <p>
-                A trendy dining and entertainment hub centered on the main strip of
-                West 25th Street, with high-end cocktail bars and beer gardens,
-                alongside fashionable vegan bistros and gourmet farm-to-table restaurants
-            </p>
-            <a href="#">Learn more</a>
-        </div>
-        <div class="card">
-            <div class="img"></div>
-            <h3>Tremont</h3>
-            <p>
-                Arty, residential Tremont has gourmet sandwich bars and craft coffee shops
-                amid restored Victorian homes, with hip galleries showcasing local talent
-                and boutiques stocking clothes by edgy young designers.
-            </p>
-            <a href="#">Learn more</a>
-        </div>
-        <div class="card">
-            <div class="img"></div>
-            <h3>Detroit-Shoreway</h3>
-            <p>
-                Set along a cliff overlooking Lake Erie, Detroit-Shoreway is home to parks
-                and trails like the multi-use Red Line Greenway, as well as retail hub Gordon Suare.
-                The Cleveland Public Theatre stages regular live performances.
-            </p>
-            <a href="#">Learn more</a>
-        </div>
-        <div class="card">
-            <div class="img"></div>
-            <h3>Edgewater</h3>
-            <p>
-                Edgewater is known for its Lake Erie frontage, tree-lined streets, and extensive
-                Edgewater Park, which features 9000 feet of shoreline, dog and swim beaches, boat
-                ramps, fishing pier, picnic areas and grills and a rentable pavilion.
-            </p>
-            <a href="#">Learn more</a>
+        <div class="cards-container">
+            <div class="card" style="--delay: 0">
+                <div class="card-image-wrapper">
+                    <img src="/images/ohio-city.jpg" alt="Ohio City neighborhood in Cleveland" class="img">
+                    <div class="image-overlay"></div>
+                </div>
+                <h3>Ohio City</h3>
+                <p>
+                    A trendy dining and entertainment hub centered on the main strip of
+                    West 25th Street, with high-end cocktail bars and beer gardens,
+                    alongside fashionable vegan bistros and gourmet farm-to-table restaurants
+                </p>
+                <a href="#" class="card-button">Learn more</a>
+            </div>
+            <div class="card" style="--delay: 0.1">
+                <div class="card-image-wrapper">
+                    <img src="/images/tremont.jpg" alt="Tremont neighborhood in Cleveland" class="img">
+                    <div class="image-overlay"></div>
+                </div>
+                <h3>Tremont</h3>
+                <p>
+                    Arty, residential Tremont has gourmet sandwich bars and craft coffee shops
+                    amid restored Victorian homes, with hip galleries showcasing local talent
+                    and boutiques stocking clothes by edgy young designers.
+                </p>
+                <a href="#" class="card-button">Learn more</a>
+            </div>
+            <div class="card" style="--delay: 0.2">
+                <div class="card-image-wrapper">
+                    <img src="/images/detroit-shoreway.jpg" alt="Detroit-Shoreway neighborhood in Cleveland" class="img">
+                    <div class="image-overlay"></div>
+                </div>
+                <h3>Detroit-Shoreway</h3>
+                <p>
+                    Set along a cliff overlooking Lake Erie, Detroit-Shoreway is home to parks
+                    and trails like the multi-use Red Line Greenway, as well as retail hub Gordon Suare.
+                    The Cleveland Public Theatre stages regular live performances.
+                </p>
+                <a href="#" class="card-button">Learn more</a>
+            </div>
+            <div class="card" style="--delay: 0.3">
+                <div class="card-image-wrapper">
+                    <img src="/images/edgewater2.jpg" alt="Edgewater neighborhood in Cleveland" class="img">
+                    <div class="image-overlay"></div>
+                </div>
+                <h3>Edgewater</h3>
+                <p>
+                    Edgewater is known for its Lake Erie frontage, tree-lined streets, and extensive
+                    Edgewater Park, which features 9000 feet of shoreline, dog and swim beaches, boat
+                    ramps, fishing pier, picnic areas and grills and a rentable pavilion.
+                </p>
+                <a href="#" class="card-button">Learn more</a>
+            </div>
         </div>
     </section>
     
     <section class="buffer"></section>
+    <script>
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Unobserve after animation to improve performance
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Respect reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.classList.add('is-visible');
+            });
+        }
+    </script>
 </body>
 </html>
