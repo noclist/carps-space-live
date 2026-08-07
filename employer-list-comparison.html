@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employer Listing: Before &amp; After</title>
+<link rel="stylesheet" href="employer-list-comparison.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c72ce0a819.js"></script>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Employer Listing Redesign</h1>
+  <p>Side-by-side comparison using the actual component HTML from each version</p>
+</div>
+
+<div class="comparison">
+
+  <!-- ========== BEFORE (employer-list.component.html) ========== -->
+  <div class="panel">
+    <div class="panel-label"><span class="before">Before</span></div>
+    <div class="mockup">
+
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="float-left">Employer Listing (47)</h1>
+            <button class="btn btn-outline btn-outline-dark">Add Employer</button>
+          </div>
+          <div class="card-body">
+            <!-- Search filter placeholder -->
+            <div class="v1-search-bar">
+              <input type="text" class="form-control" placeholder="Search employers...">
+              <button class="btn btn-outline btn-outline-dark btn-sm">Search</button>
+              <button class="btn btn-outline btn-outline-dark btn-sm">Reset</button>
+            </div>
+
+            <div id="no-more-tables">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width:35px" class="cursor"></th>
+                    <th scope="col" style="width:275px" class="cursor">
+                      <div class="d-flex align-items-center cursor"><span>Employer Name</span>
+                        <span>&#9650;</span>
+                      </div>
+                    </th>
+                    <th scope="col" style="width:90px">
+                      <div class="d-flex align-items-center"><span>Status</span></div>
+                    </th>
+                    <th scope="col" style="width:120px">
+                      <div class="d-flex align-items-center"><span>Effective Date</span></div>
+                    </th>
+                    <th scope="col" style="width:140px">
+                      <div class="d-flex align-items-center justify-content-center"><span>Days to Renewal</span></div>
+                    </th>
+                    <th scope="col" style="width:65px" class="text-center actions-td">
+                      <div class="d-flex align-items-center justify-content-center"><span>Actions</span></div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><i class="fas fa-star" style="color:#eab308"></i></td>
+                    <td data-title="Employer Name">Acme Insurance Group <i class="far fa-address-card" style="color:#64748b;margin-left:4px"></i></td>
+                    <td data-title="Status">Active</td>
+                    <td data-title="Effective Date">01-01-2026</td>
+                    <td data-title="Days to Renewal" class="text-center">148</td>
+                    <td data-title="Actions" class="action text-center actions-td">
+                      <div class="d-flex justify-content-between">
+                        <a href="#"><i class="far fa-comment-alt-dollar" title="Proposals"></i></a>
+                        <a href="#"><i class="fas fa-pencil-alt" title="Edit"></i></a>
+                        <a href="#"><i class="fas fa-ban" title="Deactivate"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="far fa-star" style="color:#ccc"></i></td>
+                    <td data-title="Employer Name">Bridgewater Solutions</td>
+                    <td data-title="Status">Active</td>
+                    <td data-title="Effective Date">03-15-2026</td>
+                    <td data-title="Days to Renewal" class="text-center">221</td>
+                    <td data-title="Actions" class="action text-center actions-td">
+                      <div class="d-flex justify-content-between">
+                        <a href="#"><i class="far fa-comment-alt-dollar"></i></a>
+                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="#"><i class="fas fa-ban"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="far fa-star" style="color:#ccc"></i></td>
+                    <td data-title="Employer Name">Cedar Valley Manufacturing</td>
+                    <td data-title="Status">Active</td>
+                    <td data-title="Effective Date">06-01-2025</td>
+                    <td data-title="Days to Renewal" class="text-center">-67</td>
+                    <td data-title="Actions" class="action text-center actions-td">
+                      <div class="d-flex justify-content-between">
+                        <a href="#"><i class="far fa-comment-alt-dollar"></i></a>
+                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="#"><i class="fas fa-ban"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="fas fa-star" style="color:#eab308"></i></td>
+                    <td data-title="Employer Name">Parkside Health Partners <i class="far fa-address-card" style="color:#64748b;margin-left:4px"></i></td>
+                    <td data-title="Status">Inactive</td>
+                    <td data-title="Effective Date">-</td>
+                    <td data-title="Days to Renewal" class="text-center"></td>
+                    <td data-title="Actions" class="action text-center actions-td">
+                      <div class="d-flex justify-content-between">
+                        <a href="#"><i class="fas fa-check-square" title="Activate"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="far fa-star" style="color:#ccc"></i></td>
+                    <td data-title="Employer Name">Summit Financial Services</td>
+                    <td data-title="Status">Active</td>
+                    <td data-title="Effective Date">09-01-2026</td>
+                    <td data-title="Days to Renewal" class="text-center">8</td>
+                    <td data-title="Actions" class="action text-center actions-td">
+                      <div class="d-flex justify-content-between">
+                        <a href="#"><i class="far fa-comment-alt-dollar"></i></a>
+                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="#"><i class="fas fa-ban"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-between align-items-center table-pagination">
+                <div class="d-flex align-items-center">
+                  Show <span class="plain-select">
+                    <select class="form-control ml-2 mr-2">
+                      <option>10</option><option>25</option><option>50</option>
+                    </select>
+                  </span> Entries
+                </div>
+                <nav><span class="v1-pagination">1 2 3 4 5</span></nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="caption">
+      <strong>Original (v1):</strong> Standard Bootstrap card with a dense table. Actions are inline icon links (pencil, ban, proposals). Favorite stars use filled/outline Font Awesome. Status is plain text. Days to renewal is a raw number with no urgency indicator. Pagination uses "Show N Entries" pattern.
+    </div>
+  </div>
+
+  <!-- ========== AFTER (employer-list-v2.component.html) ========== -->
+  <div class="panel">
+    <div class="panel-label"><span class="after">After</span></div>
+    <div class="mockup">
+
+      <div class="emp-list list-page v2">
+
+        <!-- Page header -->
+        <div class="list-header">
+          <div class="list-header__left">
+            <h1 class="list-title">Employers</h1>
+            <span class="list-count">47</span>
+          </div>
+          <button class="list-add-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Add Employer
+          </button>
+        </div>
+
+        <!-- Filter bar (from employer-search-v2.component.html) -->
+        <div class="filter-bar">
+          <div class="search-bar">
+            <!-- Search input -->
+            <div class="search-bar__input">
+              <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" role="searchbox" aria-label="Search employers" placeholder="Search by employer name..." value="Acme">
+              <button type="button" class="search-bar__clear" aria-label="Clear search">&times;</button>
+            </div>
+
+            <!-- Divider -->
+            <div class="search-bar__divider"></div>
+
+            <!-- Location dropdown (simplified) -->
+            <button class="search-bar__btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Locations
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+
+            <!-- Checkbox: Include Inactive -->
+            <label class="search-bar__checkbox">
+              <input type="checkbox">
+              <span>Show Inactive</span>
+            </label>
+
+            <!-- Favorites toggle -->
+            <label class="search-bar__checkbox search-bar__checkbox--fav">
+              <input type="checkbox">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 4.32 4.76.69a.56.56 0 0 1 .32.96l-3.45 3.36.81 4.75a.56.56 0 0 1-.81.6L12 15.77l-4.28 2.25a.56.56 0 0 1-.81-.6l.81-4.75L4.27 9.3a.56.56 0 0 1 .32-.96l4.76-.69Z"/></svg>
+              <span>Favorites</span>
+            </label>
+
+            <!-- Divider -->
+            <div class="search-bar__divider"></div>
+
+            <!-- Reset -->
+            <button type="button" class="search-bar__btn search-bar__btn--ghost">Reset</button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="list-table-wrap">
+          <table class="list-table">
+            <thead>
+              <tr>
+                <th class="list-th emp-th--fav col-favorite"><span class="sr-only">Favorite</span></th>
+                <th class="list-th list-th--sortable" aria-sort="ascending">
+                  Employer Name
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="list-sort-icon"><path d="m18 15-6-6-6 6"/></svg>
+                </th>
+                <th class="list-th col-status">Status</th>
+                <th class="list-th col-effective-date">Effective Date</th>
+                <th class="list-th list-th--center col-days-to-renewal">Days to Renewal</th>
+                <th class="list-th list-th--center col-actions"><span class="sr-only">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="list-row">
+                <td class="list-td emp-td--fav">
+                  <button class="emp-fav-btn emp-fav-btn--active" aria-label="Remove from favorites">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 4.32 4.76.69a.56.56 0 0 1 .32.96l-3.45 3.36.81 4.75a.56.56 0 0 1-.81.6L12 15.77l-4.28 2.25a.56.56 0 0 1-.81-.6l.81-4.75L4.27 9.3a.56.56 0 0 1 .32-.96l4.76-.69Z"/></svg>
+                  </button>
+                </td>
+                <td class="list-td list-td--name">
+                  <span class="emp-name">Acme Insurance Group</span>
+                  <svg class="emp-aor-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                </td>
+                <td class="list-td"><span class="info-badge info-badge--active">Active</span></td>
+                <td class="list-td">Jan 1, 2026</td>
+                <td class="list-td list-td--center"><span class="emp-renewal emp-renewal--ok">148</span></td>
+                <td class="list-td list-td--actions">
+                  <div class="kebab-wrapper">
+                    <button class="list-kebab-btn" aria-label="Actions" aria-haspopup="menu" aria-expanded="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu--open" role="menu">
+                      <li role="menuitem">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+                        <span>Proposals</span>
+                      </li>
+                      <li role="menuitem">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.86 4.86a2.1 2.1 0 0 1 2.98 2.98L8.5 19.18l-4.5 1 1-4.5Z"/></svg>
+                        <span>Edit</span>
+                      </li>
+                      <li role="menuitem">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+                        <span>Deactivate</span>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-row">
+                <td class="list-td emp-td--fav">
+                  <button class="emp-fav-btn" aria-label="Add to favorites">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 4.32 4.76.69a.56.56 0 0 1 .32.96l-3.45 3.36.81 4.75a.56.56 0 0 1-.81.6L12 15.77l-4.28 2.25a.56.56 0 0 1-.81-.6l.81-4.75L4.27 9.3a.56.56 0 0 1 .32-.96l4.76-.69Z"/></svg>
+                  </button>
+                </td>
+                <td class="list-td list-td--name"><span class="emp-name">Bridgewater Solutions</span></td>
+                <td class="list-td"><span class="info-badge info-badge--active">Active</span></td>
+                <td class="list-td">Mar 15, 2026</td>
+                <td class="list-td list-td--center"><span class="emp-renewal emp-renewal--ok">221</span></td>
+                <td class="list-td list-td--actions">
+                  <button class="list-kebab-btn" aria-label="Actions">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="list-row">
+                <td class="list-td emp-td--fav">
+                  <button class="emp-fav-btn" aria-label="Add to favorites">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 4.32 4.76.69a.56.56 0 0 1 .32.96l-3.45 3.36.81 4.75a.56.56 0 0 1-.81.6L12 15.77l-4.28 2.25a.56.56 0 0 1-.81-.6l.81-4.75L4.27 9.3a.56.56 0 0 1 .32-.96l4.76-.69Z"/></svg>
+                  </button>
+                </td>
+                <td class="list-td list-td--name"><span class="emp-name">Cedar Valley Manufacturing</span></td>
+                <td class="list-td"><span class="info-badge info-badge--active">Active</span></td>
+                <td class="list-td">Jun 1, 2025</td>
+                <td class="list-td list-td--center"><span class="emp-renewal emp-renewal--past-due">Past due</span></td>
+                <td class="list-td list-td--actions">
+                  <button class="list-kebab-btn" aria-label="Actions">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="list-row">
+                <td class="list-td emp-td--fav">
+                  <button class="emp-fav-btn emp-fav-btn--active" aria-label="Remove from favorites">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 4.32 4.76.69a.56.56 0 0 1 .32.96l-3.45 3.36.81 4.75a.56.56 0 0 1-.81.6L12 15.77l-4.28 2.25a.56.56 0 0 1-.81-.6l.81-4.75L4.27 9.3a.56.56 0 0 1 .32-.96l4.76-.69Z"/></svg>
+                  </button>
+                </td>
+                <td class="list-td list-td--name"><span class="emp-name">Parkside Health Partners</span></td>
+                <td class="list-td"><span class="info-badge info-badge--inactive">Inactive</span></td>
+                <td class="list-td"><span class="list-muted">&mdash;</span></td>
+                <td class="list-td list-td--center"><span class="list-muted">&mdash;</span></td>
+                <td class="list-td list-td--actions">
+                  <button class="list-kebab-btn" aria-label="Actions">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="list-row">
+                <td class="list-td emp-td--fav">
+                  <button class="emp-fav-btn" aria-label="Add to favorites">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 4.32 4.76.69a.56.56 0 0 1 .32.96l-3.45 3.36.81 4.75a.56.56 0 0 1-.81.6L12 15.77l-4.28 2.25a.56.56 0 0 1-.81-.6l.81-4.75L4.27 9.3a.56.56 0 0 1 .32-.96l4.76-.69Z"/></svg>
+                  </button>
+                </td>
+                <td class="list-td list-td--name"><span class="emp-name">Summit Financial Services</span></td>
+                <td class="list-td"><span class="info-badge info-badge--active">Active</span></td>
+                <td class="list-td">Sep 1, 2026</td>
+                <td class="list-td list-td--center"><span class="emp-renewal emp-renewal--soon">8</span></td>
+                <td class="list-td list-td--actions">
+                  <button class="list-kebab-btn" aria-label="Actions">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="v2-pagination-footer">
+          <div class="v2-pagination-info">Showing 1&ndash;10 of 47</div>
+          <div class="v2-pagination-controls">
+            <button class="v2-page-btn" disabled>&lsaquo;</button>
+            <button class="v2-page-btn v2-page-btn--active">1</button>
+            <button class="v2-page-btn">2</button>
+            <button class="v2-page-btn">3</button>
+            <button class="v2-page-btn">4</button>
+            <button class="v2-page-btn">5</button>
+            <button class="v2-page-btn">&rsaquo;</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="caption">
+      <strong>Redesigned (v2):</strong> Clean header with pill count badge and prominent "Add Employer" button. Searchable filter bar. Table uses status badges with color coding, human-readable dates (MMM d, yyyy), renewal urgency indicators (soon/past due), star favorites with <code>&lt;app-icon&gt;</code>, and a kebab menu for actions via <code>&lt;app-dropdown-menu&gt;</code>. Pagination footer replaces "Show N Entries."
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
