@@ -4,249 +4,358 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Employer Dashboard: Before &amp; After</title>
-<link rel="stylesheet" href="css/dashboard-comparison.css">
+<link rel="stylesheet" href="dashboard-comparison.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c72ce0a819.js"></script>
 </head>
 <body>
 
-
 <div class="page-header">
   <h1>Employer Dashboard Redesign</h1>
-  <p>Transforming a tile-based navigation hub into a data-driven dashboard that surfaces key employer information, actions, and workflows.</p>
+  <p>Side-by-side comparison using the actual component HTML from each version</p>
 </div>
-
 
 <div class="comparison">
 
-
-  <!-- ========== BEFORE ========== -->
+  <!-- ========== BEFORE (Original edit-employer.component.html) ========== -->
   <div class="panel">
     <div class="panel-label"><span class="before">Before</span></div>
     <div class="mockup">
-      <div class="old">
-        <div class="old-main">
-          <div class="old-breadcrumb"><a href="#">Employers</a> &rsaquo; Acme Insurance Group</div>
-          <div class="old-title">Acme Insurance Group</div>
 
-
-          <div class="old-section-label">Information</div>
-          <div class="old-grid">
-            <div class="old-tile"><span class="icon">&#x1f3e2;</span><span class="label">Employer</span></div>
-            <div class="old-tile"><span class="icon">&#x1f4b0;</span><span class="label">Quotes / Proposals</span></div>
-            <div class="old-tile"><span class="icon">&#x1f465;</span><span class="label">Enrollment</span></div>
-            <div class="old-tile"><span class="icon">&#x1f4c5;</span><span class="label">Effective Dates</span></div>
-          </div>
-
-
-          <div class="old-section-label">Employees</div>
-          <div class="old-grid">
-            <div class="old-tile"><span class="icon">&#x1f441;</span><span class="label">View</span></div>
-            <div class="old-tile"><span class="icon">&#x1f4cb;</span><span class="label">Census</span></div>
-            <div class="old-tile"><span class="icon">&#x1f46b;</span><span class="label">Account Team</span></div>
-            <div class="old-tile" style="opacity:.4"><span class="icon">&#x1f512;</span><span class="label">Send Forms</span></div>
-          </div>
-
-
-          <div class="old-section-label">Documents &amp; Forms</div>
-          <div class="old-grid">
-            <div class="old-tile"><span class="icon">&#x1f4c2;</span><span class="label">Manage Documents</span></div>
-            <div class="old-tile"><span class="icon">&#x1f50d;</span><span class="label">Preview Forms</span></div>
-            <div class="old-tile"><span class="icon">&#x2709;</span><span class="label">Send Forms</span></div>
-            <div class="old-tile"><span class="icon">&#x1f4dd;</span><span class="label">Manage Forms</span></div>
-          </div>
-
-
-          <div class="old-section-label">Actions</div>
-          <div class="old-grid">
-            <div class="old-tile"><span class="icon">&#x1f504;</span><span class="label">Transfer</span></div>
-            <div class="old-tile"><span class="icon">&#x26d4;</span><span class="label">Deactivate</span></div>
-            <div class="old-tile"><span class="icon">&#x1f4e7;</span><span class="label">Communication</span></div>
-            <div class="old-tile"><span class="icon">&#x1f4e6;</span><span class="label">Send to AMS+</span></div>
+      <!-- Actual v1 structure from edit-employer.component.html -->
+      <div class="container-fluid">
+        <div class="edit-employer-wrapper">
+          <div class="edit-employer left" style="width:100%">
+            <div class="card">
+              <div class="card-body">
+                <div class="breadcrumbs">
+                  <a href="#">Employers</a>
+                  <i class="fal fa-long-arrow-alt-right"></i>
+                  <span>Acme Insurance Group</span>
+                </div>
+                <h1>Acme Insurance Group</h1>
+                <div class="grid employer-hub enrollment">
+                  <section class="info modified-info">
+                    <h2>Information</h2>
+                    <div class="grid-item"><i class="fal fa-info-square"></i><span>Employer</span></div>
+                    <div class="grid-item col-span-2"><i class="fal fa-comment-alt-dollar"></i><span>Proposals</span></div>
+                    <div class="grid-item"><i class="fal fa-user-plus"></i><span>Enrollment</span></div>
+                    <div class="grid-item col-span-2"><i class="fal fa-users-class"></i><span>Account Team</span></div>
+                    <div class="grid-item col-span-2"><i class="fal fa-calendar-week"></i><span>Effective Dates</span></div>
+                  </section>
+                  <section class="employees">
+                    <h2>Employees</h2>
+                    <div class="grid-item"><i class="fal fa-users"></i><span>View</span></div>
+                    <div class="grid-item"><i class="fal fa-table"></i><span>Census</span></div>
+                  </section>
+                  <section class="forms">
+                    <h2>Documents &amp; Forms</h2>
+                    <div class="grid-item"><i class="fal fa-folder-open"></i><span>Manage Documents</span></div>
+                    <div class="grid-item"><i class="fal fa-search-plus"></i><span>Preview Forms</span></div>
+                    <div class="grid-item"><i class="fal fa-paper-plane"></i><span>Send Forms</span></div>
+                    <div class="grid-item"><i class="fal fa-file-alt"></i><span>Manage Forms</span></div>
+                  </section>
+                  <section class="actions enrollment">
+                    <h2>Actions</h2>
+                    <div class="grid-item"><i class="fal fa-exchange-alt"></i><span>Transfer</span></div>
+                    <div class="grid-item"><i class="fal fa-ban"></i><span>Deactivate</span></div>
+                    <div class="grid-item"><i class="fal fa-comments"></i><span>Pre-Screen Communications</span></div>
+                    <div class="grid-item"><i class="fal fa-cube"></i><span>Send to AMS+</span></div>
+                  </section>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="caption">
-      <strong>Original:</strong> Flat grid of icon tiles organized by section. Minimal data density &mdash; each tile shows only an icon and label with no contextual information.
+      <strong>Original (v1):</strong> Flat icon-grid tiles organized by section. Each tile shows only a Font Awesome icon and a label — no data, no stats. Sections: Information, Employees, Documents &amp; Forms, Actions.
     </div>
   </div>
 
-
-  <!-- ========== AFTER ========== -->
+  <!-- ========== AFTER (edit-employer-v2.component.html) ========== -->
   <div class="panel">
     <div class="panel-label"><span class="after">After</span></div>
     <div class="mockup">
-      <div class="new">
-        <div class="new-breadcrumb"><a href="#">Employers</a> &rsaquo; Acme Insurance Group</div>
 
+      <!-- Actual v2 structure from edit-employer-v2.component.html -->
+      <div class="dashboard list-page v2">
 
-        <!-- Overview -->
-        <div class="new-overview">
-          <div class="new-icon-circle blue">&#x1f3e2;</div>
-          <div class="new-overview-info">
-            <div class="new-overview-name">Acme Insurance Group <span class="new-badge active">Active</span></div>
-            <div class="new-overview-meta">
-              <div class="item"><strong>Tax ID:</strong> **-***4521</div>
-              <div class="item"><strong>Eff:</strong> 01/01/2026</div>
-              <div class="item"><strong>Renewal:</strong> 01/01/2027</div>
-              <div class="item"><strong>24</strong> employees &middot; <strong>38</strong> dependents</div>
-            </div>
-          </div>
-          <button class="new-edit-btn">&#9998; Edit</button>
+        <!-- Breadcrumbs -->
+        <div class="v2-breadcrumbs">
+          <a href="#">Employers</a>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          <span>Acme Insurance Group</span>
         </div>
 
+        <!-- Overview Header -->
+        <div class="dashboard__overview dashboard__overview--clickable">
+          <div class="dashboard__overview-top">
+            <div class="dashboard__overview-name-row">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--blue">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V8l10-4 10 4v12M6 12v5m4-6v6m4-6v6m4-5v5"/></svg>
+              </span>
+              <h1 class="dashboard__employer-name">Acme Insurance Group</h1>
+              <span class="info-badge info-badge--active">Active</span>
+            </div>
+            <button class="dashboard__edit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.86 4.86a2.1 2.1 0 0 1 2.98 2.98L8.5 19.18l-4.5 1 1-4.5Z"/></svg>
+              Edit
+            </button>
+          </div>
+
+          <div class="dashboard__overview-grid">
+            <div class="dashboard__overview-field">
+              <span class="dashboard__overview-label">Tax ID</span>
+              <span class="dashboard__overview-value">**-***4521</span>
+            </div>
+            <div class="dashboard__overview-field">
+              <span class="dashboard__overview-label">Address</span>
+              <span class="dashboard__overview-value">123 Main St, Springfield, IL 62704</span>
+            </div>
+            <div class="dashboard__overview-field">
+              <span class="dashboard__overview-label">Effective Date</span>
+              <span class="dashboard__overview-value">Jan 1, 2026</span>
+            </div>
+            <div class="dashboard__overview-field">
+              <span class="dashboard__overview-label">Renewal Date</span>
+              <span class="dashboard__overview-value">Jan 1, 2027 <span class="dashboard__renewal-badge dashboard__renewal-badge--ok">in 148 days</span></span>
+            </div>
+            <div class="dashboard__overview-field">
+              <span class="dashboard__overview-label">Employees</span>
+              <span class="dashboard__overview-value">24 (38 dependents)</span>
+            </div>
+            <div class="dashboard__overview-field">
+              <span class="dashboard__overview-label">Employer Code</span>
+              <span class="dashboard__overview-value dashboard__overview-value--code">ACME2026
+                <button class="dashboard__copy-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> <span class="dashboard__copy-label">Copy</span></button>
+              </span>
+            </div>
+          </div>
+        </div>
 
         <!-- Information -->
-        <div class="new-section-title">Information</div>
-        <div class="new-cards-grid">
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle blue" style="width:32px;height:32px;font-size:14px;">&#x1f4b0;</div>
-              <div>
-                <div class="new-card-title">Proposals</div>
-                <div class="new-card-desc">Manage quotes and proposals</div>
+        <div class="dashboard__section-label">Information</div>
+        <div class="dashboard__row dashboard__row--masonry">
+
+          <!-- Proposals Card -->
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--green">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Proposals</span>
+                <span class="dashboard-card__desc">Create and manage benefit proposals</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </div>
-            <div class="new-card-stats">
-              <div class="new-stat"><span class="num">5</span><span class="lbl">Total</span></div>
-              <div class="new-stat"><span class="num">2</span><span class="lbl">Open</span></div>
-              <div class="new-stat"><span class="num">3</span><span class="lbl">Closed</span></div>
+            <div class="dashboard-card__body">
+              <div class="dashboard-card__stats-row">
+                <div class="dashboard-card__stat"><span class="dashboard-card__stat-value">5</span><span class="dashboard-card__stat-label">Total</span></div>
+                <div class="dashboard-card__stat"><span class="dashboard-card__stat-value dashboard-card__stat-value--green">2</span><span class="dashboard-card__stat-label">Open</span></div>
+                <div class="dashboard-card__stat"><span class="dashboard-card__stat-value dashboard-card__stat-value--blue">3</span><span class="dashboard-card__stat-label">Closed</span></div>
+              </div>
+              <div class="dashboard-card__enrollment-list">
+                <div class="dashboard-card__enrollment-item"><span class="dashboard-card__enrollment-dot dashboard-card__enrollment-dot--open"></span><span>Q1 2026 Medical Renewal</span></div>
+                <div class="dashboard-card__enrollment-item"><span class="dashboard-card__enrollment-dot dashboard-card__enrollment-dot--purple"></span><span>Dental Benefits Review</span></div>
+              </div>
             </div>
           </div>
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle purple" style="width:32px;height:32px;font-size:14px;">&#x1f46b;</div>
-              <div>
-                <div class="new-card-title">Account Team</div>
-                <div class="new-card-desc">Brokers assigned to this employer</div>
+
+          <!-- Effective Dates Card -->
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--orange">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Effective Dates</span>
+                <span class="dashboard-card__desc">Plan effective and renewal dates</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </div>
-            <div style="margin-top:8px;">
-              <div class="avatar-stack">
-                <div class="av av-1">JD</div>
-                <div class="av av-2">KS</div>
-                <div class="av av-3">ML</div>
-                <div class="av av-more">+2</div>
+            <div class="dashboard-card__body">
+              <div class="dashboard-card__stats-row">
+                <div class="dashboard-card__stat"><span class="dashboard-card__stat-value">3</span><span class="dashboard-card__stat-label">Total</span></div>
               </div>
-              <div style="font-size:11px;color:#64748b;margin-top:6px;">5 team members</div>
+              <div class="dashboard-card__enrollment-list">
+                <div class="dashboard-card__enrollment-item"><span class="dashboard-card__enrollment-dot dashboard-card__enrollment-dot--open"></span><span>Jan 1, 2026</span></div>
+                <div class="dashboard-card__enrollment-item"><span class="dashboard-card__enrollment-dot dashboard-card__enrollment-dot--blue"></span><span>Mar 1, 2026</span></div>
+              </div>
             </div>
           </div>
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle green" style="width:32px;height:32px;font-size:14px;">&#x1f4c5;</div>
-              <div>
-                <div class="new-card-title">Effective Dates</div>
-                <div class="new-card-desc">Coverage effective dates</div>
+
+          <!-- Enrollment Card -->
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.62-1.38A9 9 0 1 1 12 3a8.96 8.96 0 0 1 5.62 1.62"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Enrollment</span>
+                <span class="dashboard-card__desc">Employee enrollment and elections</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </div>
-            <div class="new-card-stats">
-              <div class="new-stat"><span class="num">3</span><span class="lbl">Total</span></div>
+            <div class="dashboard-card__body">
+              <div class="dashboard-card__stats-row">
+                <div class="dashboard-card__stat"><span class="dashboard-card__stat-value">2</span><span class="dashboard-card__stat-label">Periods</span></div>
+                <div class="dashboard-card__stat"><span class="dashboard-card__stat-value dashboard-card__stat-value--green">1</span><span class="dashboard-card__stat-label">Open</span></div>
+              </div>
             </div>
           </div>
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle teal" style="width:32px;height:32px;font-size:14px;">&#x1f4cb;</div>
-              <div>
-                <div class="new-card-title">Enrollment</div>
-                <div class="new-card-desc">Employee enrollment management</div>
+
+          <!-- Account Team Card -->
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--teal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Account Team</span>
+                <span class="dashboard-card__desc">Assigned brokers and team members</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="dashboard-card__body">
+              <div class="dashboard-card__avatar-stack">
+                <span class="dashboard-card__avatar dashboard-card__avatar--0" title="John Davis">JD</span>
+                <span class="dashboard-card__avatar dashboard-card__avatar--1" title="Karen Smith">KS</span>
+                <span class="dashboard-card__avatar dashboard-card__avatar--2" title="Mike Lee">ML</span>
+                <span class="dashboard-card__avatar dashboard-card__avatar--more">+2</span>
+              </div>
+              <div class="dashboard-card__sublabel">5 team members assigned</div>
             </div>
           </div>
         </div>
-
 
         <!-- Employees -->
-        <div class="new-section-title">Employees</div>
-        <div class="new-emp-card">
-          <div class="new-emp-main">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-              <div class="new-icon-circle blue" style="width:32px;height:32px;font-size:14px;">&#x1f465;</div>
-              <div>
-                <div class="new-card-title">Employees</div>
-                <div class="new-card-desc">View and manage employee demographics</div>
+        <div class="dashboard__section-label">Employees</div>
+        <div class="dashboard-card dashboard-card--no-hover">
+          <div class="dashboard-card__split dashboard-card__split--full">
+            <div class="dashboard-card__split-main">
+              <div class="dashboard-card__top">
+                <span class="dashboard-card__icon-circle dashboard-card__icon-circle--blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <div class="dashboard-card__title-block">
+                  <span class="dashboard-card__title">Employees</span>
+                  <span class="dashboard-card__desc">Dependents and demographics</span>
+                </div>
+                <span class="dashboard-card__view-link">View Employees <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span>
+              </div>
+              <div class="dashboard-card__body">
+                <div class="dashboard-card__stats-row">
+                  <div class="dashboard-card__stat"><span class="dashboard-card__stat-value dashboard-card__stat-value--lg">24</span><span class="dashboard-card__stat-label">Employees</span></div>
+                  <div class="dashboard-card__stat"><span class="dashboard-card__stat-value dashboard-card__stat-value--lg">38</span><span class="dashboard-card__stat-label">Dependents</span></div>
+                </div>
+                <div class="dashboard-card__status-bar">
+                  <div class="dashboard-card__status-bar-row">
+                    <div class="dashboard-card__status-bar-track">
+                      <div class="dashboard-card__status-bar-seg dashboard-card__status-bar-seg--complete" style="width:42%"></div>
+                      <div class="dashboard-card__status-bar-seg dashboard-card__status-bar-seg--updating" style="width:12%"></div>
+                      <div class="dashboard-card__status-bar-seg dashboard-card__status-bar-seg--not-started" style="width:21%"></div>
+                      <div class="dashboard-card__status-bar-seg dashboard-card__status-bar-seg--no-account" style="width:25%"></div>
+                    </div>
+                    <span class="dashboard-card__completion-pct">42% Complete</span>
+                  </div>
+                  <div class="dashboard-card__status-legend">
+                    <span class="dashboard-card__status-legend-item"><span class="dashboard-card__status-dot dashboard-card__status-dot--complete"></span> 10 Complete</span>
+                    <span class="dashboard-card__status-legend-item"><span class="dashboard-card__status-dot dashboard-card__status-dot--updating"></span> 3 Updating</span>
+                    <span class="dashboard-card__status-legend-item"><span class="dashboard-card__status-dot dashboard-card__status-dot--not-started"></span> 5 Not Started</span>
+                    <span class="dashboard-card__status-legend-item"><span class="dashboard-card__status-dot dashboard-card__status-dot--no-account"></span> 6 No Account</span>
+                  </div>
+                </div>
+                <div class="dashboard-card__detail"><span class="dashboard-card__detail-label">HR Rep:</span> Sarah Johnson</div>
               </div>
             </div>
-            <div class="new-card-stats" style="margin-bottom:4px;">
-              <div class="new-stat"><span class="num">24</span><span class="lbl">Employees</span></div>
-              <div class="new-stat"><span class="num">38</span><span class="lbl">Dependents</span></div>
+            <div class="dashboard-card__split-aside">
+              <div class="dashboard-card__census-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <span class="dashboard-card__split-aside-title">Census</span>
+              <span class="dashboard-card__split-aside-desc">Generate and download census data</span>
+              <span class="dashboard-card__split-aside-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                Generate Census
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </span>
             </div>
-            <div class="new-status-bar">
-              <div class="seg complete" style="width:42%"></div>
-              <div class="seg updating" style="width:12%"></div>
-              <div class="seg not-started" style="width:21%"></div>
-              <div class="seg no-account" style="width:25%"></div>
-            </div>
-            <div class="new-legend">
-              <span><span class="dot" style="background:#16a34a"></span> Complete 10</span>
-              <span><span class="dot" style="background:#eab308"></span> Updating 3</span>
-              <span><span class="dot" style="background:#3b82f6"></span> Not Started 5</span>
-              <span><span class="dot" style="background:#e2e8f0"></span> No Account 6</span>
-            </div>
-          </div>
-          <div class="new-emp-aside">
-            <div class="new-icon-circle green" style="width:36px;height:36px;font-size:15px;">&#x1f4cb;</div>
-            <div style="font-size:13px;font-weight:600;">Census</div>
-            <div style="font-size:11px;color:#64748b;">Generate employee census</div>
-            <button class="new-census-btn">Generate Census</button>
           </div>
         </div>
-
 
         <!-- Documents & Forms -->
-        <div class="new-section-title">Documents &amp; Forms</div>
-        <div class="new-docs-grid">
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle orange" style="width:32px;height:32px;font-size:14px;">&#x1f4c2;</div>
-              <div>
-                <div class="new-card-title">Manage Documents</div>
-                <div class="new-card-desc">Upload and organize files</div>
+        <div class="dashboard__section-label">Documents &amp; Forms</div>
+        <div class="dashboard__row dashboard__row--3col">
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--orange">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Manage Documents</span>
+                <span class="dashboard-card__desc">Upload and organize employer documents</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </div>
           </div>
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle teal" style="width:32px;height:32px;font-size:14px;">&#x1f50d;</div>
-              <div>
-                <div class="new-card-title">Preview Forms</div>
-                <div class="new-card-desc">Preview employer forms</div>
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--teal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Preview Forms</span>
+                <span class="dashboard-card__desc">Review forms before sending</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </div>
           </div>
-          <div class="new-card">
-            <div class="new-card-header">
-              <div class="new-icon-circle purple" style="width:32px;height:32px;font-size:14px;">&#x1f4dd;</div>
-              <div>
-                <div class="new-card-title">Manage Forms</div>
-                <div class="new-card-desc">Configure form settings</div>
+          <div class="dashboard-card">
+            <div class="dashboard-card__top">
+              <span class="dashboard-card__icon-circle dashboard-card__icon-circle--purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+              </span>
+              <div class="dashboard-card__title-block">
+                <span class="dashboard-card__title">Manage Forms</span>
+                <span class="dashboard-card__desc">Configure and manage form templates</span>
               </div>
+              <svg class="dashboard-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </div>
           </div>
         </div>
-
 
         <!-- Actions -->
-        <div class="new-section-title">Actions</div>
-        <div class="new-actions">
-          <button class="new-action-btn">&#x1f504; Transfer</button>
-          <button class="new-action-btn">&#x1f4e7; Communications</button>
-          <button class="new-action-btn">&#x1f4e6; Send to AMS+</button>
-          <button class="new-action-btn danger">&#x26d4; Deactivate</button>
+        <div class="dashboard__section-label">Actions</div>
+        <div class="dashboard__actions-row">
+          <button class="action-btn action-btn--outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01"/></svg>
+            Transfer
+          </button>
+          <button class="action-btn action-btn--outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Pre-Screen Communications
+          </button>
+          <button class="action-btn action-btn--outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V8l10-4 10 4v12M6 12v5m4-6v6m4-6v6m4-5v5"/></svg>
+            Send to AMS+
+          </button>
+          <button class="action-btn action-btn--danger">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+            Deactivate
+          </button>
         </div>
+
       </div>
     </div>
     <div class="caption">
-      <strong>Redesigned:</strong> Rich dashboard cards with inline stats, status bars, and avatar stacks. Overview header shows key employer data at a glance. Employee section includes MHQ completion progress. No sidebar &mdash; all content flows vertically with better information density.
+      <strong>Redesigned (v2):</strong> Single-column dashboard with an overview header (employer details at a glance), rich cards with inline stats (proposal counts, enrollment periods, avatar stacks), an employee status progress bar with MHQ completion, a split census panel, and a consolidated actions row. Uses Heroicons via <code>&lt;app-icon&gt;</code> and the new design token system.
     </div>
   </div>
 
-
 </div>
-
 
 </body>
 </html>
-
-
-
-
-
